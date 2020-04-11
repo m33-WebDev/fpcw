@@ -1,0 +1,40 @@
+@import '../styles/variables.scss';
+
+.List {
+
+    ul {
+        list-style: none;
+        padding-left: 0;
+
+        p {
+            margin: 0;
+        }
+    }
+
+    a {
+        padding: 3px;
+    }
+
+    a:hover {
+        text-decoration: none;
+        color: #ED553B;
+    }
+
+    // lvl 1
+    li {
+
+        margin-top: 2px;
+        margin-bottom: 2px;
+
+        // lvl 2
+        li {
+
+            padding-left: 1em;
+
+            // lvl3
+            li {
+                padding-left: 2em;
+            }
+        }
+    }
+}

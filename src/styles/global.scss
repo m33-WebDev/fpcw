@@ -1,0 +1,9 @@
+@import './variables.scss';
+
+html {
+  // background-color: $color-bg-primary !important;
+  // scrollbar-color: #EAAA03 #272822;
+  scrollbar-width: thin;
+}
+
+@import '~bulma/bulma.sass';

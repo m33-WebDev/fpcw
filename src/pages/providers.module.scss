@@ -1,0 +1,10 @@
+
+.ProviderList {
+    max-height: 80vh;
+    overflow: scroll;
+    scrollbar-width: thin;
+}
+
+.ProviderList::-webkit-scrollbar {
+    display: none;
+}

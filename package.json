@@ -1,29 +1,8 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "gatsby-starter-hello-world",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "A simplified bare-bones starter for Gatsby",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
-  "dependencies": {
-    "gatsby": "^2.19.45",
-    "gatsby-image": "^2.2.44",
-    "gatsby-plugin-manifest": "^2.2.48",
-    "gatsby-plugin-offline": "^3.0.41",
-    "gatsby-plugin-react-helmet": "^3.1.24",
-    "gatsby-plugin-sharp": "^2.4.13",
-    "gatsby-source-filesystem": "^2.1.56",
-    "gatsby-transformer-sharp": "^2.3.19",
-    "prop-types": "^15.7.2",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0",
-    "react-helmet": "^5.2.1"
-  },
-  "devDependencies": {
-    "prettier": "^1.19.1"
-  },
-  "keywords": [
-    "gatsby"
-  ],
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
@@ -32,11 +11,52 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
+    "deploy": "git push -u origin master",
+    "deploysurge": "surge public/ unrealistic.surge.sh",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.27",
+    "@fortawesome/free-solid-svg-icons": "^5.12.1",
+    "@fortawesome/react-fontawesome": "^0.1.9",
+    "bulma": "^0.8.0",
+    "bulma-calendar": "^6.0.7",
+    "gatsby": "^2.19.35",
+    "gatsby-plugin-catch-links": "^2.1.26",
+    "gatsby-plugin-google-analytics": "^2.1.37",
+    "gatsby-plugin-manifest": "^2.2.45",
+    "gatsby-plugin-offline": "^3.0.40",
+    "gatsby-plugin-react-helmet": "^3.1.22",
+    "gatsby-plugin-sass": "^2.1.30",
+    "gatsby-plugin-sharp": "^2.4.5",
+    "gatsby-remark-autolink-headers": "^2.1.24",
+    "gatsby-remark-code-buttons": "^2.0.4",
+    "gatsby-remark-code-titles": "^1.1.0",
+    "gatsby-remark-figure-caption": "^2.0.0",
+    "gatsby-remark-images": "^3.1.44",
+    "gatsby-remark-prismjs": "^3.3.32",
+    "gatsby-source-contentful": "^2.2.7",
+    "gatsby-source-filesystem": "^2.1.48",
+    "gatsby-transformer-remark": "^2.6.53",
+    "gatsby-transformer-sharp": "^2.3.18",
+    "hyvor-talk-react": "^1.0.1",
+    "lorem-ipsum": "^2.0.3",
+    "node-sass": "^4.13.1",
+    "prismjs": "^1.19.0",
+    "random": "^2.1.1",
+    "react": "^16.13.0",
+    "react-datepicker": "^2.14.1",
+    "react-dom": "^16.13.0",
+    "react-helmet": "^5.2.1",
+    "sharp": "^0.24.1",
+    "voca": "^1.4.0"
+  },
+  "devDependencies": {
+    "prettier": "^1.19.1"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+    "url": "https://github.com/gatsbyjs/gatsby-starter-hello-world"
   },
   "bugs": {
     "url": "https://github.com/gatsbyjs/gatsby/issues"
