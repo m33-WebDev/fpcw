@@ -1,40 +1,63 @@
-import React from "react"
+import React, { useEffect } from "react"
 import { Link, graphql } from "gatsby"
+import { Helmet } from "react-helmet"
 import * as random from "random"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import SplashTile from "../components/splashtile"
 import NewsTile from "../components/newstile"
+import Carousel from "../components/carousel"
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import {
+  faEnvelope,
+  faPhone,
+  faCalendar,
+  faStar,
+  faStarAndCrescent,
+  faHandPointDown,
+  faHandHoldingMedical,
+  faLink,
+  faExternalLinkAlt,
+  faLongArrowAltRight,
+  faChevronRight,
+  faFileMedical,
+  faBookMedical,
+  faHeartbeat,
+  faStethoscope,
+} from "@fortawesome/free-solid-svg-icons"
+
+import { faFacebookSquare, faGoogle } from "@fortawesome/free-brands-svg-icons"
+
+import styles from "./index.module.scss"
 
 import logo from "../images/logo-new.png"
 
 export default ({ data }) => {
-
   function getNewsTiles() {
     var tiles = []
-  
+
     for (var i = 0; i < 3; ++i) {
       tiles.push(
-        <div class="column">
-          <NewsTile post={data.allContentfulNewsPost.nodes[i]} />
+        <div className="column is-3 is-flex" key={i} style={{ height: "100%" }}>
+          <NewsTile post={data.newsPosts.nodes[i]} style={{ height: "100%" }} />
         </div>
       )
     }
-  
+
     return tiles
   }
-  
 
   return (
     <Layout>
       <SEO title={data.site.siteMetadata.shortTitle} />
-      <section class="hero is-light is-fullheight-with-navbar">
-        <div class="hero-body">
-          <div class="container" style={{ height: "100%" }}>
-            <div class="columns is-vcentered" style={{ height: "100%" }}>
+      <section className="hero is-light is-fullheight-with-navbar">
+        <div className="hero-body">
+          <div className="container" style={{ height: "100%" }}>
+            <div className="columns is-vcentered" style={{ height: "100%" }}>
               <div
-                class="column is-6"
+                className="column is-6"
                 style={{ position: "relative", display: "inline-block" }}
               >
                 <div>
@@ -44,53 +67,62 @@ export default ({ data }) => {
                   </h1>
                   <h2 className="subtitle">Find better, one step at a time</h2>
                   <Link to="/appointments" className="has-text-white">
-                    <button class="button is-success">
+                    <button className="button is-success">
+                      {" "}
                       <p>Schedule an appointment today</p>
+                      <FontAwesomeIcon
+                        icon={faChevronRight}
+                        style={{ marginLeft: ".8em" }}
+                      />
                     </button>
                   </Link>
                 </div>
               </div>
-              <div class="column is-6">
+              <div className="column is-6">
                 <div className="tile is-ancestor">
                   <div className="tile is-vertical">
-                    <div class="tile">
+                    <div className="tile">
                       <div className="tile is-parent">
                         <div
                           className="tile is-child"
-                          style={{ minHeight: "40vh" }}
+                          style={{ minHeight: "40vmin" }}
                         >
                           <SplashTile
                             title="Services"
                             image="https://live.staticflickr.com/1849/29409117887_b8cd64b42f_b.jpg"
+                            to="/services/"
                           />
                         </div>
                       </div>
-                      <div class="tile is-parent">
+                      <div className="tile is-parent">
                         <div className="tile is-child">
                           <SplashTile
                             title="Locations"
                             image="https://cdn.theatlantic.com/thumbor/ziZG61zzYJ2ZZQCAFj-oWDaI1Zc=/900x599/media/img/photo/2018/05/travel-monday-a-photo-trip-to-zhang/z01_1021238707/original.jpg"
+                            to="/locations/"
                           />
                         </div>
                       </div>{" "}
                     </div>
-                    <div class="tile">
+                    <div className="tile">
                       <div className="tile is-parent">
                         <div className="tile is-child">
                           <SplashTile
-                            title="Education"
-                            image="https://greece.greekreporter.com/files/Hagia-Sophia.jpg"
+                            title="Library"
+                            image="https://images.unsplash.com/photo-1532012197267-da84d127e765?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"
+                            to="/library/"
                           />
                         </div>
                       </div>
-                      <div class="tile is-parent">
+                      <div className="tile is-parent">
                         <div
                           className="tile is-child"
-                          style={{ minHeight: "40vh" }}
+                          style={{ minHeight: "40vmin" }}
                         >
                           <SplashTile
                             title="Telehealth"
                             image="https://qtxasset.com/2016-11/telemedicine-medical-spa-servicesjpg.jpg?901Y_noU1ISnVdF1IV_bYbieUL7K23b0"
+                            to='/telehealth-teletherapy'
                           />
                         </div>
                       </div>{" "}
@@ -102,136 +134,182 @@ export default ({ data }) => {
           </div>
         </div>
       </section>
-      <section className="hero is-success is-fullheight">
-        <div className="hero-body">
-          <div className="container">
-            <div class="content has-text-centered">
-              <h1 className="title is-2" style={{borderBottom: '4px solid #494949', display: 'inline'}}>News & Events</h1>
+      <section className="hero has-background-grey-lighter">
+        <div class="hero-body">
+          <div class="columns is-vcentered is-centered is-desktop">
+            <div className="column is-2 has-text-centered">
+              <FontAwesomeIcon
+                icon={faHandHoldingMedical}
+                size="8x"
+                className="is-size-3-mobile"
+              />
             </div>
-            <div className="columns is-centered">
-              <div class="column is-8">
-                <div class="columns">
-                  {getNewsTiles()}
+            <div class="column is-6">
+              <div className="title">
+                {" "}
+                Holistic Psychiatry for your Mind, Body & Soul{" "}
+              </div>
+              <div
+                className="content is-size-5 is-size-6-mobile"
+                style={{ textAlign: "justify" }}
+              >
+                At Family Psychiatry Counseling & Wellness, we specialize in
+                performing comprehensive psychiatric and psychological
+                evaluations to establish accurate diagnoses and prepare
+                individualized treatment plans. We combine advanced conventional
+                methods with safe alternative treatment approaches to bring
+                about lasting relief and improved quality of life.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="hero is-light">
+        <div className="hero-body">
+          <section class="section">
+            <div class="container" style={{ height: "100%" }}>
+              <div
+                className="columns is-desktop is-fullheight"
+                style={{ height: "100%" }}
+              >
+                <div className="column is-3">
+                  <div className="">
+                    <h1
+                      className="title is-1 is-size-3-mobile has-text-centered-mobile"
+                      style={{ textAlign: "left" }}
+                    >
+                      What Our Patients Are Saying
+                    </h1>
+                  </div>
+                </div>
+
+                <div className="column is-1" />
+                <div className="column is-2">
+                  <a
+                    href="https://www.google.com/search?sxsrf=ALeKk00VCh2E4hyk89Nj9ExwQPWMR02uAg%3A1586936272331&source=hp&ei=0LmWXob-EYWw0PEPtPiGsAs&q=family+psychiatry+and+wellness&oq=famil&gs_lcp=CgZwc3ktYWIQARgAMgQIIxAnMgQIIxAnMgQIIxAnMgQIABBDMgQIABBDMgQIABBDMgQIABBDMgIIADICCAAyAggAOgcIABCDARBDOgUIABCRAjoFCAAQgwE6BggAEAoQQ0oVCBcSETItMTczZzIzNmcyOTNnMzAySg0IGBIJMi0xZzFnMWcxUKLF_QJYnMb9AmCE0v0CaANwAHgAgAGgAogB4QaSAQUxLjAuM5gBAKABAaoBB2d3cy13aXo&sclient=psy-ab"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <div class="level">
+                      <div class="level-item">
+                        <FontAwesomeIcon
+                          icon={faGoogle}
+                          size="3x"
+                          color="#48C774"
+                        />
+                      </div>
+                      <div className="level-item title">
+                        4.8
+                        <FontAwesomeIcon
+                          icon={faStar}
+                          size="xs"
+                          style={{ marginLeft: ".2em" }}
+                        />
+                      </div>
+                    </div>
+                  </a>
+                  <hr />
+                  <a
+                    href="https://www.facebook.com/www.familypsychiatry101.net/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <div class="level">
+                      <div class="level-item">
+                        <FontAwesomeIcon
+                          icon={faFacebookSquare}
+                          size="3x"
+                          color="#48C774"
+                        />
+                      </div>
+                      <div className="level-item title">
+                        4.1
+                        <FontAwesomeIcon
+                          icon={faStar}
+                          size="xs"
+                          style={{ marginLeft: ".2em" }}
+                        />
+                      </div>
+                    </div>
+                  </a>
+                  <hr />
+                  <a
+                    href="https://www.vitals.com/doctors/Dr_Sabira_Saifuddin/reviews"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <div class="level">
+                      <div class="level-item">
+                        <FontAwesomeIcon
+                          icon={faHeartbeat}
+                          size="3x"
+                          color="#48C774"
+                        />
+                      </div>
+                      <div className="level-item title">
+                        5.0
+                        <FontAwesomeIcon
+                          icon={faStar}
+                          size="xs"
+                          style={{ marginLeft: ".2em" }}
+                        />
+                      </div>
+                    </div>
+                  </a>
+                </div>
+
+                <div className="column is-1" />
+                <div className="column is-4">
+                  <Carousel />
                 </div>
               </div>
             </div>
+          </section>
+        </div>
+      </section>
+      <section className="hero has-background-grey-lighter is-medium">
+        <div className="hero-body">
+          <div className="container">
+            <div className="content has-text-centered">
+              <div>
+                <FontAwesomeIcon
+                  icon={faStethoscope}
+                  size="3x"
+                  className="is-size-3-mobile"
+                />
+
+                <h1
+                  className="title is-2 is-size-3-mobile"
+                >
+                  Health Resources
+                </h1>
+              </div>
+            </div>
+            <hr
+              style={{
+                backgroundColor: "#48C774",
+                width: "15%",
+                marginLeft: "auto",
+                marginRight: "auto",
+                height: "5px",
+              }}
+            />
+            <div className="columns is-centered">{getNewsTiles()}</div>
+            <hr
+              style={{
+                backgroundColor: "#48C774",
+                width: "15%",
+                marginLeft: "auto",
+                marginRight: "auto",
+                height: "5px",
+              }}
+            />
           </div>
         </div>
       </section>
     </Layout>
   )
 }
-
-// export default ({ data }) => {
-//   function getRandomPost() {
-//     var idx = random.int(0, data.allPosts.edges.length - 1)
-//     return data.allPosts.edges[idx].node
-//   }
-
-//   function getImageFromPost(post) {
-//     var defaultImg = "https://bulma.io/images/placeholders/1280x960.png;"
-//     return post && post.image ? post.image.file.url : defaultImg
-//   }
-
-//   var freshPost = data.newestPosts.nodes[0]
-//   var insiderPost = data.insiderPosts.nodes[0]
-//   var stylePost = data.nokternelStyleGuide
-//   var devlogPost = data.projectSpudDevlog
-//   var beginnerPost = data.beginnersGuide;
-
-//   return (
-//     <Layout>
-//       <SEO title={data.site.siteMetadata.shortTitle} />
-//       <div className="level">
-//         <div className="container">
-//           <div className="content has-text-centered">
-//             <figure
-//               className="image"
-//               style={{
-//                 maxWidth: "512px",
-//                 marginLeft: "auto",
-//                 marginRight: "auto",
-//                 marginBottom: ".5vmin",
-//               }}
-//             >
-//               <img src={logo} alt="logo" />
-//             </figure>
-//             <p style={{ fontStyle: "italic" }}>
-//               A place to learn about Unreal Engine 4,
-//               <br /> gamedev, and chasing your dreams
-//             </p>
-//           </div>
-//         </div>
-//       </div>
-//       <div className="tile is-ancestor">
-//         <div className="tile is-vertical">
-//           <div className="tile">
-//             <div className="tile is-parent is-9">
-//               <div className="tile is-child">
-//                 <Widget
-//                   title={freshPost.title}
-//                   subtitle="Fresh Off the Press"
-//                   image={getImageFromPost(freshPost)}
-//                   to={freshPost.slug}
-//                   fullheight
-//                 />
-//               </div>
-//             </div>
-//             <div className="tile is-parent is-vertical">
-//               <div className="tile is-child">
-//                 <Widget
-//                   title={insiderPost.title}
-//                   subtitle="Insider Insight"
-//                   image={getImageFromPost(insiderPost)}
-//                   to={insiderPost.slug}
-//                 />
-//               </div>
-//               <div className="tile is-child">
-//                 <Widget
-//                   title={stylePost.title}
-//                   subtitle="Style"
-//                   image={stylePost.image.file.url}
-//                   to={stylePost.slug}
-//                 />
-//               </div>
-//             </div>
-//           </div>
-//           <div className="tile">
-//             <div className="tile is-parent is-vertical is-4">
-//               <div className="tile is-child">
-//                 <Widget
-//                   to={devlogPost.slug}
-//                   title="Project Spud"
-//                   subtitle="Devlog"
-//                   image={getImageFromPost(devlogPost)}
-//                 />
-//               </div>
-//               <div className="tile is-child">
-//                 <Widget
-//                   to={getRandomPost().slug}
-//                   title="Learn something new"
-//                   subtitle="Random"
-//                   image="https://cdn.vox-cdn.com/thumbor/2PaCKdhf1dUhQkcGE9P-pMwKcJQ=/1400x1050/filters:format(jpeg)/cdn.vox-cdn.com/uploads/chorus_asset/file/8587203/overwatch_loot_box.jpg"
-//                 />
-//               </div>
-//             </div>
-//             <div className="tile is-parent">
-//               <div className="tile is-child">
-//                 <Widget
-//                   to={beginnerPost.slug}
-//                   title="No better place to start"
-//                   subtitle="Beginner's Guide"
-//                   image={getImageFromPost(beginnerPost)}
-//                   fullheight
-//                 />
-//               </div>
-//             </div>
-//           </div>
-//         </div>
-//       </div>
-//     </Layout>
-//   )
-// }
 
 export const query = graphql`
   query {
@@ -241,14 +319,17 @@ export const query = graphql`
         shortTitle
       }
     }
-    allContentfulNewsPost{
-      nodes{
+    newsPosts: allContentfulPost(filter: { tags: { in: "news" } }) {
+      nodes {
         slug
         title
         feature {
           file {
             url
           }
+        }
+        body {
+          json
         }
       }
     }

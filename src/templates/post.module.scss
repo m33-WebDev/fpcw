@@ -1,0 +1,123 @@
+@import '../styles/variables.scss';
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400|Sen:400,700&display=swap');
+
+$font-size-base: 8px;
+
+.Title {
+    font-size: calc(#{$font-size-base} + 4vw);
+}
+
+.Subtitle {
+    font-size: calc(#{$font-size-base} + .5vw);
+    text-transform: uppercase;
+    display: inline-block;
+    padding-right: 1em;
+    padding-left: 1em;
+    padding-top: .2em;
+    padding-bottom: .2em;
+    margin: 0;
+}
+
+.body h1::before,
+h2::before {
+    content: "";
+}
+
+.body::-webkit-scrollbar {
+    display: none;
+}
+
+.body {
+
+    padding-right: 2vmin;
+    max-height: 80vmin;
+    overflow: auto;
+    scrollbar-width: thin;
+
+    color: #2E2F3E;
+    font-size: calc(#{$font-size-base} + 1vw);
+    font-weight: lighter;
+
+    word-wrap: break-word;
+
+    h1,
+    h2 {
+        text-align: left;
+        margin-top: 5vmin;
+        margin-bottom: 3vmin;
+    }
+
+    h1 {
+        font-size: calc(#{$font-size-base} + 2vw);
+        color: #20639B;
+        // border-bottom: 2px solid #20639B;
+        display: inline-block;
+    }
+
+    h2 {
+        font-size: calc(#{$font-size-base} + 1.5vw);
+        color: #3CAEA3;
+        display: inline-block;
+    }
+
+    p {
+        line-height: calc((#{$font-size-base} + 1vw) * 1.6);
+        margin-bottom: 3vmin;
+    }
+
+    p,
+    ul {
+        code {
+            background-color: rgb(231, 224, 224);
+            color: rgb(53, 142, 184);
+            padding: 3px;
+            border-radius: .3em;
+
+        }
+    }
+
+    blockquote {
+        color: darken($color-fg-primary, 30%);
+        font-style: italic;
+        padding-left: 1em;
+        border-left: 1px solid rgb(208, 212, 216);
+
+        p {
+            font-size: calc(#{$font-size-base} + .8vw);
+            // line-height: $font-size-base * 1.2;
+            line-height: calc((#{$font-size-base} + .8vw) * 1.4);
+        }
+    }
+
+    ul,
+    ol {
+        margin-left: 3vmin;
+        margin-top: 3vmin;
+        margin-bottom: 3vmin;
+    }
+
+    ul {
+        list-style-type: square;
+    }
+
+    img {
+        object-fit: contain;
+        max-width: 100%;
+        margin-bottom: .5em;
+    }
+
+    figcaption {
+        font-weight: 100;
+        font-style: italic;
+        color: lighten($color-bg-secondary, 50%);
+        text-align: center;
+    }
+}
+
+.SeriesNavInline {
+    color: rgb(209, 204, 204);
+}
+
+.SeriesNavInline:hover {
+    color: darken(rgb(209, 204, 204), 30%);
+}

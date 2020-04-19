@@ -1,28 +1,38 @@
 import React from "react"
 import { Link } from "gatsby"
+import Truncate from "react-truncate"
 
-function NewsTile({ post }) {
+import RichText from "../components/richtext"
 
-  const { title, date, feature, excerpt, slug } = post
+function NewsTile({ post, style }) {
+  const { title, date, feature, body, slug } = post
 
   return (
-    <Link to={slug}>
-      <div className="card" style={{ height: "70vmin", overflow: 'hidden' }}>
+    <Link to={"/" + slug} style={style}>
+      <div className="card" style={{ minHeight: "60vmin" }}>
         <div className="card-image">
-          <figure class="image is-4by3">
-            <img src={feature ? feature.file.url : "https://bulma.io/images/placeholders/1280x960.png"} style={{objectFit: 'cover'}}/>
+          <figure className="image is-4by3">
+            <img
+              src={
+                feature
+                  ? feature.file.url
+                  : "https://bulma.io/images/placeholders/1280x960.png"
+              }
+              style={{ objectFit: "cover" }}
+            />
           </figure>
         </div>
         <div className="card-content">
           <h1 className="title has-text-black is-5">{title}</h1>
-          <h2 className="subtitle">{date}</h2>
-          <div class="content">
-            <p>
-              {
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-              }
-            </p>
-          </div>
+          <h2 className="subtitle" style={{ marginBottom: "4vmin" }}>
+            {date}
+          </h2>
+          <Truncate
+            lines={2}
+            ellipsis={<span style={{ color: "#48C774" }}> ...</span>}
+          >
+            <RichText document={body.json} />
+          </Truncate>
         </div>
       </div>
     </Link>

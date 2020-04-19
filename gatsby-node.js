@@ -22,7 +22,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
             }
           }
         }
-        allContentfulNewsPost {
+        allContentfulPost {
           edges {
             node {
               slug
@@ -51,13 +51,13 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     })
   })
 
-  const newsTemplate = path.resolve(`./src/templates/newspost.js`)
-  result.data.allContentfulNewsPost.edges.forEach(({ node }) => {
+  const postTemplate = path.resolve(`./src/templates/post.js`)
+  result.data.allContentfulPost.edges.forEach(({ node }) => {
     const path = node.slug
     console.log("Creating page: " + path)
     createPage({
       path,
-      component: newsTemplate,
+      component: postTemplate,
       context: {
         pagePath: path,
       },

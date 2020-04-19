@@ -1,0 +1,14 @@
+.postContainer {
+
+    position: relative;
+}
+
+.postContainer::before {
+    content: 'Health Resources';
+    position: absolute;
+    text-align: center;
+    width: auto;
+    left: 45%;
+    // padding: 2em;
+    top: 0;
+}

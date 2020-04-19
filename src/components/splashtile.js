@@ -2,22 +2,26 @@ import React from "react"
 import { Link } from "gatsby"
 
 class SplashTile extends React.Component {
-  state = { scale: 1 }
+  state = { scale: 1, backgroundColor: "rgba(72, 199, 116, .7)" }
 
-  onMouseOver = () => this.setState({scale: '1.2'})
-  onMouseOut = () => this.setState({ scale: '1' })
+  onMouseOver = () => this.setState({ backgroundColor: "#48C774" })
+  onMouseOut = () =>
+    this.setState({ backgroundColor: "rgba(72, 199, 116, .5)" })
 
   render() {
-    var { title, image } = this.props
+    var { title, image, to } = this.props
 
     return (
-      <Link to="/" onMouseOver={this.onMouseOver} onMouseOut={this.onMouseOut}>
+      <Link
+        to={to ? to : "/"}
+        onMouseOver={this.onMouseOver}
+        onMouseOut={this.onMouseOut}
+      >
         <div
           className="card"
           style={{
             height: "100%",
             overflow: "hidden",
-            border: "4px solid #48C774",
           }}
         >
           <div
@@ -39,11 +43,15 @@ class SplashTile extends React.Component {
               className="title is-4 has-text-light"
               style={{
                 position: "absolute",
-                top: "0",
+                top: "80%",
                 left: "0",
-                padding: "5px",
-                // borderBottom: "2px solid #48C774",
-                background: "#48C774",
+                width: "auto",
+                padding: "5px .8em",
+                textAlign: "center",
+                // // borderBottom: "2px solid #48C774",
+                // background: this.state.backgroundColor,
+                background: "linear-gradient(to top, rgb(64, 64, 64, .8), rgb(0,0,0, 0))",
+                borderBottom: "3px solid #48C774",
               }}
             >
               {title}

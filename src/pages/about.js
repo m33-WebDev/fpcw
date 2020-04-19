@@ -2,15 +2,15 @@ import React from "react"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import Hireme from "../components/hireme"
+// import Hireme from "../components/hireme"
 
 export default () => (
   <Layout>
-    <SEO title="About" />
+    <SEO title="FPCW - About" />
     <div className="container">
       <div className="columns is-centered">
         <div className="column is-3">
-          <Hireme />
+          {/* <Hireme /> */}
         </div>
         <div className="column is-1" />
         <div className="column is-4">

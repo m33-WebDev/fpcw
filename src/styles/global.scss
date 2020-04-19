@@ -1,9 +1,13 @@
 @import './variables.scss';
 
 html {
-  // background-color: $color-bg-primary !important;
-  // scrollbar-color: #EAAA03 #272822;
   scrollbar-width: thin;
 }
 
+// Bulma overrides
+$navbar-item-hover-background-color:  darken(#48C774, 5%) !important;
+$navbar-item-active-background-color: darken(#48C774, 10%) !important;
+$navbar-burger-color: darken(#48C774, 10%)  !important;
+
 @import '~bulma/bulma.sass';
+@import '@creativebulma/bulma-divider'
