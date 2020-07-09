@@ -8,6 +8,46 @@ import ProviderSearch from "../components/providersearch"
 import styles from "./providers.module.scss"
 
 export default ({ data }) => {
+  function createProfileCard(profile, i) {
+    var { slug, name, headshot } = profile
+    return (
+      <div className="column is-4" key={i}>
+        <Link to={slug ? "/" + slug : "/"}>
+          <div className="card">
+            <div className="card-image">
+              <figure className="image is-square">
+                <img
+                  src={
+                    headshot
+                      ? headshot.file.url
+                      : "https://versions.bulma.io/0.5.3/images/placeholders/1280x960.png"
+                  }
+                  alt="Post Feature"
+                  style={{ objectFit: "cover" }}
+                />
+              </figure>
+            </div>
+            <div
+              className="title is-4 has-text-light"
+              style={{
+                position: "absolute",
+                bottom: "0.5em",
+                right: "0",
+                width: "auto",
+                padding: "5px",
+                background:
+                  "linear-gradient(to top, rgb(64, 64, 64, .8), rgb(0,0,0, 0))",
+                borderBottom: "3px solid #48C774",
+              }}
+            >
+              {name}
+            </div>
+          </div>
+        </Link>
+      </div>
+    )
+  }
+
   return (
     <Layout>
       <SEO title="FPCW - Providers" />
@@ -37,48 +77,13 @@ export default ({ data }) => {
             </div>
             <div className="column is-8">
               <div className={"columns is-multiline " + styles.ProviderList}>
-                {data.allContentfulProviderProfile.nodes.map(
-                  ({ slug, name, headshot }, i) => {
-                    return (
-                      <div className="column is-4" key={i}>
-                        <Link to={slug ? "/" + slug : "/"}>
-                          <div
-                            className="card"
-                            // style={{ border: "4px solid #48C774" }}
-                          >
-                            <div className="card-image">
-                              <figure className="image is-square">
-                                <img
-                                  src={
-                                    headshot
-                                      ? headshot.file.url
-                                      : "https://versions.bulma.io/0.5.3/images/placeholders/1280x960.png"
-                                  }
-                                  alt="Post Feature"
-                                  style={{ objectFit: "cover" }}
-                                />
-                              </figure>
-                            </div>
-                            <div
-                              className="title is-4 has-text-light"
-                              style={{
-                                position: "absolute",
-                                bottom: "0.5em",
-                                right: "0",
-                                width: "auto",
-                                padding: "5px",
-                                background: "linear-gradient(to top, rgb(64, 64, 64, .8), rgb(0,0,0, 0))",
-                                borderBottom: "3px solid #48C774",
-                              }}
-                            >
-                              {name}
-                            </div>
-                          </div>
-                        </Link>
-                      </div>
-                    )
-                  }
-                )}
+                {createProfileCard(data.profSabira, 0)}
+                {data.profProfessional.nodes.map((profile, i) => {
+                  return createProfileCard(profile, i)
+                })}
+                {data.profAdmin.nodes.map((profile, i) => {
+                  return createProfileCard(profile, i)
+                })}
               </div>
             </div>
           </div>
@@ -90,7 +95,22 @@ export default ({ data }) => {
 
 export const query = graphql`
   query {
-    allContentfulProviderProfile {
+    profSabira: contentfulProviderProfile(name: { eq: "Sabira Saifuddin" }) {
+      slug
+      name
+      title
+      headshot {
+        file {
+          url
+        }
+      }
+    }
+    profProfessional: allContentfulProviderProfile(
+      filter: {
+        title: { nin: ["Support Staff", "Front Desk", "Practice Manager"] },
+        name: {nin: "Sabira Saifuddin"}
+      }
+    ) {
       nodes {
         slug
         name
@@ -100,7 +120,22 @@ export const query = graphql`
             url
           }
         }
-        createdAt(difference: "minutes")
+      }
+    }
+    profAdmin: allContentfulProviderProfile(
+      filter: {
+        title: { in: ["Support Staff", "Front Desk", "Practice Manager"] }
+      }
+    ) {
+      nodes {
+        slug
+        name
+        title
+        headshot {
+          file {
+            url
+          }
+        }
       }
     }
   }

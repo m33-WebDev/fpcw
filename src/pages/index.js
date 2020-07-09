@@ -33,6 +33,7 @@ import { faFacebookSquare, faGoogle } from "@fortawesome/free-brands-svg-icons"
 import styles from "./index.module.scss"
 
 import logo from "../images/logo-new.png"
+import logoFull from "../images/logo-white.png"
 
 export default ({ data }) => {
   function getNewsTiles() {
@@ -93,39 +94,40 @@ export default ({ data }) => {
                             to="/services/"
                           />
                         </div>
-                      </div>
+                      </div>{" "}
                       <div className="tile is-parent">
                         <div className="tile is-child">
                           <SplashTile
-                            title="Locations"
-                            image="https://cdn.theatlantic.com/thumbor/ziZG61zzYJ2ZZQCAFj-oWDaI1Zc=/900x599/media/img/photo/2018/05/travel-monday-a-photo-trip-to-zhang/z01_1021238707/original.jpg"
-                            to="/locations/"
+                            title="Telehealth"
+                            image="https://images.pexels.com/photos/3902881/pexels-photo-3902881.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                            // image="https://qtxasset.com/2016-11/telemedicine-medical-spa-servicesjpg.jpg?901Y_noU1ISnVdF1IV_bYbieUL7K23b0"
+                            to="/telehealth-teletherapy"
                           />
                         </div>
-                      </div>{" "}
+                      </div>
                     </div>
                     <div className="tile">
-                      <div className="tile is-parent">
-                        <div className="tile is-child">
-                          <SplashTile
-                            title="Library"
-                            image="https://images.unsplash.com/photo-1532012197267-da84d127e765?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"
-                            to="/library/"
-                          />
-                        </div>
-                      </div>
                       <div className="tile is-parent">
                         <div
                           className="tile is-child"
                           style={{ minHeight: "40vmin" }}
                         >
                           <SplashTile
-                            title="Telehealth"
-                            image="https://qtxasset.com/2016-11/telemedicine-medical-spa-servicesjpg.jpg?901Y_noU1ISnVdF1IV_bYbieUL7K23b0"
-                            to='/telehealth-teletherapy'
+                            title="Library"
+                            image="https://images.unsplash.com/photo-1532012197267-da84d127e765?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"
+                            to="/library/"
                           />
                         </div>
                       </div>{" "}
+                      <div className="tile is-parent">
+                        <div className="tile is-child">
+                          <SplashTile
+                            title="Locations"
+                            image="https://42floors.com/images/Hd8216713d023e525024253c5987cddc2ea7287bfS1560x1040W0seB505153O/978a35bfd12f5e9a8c8c547cf2dc17a0d003d928"
+                            to="/locations/"
+                          />
+                        </div>
+                      </div>
                     </div>{" "}
                   </div>
                 </div>
@@ -191,12 +193,8 @@ export default ({ data }) => {
                     rel="noopener noreferrer"
                   >
                     <div class="level">
-                      <div class="level-item">
-                        <FontAwesomeIcon
-                          icon={faGoogle}
-                          size="3x"
-                          color="#48C774"
-                        />
+                      <div class="level-item has-text-success">
+                        <FontAwesomeIcon icon={faGoogle} size="3x" />
                       </div>
                       <div className="level-item title">
                         4.8
@@ -215,12 +213,8 @@ export default ({ data }) => {
                     rel="noopener noreferrer"
                   >
                     <div class="level">
-                      <div class="level-item">
-                        <FontAwesomeIcon
-                          icon={faFacebookSquare}
-                          size="3x"
-                          color="#48C774"
-                        />
+                      <div class="level-item has-text-success">
+                        <FontAwesomeIcon icon={faFacebookSquare} size="3x" />
                       </div>
                       <div className="level-item title">
                         4.1
@@ -239,12 +233,8 @@ export default ({ data }) => {
                     rel="noopener noreferrer"
                   >
                     <div class="level">
-                      <div class="level-item">
-                        <FontAwesomeIcon
-                          icon={faHeartbeat}
-                          size="3x"
-                          color="#48C774"
-                        />
+                      <div class="level-item  has-text-success">
+                        <FontAwesomeIcon icon={faHeartbeat} size="3x" />
                       </div>
                       <div className="level-item title">
                         5.0
@@ -278,9 +268,7 @@ export default ({ data }) => {
                   className="is-size-3-mobile"
                 />
 
-                <h1
-                  className="title is-2 is-size-3-mobile"
-                >
+                <h1 className="title is-2 is-size-3-mobile">
                   Health Resources
                 </h1>
               </div>

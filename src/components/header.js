@@ -26,15 +26,15 @@ export default () => {
 
   return (
     <nav
-      className="navbar is-fixed-top is-success is-spaced"
+      className="navbar is-fixed-top is-success"
       role="navigation"
       aria-label="main navigation"
       style={{ boxShadow: "0 2px 2px -2px rgba(0,0,0,.2)" }}
     >
       <div className="container">
         <div className="navbar-brand">
-          <Link className="navbar-item" href="/">
-            <img src={logo} alt="logo" width="82" height="28" />
+          <Link className="navbar-item image" href="/">
+            <img src={logo} alt="logo" width="128" height="128" />
           </Link>
 
           <a
@@ -77,7 +77,7 @@ export default () => {
                   marginLeft: "1vmin",
                   marginRight: "1vmin",
                 }}
-                className='has-text-warning'
+                className='has-text-white'
               >
                 Telehealth appointments now available
               </div>

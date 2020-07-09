@@ -48,7 +48,8 @@ export default () => {
                           style={{ marginBottom: "3vmin" }}
                         >
                           <img
-                            src="https://www.askideas.com/media/39/Colosseum-Looks-Beautiful-In-Sunset-Light.jpg"
+                            // src="https://www.askideas.com/media/39/Colosseum-Looks-Beautiful-In-Sunset-Light.jpg"
+                            src="https://42floors.com/images/Hd8216713d023e525024253c5987cddc2ea7287bfS1560x1040W0seB505153O/978a35bfd12f5e9a8c8c547cf2dc17a0d003d928"
                             style={{ objectFit: "cover" }}
                           />
                         </figure>
@@ -83,7 +84,8 @@ export default () => {
                           style={{ marginBottom: "3vmin" }}
                         >
                           <img
-                            src="https://i.pinimg.com/originals/ce/7f/55/ce7f55d0ce9ec88c238f4f0f5731d809.jpg"
+                            // src="https://i.pinimg.com/originals/ce/7f/55/ce7f55d0ce9ec88c238f4f0f5731d809.jpg"
+                            src="https://images.squarespace-cdn.com/content/56412ff6e4b09a51a6703186/1563487713368-OFJHMDD4SJZBKFSQXNE4/image-asset.jpeg?content-type=image%2Fjpeg"
                             style={{ objectFit: "cover" }}
                           />
                         </figure>

@@ -5,6 +5,8 @@ html {
 }
 
 // Bulma overrides
+// $primary: #638c64 !important;
+// $green: red;
 $navbar-item-hover-background-color:  darken(#48C774, 5%) !important;
 $navbar-item-active-background-color: darken(#48C774, 10%) !important;
 $navbar-burger-color: darken(#48C774, 10%)  !important;
