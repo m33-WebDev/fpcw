@@ -63,7 +63,7 @@ export default () => {
             style={{ flexGrow: 1, flexShrink: 1, display: "flex" }}
           >
             <Link
-              className="navbar-item has-text-centered"
+              className="navbar-item has-text-centered is-hidden-mobile"
               to="/appointments"
               style={{ marginLeft: "5vmin", marginRight: "5vmin" }}
             >
@@ -73,7 +73,6 @@ export default () => {
               />
               <div
                 style={{
-                  // borderBottom: "1px solid #FFDD57",
                   marginLeft: "1vmin",
                   marginRight: "1vmin",
                 }}
