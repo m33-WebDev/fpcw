@@ -143,7 +143,7 @@ export default ({ data }) => {
               </div>
               <div
                 className="content is-size-5 is-size-6-mobile"
-                style={{ textAlign: "justify" }}
+                style={{ textAlign: "left" }}
               >
                 At Family Psychiatry Counseling & Wellness, we specialize in
                 performing comprehensive psychiatric and psychological
