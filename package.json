@@ -23,7 +23,7 @@
     "@fortawesome/free-brands-svg-icons": "^5.13.0",
     "@fortawesome/free-solid-svg-icons": "^5.12.1",
     "@fortawesome/react-fontawesome": "^0.1.9",
-    "bulma": "^0.8.0",
+    "bulma": "^0.9.0",
     "bulma-calendar": "^6.0.7",
     "bulma-carousel": "^4.0.4",
     "bulma-helpers": "^0.3.10",
