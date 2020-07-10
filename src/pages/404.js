@@ -8,7 +8,7 @@ export default () => {
   return (
     <Layout>
       <SEO title='Unrealistic - 404'/>
-      <div className='container'>
+      <div className='section'>
         <div className='content has-text-centered'>
             <p>
                 Something went wrong :(<br/>Return to <Link to='/'>Home</Link>.
