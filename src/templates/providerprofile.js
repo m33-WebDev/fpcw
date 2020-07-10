@@ -3,12 +3,13 @@ import { Link, graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import RichText from '../components/richtext'
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faChevronLeft } from "@fortawesome/free-solid-svg-icons"
 
 export default ({ data, pageContext }) => {
-  const { name, title, headshot } = data.contentfulProviderProfile
+  const { name, title, headshot, bio } = data.contentfulProviderProfile
 
   return (
     <Layout>
@@ -49,17 +50,18 @@ export default ({ data, pageContext }) => {
                 >
                   {title}
                 </div>
-                <p className="is-size-5">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                <p className="is-size-6">
+                  {/* Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                   do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                   Ut enim ad minim veniam, quis nostrud exercitation ullamco
                   laboris nisi ut aliquip ex ea commodo consequat. Duis aute
                   irure dolor in reprehenderit in voluptate velit esse cillum
                   dolore eu fugiat nulla pariatur. Excepteur sint occaecat
                   cupidatat non proident, sunt in culpa qui officia deserunt
-                  mollit anim id est laborum.
+                  mollit anim id est laborum. */}
+                  <RichText document={bio.json} />
                 </p>
-                <div className="columns" style={{ minHeight: "40vmin" }}>
+                {/* <div className="columns" style={{ minHeight: "40vmin" }}>
                   <div className="column">
                     <h1>Education</h1>
                     <p>Medical...</p>
@@ -71,7 +73,7 @@ export default ({ data, pageContext }) => {
                     <p>Labwork...</p>
                     <p>Alternative...</p>
                   </div>
-                </div>
+                </div> */}
                 <Link to="/providers" className="has-text-success">
                   <FontAwesomeIcon icon={faChevronLeft} />
                   {" Back to provider list"}
@@ -95,6 +97,9 @@ export const providerQuery = graphql`
         file {
           url
         }
+      }
+      bio {
+        json
       }
     }
   }

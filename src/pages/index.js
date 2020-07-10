@@ -142,9 +142,7 @@ export default ({ data }) => {
                 Holistic Psychiatry for your Mind, Body & Soul{" "}
               </div>
               <div
-                className="content is-size-5 is-size-6-mobile"
-                style={{ textAlign: "left" }}
-              >
+                className="content is-size-5 is-size-6-mobile">
                 At Family Psychiatry Counseling & Wellness, we specialize in
                 performing comprehensive psychiatric and psychological
                 evaluations to establish accurate diagnoses and prepare
@@ -297,7 +295,7 @@ export const query = graphql`
         shortTitle
       }
     }
-    newsPosts: allContentfulPost(filter: { tags: { in: "news" } }) {
+    newsPosts: allContentfulPost {
       nodes {
         slug
         title
