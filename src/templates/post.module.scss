@@ -1,14 +1,15 @@
 @import '../styles/variables.scss';
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400|Sen:400,700&display=swap');
 
-$font-size-base: 8px;
+$font-size-base-desktop: 8px;
+$font-size-base-mobile: 12px;
 
 .Title {
-    font-size: calc(#{$font-size-base} + 4vw);
+    font-size: calc(#{$font-size-base-desktop} + 4vw);
 }
 
 .Subtitle {
-    font-size: calc(#{$font-size-base} + .5vw);
+    font-size: calc(#{$font-size-base-desktop} + .5vw);
     text-transform: uppercase;
     display: inline-block;
     padding-right: 1em;
@@ -30,15 +31,52 @@ h2::before {
 .body {
 
     padding-right: 2vmin;
-    max-height: 80vmin;
+
+    @media (min-width: 1024px) {
+        max-height: 80vh;
+    }
+
     overflow: auto;
     scrollbar-width: thin;
 
     color: #2E2F3E;
-    font-size: calc(#{$font-size-base} + 1vw);
+    font-size: calc(#{$font-size-base-desktop} + 1vw);
     font-weight: lighter;
 
     word-wrap: break-word;
+
+    // Desktop fonts
+    @media (min-width: 1024px) {
+        h1 {
+            font-size: calc(#{$font-size-base-desktop} + 2vw);
+        }
+
+        h2 {
+            font-size: calc(#{$font-size-base-desktop} + 1.5vw);
+        }
+
+        p {
+            line-height: calc((#{$font-size-base-desktop} + 1vw) * 1.6);
+        }
+    }
+
+    // Mobile fonts
+    @media (max-width: 1024px) {
+        font-weight: normal !important;
+
+        h1 {
+            font-size: calc(#{$font-size-base-mobile} + 2vw);
+        }
+
+        h2 {
+            font-size: calc(#{$font-size-base-mobile} + 1.5vw);
+        }
+
+        p {
+            font-size: calc(#{$font-size-base-mobile} + 1.2vw);
+            line-height: calc((#{$font-size-base-mobile} + 1.2vw) * 1.6);
+        }
+    }
 
     h1,
     h2 {
@@ -48,20 +86,16 @@ h2::before {
     }
 
     h1 {
-        font-size: calc(#{$font-size-base} + 2vw);
         color: #20639B;
-        // border-bottom: 2px solid #20639B;
         display: inline-block;
     }
 
     h2 {
-        font-size: calc(#{$font-size-base} + 1.5vw);
         color: #3CAEA3;
         display: inline-block;
     }
 
     p {
-        line-height: calc((#{$font-size-base} + 1vw) * 1.6);
         margin-bottom: 3vmin;
     }
 
@@ -83,9 +117,9 @@ h2::before {
         border-left: 1px solid rgb(208, 212, 216);
 
         p {
-            font-size: calc(#{$font-size-base} + .8vw);
+            font-size: calc(#{$font-size-base-desktop} + .8vw);
             // line-height: $font-size-base * 1.2;
-            line-height: calc((#{$font-size-base} + .8vw) * 1.4);
+            line-height: calc((#{$font-size-base-desktop} + .8vw) * 1.4);
         }
     }
 

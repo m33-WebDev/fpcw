@@ -12,4 +12,5 @@ $navbar-item-active-background-color: darken(#48C774, 10%) !important;
 $navbar-burger-color: darken(#48C774, 10%)  !important;
 
 @import '~bulma/bulma.sass';
+@import "~bulma/sass/utilities/mixins";
 @import '@creativebulma/bulma-divider'
