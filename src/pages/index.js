@@ -66,7 +66,12 @@ export default ({ data }) => {
                     Family Psychiatry <br />
                     Counseling & Wellness
                   </h1>
-                  <h2 className="subtitle">Find better, one step at a time</h2>
+                  <h2 className="subtitle is-size-4" style={{textAlign: 'left', maxWidth: '30vw'}}>
+                    A comprehensive, integrative psychiatric and wellness clinic
+                    serving the mental, physical, emotional and preventative
+                    health needs of all members of the family. Find better, one
+                    step at a time.
+                  </h2>
                   <Link to="/appointments" className="has-text-white">
                     <button className="button is-success">
                       {" "}

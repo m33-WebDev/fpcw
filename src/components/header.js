@@ -1,7 +1,7 @@
 /* eslint-disable */
 import React, { useState } from "react"
 import { graphql, useStaticQuery, Link } from "gatsby"
-import logo from "../images/logo-new.png"
+import logo from "../images/logo-fitted.png"
 import "./header.scss"
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
@@ -33,9 +33,9 @@ export default () => {
     >
       <div className="container">
         <div className="navbar-brand">
-          <Link className="navbar-item image" href="/">
-            <img src={logo} alt="logo" width="128" height="128" />
-          </Link>
+          <a className="navbar-item" href="/">
+            <img src={logo} alt="logo" width="80" />
+          </a>
 
           <a
             role="button"
