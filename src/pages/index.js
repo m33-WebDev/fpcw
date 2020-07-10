@@ -80,7 +80,7 @@ export default ({ data }) => {
                         >
                           <SplashTile
                             title="Services"
-                            image="https://live.staticflickr.com/1849/29409117887_b8cd64b42f_b.jpg"
+                            image="https://anewerapsychiatry.com/wp-content/uploads/2019/06/outpatient-psychiatric-services-550x321.jpg"
                             to="/services/"
                           />
                         </div>
@@ -89,8 +89,7 @@ export default ({ data }) => {
                         <div className="tile is-child">
                           <SplashTile
                             title="Telehealth"
-                            image="https://images.pexels.com/photos/3902881/pexels-photo-3902881.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-                            // image="https://qtxasset.com/2016-11/telemedicine-medical-spa-servicesjpg.jpg?901Y_noU1ISnVdF1IV_bYbieUL7K23b0"
+                            image="https://www.ciproms.com/wp-content/uploads/2020/03/Telehealth-600x400.jpg"
                             to="/telehealth-teletherapy"
                           />
                         </div>
@@ -105,7 +104,6 @@ export default ({ data }) => {
                           <SplashTile
                             title="Health Library"
                             image="https://freedesignfile.com/upload/2018/01/Brain-infographic-template-vector-01.jpg"
-                            // image="https://images.unsplash.com/photo-1532012197267-da84d127e765?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"
                             to="/library/"
                           />
                         </div>
