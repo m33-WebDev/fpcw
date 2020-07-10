@@ -23,8 +23,8 @@ const options = {
 
 class RichText extends React.Component {
   render() {
-    return documentToReactComponents(this.props.document, options)
+      return documentToReactComponents(this.props.document, options)
   }
 }
 
-export default RichText;
+export default RichText

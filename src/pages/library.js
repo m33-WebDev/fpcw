@@ -70,7 +70,7 @@ export default ({ data }) => {
                     paddingBottom: ".3em",
                   }}
                 >
-                  The Library
+                  The Health Library
                 </h1>
                 <p className="is-size-5" style={{ textAlign: "left" }}>
                   Read up on the conditions we treat, the treatments we offer,

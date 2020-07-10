@@ -103,8 +103,9 @@ export default ({ data }) => {
                           style={{ minHeight: "40vmin" }}
                         >
                           <SplashTile
-                            title="Library"
-                            image="https://images.unsplash.com/photo-1532012197267-da84d127e765?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"
+                            title="Health Library"
+                            image="https://freedesignfile.com/upload/2018/01/Brain-infographic-template-vector-01.jpg"
+                            // image="https://images.unsplash.com/photo-1532012197267-da84d127e765?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"
                             to="/library/"
                           />
                         </div>
