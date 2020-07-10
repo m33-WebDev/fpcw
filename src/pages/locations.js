@@ -21,13 +21,13 @@ export default () => {
       <SEO title="FPCW - Locations" />
       <section className="hero is-fullheight-with-navbar is-light">
         <div className="hero-body">
-          <div class="container">
+          <div className="container">
             <div
-              class="columns is-centered is-variable is-8 is-desktop"
+              className="columns is-centered is-variable is-8 is-desktop"
               style={{ width: "100%" }}
             >
               <div className="column is-6">
-                <div class="content">
+                <div className="content">
                   <h1 className="title is-1 is-size-3-mobile has-text-centered">
                     Locations
                   </h1>
@@ -40,7 +40,7 @@ export default () => {
                       rel="noopener noreferrer"
                     >
                       <div
-                        class="box has-background-light"
+                        className="box has-background-light"
                         style={{ position: "relative" }}
                       >
                         <figure
@@ -76,7 +76,7 @@ export default () => {
                       rel="noopener noreferrer"
                     >
                       <div
-                        class="box has-background-light"
+                        className="box has-background-light"
                         style={{ position: "relative" }}
                       >
                         <figure
@@ -112,8 +112,8 @@ export default () => {
                   <p>Click for directions</p>
                 </div>
               </div>
-              <div class="column is-4">
-                <div class="content">
+              <div className="column is-4">
+                <div className="content">
                   <h1 className="title is-1 is-size-3-mobile ">Contact Info</h1>
                   <table className="table is-completely-borderless has-background-light">
                     <tbody>
@@ -152,13 +152,13 @@ export default () => {
       {/* <section className="hero is-medium is-light">
         <div className="hero-body">
           <div
-            class="content has-text-centered"
+            className="content has-text-centered"
             style={{ marginBottom: "8vmin" }}
           >
             <h1 className="title is-1">Contact Information</h1>
           </div>
 
-          <div class="container">
+          <div className="container">
             <div
               className="columns is-centered is-vcentered is-desktop is-variable is-6"
               style={{ width: "100%" }}
@@ -172,8 +172,8 @@ export default () => {
                   />
                 </figure>
               </div>
-              <div class="column is-2">
-                <div class="content">
+              <div className="column is-2">
+                <div className="content">
                   <p className="">
                     311 La Baya Drive
                     <br />
@@ -193,8 +193,8 @@ export default () => {
                   />
                 </figure>
               </div>
-              <div class="column is-2">
-                <div class="content">
+              <div className="column is-2">
+                <div className="content">
                   <p className="">
                     30851 Agoura Road
                     <br />
@@ -211,9 +211,9 @@ export default () => {
 
       <section className="hero is-medium is-light">
         <div className="hero-body">
-          <div class="container">
+          <div className="container">
             <div
-              class="content has-text-centered"
+              className="content has-text-centered"
               style={{ marginBottom: "8vmin" }}
             >
               <h1 className="title is-1">Locations</h1>
@@ -231,8 +231,8 @@ export default () => {
                   />
                 </figure>
               </div>
-              <div class="column is-2">
-                <div class="content">
+              <div className="column is-2">
+                <div className="content">
                   <p className="">
                     311 La Baya Drive
                     <br />
@@ -252,8 +252,8 @@ export default () => {
                   />
                 </figure>
               </div>
-              <div class="column is-2">
-                <div class="content">
+              <div className="column is-2">
+                <div className="content">
                   <p className="">
                     30851 Agoura Road
                     <br />

@@ -59,13 +59,13 @@ export default ({ data, pageContext }) => {
                   cupidatat non proident, sunt in culpa qui officia deserunt
                   mollit anim id est laborum.
                 </p>
-                <div class="columns" style={{ minHeight: "40vmin" }}>
-                  <div class="column">
+                <div className="columns" style={{ minHeight: "40vmin" }}>
+                  <div className="column">
                     <h1>Education</h1>
                     <p>Medical...</p>
                     <p>College...</p>
                   </div>
-                  <div class="column">
+                  <div className="column">
                     <h1>Specialties</h1>
                     <p>Psychiatry...</p>
                     <p>Labwork...</p>

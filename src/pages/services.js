@@ -33,15 +33,15 @@ export default ({ data }) => {
   return (
     <Layout>
       <SEO title="FPCW - Services" />
-      <section class="hero is-fullheight-with-navbar">
-        <div class="hero-body">
-          <div class="container">
-            <div class="columns is-centered is-variable is-6">
+      <section className="hero is-fullheight-with-navbar">
+        <div className="hero-body">
+          <div className="container">
+            <div className="columns is-centered is-variable is-6">
               <div
-                class="column is-4"
+                className="column is-4"
                 style={{ marginTop: "auto", marginBottom: "auto" }}
               >
-                <div class="content">
+                <div className="content">
                   <h1
                     className="title is-size-3-mobile"
                     style={{
@@ -61,7 +61,7 @@ export default ({ data }) => {
                 </div>
               </div>
               <div className="column is-4">
-                <div class="content">
+                <div className="content">
                   <div className="has-text-centered">
                     <FontAwesomeIcon icon={faHeadSideVirus} size="3x" />
                   </div>
@@ -84,7 +84,7 @@ export default ({ data }) => {
                 </div>
               </div>
               <div className="column is-4">
-                <div class="content">
+                <div className="content">
                   <div className="has-text-centered">
                     <FontAwesomeIcon icon={faDiagnoses} size="3x" />
                   </div>
@@ -104,7 +104,7 @@ export default ({ data }) => {
               </div>
               {/* {data.services.nodes.map(({ slug, title, feature }) => {
                 return (
-                  <div class="column is-6">
+                  <div className="column is-6">
                     <Link to={"/" + slug}>
                       <div className="box">
                         <article className="media">
@@ -120,8 +120,8 @@ export default ({ data }) => {
                               />
                             </p>
                           </figure>
-                          <div class="media-content">
-                            <div class="content">
+                          <div className="media-content">
+                            <div className="content">
                               <p
                                 className="subtitle"
                                 style={{ padding: ".2em" }}

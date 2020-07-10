@@ -127,8 +127,8 @@ export default ({ data }) => {
         </div>
       </section>
       <section className="hero has-background-grey-lighter">
-        <div class="hero-body">
-          <div class="columns is-vcentered is-centered is-desktop">
+        <div className="hero-body">
+          <div className="columns is-vcentered is-centered is-desktop">
             <div className="column is-2 has-text-centered">
               <FontAwesomeIcon
                 icon={faHandHoldingMedical}
@@ -136,7 +136,7 @@ export default ({ data }) => {
                 className="is-size-3-mobile"
               />
             </div>
-            <div class="column is-6">
+            <div className="column is-6">
               <div className="title">
                 {" "}
                 Holistic Psychiatry for your Mind, Body & Soul{" "}
@@ -158,8 +158,8 @@ export default ({ data }) => {
       </section>
       <section className="hero is-light">
         <div className="hero-body">
-          <section class="section">
-            <div class="container" style={{ height: "100%" }}>
+          <section className="section">
+            <div className="container" style={{ height: "100%" }}>
               <div
                 className="columns is-desktop is-fullheight"
                 style={{ height: "100%" }}
@@ -182,8 +182,8 @@ export default ({ data }) => {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <div class="level">
-                      <div class="level-item has-text-success">
+                    <div className="level">
+                      <div className="level-item has-text-success">
                         <FontAwesomeIcon icon={faGoogle} size="3x" />
                       </div>
                       <div className="level-item title">
@@ -202,8 +202,8 @@ export default ({ data }) => {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <div class="level">
-                      <div class="level-item has-text-success">
+                    <div className="level">
+                      <div className="level-item has-text-success">
                         <FontAwesomeIcon icon={faFacebookSquare} size="3x" />
                       </div>
                       <div className="level-item title">
@@ -222,8 +222,8 @@ export default ({ data }) => {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <div class="level">
-                      <div class="level-item  has-text-success">
+                    <div className="level">
+                      <div className="level-item  has-text-success">
                         <FontAwesomeIcon icon={faHeartbeat} size="3x" />
                       </div>
                       <div className="level-item title">

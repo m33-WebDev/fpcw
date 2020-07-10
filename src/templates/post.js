@@ -1,6 +1,8 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
 
+import { setConfig } from "react-hot-loader"
+
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import RichText from "../components/richtext"
@@ -10,6 +12,8 @@ import { faChevronLeft } from "@fortawesome/free-solid-svg-icons"
 
 import styles from "./post.module.scss"
 
+setConfig({ logLevel: "no-errors-please" })
+
 export default ({ data, pageContext }) => {
   const { title, feature, body } = data.contentfulPost
 
@@ -17,10 +21,10 @@ export default ({ data, pageContext }) => {
     <Layout>
       <SEO title={title} />
       <div className="hero is-fullheight-with-navbar">
-        <div class="hero-body">
-          <div class="container">
+        <div className="hero-body">
+          <div className="container">
             <div className="columns is-centered is-desktop is-variable is-8">
-              <div class="column is-6">
+              <div className="column is-6">
                 <div className="content">
                   <div className={"title"} style={{ textAlign: "left" }}>
                     {title}
@@ -30,7 +34,11 @@ export default ({ data, pageContext }) => {
                   className="image is-4by3"
                   style={{ marginBottom: "5vmin" }}
                 >
-                  <img src={feature.file.url} alt="Post feature" style={{ objectFit: "cover" }} />
+                  <img
+                    src={feature.file.url}
+                    alt="Post feature"
+                    style={{ objectFit: "cover" }}
+                  />
                 </figure>
                 <Link to="/library" className="has-text-success">
                   <FontAwesomeIcon icon={faChevronLeft} />

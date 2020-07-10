@@ -13,12 +13,12 @@ import './footer.scss'
 function Divider() {
   return (
     <div
-      class="section is-marginless is-paddingless is-hidden-mobile"
+      className="section is-marginless is-paddingless is-hidden-mobile"
       style={{ display: "flex" }}
     >
       {/* <div style={{ flex: 1, height: "200px", color: "grey" }}></div> */}
       <div
-        class="divider is-vertical is-paddingless"
+        className="divider is-vertical is-paddingless"
         style={{ height: "20vmin", backgroundColor: '#FFFFFF ' }}
       ></div>
       {/* <div style={{ flex: 1, height: "200px", color: "grey" }}></div> */}
@@ -27,10 +27,10 @@ function Divider() {
 }
 
 export default () => (
-  <footer class={"footer has-background-success has-text-light " + styles.Footer}>
+  <footer className={"footer has-background-success has-text-light " + styles.Footer}>
     <div className="columns is-desktop is-vcentered is-centered">
       <div className="column is-3">
-        <div class="content">
+        <div className="content">
           <table
             className="table is-completely-borderless has-background-success has-text-light"
             style={{ background: "rgb(250, 250, 250)" }}
@@ -78,7 +78,7 @@ export default () => (
       </div>
       <Divider />
       <div className="column is-3">
-        <div class="content">
+        <div className="content">
           <p>© 2020 Family Psychiatry Counseling and Wellness.</p>
         </div>
       </div>
