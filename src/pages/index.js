@@ -51,7 +51,7 @@ export default ({ data }) => {
                     Family Psychiatry <br />
                     Counseling & Wellness
                   </h1>
-                  <h2 className={"subtitle is-size-4 mt-3 mb-5 " + styles.splashSubtitle}>
+                  <h2 className={"subtitle is-size-4 mt-3 mb-5 " + styles.splashSubtitle} style={{fontWeight: 'lighter'}}>
                     A comprehensive, integrative psychiatric and wellness clinic
                     serving the mental, physical, emotional and preventative
                     health needs of all members of the family. Find better, one
