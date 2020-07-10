@@ -48,8 +48,8 @@ export default () => {
                           style={{ marginBottom: "3vmin" }}
                         >
                           <img
-                            // src="https://www.askideas.com/media/39/Colosseum-Looks-Beautiful-In-Sunset-Light.jpg"
                             src="https://42floors.com/images/Hd8216713d023e525024253c5987cddc2ea7287bfS1560x1040W0seB505153O/978a35bfd12f5e9a8c8c547cf2dc17a0d003d928"
+                            alt="La Baya Drive location exterior"
                             style={{ objectFit: "cover" }}
                           />
                         </figure>
@@ -84,8 +84,8 @@ export default () => {
                           style={{ marginBottom: "3vmin" }}
                         >
                           <img
-                            // src="https://i.pinimg.com/originals/ce/7f/55/ce7f55d0ce9ec88c238f4f0f5731d809.jpg"
                             src="https://images.squarespace-cdn.com/content/56412ff6e4b09a51a6703186/1563487713368-OFJHMDD4SJZBKFSQXNE4/image-asset.jpeg?content-type=image%2Fjpeg"
+                            alt="Agoura Road location exterior"
                             style={{ objectFit: "cover" }}
                           />
                         </figure>
@@ -112,14 +112,7 @@ export default () => {
                   <p>Click for directions</p>
                 </div>
               </div>
-              <div
-                class="column is-4"
-                //   style={{
-                //     border: "2px solid #48C774",
-                //     borderRadius: "5px",
-                //     padding: "4em 1em",
-                //   }}
-              >
+              <div class="column is-4">
                 <div class="content">
                   <h1 className="title is-1 is-size-3-mobile ">Contact Info</h1>
                   <table className="table is-completely-borderless has-background-light">

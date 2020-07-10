@@ -16,6 +16,8 @@ class SplashTile extends React.Component {
         to={to ? to : "/"}
         onMouseOver={this.onMouseOver}
         onMouseOut={this.onMouseOut}
+        onFocus={this.onMouseOver}
+        onBlur={this.onMouseOut}
       >
         <div
           className="card"
@@ -36,6 +38,7 @@ class SplashTile extends React.Component {
                     ? image
                     : "https://bulma.io/images/placeholders/1280x960.png"
                 }
+                alt="Thumbnail"
                 style={{ objectFit: "cover", scale: this.state.scale }}
               />
             </figure>
@@ -48,9 +51,8 @@ class SplashTile extends React.Component {
                 width: "auto",
                 padding: "5px .8em",
                 textAlign: "center",
-                // // borderBottom: "2px solid #48C774",
-                // background: this.state.backgroundColor,
-                background: "linear-gradient(to top, rgb(64, 64, 64, .8), rgb(0,0,0, 0))",
+                background:
+                  "linear-gradient(to top, rgb(64, 64, 64, .8), rgb(0,0,0, 0))",
                 borderBottom: "3px solid #48C774",
               }}
             >

@@ -1,7 +1,5 @@
-import React, { useEffect } from "react"
+import React from "react"
 import { Link, graphql } from "gatsby"
-import { Helmet } from "react-helmet"
-import * as random from "random"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -11,19 +9,9 @@ import Carousel from "../components/carousel"
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import {
-  faEnvelope,
-  faPhone,
-  faCalendar,
   faStar,
-  faStarAndCrescent,
-  faHandPointDown,
   faHandHoldingMedical,
-  faLink,
-  faExternalLinkAlt,
-  faLongArrowAltRight,
   faChevronRight,
-  faFileMedical,
-  faBookMedical,
   faHeartbeat,
   faStethoscope,
 } from "@fortawesome/free-solid-svg-icons"
@@ -31,9 +19,6 @@ import {
 import { faFacebookSquare, faGoogle } from "@fortawesome/free-brands-svg-icons"
 
 import styles from "./index.module.scss"
-
-import logo from "../images/logo-new.png"
-import logoFull from "../images/logo-white.png"
 
 export default ({ data }) => {
   function getNewsTiles() {

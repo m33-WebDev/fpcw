@@ -1,5 +1,4 @@
 import React from "react"
-import DatePicker from "react-datepicker"
 
 /* eslint-disable no-useless-concat */
 

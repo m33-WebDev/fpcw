@@ -18,6 +18,7 @@ function NewsTile({ post, style }) {
                   ? feature.file.url
                   : "https://bulma.io/images/placeholders/1280x960.png"
               }
+              alt="News title"
               style={{ objectFit: "cover" }}
             />
           </figure>

@@ -1,12 +1,11 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
+import { Link } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import {
   faDiagnoses,
-  faFlushed,
   faHeadSideVirus,
 } from "@fortawesome/free-solid-svg-icons"
 
