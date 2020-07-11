@@ -122,7 +122,7 @@ class FormJobApplication extends React.Component {
             style={{ width: "100%" }}
           >
             <label class="file-label">
-              <input class="file-input" type="file" name="resume" />
+              <input class="file-input" type="file" name="resume" onChange={this.onUpload} />
               <span class="file-cta">
                 <span class="file-icon">
                   <FontAwesomeIcon icon={faUpload} />
