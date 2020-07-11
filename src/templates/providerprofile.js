@@ -51,7 +51,7 @@ export default ({ data, pageContext }) => {
                 >
                   {title}
                 </div>
-                <div>
+                <div className='mb-3'>
                   <RichText document={bio ? bio.json : bio} />
                 </div>
                 <Link to="/providers" className="has-text-success">
