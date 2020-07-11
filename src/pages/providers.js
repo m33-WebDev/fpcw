@@ -19,7 +19,7 @@ export default ({ data }) => {
                   src={
                     headshot
                       ? headshot.file.url
-                      : "https://versions.bulma.io/0.5.3/images/placeholders/1280x960.png"
+                      : "https://images.theconversation.com/files/304957/original/file-20191203-66986-im7o5.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=926&fit=clip"
                   }
                   alt="Post Feature"
                   style={{ objectFit: "cover" }}
@@ -106,8 +106,8 @@ export const query = graphql`
     }
     profProfessional: allContentfulProviderProfile(
       filter: {
-        title: { nin: ["Support Staff", "Front Desk", "Practice Manager"] },
-        name: {nin: "Sabira Saifuddin"}
+        title: { nin: ["Support Staff", "Front Desk", "Practice Manager"] }
+        name: { nin: "Sabira Saifuddin" }
       }
     ) {
       nodes {
