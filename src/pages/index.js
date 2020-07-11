@@ -26,7 +26,7 @@ export default ({ data }) => {
 
     for (var i = 0; i < 3; ++i) {
       tiles.push(
-        <div className="column is-3 is-flex" key={i} style={{ height: "100%" }}>
+        <div className="column is-3" key={i} style={{ height: "100%" }}>
           <NewsTile post={data.newsPosts.nodes[i]} style={{ height: "100%" }} />
         </div>
       )
