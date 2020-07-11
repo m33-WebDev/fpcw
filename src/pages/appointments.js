@@ -18,14 +18,12 @@ export default () => {
       <div className="hero is-fullheight-with-navbar">
         <div className="hero-body">
           <div className="container">
-            <div className="columns is-desktop is-vcentered">
+            <div className="columns is-desktop">
               <div className="column is-6">
                 <figure className="image is-4by3">
                   <img
                     style={{ objectFit: "cover" }}
                     alt="West Coast landscape"
-                    // src="https://sgl-assets.imgix.net/files/article_hero/bixby-bridge-big-sur-california-nature-spots-outdoor-fun-views-via-magazine-shutterstock_401354710.jpg?w=1440&h=720&crop=faces,edges"
-                    // src="https://lh3.googleusercontent.com/proxy/lRowcti3k_Dth1Ivj43ni54yudcEtnmrDmfMkENwz8NftBoeNhh0VxxOzzr-LIC_4aMmqu0Hbwv0BJOCHR6Ys-FLsN2i2p6s7LlHQRu85WO1KEpbXpYeGnuJYBAErB6HvRhiPcv_2gQ8pA1f"
                     src="https://www.totalvoicetech.com/wp-content/uploads/medical-receptionists-productivity.jpg"
                   />
                 </figure>

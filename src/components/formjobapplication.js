@@ -1,4 +1,4 @@
-import React from "react"
+import React, { createRef } from "react"
 
 /* eslint-disable no-useless-concat */
 
@@ -6,10 +6,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import {
   faEnvelope,
   faPhone,
-  faCalendar,
+  faUpload,
 } from "@fortawesome/free-solid-svg-icons"
-
-import "react-datepicker/dist/react-datepicker-cssmodules.css"
 
 function BulmaControl({ children, name, hasLeftIcons, hasRightIcons }) {
   function getControlClass() {
@@ -27,18 +25,50 @@ function BulmaControl({ children, name, hasLeftIcons, hasRightIcons }) {
   )
 }
 
-class FormAppointment extends React.Component {
-  state = { startDate: new Date() }
+var positions = [
+  "Psychiatrist",
+  "Psychiatric Nurse Practitioner",
+  "Licensed Marriage and Family Therapist",
+  "Psychologist",
+  "Licensed Clinical Social Worker",
+]
 
-  handleChange = date => {
-    this.setState({ startDate: date })
+class FormJobApplication extends React.Component {
+  constructor(props) {
+    super(props)
+    this.onUpload = this.onUpload.bind(this)
+    this.state = {
+      resume: {},
+    }
+  }
+  onUpload(event) {
+    var files = event.target.files;
+    this.setState({resume: files[0]})
+    console.log("Uploading file: %s", files[0].name);
   }
 
   render() {
     return (
-      <form name="appointmentrequest" method="POST" netlify="true" action="/success/">
+      <form
+        name="jobapplication"
+        method="POST"
+        netlify="true"
+        action="/success/"
+      >
         <input type="hidden" name="form-name" value="appointmentrequest" />
-        <h1 className="title">Request an Appointment</h1>
+
+        <BulmaControl name="Position" hasLeftIcons>
+          <div className="select is-success">
+            <select name="position">
+              {positions.map(pos => {
+                return <option>{pos}</option>
+              })}
+            </select>
+          </div>
+          <span className="icon is-small is-left">
+            <FontAwesomeIcon icon={faEnvelope} />
+          </span>
+        </BulmaControl>
 
         <div className="columns">
           <div className="column">
@@ -84,31 +114,23 @@ class FormAppointment extends React.Component {
             <FontAwesomeIcon icon={faPhone} />
           </span>
         </BulmaControl>
-        <BulmaControl name="Date" hasLeftIcons>
-          <input
-            className="input"
-            type="date"
-            placeholder="12/05/1993"
-            name="date"
-          />{" "}
-          <span className="icon is-small is-left">
-            <FontAwesomeIcon icon={faCalendar} />
-          </span>
-          {/* <DatePicker
-            selected={this.state.startDate}
-            onChange={this.handleChange}
-          /> */}
+        <BulmaControl name="Resume" hasLeftIcons>
+          <div
+            class="file is-success is-right is-fullwidth"
+            style={{ width: "100%" }}
+          >
+            <label class="file-label">
+              <input class="file-input" type="file" name="resume" onChange={this.onUpload} ref={this.resume} />
+              <span class="file-cta">
+                <span class="file-icon">
+                  <FontAwesomeIcon icon={faUpload} />
+                </span>
+                <span class="file-label">Upload</span>
+              </span>
+              <span class="file-name">{this.state.resume ? this.state.resume.name : ""}</span>
+            </label>
+          </div>
         </BulmaControl>
-
-        {/* <BulmaControl name="Notes">
-          <textarea
-            className="textarea"
-            name="projectdescription"
-            placeholder="I want to talk about..."
-            style={{ height: "100%" }}
-          />
-        </BulmaControl> */}
-
         <BulmaControl>
           <button
             className="button is-success is-outlined"
@@ -123,4 +145,4 @@ class FormAppointment extends React.Component {
   }
 }
 
-export default FormAppointment
+export default FormJobApplication

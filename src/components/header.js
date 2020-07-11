@@ -76,7 +76,7 @@ export default () => {
                   marginLeft: "1vmin",
                   marginRight: "1vmin",
                 }}
-                className='has-text-white'
+                className="has-text-white"
               >
                 Telehealth appointments now available
               </div>
@@ -122,6 +122,13 @@ export default () => {
               to="/library/"
             >
               Library
+            </Link>
+            <Link
+              className="navbar-item"
+              activeClassName="navbar-item is-active"
+              to="/careers/"
+            >
+              Careers
             </Link>
             <Link
               className="navbar-item"
