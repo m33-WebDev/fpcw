@@ -20,8 +20,9 @@ export default ({ data, pageContext }) => {
             <figure className="image is-square">
               <img
                 src={
-                  headshot.file.url
-                  // "https://images.theconversation.com/files/304957/original/file-20191203-66986-im7o5.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=926&fit=clip"
+                  headshot
+                  ? headshot.file.url
+                  : "https://images.theconversation.com/files/304957/original/file-20191203-66986-im7o5.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=926&fit=clip"
                 }
                 alt=""
                 style={{ objectFit: "cover" }}
