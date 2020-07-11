@@ -55,7 +55,7 @@ class FormJobApplication extends React.Component {
         netlify="true"
         action="/success/"
       >
-        <input type="hidden" name="form-name" value="appointmentrequest" />
+        <input type="hidden" name="form-name" value="jobapplication" />
         <h1 className="title">Application</h1>
 
         <BulmaControl name="Position" hasLeftIcons>
