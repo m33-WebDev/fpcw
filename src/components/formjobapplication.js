@@ -56,9 +56,10 @@ class FormJobApplication extends React.Component {
         action="/success/"
       >
         <input type="hidden" name="form-name" value="appointmentrequest" />
+        <h1 className="title">Application</h1>
 
         <BulmaControl name="Position" hasLeftIcons>
-          <div className="select is-success">
+          <div className="select is-success is-fullwidth">
             <select name="position">
               {positions.map(pos => {
                 return <option>{pos}</option>

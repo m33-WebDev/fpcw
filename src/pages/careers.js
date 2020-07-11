@@ -11,21 +11,9 @@ export default () => {
       <div className="hero is-fullheight-with-navbar">
         <div className="hero-body">
           <div className="container">
-            <div className="columns is-desktop">
-            <div className="column is-6">
-                <figure className="image is-4by3">
-                  <img
-                    style={{ objectFit: "cover" }}
-                    alt="West Coast landscape"
-                    src="https://www.helpguide.org/wp-content/uploads/woman-on-couch-speaking-with-therapist.jpg"
-                  />
-                </figure>
-              </div>
+            <div className="columns">
               <div className="column is-3">
-                <FormJobApplication />
-              </div>
-              <div className="column is-3" style={{ height: "auto" }}>
-                <div style={{ height: "auto" }}>
+                <div>
                   <h1 className="title is-1 is-size-3-mobile">Careers</h1>
                   <p>
                     Want to join a team that is passionate about patient care?
@@ -42,6 +30,19 @@ export default () => {
                     Interested in joining our team? Submit an application today!
                   </p>
                 </div>
+              </div>
+
+              <div className="column is-6 is-hidden-mobile">
+                <figure className="image is-4by3">
+                  <img
+                    style={{ objectFit: "cover" }}
+                    alt="West Coast landscape"
+                    src="https://www.helpguide.org/wp-content/uploads/woman-on-couch-speaking-with-therapist.jpg"
+                  />
+                </figure>
+              </div>
+              <div className="column is-3">
+                <FormJobApplication />
               </div>
             </div>
           </div>
