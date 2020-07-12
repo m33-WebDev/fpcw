@@ -97,21 +97,6 @@ export default () => {
             <Link
               className="navbar-item"
               activeClassName="navbar-item is-active"
-              to="/services/"
-            >
-              Services
-            </Link>
-
-            <Link
-              className="navbar-item"
-              activeClassName="navbar-item is-active"
-              to="/providers/"
-            >
-              Providers
-            </Link>
-            <Link
-              className="navbar-item"
-              activeClassName="navbar-item is-active"
               to="/appointments/"
             >
               Appointments
@@ -123,20 +108,25 @@ export default () => {
             >
               Library
             </Link>
-            <Link
-              className="navbar-item"
-              activeClassName="navbar-item is-active"
-              to="/careers/"
-            >
-              Careers
-            </Link>
-            <Link
-              className="navbar-item"
-              activeClassName="navbar-item is-active"
-              to="/locations/"
-            >
-              Contact
-            </Link>
+            <div class="navbar-item has-dropdown is-hoverable" href="/">
+              <a href="#" class="navbar-link">
+                About
+              </a>
+              <div class="navbar-dropdown has-background-success">
+                <a href="/services" class="navbar-item has-text-light">
+                  Services
+                </a>
+                <a href="/providers" class="navbar-item has-text-light">
+                  Providers
+                </a>
+                <a href="/careers" class="navbar-item has-text-light">
+                  Careers
+                </a>
+                <a href="/locations" class="navbar-item has-text-light">
+                  Contact
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
