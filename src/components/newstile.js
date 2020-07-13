@@ -29,7 +29,8 @@ function NewsTile({ post, style }) {
             {date}
           </h2>
           <Truncate
-            lines={2}
+            lines={1}
+            width={1000}
             ellipsis={<span style={{ color: "#48C774" }}> ...</span>}
           >
             <RichText document={body.json} />
