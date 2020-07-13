@@ -90,7 +90,7 @@ export default ({ data }) => {
                           <SplashTile
                             title="Telehealth"
                             image="https://www.ciproms.com/wp-content/uploads/2020/03/Telehealth-600x400.jpg"
-                            to="/telehealth-teletherapy"
+                            to="/telepsychiatry-telecounseling"
                           />
                         </div>
                       </div>
