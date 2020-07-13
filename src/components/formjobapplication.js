@@ -53,7 +53,7 @@ class FormJobApplication extends React.Component {
         name="jobapplication"
         method="POST"
         netlify="true"
-        action="/success/"
+        action="/formsuccess/"
         encType='multipart/form-data'
       >
         <input type="hidden" name="form-name" value="jobapplication" />

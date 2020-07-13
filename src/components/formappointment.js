@@ -36,7 +36,7 @@ class FormAppointment extends React.Component {
 
   render() {
     return (
-      <form name="appointmentrequest" method="POST" netlify="true" action="/success/">
+      <form name="appointmentrequest" method="POST" netlify="true" action="/formsuccess/">
         <input type="hidden" name="form-name" value="appointmentrequest" />
         <h1 className="title">Request an Appointment</h1>
 
