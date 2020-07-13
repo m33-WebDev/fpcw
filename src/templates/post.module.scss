@@ -81,7 +81,7 @@ h2::before {
     h1,
     h2 {
         text-align: left;
-        margin-top: 5vmin;
+        // margin-top: 5vmin;
         margin-bottom: 3vmin;
     }
 
@@ -118,7 +118,6 @@ h2::before {
 
         p {
             font-size: calc(#{$font-size-base-desktop} + .8vw);
-            // line-height: $font-size-base * 1.2;
             line-height: calc((#{$font-size-base-desktop} + .8vw) * 1.4);
         }
     }
@@ -126,7 +125,7 @@ h2::before {
     ul,
     ol {
         margin-left: 3vmin;
-        margin-top: 3vmin;
+        // margin-top: 3vmin;
         margin-bottom: 3vmin;
     }
 
