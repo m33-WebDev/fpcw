@@ -6,23 +6,11 @@ import "./header.scss"
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import {
-  faExclamation,
-  faExclamationTriangle,
   faExclamationCircle,
 } from "@fortawesome/free-solid-svg-icons"
 
 export default () => {
   const [active, setActive] = useState(false)
-
-  const data = useStaticQuery(graphql`
-    query {
-      site {
-        siteMetadata {
-          shortTitle
-        }
-      }
-    }
-  `)
 
   return (
     <nav
@@ -112,17 +100,17 @@ export default () => {
               <a href="#" class="navbar-link">
                 About
               </a>
-              <div class="navbar-dropdown has-background-success">
-                <a href="/services" class="navbar-item has-text-light">
+              <div class="navbar-dropdown">
+                <a href="/services" class="navbar-item">
                   Services
                 </a>
-                <a href="/providers" class="navbar-item has-text-light">
+                <a href="/providers" class="navbar-item">
                   Providers
                 </a>
-                <a href="/careers" class="navbar-item has-text-light">
+                <a href="/careers" class="navbar-item">
                   Careers
                 </a>
-                <a href="/locations" class="navbar-item has-text-light">
+                <a href="/locations" class="navbar-item">
                   Contact
                 </a>
               </div>
