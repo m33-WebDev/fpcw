@@ -8,11 +8,8 @@ module.exports = {
   siteMetadata: {
     title: `Family Psychiatry, Counseling and Wellness`,
     shortTitle: `FPCW`,
-    description: `A place to learn about Unreal Engine 4, gamedev, and chasing your dreams.`,
-    author: `Sabira Saifuddin, M.D.`,
-    navbarItems: ["articles", "glossary", "creations", "about"],
-    tipOfTheWeek:
-      "Never think you have the best idea ever. Test it as soon as possible. As it will probably turn out to be shit anyway.",
+    description: `A mental health clinic with a focus on overall wellness. Find better, one step at a time.`,
+    author: `Sabira Saifuddin, M.D.`
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -28,13 +25,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Unrealistic.dev`,
-        short_name: `Unrealistic`,
+        name: `Family Psychiatry, Counseling and Wellness`,
+        short_name: `FPCW`,
         start_url: `/`,
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `standalone`,
-        icon: `src/images/icon.png`,
+        icon: `src/images/icon-new.png`,
       },
     },
     `gatsby-plugin-sass`,
