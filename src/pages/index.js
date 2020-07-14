@@ -290,7 +290,6 @@ export const query = graphql`
   query {
     site {
       siteMetadata {
-        tipOfTheWeek
         shortTitle
       }
     }
