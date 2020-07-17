@@ -1,3 +1,4 @@
+@import '../styles/variables.scss';
 
 .ProviderList {
     @media (min-width: 1024px) {
@@ -11,4 +12,24 @@
 
 .ProviderList::-webkit-scrollbar {
     display: none;
+}
+
+.PageDescription {
+    @media (min-width: 1024px) {
+        position: sticky;
+        top: 15vmin
+    }
+}
+
+.PostTitle {
+    border: 3px solid #48C774;
+    border-right: 0px;
+
+    position: absolute;
+    bottom: 10%;
+    right: 0;
+    padding: .3em;
+    text-align: left;
+    background: rgba(72, 199, 116, $card-title-alpha);
+    max-width: 70%;
 }

@@ -1,10 +1,13 @@
 import React from "react"
-import { Link } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faDiagnoses, faHeadSideVirus, faSearch, faUserMd } from "@fortawesome/free-solid-svg-icons"
+import {
+  faDiagnoses,
+  faHeadSideVirus,
+  faUserMd,
+} from "@fortawesome/free-solid-svg-icons"
 
 export default ({ data }) => {
   const conditions = [
@@ -16,7 +19,7 @@ export default ({ data }) => {
     "Dual Diagnosis",
     "Psychotic Disorders",
     "Developmental Delays",
-    "and much more..."
+    "and much more...",
   ]
   const psych = [
     "Psychiatric Evaluation",

@@ -4,7 +4,7 @@ import { graphql, Link } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-import styles from "./providers.module.scss"
+import pageStyle from "./providers.module.scss"
 
 export default ({ data }) => {
   function createProfileCard(profile, i) {
@@ -27,17 +27,9 @@ export default ({ data }) => {
               </figure>
             </div>
             <div
-              className="title is-4 has-text-light"
-              style={{
-                position: "absolute",
-                bottom: "0.5em",
-                right: "0",
-                width: "auto",
-                padding: "5px",
-                background:
-                  "linear-gradient(to top, rgb(64, 64, 64, .8), rgb(0,0,0, 0))",
-                borderBottom: "3px solid #48C774",
-              }}
+              className={
+                "title is-4 has-text-light " + pageStyle.PostTitle
+              }
             >
               {name}
             </div>
@@ -52,9 +44,13 @@ export default ({ data }) => {
       <SEO title="FPCW - Providers" />
       <div className="hero is-fullheight-with-navbar">
         <div className="hero-body">
-          <div className="columns is-vcentered is-desktop">
+          <div className="columns is-desktop">
             <div className="column is-4" style={{ padding: "0 5vmin" }}>
-              <div className="content has-text-centered">
+              <div
+                className={
+                  "content has-text-centered " + pageStyle.PageDescription
+                }
+              >
                 <h1
                   className="title"
                   style={{
@@ -75,7 +71,7 @@ export default ({ data }) => {
               </div>
             </div>
             <div className="column is-8">
-              <div className={"columns is-multiline " + styles.ProviderList}>
+              <div className={"columns is-multiline "}>
                 {createProfileCard(data.profSabira, 0)}
                 {data.profProfessional.nodes.map((profile, i) => {
                   return createProfileCard(profile, i)

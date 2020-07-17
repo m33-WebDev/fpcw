@@ -4,6 +4,7 @@
     display: flex;
     flex-wrap: wrap;
 }
+
 .Box>* {
     flex: 1 1 300px
 }
@@ -23,7 +24,15 @@
     padding: 15px;
     max-width: 600px;
     min-width: 200px;
-    display: inline-flex;;
+    display: inline-flex;
+    ;
+}
+
+.PageDescription {
+    @media (min-width: 1024px) {
+        position: sticky;
+        top: 15vh
+    }
 }
 
 .Title {
@@ -38,15 +47,17 @@
 
 .Image {
     object-fit: cover;
-    // position: absolute;
-    // top: 0;
-    // left: 0;
-    // width: 20%;
 }
 
-@media(max-width: 767px) { /* <== You can change this break point as per your  needs */
-    .ReverseColumns {
-      flex-direction: column-reverse;
-      display: flex;
-    }
-  }
+.PostTitle {
+    border: 3px solid #48C774;
+    border-right: 0px;
+
+    position: absolute;
+    bottom: 10%;
+    right: 0;
+    padding: .3em;
+    text-align: left;
+    background: rgba(72, 199, 116, $card-title-alpha);
+    max-width: 70%;
+}

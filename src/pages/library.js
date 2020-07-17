@@ -4,15 +4,21 @@ import { graphql, Link } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
+import pageStyle from "./library.module.scss"
+
 export default ({ data }) => {
   return (
     <Layout>
       <SEO title="FPCW - Library" />
       <div className="hero">
         <div className="hero-body">
-          <div className="columns is-vcentered is-desktop">
+          <div className="columns is-desktop">
             <div className="column is-4" style={{ padding: "0 5vmin" }}>
-              <div className="content has-text-centered">
+              <div
+                className={
+                  "content has-text-centered " + pageStyle.PageDescription
+                }
+              >
                 <h1
                   className="title"
                   style={{
@@ -54,18 +60,9 @@ export default ({ data }) => {
                                 />
                               </figure>
                               <div
-                                className="content"
-                                style={{
-                                  position: "absolute",
-                                  bottom: "10%",
-                                  right: "0",
-                                  padding: ".3em",
-                                  textAlign: "left",
-                                  background:
-                                    "linear-gradient(to top, rgb(64, 64, 64, .8), rgb(0,0,0, 0))",
-                                  borderBottom: "3px solid #48C774",
-                                  maxWidth: "70%",
-                                }}
+                                className={
+                                  "content " + pageStyle.PostTitle
+                                }
                               >
                                 <div className="title is-5 has-text-light">
                                   {title}

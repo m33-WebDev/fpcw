@@ -1,6 +1,8 @@
 import React from "react"
 import { Link } from "gatsby"
 
+import pageStyle from './splashtile.module.scss'
+
 class SplashTile extends React.Component {
   state = { scale: 1, backgroundColor: "rgba(72, 199, 116, .7)" }
 
@@ -43,18 +45,7 @@ class SplashTile extends React.Component {
               />
             </figure>
             <div
-              className="title is-4 has-text-light"
-              style={{
-                position: "absolute",
-                top: "80%",
-                left: "0",
-                width: "auto",
-                padding: "5px .8em",
-                textAlign: "center",
-                background:
-                  "linear-gradient(to top, rgb(64, 64, 64, .8), rgb(0,0,0, 0))",
-                borderBottom: "3px solid #48C774",
-              }}
+              className={"title is-4 has-text-light " + pageStyle.PostTitle}
             >
               {title}
             </div>
