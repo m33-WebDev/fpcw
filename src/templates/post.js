@@ -10,7 +10,7 @@ import RichText from "../components/richtext"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faChevronLeft } from "@fortawesome/free-solid-svg-icons"
 
-import styles from "./post.module.scss"
+import pageStyle from "./post.module.scss"
 
 setConfig({ logLevel: "no-errors-please" })
 
@@ -25,28 +25,30 @@ export default ({ data, pageContext }) => {
           <div className="container">
             <div className="columns is-centered is-desktop is-variable is-8">
               <div className="column is-6">
-                <div className="content">
-                  <div className={"title"} style={{ textAlign: "left" }}>
-                    {title}
+                <div className={pageStyle.Frontmatter}>
+                  <div className="content">
+                    <div className={"title"} style={{ textAlign: "left" }}>
+                      {title}
+                    </div>
                   </div>
+                  <figure
+                    className="image is-4by3"
+                    style={{ marginBottom: "5vmin" }}
+                  >
+                    <img
+                      src={feature.file.url}
+                      alt="Post feature"
+                      style={{ objectFit: "cover" }}
+                    />
+                  </figure>
+                  <Link to="/library" className="has-text-success is-hidden-mobile">
+                    <FontAwesomeIcon icon={faChevronLeft} />
+                    {" Back to library"}
+                  </Link>
                 </div>
-                <figure
-                  className="image is-4by3"
-                  style={{ marginBottom: "5vmin" }}
-                >
-                  <img
-                    src={feature.file.url}
-                    alt="Post feature"
-                    style={{ objectFit: "cover" }}
-                  />
-                </figure>
-                <Link to="/library" className="has-text-success">
-                  <FontAwesomeIcon icon={faChevronLeft} />
-                  {" Back to library"}
-                </Link>
               </div>
               <div className="column is-6">
-                <div className={styles.body}>
+                <div className={pageStyle.body}>
                   <RichText document={body.json} />
                   <p>---</p>
                   <p style={{ fontStyle: "italic" }}>
