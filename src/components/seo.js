@@ -57,6 +57,10 @@ function SEO({ title, description, meta, lang }) {
           name: `twitter:description`,
           content: metaDescription,
         },
+        {
+          name: `robots`,
+          content: `index, follow`
+        }
       ].concat(meta)}
     />
   )
