@@ -5,9 +5,7 @@ import logo from "../images/logo-fitted.png"
 import "./header.scss"
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import {
-  faExclamationCircle,
-} from "@fortawesome/free-solid-svg-icons"
+import { faExclamationCircle } from "@fortawesome/free-solid-svg-icons"
 
 export default () => {
   const [active, setActive] = useState(false)
@@ -82,6 +80,12 @@ export default () => {
             >
               Home
             </Link>
+            <a href="/services" class="navbar-item">
+              Services
+            </a>
+            <a href="/providers" class="navbar-item">
+              Providers
+            </a>
             <Link
               className="navbar-item"
               activeClassName="navbar-item is-active"
@@ -101,12 +105,6 @@ export default () => {
                 About
               </a>
               <div class="navbar-dropdown">
-                <a href="/services" class="navbar-item">
-                  Services
-                </a>
-                <a href="/providers" class="navbar-item">
-                  Providers
-                </a>
                 <a href="/careers" class="navbar-item">
                   Careers
                 </a>
