@@ -8,7 +8,7 @@ function NewsTile({ post, style }) {
   const { title, date, feature, body, slug } = post
 
   return (
-    <Link to={"/" + slug} style={style}>
+    <Link to={"/library/" + slug} style={style}>
       <div className="card" style={{ minHeight: "60vmin" }}>
         <div className="card-image">
           <figure className="image is-4by3">

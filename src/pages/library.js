@@ -42,7 +42,7 @@ export default ({ data }) => {
                   ({ slug, title, feature }, i) => {
                     return (
                       <div className="column is-4" key={i}>
-                        <Link to={"/" + slug}>
+                        <Link to={"/library/" + slug}>
                           <div className="card">
                             <div
                               className="card-image"

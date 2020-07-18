@@ -11,7 +11,7 @@ export default ({ data }) => {
     var { slug, name, headshot } = profile
     return (
       <div className="column is-4" key={i}>
-        <Link to={slug ? "/" + slug : "/"}>
+        <Link to={slug ? "/providers/" + slug : "/"}>
           <div className="card">
             <div className="card-image">
               <figure className="image is-square">
