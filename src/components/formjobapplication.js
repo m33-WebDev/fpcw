@@ -118,18 +118,18 @@ class FormJobApplication extends React.Component {
         </BulmaControl>
         <BulmaControl name="Resume" hasLeftIcons>
           <div
-            class="file is-success is-right is-fullwidth"
+            className="file is-success is-right is-fullwidth"
             style={{ width: "100%" }}
           >
-            <label class="file-label">
-              <input class="file-input" type="file" name="resume" onChange={this.onUpload} />
-              <span class="file-cta">
-                <span class="file-icon">
+            <label className="file-label">
+              <input className="file-input" type="file" name="resume" onChange={this.onUpload} />
+              <span className="file-cta">
+                <span className="file-icon">
                   <FontAwesomeIcon icon={faUpload} />
                 </span>
-                <span class="file-label">Upload</span>
+                <span className="file-label">Upload</span>
               </span>
-              <span class="file-name">{this.state.resume ? this.state.resume.name : ""}</span>
+              <span className="file-name">{this.state.resume ? this.state.resume.name : ""}</span>
             </label>
           </div>
         </BulmaControl>

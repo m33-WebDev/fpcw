@@ -96,21 +96,21 @@ export default () => {
             >
               Library
             </Link>
-            <div class="navbar-item has-dropdown is-hoverable" href="/">
-              <a href="#" class="navbar-link">
+            <div className="navbar-item has-dropdown is-hoverable" href="/">
+              <a href="#" className="navbar-link">
                 About
               </a>
-              <div class="navbar-dropdown">
-                <a href="/services" class="navbar-item">
+              <div className="navbar-dropdown">
+                <a href="/services" className="navbar-item">
                   Services
                 </a>
-                <a href="/providers" class="navbar-item">
+                <a href="/providers" className="navbar-item">
                   Providers
                 </a>
-                <a href="/careers" class="navbar-item">
+                <a href="/careers" className="navbar-item">
                   Careers
                 </a>
-                <a href="/locations" class="navbar-item">
+                <a href="/locations" className="navbar-item">
                   Contact
                 </a>
               </div>

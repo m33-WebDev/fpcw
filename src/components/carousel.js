@@ -43,7 +43,7 @@ export default () => {
       <Slider>
         {reviews.nodes.map(({ author, content, link }, i) => {
           return (
-            <Slide index={i}>
+            <Slide index={i} key={i}>
               <div className="content">
                 <div
                   dangerouslySetInnerHTML={{
