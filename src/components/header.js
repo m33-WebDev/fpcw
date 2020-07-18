@@ -52,7 +52,7 @@ export default () => {
           >
             <Link
               className="navbar-item has-text-centered is-hidden-mobile"
-              to="/appointments"
+              to="/appointments/"
               style={{ marginLeft: "5vmin", marginRight: "5vmin" }}
             >
               <FontAwesomeIcon
