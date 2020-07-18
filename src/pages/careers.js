@@ -7,7 +7,7 @@ import FormJobApplication from "../components/formjobapplication"
 export default () => {
   return (
     <Layout>
-      <SEO title="FPCW - Appointments" />
+      <SEO title="FPCW - Careers" />
       <div className="hero is-fullheight-with-navbar">
         <div className="hero-body">
           <div className="container">
