@@ -20,7 +20,7 @@ module.exports = {
 					{
 						userAgent: '*',
 						allow: '/',
-						// disallow: '/providers/*',
+						disallow: '/formsuccess',
 						crawlDelay: 2,
 					},
 				],
