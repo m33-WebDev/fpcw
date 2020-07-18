@@ -21,7 +21,7 @@ module.exports = {
 						userAgent: '*',
 						allow: '/',
 						disallow: '/formsuccess',
-						crawlDelay: 2,
+						// crawlDelay: 2,
 					},
 				],
 			},
