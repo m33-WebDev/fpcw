@@ -26,6 +26,9 @@ module.exports = {
 				],
 			},
 		},
+		{
+			resolve: `gatsby-plugin-sitemap`
+		},
 		`gatsby-plugin-react-helmet`,
 		{
 			resolve: `gatsby-source-contentful`,
