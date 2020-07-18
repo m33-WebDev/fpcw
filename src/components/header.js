@@ -52,7 +52,7 @@ export default () => {
           >
             <Link
               className="navbar-item has-text-centered is-hidden-mobile"
-              to="/appointments/"
+              to="/appointments"
               style={{ marginLeft: "5vmin", marginRight: "5vmin" }}
             >
               <FontAwesomeIcon
@@ -85,14 +85,14 @@ export default () => {
             <Link
               className="navbar-item"
               activeClassName="navbar-item is-active"
-              to="/appointments/"
+              to="/appointments"
             >
               Appointments
             </Link>
             <Link
               className="navbar-item"
               activeClassName="navbar-item is-active"
-              to="/library/"
+              to="/library"
             >
               Library
             </Link>
