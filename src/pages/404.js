@@ -7,11 +7,11 @@ import SEO from "../components/seo"
 export default () => {
   return (
     <Layout>
-      <SEO title='Unrealistic - 404'/>
+      <SEO title='FPCW - 404'/>
       <div className='section'>
         <div className='content has-text-centered'>
             <p>
-                Something went wrong :(<br/>Return to <Link to='/'>Home</Link>.
+                It looks like something went wrong :(<br/>Return to <Link to='/'>Home</Link>.
             </p>
         </div>
       </div>
