@@ -86,7 +86,7 @@ export default ({ data }) => {
 													<SplashTile
 														title='Services'
 														image='https://anewerapsychiatry.com/wp-content/uploads/2019/06/outpatient-psychiatric-services-550x321.jpg'
-														to='/services/'
+														to='/services'
 													/>
 												</div>
 											</div>{' '}
