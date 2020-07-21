@@ -37,7 +37,7 @@ export default ({ data }) => {
 
 	return (
 		<Layout>
-			<SEO title='FPCW - Home' />
+			<SEO title='Family Psychiatry, Counseling and Wellness' />
 			<section className='hero is-light is-fullheight-with-navbar'>
 				<div className='hero-body'>
 					<div className='container' style={{ height: '100%' }}>
