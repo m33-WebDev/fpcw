@@ -73,7 +73,13 @@ export default ({ data }) => {
             <div className="column is-8">
               <div className={"columns is-multiline "}>
                 {createProfileCard(data.profSabira, 0)}
-                {data.profProfessional.nodes.map((profile, i) => {
+                {data.profPsych.nodes.map((profile, i) => {
+                  return createProfileCard(profile, i)
+                })}
+                {data.profNP.nodes.map((profile, i) => {
+                  return createProfileCard(profile, i)
+                })}
+                {data.profLMFT.nodes.map((profile, i) => {
                   return createProfileCard(profile, i)
                 })}
                 {data.profAdmin.nodes.map((profile, i) => {
@@ -100,9 +106,43 @@ export const query = graphql`
         }
       }
     }
-    profProfessional: allContentfulProviderProfile(
+    profPsych: allContentfulProviderProfile(
       filter: {
-        title: { nin: ["Support Staff", "Front Desk", "Practice Manager"] }
+        title: { eq: "MD" }
+        name: { nin: "Sabira Saifuddin" }
+      }
+    ) {
+      nodes {
+        slug
+        name
+        title
+        headshot {
+          file {
+            url
+          }
+        }
+      }
+    }
+    profNP: allContentfulProviderProfile(
+      filter: {
+        title: { eq: "PMHNP" }
+        name: { nin: "Sabira Saifuddin" }
+      }
+    ) {
+      nodes {
+        slug
+        name
+        title
+        headshot {
+          file {
+            url
+          }
+        }
+      }
+    }
+    profLMFT: allContentfulProviderProfile(
+      filter: {
+        title: { eq: "LMFT" }
         name: { nin: "Sabira Saifuddin" }
       }
     ) {
@@ -119,7 +159,7 @@ export const query = graphql`
     }
     profAdmin: allContentfulProviderProfile(
       filter: {
-        title: { in: ["Support Staff", "Front Desk", "Practice Manager"] }
+        title: { nin: ["MD", "PMHNP", "LMFT"] }
       }
     ) {
       nodes {
