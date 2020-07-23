@@ -95,7 +95,7 @@ export default ({ data }) => {
 													<SplashTile
 														title='Telehealth'
 														image='https://www.ciproms.com/wp-content/uploads/2020/03/Telehealth-600x400.jpg'
-														to='/telepsychiatry-telecounseling'
+														to='/library/telepsychiatry-telecounseling'
 													/>
 												</div>
 											</div>
@@ -109,7 +109,7 @@ export default ({ data }) => {
 													<SplashTile
 														title='Health Library'
 														image='https://freedesignfile.com/upload/2018/01/Brain-infographic-template-vector-01.jpg'
-														to='/library/'
+														to='/library'
 													/>
 												</div>
 											</div>{' '}
@@ -118,7 +118,7 @@ export default ({ data }) => {
 													<SplashTile
 														title='Locations'
 														image='https://42floors.com/images/Hd8216713d023e525024253c5987cddc2ea7287bfS1560x1040W0seB505153O/978a35bfd12f5e9a8c8c547cf2dc17a0d003d928'
-														to='/locations/'
+														to='/locations'
 													/>
 												</div>
 											</div>
