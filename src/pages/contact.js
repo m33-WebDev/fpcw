@@ -18,7 +18,7 @@ import "bulma-helpers/css/bulma-helpers.min.css"
 export default () => {
   return (
     <Layout>
-      <SEO title="FPCW - Locations" />
+      <SEO title="FPCW - Contact" />
       <section className="hero is-fullheight-with-navbar is-light">
         <div className="hero-body">
           <div className="container">
@@ -141,7 +141,7 @@ export default () => {
                   <p>
                     If you would like to request an appointment outside of
                     business hours, please use this{" "}
-                    <Link to="/appointments/">form</Link>.
+                    <Link to="/appointments">form</Link>.
                   </p>
                 </div>
               </div>
@@ -149,124 +149,6 @@ export default () => {
           </div>
         </div>
       </section>
-      {/* <section className="hero is-medium is-light">
-        <div className="hero-body">
-          <div
-            className="content has-text-centered"
-            style={{ marginBottom: "8vmin" }}
-          >
-            <h1 className="title is-1">Contact Information</h1>
-          </div>
-
-          <div className="container">
-            <div
-              className="columns is-centered is-vcentered is-desktop is-variable is-6"
-              style={{ width: "100%" }}
-            >
-              <div className="column is-4">
-                <figure className="image is-square">
-                  <img
-                    src="https://c5j2d3d6.stackpathcdn.com/wp-content/uploads/2019/01/louvre.jpg"
-                    alt="Meh"
-                    style={{ objectFit: "cover" }}
-                  />
-                </figure>
-              </div>
-              <div className="column is-2">
-                <div className="content">
-                  <p className="">
-                    311 La Baya Drive
-                    <br />
-                    Suite 202
-                    <br />
-                    Westlake Village, CA 91362
-                  </p>
-                </div>
-              </div>
-
-              <div className="column is-4">
-                <figure className="image is-square">
-                  <img
-                    src="https://upload.wikimedia.org/wikipedia/commons/5/53/Colosseum_in_Rome%2C_Italy_-_April_2007.jpg"
-                    alt="Meh"
-                    style={{ objectFit: "cover" }}
-                  />
-                </figure>
-              </div>
-              <div className="column is-2">
-                <div className="content">
-                  <p className="">
-                    30851 Agoura Road
-                    <br />
-                    Suite 304
-                    <br />
-                    Agoura Hills, CA 91301
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="hero is-medium is-light">
-        <div className="hero-body">
-          <div className="container">
-            <div
-              className="content has-text-centered"
-              style={{ marginBottom: "8vmin" }}
-            >
-              <h1 className="title is-1">Locations</h1>
-            </div>
-            <div
-              className="columns is-centered is-vcentered is-desktop is-variable is-6"
-              style={{ width: "100%" }}
-            >
-              <div className="column is-4">
-                <figure className="image is-square">
-                  <img
-                    src="https://c5j2d3d6.stackpathcdn.com/wp-content/uploads/2019/01/louvre.jpg"
-                    alt="Meh"
-                    style={{ objectFit: "cover" }}
-                  />
-                </figure>
-              </div>
-              <div className="column is-2">
-                <div className="content">
-                  <p className="">
-                    311 La Baya Drive
-                    <br />
-                    Suite 202
-                    <br />
-                    Westlake Village, CA 91362
-                  </p>
-                </div>
-              </div>
-
-              <div className="column is-4">
-                <figure className="image is-square">
-                  <img
-                    src="https://upload.wikimedia.org/wikipedia/commons/5/53/Colosseum_in_Rome%2C_Italy_-_April_2007.jpg"
-                    alt="Meh"
-                    style={{ objectFit: "cover" }}
-                  />
-                </figure>
-              </div>
-              <div className="column is-2">
-                <div className="content">
-                  <p className="">
-                    30851 Agoura Road
-                    <br />
-                    Suite 304
-                    <br />
-                    Agoura Hills, CA 91301
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section> */}
     </Layout>
   )
 }

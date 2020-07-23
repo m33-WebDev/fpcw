@@ -118,7 +118,7 @@ export default ({ data }) => {
 													<SplashTile
 														title='Locations'
 														image='https://42floors.com/images/Hd8216713d023e525024253c5987cddc2ea7287bfS1560x1040W0seB505153O/978a35bfd12f5e9a8c8c547cf2dc17a0d003d928'
-														to='/locations'
+														to='/contact'
 													/>
 												</div>
 											</div>

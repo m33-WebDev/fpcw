@@ -111,7 +111,7 @@ export default () => {
                 <a href="/careers" className="navbar-item">
                   Careers
                 </a>
-                <a href="/locations" className="navbar-item">
+                <a href="/contact" className="navbar-item">
                   Contact
                 </a>
               </div>
