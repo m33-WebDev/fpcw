@@ -24,13 +24,13 @@ export default ({ data }) => {
 	function getNewsTiles() {
 		var tiles = [];
 
-		for (var i = 0; i < 3; ++i) {
+		data.newsPosts.nodes.forEach((post, i) => {
 			tiles.push(
 				<div className='column is-3' key={i} style={{ height: '100%' }}>
-					<NewsTile post={data.newsPosts.nodes[i]} style={{ height: '100%' }} />
+					<NewsTile post={post} style={{ height: '100%' }} />
 				</div>
 			);
-		}
+		});
 
 		return tiles;
 	}
@@ -297,11 +297,14 @@ export const query = graphql`
 				shortTitle
 			}
 		}
-		newsPosts: allContentfulPost {
+		newsPosts: allContentfulPost(limit: 3) {
 			nodes {
 				slug
 				title
 				feature {
+					fluid {
+						...GatsbyContentfulFluid
+					}
 					file {
 						url
 					}
@@ -313,99 +316,3 @@ export const query = graphql`
 		}
 	}
 `;
-
-// export const query = graphql`
-//   query {
-//     site {
-//       siteMetadata {
-//         tipOfTheWeek
-//         shortTitle
-//       }
-//     }
-//     allPosts: allContentfulBlogPost {
-//       edges {
-//         node {
-//           slug
-//           title
-//           id
-//           image {
-//             file {
-//               url
-//             }
-//           }
-//         }
-//       }
-//     }
-//     newestPosts: allContentfulBlogPost(
-//       filter: { tags: { nin: ["insider", "devlog", "series", "nokternel-style-guide"] } }
-//       sort: { fields: createdAt, order: DESC }
-//     ) {
-//       nodes {
-//         slug
-//         title
-//         image {
-//           file {
-//             url
-//           }
-//         }
-//       }
-//     }
-//     insiderPosts: allContentfulBlogPost(
-//       filter: { tags: { in: "insider" } }
-//       sort: { fields: createdAt, order: DESC }
-//     ) {
-//       nodes {
-//         slug
-//         title
-//         image {
-//           file {
-//             url
-//           }
-//         }
-//       }
-//     }
-//     editorPosts: allContentfulBlogPost(
-//       filter: { tags: { in: "editor" } }
-//       sort: { fields: createdAt, order: DESC }
-//     ) {
-//       nodes {
-//         slug
-//         title
-//         image {
-//           file {
-//             url
-//           }
-//         }
-//       }
-//     }
-//     nokternelStyleGuide: contentfulBlogPost(slug: { eq: "nokternel-style-guide" }) {
-//       title
-//       slug
-//       image {
-//         file {
-//           url
-//         }
-//       }
-//     }
-//     projectSpudDevlog: contentfulBlogPost(slug: { eq: "devlog-project-spud" }) {
-//       slug
-//       image {
-//         file {
-//           url
-//         }
-//       }
-//     }
-//     beginnersGuide: contentfulBlogPost(
-//       series: { eq: "Beginner's Guide" }
-//       seriesNum: { eq: 0 }
-//     ) {
-//       title
-//       slug
-//       image {
-//         file {
-//           url
-//         }
-//       }
-//     }
-//   }
-// `

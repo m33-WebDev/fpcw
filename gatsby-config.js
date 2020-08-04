@@ -26,7 +26,7 @@ module.exports = {
 			},
 		},
 		{
-			resolve: `gatsby-plugin-sitemap`
+			resolve: `gatsby-plugin-sitemap`,
 		},
 		`gatsby-plugin-react-helmet`,
 		{
@@ -47,7 +47,10 @@ module.exports = {
 				background_color: `#663399`,
 				theme_color: `#663399`,
 				display: `standalone`,
-				icon: `src/images/logo-manifest.png`,
+				icon: `src/images/maskable_icon.png`,
+				icon_options: {
+					purpose: `maskable any`
+				}
 			},
 		},
 		`gatsby-plugin-sass`,
@@ -160,6 +163,13 @@ module.exports = {
 				trackingId: 'UA-122920911-4',
 			},
 		},
+		{ 
+			resolve: `gatsby-plugin-canonical-urls`, 
+			options: {
+				siteUrl: `https://familypsychiatry.us`
+			} 
+		},
+		`gatsby-plugin-netlify`,
 		`gatsby-plugin-offline`,
 	],
 };
