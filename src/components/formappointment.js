@@ -67,7 +67,7 @@ function FormAppointment() {
 									type='text'
 									placeholder='John'
 									name='firstname'
-                  required
+									required
 								/>
 							</BulmaControl>
 						</div>
@@ -78,7 +78,7 @@ function FormAppointment() {
 									type='text'
 									placeholder='Smith'
 									name='lastname'
-                  required
+									required
 								/>
 							</BulmaControl>
 						</div>
@@ -89,7 +89,7 @@ function FormAppointment() {
 							type='email'
 							placeholder='johnsmith@gmail.com'
 							name='email'
-              required
+							required
 						/>{' '}
 						<span className='icon is-small is-left'>
 							<FontAwesomeIcon icon={faEnvelope} />
@@ -101,7 +101,7 @@ function FormAppointment() {
 							type='phone'
 							placeholder='(123) 456-7890'
 							name='phone'
-              required
+							required
 						/>{' '}
 						<span className='icon is-small is-left'>
 							<FontAwesomeIcon icon={faPhone} />
@@ -113,7 +113,7 @@ function FormAppointment() {
 							type='date'
 							placeholder='12/05/1993'
 							name='date'
-              required
+							required
 						/>{' '}
 						<span className='icon is-small is-left'>
 							<FontAwesomeIcon icon={faCalendar} />
@@ -127,7 +127,8 @@ function FormAppointment() {
 								name='referralsource'
 								value={referralSource}
 								onChange={handleChange}
-                required
+								onBlur={handleChange}
+								required
 							>
 								{refSources.map((source) => {
 									return <option>{source}</option>;
@@ -146,9 +147,9 @@ function FormAppointment() {
 								placeholder='Insurer'
 								name='referralinsurance'
 							/>
-              								<span className='icon is-small is-left'>
-									<FontAwesomeIcon icon={faUser} />
-								</span>
+							<span className='icon is-small is-left'>
+								<FontAwesomeIcon icon={faUser} />
+							</span>
 						</BulmaControl>
 					)}
 					{referralSource === womOp && (
@@ -192,15 +193,15 @@ function FormAppointment() {
 					)}
 				</div>
 			</div>
-      <BulmaControl>
-					<button
-						className='button is-success is-outlined'
-						type='submit'
-						style={{ width: '100%' }}
-					>
-						Submit
-					</button>
-				</BulmaControl>
+			<BulmaControl>
+				<button
+					className='button is-success is-outlined'
+					type='submit'
+					style={{ width: '100%' }}
+				>
+					Submit
+				</button>
+			</BulmaControl>
 		</form>
 	);
 }
