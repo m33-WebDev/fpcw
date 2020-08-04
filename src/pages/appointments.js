@@ -34,8 +34,9 @@ export default () => {
 						</h1>
 
 						<FormAppointment />
-            <div className={styles.disclaimer}>
-							<p>{disclaimer1}</p><br/>
+						<div className={styles.disclaimer}>
+							<p>{disclaimer1}</p>
+							<br />
 							<p>{disclaimer2}</p>
 						</div>
 					</div>

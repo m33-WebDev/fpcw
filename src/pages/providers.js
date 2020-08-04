@@ -44,47 +44,49 @@ export default ({ data }) => {
       <SEO title="FPCW - Providers" />
       <div className="hero is-fullheight-with-navbar">
         <div className="hero-body">
-          <div className="columns is-desktop">
-            <div className="column is-4" style={{ padding: "0 5vmin" }}>
-              <div
-                className={
-                  "content has-text-centered " + pageStyle.PageDescription
-                }
-              >
-                <h1
-                  className="title"
-                  style={{
-                    borderBottom: "4px solid #48C774",
-                    textAlign: "left",
-                    paddingBottom: ".3em",
-                  }}
+          <div class="container">
+            <div className="columns is-desktop is-variable is-4">
+              <div className="column is-4">
+                <div
+                  className={
+                    "content has-text-centered " + pageStyle.PageDescription
+                  }
                 >
-                  The Team
-                </h1>
-                <p className="is-size-5" style={{ textAlign: "left" }}>
-                  Our professional staff consists of board-certified,
-                  experienced psychiatrists, therapists, nurse practitioners,
-                  and others. We are, individually and collectively, committed
-                  to providing the highest quality care to our patients and to
-                  advancing wellness of the mind, body, and spirit.
-                </p>
+                  <h1
+                    className="title"
+                    style={{
+                      borderBottom: "4px solid #48C774",
+                      textAlign: "left",
+                      paddingBottom: ".3em",
+                    }}
+                  >
+                    The Team
+                  </h1>
+                  <p className="is-size-5" style={{ textAlign: "left" }}>
+                    Our professional staff consists of board-certified,
+                    experienced psychiatrists, therapists, nurse practitioners,
+                    and others. We are, individually and collectively, committed
+                    to providing the highest quality care to our patients and to
+                    advancing wellness of the mind, body, and spirit.
+                  </p>
+                </div>
               </div>
-            </div>
-            <div className="column is-8">
-              <div className={"columns is-multiline "}>
-                {createProfileCard(data.profSabira, 0)}
-                {data.profPsych.nodes.map((profile, i) => {
-                  return createProfileCard(profile, i)
-                })}
-                {data.profNP.nodes.map((profile, i) => {
-                  return createProfileCard(profile, i)
-                })}
-                {data.profLMFT.nodes.map((profile, i) => {
-                  return createProfileCard(profile, i)
-                })}
-                {data.profAdmin.nodes.map((profile, i) => {
-                  return createProfileCard(profile, i)
-                })}
+              <div className="column is-8">
+                <div className={"columns is-multiline "}>
+                  {createProfileCard(data.profSabira, 0)}
+                  {data.profPsych.nodes.map((profile, i) => {
+                    return createProfileCard(profile, i)
+                  })}
+                  {data.profNP.nodes.map((profile, i) => {
+                    return createProfileCard(profile, i)
+                  })}
+                  {data.profLMFT.nodes.map((profile, i) => {
+                    return createProfileCard(profile, i)
+                  })}
+                  {data.profAdmin.nodes.map((profile, i) => {
+                    return createProfileCard(profile, i)
+                  })}
+                </div>
               </div>
             </div>
           </div>
