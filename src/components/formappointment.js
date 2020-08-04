@@ -67,6 +67,7 @@ function FormAppointment() {
 									type='text'
 									placeholder='John'
 									name='firstname'
+                  required
 								/>
 							</BulmaControl>
 						</div>
@@ -77,6 +78,7 @@ function FormAppointment() {
 									type='text'
 									placeholder='Smith'
 									name='lastname'
+                  required
 								/>
 							</BulmaControl>
 						</div>
@@ -87,6 +89,7 @@ function FormAppointment() {
 							type='email'
 							placeholder='johnsmith@gmail.com'
 							name='email'
+              required
 						/>{' '}
 						<span className='icon is-small is-left'>
 							<FontAwesomeIcon icon={faEnvelope} />
@@ -98,6 +101,7 @@ function FormAppointment() {
 							type='phone'
 							placeholder='(123) 456-7890'
 							name='phone'
+              required
 						/>{' '}
 						<span className='icon is-small is-left'>
 							<FontAwesomeIcon icon={faPhone} />
@@ -109,6 +113,7 @@ function FormAppointment() {
 							type='date'
 							placeholder='12/05/1993'
 							name='date'
+              required
 						/>{' '}
 						<span className='icon is-small is-left'>
 							<FontAwesomeIcon icon={faCalendar} />
@@ -122,6 +127,7 @@ function FormAppointment() {
 								name='referralsource'
 								value={referralSource}
 								onChange={handleChange}
+                required
 							>
 								{refSources.map((source) => {
 									return <option>{source}</option>;

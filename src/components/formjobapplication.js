@@ -7,6 +7,7 @@ import {
   faEnvelope,
   faPhone,
   faUpload,
+  faStethoscope,
 } from "@fortawesome/free-solid-svg-icons"
 
 function BulmaControl({ children, name, hasLeftIcons, hasRightIcons }) {
@@ -68,7 +69,7 @@ class FormJobApplication extends React.Component {
             </select>
           </div>
           <span className="icon is-small is-left">
-            <FontAwesomeIcon icon={faEnvelope} />
+            <FontAwesomeIcon icon={faStethoscope} />
           </span>
         </BulmaControl>
 
