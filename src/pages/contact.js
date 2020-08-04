@@ -14,6 +14,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons"
 
 import "bulma-helpers/css/bulma-helpers.min.css"
+import styles from './contact.module.scss'
 
 export default () => {
   return (
@@ -24,11 +25,10 @@ export default () => {
           <div className="container">
             <div
               className="columns is-centered is-variable is-8 is-desktop"
-              style={{ width: "100%" }}
             >
               <div className="column is-6">
                 <div className="content">
-                  <h1 className="title is-1 is-size-3-mobile has-text-centered">
+                  <h1 className={"title is-1 is-size-3-mobile " + styles.LocationTitle}>
                     Locations
                   </h1>
                 </div>
