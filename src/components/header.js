@@ -77,7 +77,7 @@ export default () => {
 									marginLeft: '1vmin',
 									marginRight: '1vmin',
 								}}
-								className='has-text-white'
+								className='has-text-dark'
 							>
 								Telehealth appointments now available
 							</div>
@@ -89,28 +89,28 @@ export default () => {
 					</div>
 					<div className='navbar-end'>
 						<Link
-							className='navbar-item'
+							className='navbar-item has-text-dark'
 							activeClassName='navbar-item is-active'
 							to='/'
 						>
 							Home
 						</Link>
 						<Link
-							className='navbar-item'
+							className='navbar-item has-text-dark'
 							activeClassName='navbar-item is-active'
 							to='/appointments'
 						>
 							Appointments
 						</Link>
 						<Link
-							className='navbar-item'
+							className='navbar-item has-text-dark'
 							activeClassName='navbar-item is-active'
 							to='/library'
 						>
 							Library
 						</Link>
 						<div className='navbar-item has-dropdown is-hoverable' href='/'>
-							<a href='#' className='navbar-link'>
+							<a href='#' className='navbar-link has-text-dark'>
 								About
 							</a>
 							<div className='navbar-dropdown'>
