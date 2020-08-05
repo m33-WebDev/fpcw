@@ -2,7 +2,6 @@
 import React, { useState } from 'react';
 import { graphql, useStaticQuery, Link } from 'gatsby';
 import Img from 'gatsby-image';
-import logo from '../images/logo-fitted.png';
 import './header.scss';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -41,7 +40,7 @@ export default () => {
 
 					<a
 						role='button'
-						className={'navbar-burger burger ' + (active ? 'is-active' : '')}
+						className={'navbar-burger burger has-text-dark ' + (active ? 'is-active' : '')}
 						aria-label='menu'
 						aria-expanded='false'
 						onClick={(e) => {
