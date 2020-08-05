@@ -62,8 +62,8 @@ export default ({ data }) => {
 										health needs of all members of the family. Find better, one
 										step at a time.
 									</h2>
-									<Link to='/appointments' className='has-text-white'>
-										<button className='button is-success'>
+									<Link to='/appointments'>
+										<button className='button has-background-grey-lighter has-text-dark'>
 											{' '}
 											<p>Schedule an appointment today</p>
 											<FontAwesomeIcon
