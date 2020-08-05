@@ -84,8 +84,9 @@ export default ({ data }) => {
 													style={{ minHeight: '40vmin' }}
 												>
 													<SplashTile
-														title='Services'
-														image='https://anewerapsychiatry.com/wp-content/uploads/2019/06/outpatient-psychiatric-services-550x321.jpg'
+														title='Services' 
+														image={data.serviceSplash}
+														// image='https://anewerapsychiatry.com/wp-content/uploads/2019/06/outpatient-psychiatric-services-550x321.jpg'
 														to='/services'
 													/>
 												</div>
@@ -94,7 +95,7 @@ export default ({ data }) => {
 												<div className='tile is-child'>
 													<SplashTile
 														title='Telehealth'
-														image='https://www.ciproms.com/wp-content/uploads/2020/03/Telehealth-600x400.jpg'
+														image={data.telehealthSplash}
 														to='/library/telepsychiatry-telecounseling'
 													/>
 												</div>
@@ -108,7 +109,7 @@ export default ({ data }) => {
 												>
 													<SplashTile
 														title='Health Library'
-														image='https://freedesignfile.com/upload/2018/01/Brain-infographic-template-vector-01.jpg'
+														image={data.librarySplash}
 														to='/library'
 													/>
 												</div>
@@ -117,7 +118,7 @@ export default ({ data }) => {
 												<div className='tile is-child'>
 													<SplashTile
 														title='Locations'
-														image='https://42floors.com/images/Hd8216713d023e525024253c5987cddc2ea7287bfS1560x1040W0seB505153O/978a35bfd12f5e9a8c8c547cf2dc17a0d003d928'
+														image={data.locationsSplash}
 														to='/contact'
 													/>
 												</div>
@@ -311,6 +312,34 @@ export const query = graphql`
 				}
 				body {
 					json
+				}
+			}
+		}
+		serviceSplash: file(relativePath: {eq: "images/servicesplash.jpg"}) {
+			childImageSharp {
+				fluid {
+					...GatsbyImageSharpFluid
+				}
+			}
+		}
+		telehealthSplash: file(relativePath: {eq: "images/telehealthsplash.jpg"}) {
+			childImageSharp {
+				fluid {
+					...GatsbyImageSharpFluid
+				}
+			}
+		}
+		librarySplash: file(relativePath: {eq: "images/librarysplash.jpg"}) {
+			childImageSharp {
+				fluid {
+					...GatsbyImageSharpFluid
+				}
+			}
+		}
+		locationsSplash: file(relativePath: {eq: "images/locationsplash.jpg"}) {
+			childImageSharp {
+				fluid {
+					...GatsbyImageSharpFluid
 				}
 			}
 		}
