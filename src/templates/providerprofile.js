@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
+import Img from 'gatsby-image';
 
 import Layout from '../components/layout';
 import SEO from '../components/seo';
@@ -18,19 +19,17 @@ export default ({ data, pageContext }) => {
 			<SEO title={name} />
 			<div className='hero is-fullheight-with-navbar'>
 				<div className='columns'>
-					<div className='column is-6' style={{position: 'relative'}}>
+					<div className='column is-6' style={{ position: 'relative' }}>
 						<div className={pageStyle.Frontmatter}>
-							<figure className='image is-square' style={{height: '100%'}}>
-								<img
-									src={
-										headshot
-											? headshot.file.url
-											: 'https://images.theconversation.com/files/304957/original/file-20191203-66986-im7o5.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=926&fit=clip'
-									}
-									alt=''
-									style={{ objectFit: 'cover' }}
-								/>
-							</figure>
+							<Img
+								fluid={
+									headshot
+										? headshot.fluid
+										: 'https://images.theconversation.com/files/304957/original/file-20191203-66986-im7o5.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=926&fit=clip'
+								}
+								alt=''
+								style={{ objectFit: 'cover', height: '100vmin' }}
+							/>
 						</div>
 					</div>
 					<div className='column is-6'>
@@ -78,8 +77,8 @@ export const providerQuery = graphql`
 			name
 			title
 			headshot {
-				file {
-					url
+				fluid {
+					...GatsbyContentfulFluid
 				}
 			}
 			bio {

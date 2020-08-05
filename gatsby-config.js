@@ -14,6 +14,12 @@ module.exports = {
 	},
 	plugins: [
 		{
+			resolve: `gatsby-source-filesystem`,
+			options: {
+				path: `${__dirname}/src`
+			}
+		},
+		{
 			resolve: `gatsby-plugin-robots-txt`,
 			options: {
 				policy: [

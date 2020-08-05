@@ -1,8 +1,7 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import Img from 'gatsby-image';
 
-import pageStyle from './splashtile.module.scss';
+import styles from './splashtile.module.scss';
 
 class SplashTile extends React.Component {
 	state = { scale: 1, backgroundColor: 'rgba(72, 199, 116, .7)' };
@@ -34,19 +33,9 @@ class SplashTile extends React.Component {
 						style={{ position: 'relative', height: '100%' }}
 					>
 						<figure className='image is-4by3' style={{ height: '100%' }}>
-							{/* <img
-                id="image"
-                src={
-                  image
-                    ? image
-                    : "https://bulma.io/images/placeholders/1280x960.png"
-                }
-                alt="Thumbnail"
-                style={{ objectFit: "cover", scale: this.state.scale }}
-              /> */}
-							{/* <Img fluid={image.fluid} key={image.fluid.src} alt='Splash' /> */}
+							<img src={image} alt='Splash' style={{objectFit: 'cover'}} />
 						</figure>
-						<div className={'title is-4 has-text-light ' + pageStyle.PostTitle}>
+						<div className={'title is-4 has-text-light ' + styles.PostTitle}>
 							{title}
 						</div>
 					</div>

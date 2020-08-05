@@ -64,7 +64,7 @@ class FormJobApplication extends React.Component {
           <div className="select is-success is-fullwidth">
             <select name="position">
               {positions.map(pos => {
-                return <option>{pos}</option>
+                return <option key={pos}>{pos}</option>
               })}
             </select>
           </div>

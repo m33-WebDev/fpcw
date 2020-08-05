@@ -16,8 +16,8 @@ export default () => {
 		<Layout>
 			<SEO title='FPCW - Appointments' />
 
-			<div class='hero is-fullheight-with-navbar'>
-				<div class='hero-body'>
+			<div className='hero is-fullheight-with-navbar'>
+				<div className='hero-body'>
 					<div className='container'>
 						{/* <div className='column is-9'>
         							<figure className='image is-4by3'>

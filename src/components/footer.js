@@ -28,7 +28,7 @@ function Divider() {
 
 export default () => (
   <footer className={"footer has-background-success has-text-light " + styles.Footer}>
-    <div class="container">
+    <div className="container">
       <div className="columns is-desktop is-vcentered is-centered">
         <div className="column is-3">
           <div className="content">

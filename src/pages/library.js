@@ -1,28 +1,24 @@
 import React from 'react';
 import { graphql, Link } from 'gatsby';
 import Img from 'gatsby-image';
-import Helmet from 'react-helmet';
 
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 
-import pageStyle from './library.module.scss';
+import styles from './library.module.scss';
 
 export default ({ data }) => {
 	return (
 		<Layout>
 			<SEO title='FPCW - Library' />
-			<Helmet>
-				<link rel='canonical' href='https://familypsychiatry.us/library/xyz' />
-			</Helmet>
 			<div className='hero'>
 				<div className='hero-body'>
-					<div class='container'>
+					<div className='container'>
 						<div className='columns is-desktop is-variable is-4'>
 							<div className='column is-4'>
 								<div
 									className={
-										'content has-text-centered ' + pageStyle.PageDescription
+										'content has-text-centered ' + styles.PageDescription
 									}
 								>
 									<h1
@@ -49,33 +45,16 @@ export default ({ data }) => {
 											return (
 												<div className='column is-4' key={i}>
 													<Link to={'/library/' + slug}>
-														<div className='card'>
-															<div
-																className='card-image'
-																style={{ position: 'relative' }}
-															>
-																{/* <figure className='image is-square'> */}
-																{/* <img
-                                    src={
-                                      feature
-                                        ? feature.file.url
-                                        : "https://versions.bulma.io/0.5.3/images/placeholders/1280x960.png"
-                                    }
-                                    alt="Post Feature"
-                                    style={{ objectFit: "cover" }}
-                                  /> */}
-																<Img
-																	fluid={feature.fluid}
-																	key={feature.fluid.src}
-																	alt={feature.fluid.title}
-																/>
-																{/* </figure> */}
-																<div
-																	className={'content ' + pageStyle.PostTitle}
-																>
-																	<div className='title is-5 has-text-light'>
-																		{title}
-																	</div>
+														<div className={'card ' + styles.Card}>
+															<Img
+																fluid={feature.fluid}
+																key={feature.fluid.src}
+																alt={feature.fluid.title}
+																style={{ height: '100%' }}
+															/>
+															<div className={'content ' + styles.PostTitle}>
+																<div className='title is-5 has-text-light'>
+																	{title}
 																</div>
 															</div>
 														</div>
@@ -104,9 +83,6 @@ export const query = graphql`
 				feature {
 					fluid(maxWidth: 600) {
 						...GatsbyContentfulFluid
-					}
-					file {
-						url
 					}
 				}
 			}

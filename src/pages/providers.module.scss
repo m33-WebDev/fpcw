@@ -5,7 +5,6 @@
         max-height: 80vmin;
     }
 
-    // max-height: 80vmin;
     overflow: scroll;
     scrollbar-width: thin;
 }
@@ -18,6 +17,15 @@
     @media (min-width: 1024px) {
         position: sticky;
         top: 15vmin
+    }
+}
+
+.Card {
+    @media (max-width: 769px) {
+        height: 70vmin;
+    }
+    @media (min-width: 769px) {
+        height: 30vmin;
     }
 }
 

@@ -18,14 +18,12 @@
 }
 
 .Card {
-    background-color: $color-bg-secondary;
-    color: $color-fg-yellow;
-    border-radius: 0px;
-    padding: 15px;
-    max-width: 600px;
-    min-width: 200px;
-    display: inline-flex;
-    ;
+    @media (max-width: 769px) {
+        height: 70vmin;
+    }
+    @media (min-width: 769px) {
+        height: 30vmin;
+    }
 }
 
 .PageDescription {

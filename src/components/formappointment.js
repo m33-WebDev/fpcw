@@ -57,8 +57,8 @@ function FormAppointment() {
 		>
 			<input type='hidden' name='form-name' value='appointmentrequest' />
 
-			<div class='columns'>
-				<div class='column is-6'>
+			<div className='columns'>
+				<div className='column is-6'>
 					<div className='columns'>
 						<div className='column'>
 							<BulmaControl name='First Name'>
@@ -120,7 +120,7 @@ function FormAppointment() {
 						</span>
 					</BulmaControl>
 				</div>
-				<div class='column is-6'>
+				<div className='column is-6'>
 					<BulmaControl name='How Did You Hear About Us?' hasLeftIcons>
 						<div className='select is-success is-fullwidth'>
 							<select
@@ -131,7 +131,7 @@ function FormAppointment() {
 								required
 							>
 								{refSources.map((source) => {
-									return <option>{source}</option>;
+									return <option key={source}>{source}</option>;
 								})}
 							</select>
 						</div>

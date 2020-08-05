@@ -66,6 +66,7 @@ export default () => {
               className="button is-rounded is-small is-success"
               slide={i}
               style={{ margin: "2px" }}
+              key={i}
             />
           )
         })}
