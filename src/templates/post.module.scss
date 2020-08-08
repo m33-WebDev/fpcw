@@ -1,10 +1,9 @@
 @import '../styles/variables.scss';
-@import url('https://fonts.googleapis.com/css?family=Roboto:300,400|Sen:400,700&display=swap');
 
 .Frontmatter {
     @media (min-width: 1024px) {
         position: sticky;
-        top: 14vh
+        top: 10vh;
     }
 }
 
@@ -23,11 +22,6 @@
     margin: 0;
 }
 
-.body h1::before,
-h2::before {
-    content: "";
-}
-
 .body::-webkit-scrollbar {
     display: none;
 }
@@ -44,11 +38,11 @@ h2::before {
 
     // Desktop fonts
     @media (min-width: 1024px) {
-        h1 {
+        h2 {
             font-size: calc(#{$font-size-base-desktop} + 2vw);
         }
 
-        h2 {
+        h3 {
             font-size: calc(#{$font-size-base-desktop} + 1.5vw);
         }
 
@@ -61,11 +55,11 @@ h2::before {
     @media (max-width: 1024px) {
         font-weight: normal !important;
 
-        h1 {
+        h2 {
             font-size: calc(#{$font-size-base-mobile} + 2vw);
         }
 
-        h2 {
+        h3 {
             font-size: calc(#{$font-size-base-mobile} + 1.5vw);
         }
 
@@ -75,19 +69,19 @@ h2::before {
         }
     }
 
-    h1,
-    h2 {
+    h2,
+    h3 {
         text-align: left;
         // margin-top: 5vmin;
         margin-bottom: 3vmin;
     }
 
-    h1 {
+    h2 {
         color: #20639B;
         display: inline-block;
     }
 
-    h2 {
+    h3 {
         color: #3CAEA3;
         display: inline-block;
     }
