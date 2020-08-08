@@ -51,8 +51,8 @@ module.exports = {
 				name: `Family Psychiatry, Counseling and Wellness`,
 				short_name: `FPCW`,
 				start_url: `/`,
-				background_color: `#663399`,
-				theme_color: `#663399`,
+				background_color: `#f5f5f5`,
+				theme_color: `#f5f5f5`,
 				display: `standalone`,
 				icon: `src/images/maskable_icon.png`,
 				icon_options: {
