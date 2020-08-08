@@ -84,7 +84,7 @@ export default ({ data }) => {
 													style={{ minHeight: '40vmin' }}
 												>
 													<SplashTile
-														title='Services' 
+														title='Services'
 														image={data.serviceSplash}
 														// image='https://anewerapsychiatry.com/wp-content/uploads/2019/06/outpatient-psychiatric-services-550x321.jpg'
 														to='/services'
@@ -315,28 +315,30 @@ export const query = graphql`
 				}
 			}
 		}
-		serviceSplash: file(relativePath: {eq: "images/servicesplash.jpg"}) {
+		serviceSplash: file(relativePath: { eq: "images/servicesplash.jpg" }) {
 			childImageSharp {
 				fluid {
 					...GatsbyImageSharpFluid
 				}
 			}
 		}
-		telehealthSplash: file(relativePath: {eq: "images/telehealthsplash.jpg"}) {
+		telehealthSplash: file(
+			relativePath: { eq: "images/telehealthsplash.jpg" }
+		) {
 			childImageSharp {
 				fluid {
 					...GatsbyImageSharpFluid
 				}
 			}
 		}
-		librarySplash: file(relativePath: {eq: "images/librarysplash.jpg"}) {
+		librarySplash: file(relativePath: { eq: "images/librarysplash.jpg" }) {
 			childImageSharp {
 				fluid {
 					...GatsbyImageSharpFluid
 				}
 			}
 		}
-		locationsSplash: file(relativePath: {eq: "images/locationsplash.jpg"}) {
+		locationsSplash: file(relativePath: { eq: "images/locationsplash.jpg" }) {
 			childImageSharp {
 				fluid {
 					...GatsbyImageSharpFluid

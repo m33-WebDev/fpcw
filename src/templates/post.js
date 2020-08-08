@@ -28,9 +28,9 @@ export default ({ data, pageContext }) => {
 							<div className='column is-6'>
 								<div className={pageStyle.Frontmatter}>
 									<div className='content'>
-										<div className={'title'} style={{ textAlign: 'left' }}>
+										<h1 className='title' style={{ textAlign: 'left' }}>
 											{title}
-										</div>
+										</h1>
 									</div>
 									<Img
 										fluid={feature.fluid}

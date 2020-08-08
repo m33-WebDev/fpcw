@@ -13,7 +13,6 @@ module.exports = {
 		author: `Sabira Saifuddin, M.D.`,
 	},
 	plugins: [
-		`gatsby-plugin-preact`,
 		{
 			resolve: `gatsby-source-filesystem`,
 			options: {
