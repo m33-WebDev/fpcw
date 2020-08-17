@@ -107,12 +107,12 @@ function FormAppointment() {
 							<FontAwesomeIcon icon={faPhone} />
 						</span>
 					</BulmaControl>
-					<BulmaControl name='Date' hasLeftIcons>
+					<BulmaControl name='Desired Appointment Date' hasLeftIcons>
 						<input
 							className='input'
 							type='date'
 							placeholder='12/05/1993'
-							name='date'
+							name='appt-requested-date'
 							required
 						/>{' '}
 						<span className='icon is-small is-left'>
