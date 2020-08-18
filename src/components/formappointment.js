@@ -56,7 +56,7 @@ function FormAppointment() {
 			action='/formsuccess/'
 		>
 			<input type='hidden' name='form-name' value='appointmentrequest' />
-			<input type='hidden' name='referral-insurer' value='referral-insurer' />
+			<input type='hidden' name='referral-insurer' />
 			<input type='hidden' name='referral-wordofmouth-name' />
 			<input type='hidden' name='referral-wordofmouth-phone' />
 			<input type='hidden' name='referral-other-details' />
