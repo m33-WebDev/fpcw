@@ -56,7 +56,22 @@ function FormAppointment() {
 			action='/formsuccess/'
 		>
 			<input type='hidden' name='form-name' value='appointmentrequest' />
-			<input type='hidden' name='referralwomname' value='referralwomname'/>
+			<input type='hidden' name='referral-insurer' value='referral-insurer' />
+			<input
+				type='hidden'
+				name='referral-wordofmouth-name'
+				value='referral-wordofmouth-name'
+			/>
+			<input
+				type='hidden'
+				name='referral-wordofmouth-phone'
+				value='referral-wordofmouth-phone'
+			/>
+			<input
+				type='hidden'
+				name='referral-other-details'
+				value='referral-other-details'
+			/>
 
 			<div className='columns'>
 				<div className='column is-6'>
@@ -67,7 +82,7 @@ function FormAppointment() {
 									className='input'
 									type='text'
 									placeholder='John'
-									name='firstname'
+									name='first-name'
 									required
 								/>
 							</BulmaControl>
@@ -78,7 +93,7 @@ function FormAppointment() {
 									className='input'
 									type='text'
 									placeholder='Smith'
-									name='lastname'
+									name='last-name'
 									required
 								/>
 							</BulmaControl>
@@ -125,7 +140,7 @@ function FormAppointment() {
 					<BulmaControl name='How Did You Hear About Us?' hasLeftIcons>
 						<div className='select is-success is-fullwidth'>
 							<select
-								name='referralsource'
+								name='referral-source'
 								value={referralSource}
 								onChange={handleChange}
 								onBlur={handleChange}
@@ -146,7 +161,7 @@ function FormAppointment() {
 								className='input'
 								type='text'
 								placeholder='Insurer'
-								name='referralinsurance'
+								name='referral-insurer'
 							/>
 							<span className='icon is-small is-left'>
 								<FontAwesomeIcon icon={faUser} />
@@ -160,7 +175,7 @@ function FormAppointment() {
 									className='input'
 									type='text'
 									placeholder='Name'
-									name='referralwomname'
+									name='referral-wordofmouth-name'
 								/>
 								<span className='icon is-small is-left'>
 									<FontAwesomeIcon icon={faUser} />
@@ -171,7 +186,7 @@ function FormAppointment() {
 									className='input'
 									type='text'
 									placeholder='(123) 456-7890'
-									name='referralwomphone'
+									name='referral-wordofmouth-phone'
 								/>
 								<span className='icon is-small is-left'>
 									<FontAwesomeIcon icon={faPhone} />
@@ -185,7 +200,7 @@ function FormAppointment() {
 								className='input'
 								type='text'
 								placeholder='...'
-								name='referralother'
+								name='referral-other-details'
 							/>
 							<span className='icon is-small is-left'>
 								<FontAwesomeIcon icon={faUser} />
