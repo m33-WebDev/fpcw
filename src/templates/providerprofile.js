@@ -12,11 +12,11 @@ import { faChevronLeft } from '@fortawesome/free-solid-svg-icons';
 import pageStyle from './providerprofile.module.scss';
 
 export default ({ data, pageContext }) => {
-	const { name, title, headshot, bio } = data.contentfulProviderProfile;
+	const { name, title, headshot, bio, description } = data.contentfulProviderProfile;
 
 	return (
 		<Layout>
-			<SEO title={name} />
+			<SEO title={name} description={description} />
 			<div className='hero is-fullheight-with-navbar'>
 				<div className='columns'>
 					<div className='column is-6' style={{ position: 'relative' }}>
@@ -83,6 +83,9 @@ export const providerQuery = graphql`
 			}
 			bio {
 				json
+			}
+			description {
+				description
 			}
 		}
 	}

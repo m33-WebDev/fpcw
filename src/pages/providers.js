@@ -8,6 +8,7 @@ import SEO from '../components/seo';
 import styles from './providers.module.scss';
 
 export default ({ data }) => {
+
 	function createProfileCard(profile, i) {
 		var { slug, name, headshot } = profile;
 		return (
@@ -33,9 +34,11 @@ export default ({ data }) => {
 		);
 	}
 
+	var pageDescription = data.contentfulPage.metaDescription.metaDescription;
+
 	return (
 		<Layout>
-			<SEO title='FPCW - Providers' />
+			<SEO title='FPCW - Providers' pageDescription={pageDescription} />
 			<div className='hero is-fullheight-with-navbar'>
 				<div className='hero-body'>
 					<div className='container'>
@@ -92,6 +95,11 @@ export default ({ data }) => {
 
 export const query = graphql`
 	query {
+		contentfulPage(title: {eq: "Providers"}) {
+			metaDescription {
+				metaDescription
+			}
+		}
 		profSabira: contentfulProviderProfile(name: { eq: "Sabira Saifuddin" }) {
 			slug
 			name

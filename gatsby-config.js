@@ -31,9 +31,7 @@ module.exports = {
 				],
 			},
 		},
-		{
-			resolve: `gatsby-plugin-sitemap`,
-		},
+		`gatsby-plugin-advanced-sitemap`,
 		`gatsby-plugin-react-helmet`,
 		{
 			resolve: `gatsby-source-contentful`,

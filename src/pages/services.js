@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'gatsby';
+import { Link, graphql } from 'gatsby';
 
 import Layout from '../components/layout';
 import SEO from '../components/seo';
@@ -27,9 +27,12 @@ function createService(item) {
 }
 
 export default ({ data }) => {
+
+	var pageDescription = data.contentfulPage.metaDescription.metaDescription;
+
 	return (
 		<Layout>
-			<SEO title='FPCW - Services' />
+			<SEO title='FPCW - Services' description={pageDescription} />
 			<section className='hero is-fullheight-with-navbar'>
 				<div className='hero-body'>
 					<div className='container'>
@@ -97,3 +100,13 @@ export default ({ data }) => {
 		</Layout>
 	);
 };
+
+export const query = graphql`
+	query {
+		contentfulPage(title: {eq: "Services"}) {
+			metaDescription {
+				metaDescription
+			}
+		}
+	}
+`

@@ -1,13 +1,17 @@
 import React from "react"
+import { graphql } from 'gatsby'
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import FormJobApplication from "../components/formjobapplication"
 
-export default () => {
+export default ({data}) => {
+
+	var pageDescription = data.contentfulPage.metaDescription.metaDescription;
+
   return (
     <Layout>
-      <SEO title="FPCW - Careers" />
+      <SEO title="FPCW - Careers" description={pageDescription} />
       <div className="hero is-fullheight-with-navbar">
         <div className="hero-body">
           <div className="container">
@@ -51,3 +55,13 @@ export default () => {
     </Layout>
   )
 }
+
+export const query = graphql`
+	query {
+		contentfulPage(title: {eq: "Careers"}) {
+			metaDescription {
+				metaDescription
+			}
+		}
+	}
+`

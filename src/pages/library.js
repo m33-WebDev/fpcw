@@ -8,9 +8,12 @@ import SEO from '../components/seo';
 import styles from './library.module.scss';
 
 export default ({ data }) => {
+
+	var pageDescription = data.contentfulPage.metaDescription.metaDescription;
+
 	return (
 		<Layout>
-			<SEO title='FPCW - Library' />
+			<SEO title='FPCW - Library' description={pageDescription} />
 			<div className='hero'>
 				<div className='hero-body'>
 					<div className='container'>
@@ -75,6 +78,11 @@ export default ({ data }) => {
 
 export const query = graphql`
 	query {
+		contentfulPage(title: {eq: "Library"}) {
+			metaDescription {
+				metaDescription
+			}
+		}
 		allContentfulPost(sort: { fields: createdAt, order: DESC }) {
 			nodes {
 				slug

@@ -1,5 +1,5 @@
 import React from "react"
-import { Link } from "gatsby"
+import { Link, graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -16,10 +16,13 @@ import {
 import "bulma-helpers/css/bulma-helpers.min.css"
 import styles from './contact.module.scss'
 
-export default () => {
+export default ({data}) => {
+
+	var pageDescription = data.contentfulPage.metaDescription.metaDescription;
+
   return (
     <Layout>
-      <SEO title="FPCW - Contact" />
+      <SEO title="FPCW - Contact" description={pageDescription} />
       <section className="hero is-fullheight-with-navbar is-light">
         <div className="hero-body">
           <div className="container">
@@ -152,3 +155,13 @@ export default () => {
     </Layout>
   )
 }
+
+export const query = graphql`
+	query {
+		contentfulPage(title: {eq: "Contact"}) {
+			metaDescription {
+				metaDescription
+			}
+		}
+	}
+`

@@ -16,11 +16,11 @@ import pageStyle from './post.module.scss';
 setConfig({ logLevel: 'no-errors-please' });
 
 export default ({ data, pageContext }) => {
-	const { title, feature, body } = data.contentfulPost;
+	const { title, feature, body, description } = data.contentfulPost;
 
 	return (
 		<Layout>
-			<SEO title={title} />
+			<SEO title={title} description={description.description}/>
 			<div className='hero is-fullheight-with-navbar'>
 				<div className='hero-body'>
 					<div className='container'>
@@ -80,6 +80,9 @@ export const postQuery = graphql`
 			}
 			body {
 				json
+			}
+			description {
+				description
 			}
 		}
 	}
