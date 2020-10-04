@@ -12,11 +12,13 @@ import { faChevronLeft } from '@fortawesome/free-solid-svg-icons';
 import pageStyle from './providerprofile.module.scss';
 
 export default ({ data, pageContext }) => {
-	const { name, title, headshot, bio, description } = data.contentfulProviderProfile;
+	const { name, credential, jobTitle, headshot, bio, description } = data.contentfulProviderProfile;
+
+	var metaTitle = ''.concat(name, ", ", jobTitle, " | Providers");
 
 	return (
 		<Layout>
-			<SEO title={name} description={description} />
+			<SEO title={metaTitle} description={description} />
 			<div className='hero is-fullheight-with-navbar'>
 				<div className='columns'>
 					<div className='column is-6' style={{ position: 'relative' }}>
@@ -35,7 +37,7 @@ export default ({ data, pageContext }) => {
 					<div className='column is-6'>
 						<div className='section'>
 							<div className='content'>
-								<div
+								<h1
 									className='title'
 									style={{
 										borderBottom: '4px solid #48C774',
@@ -43,7 +45,7 @@ export default ({ data, pageContext }) => {
 									}}
 								>
 									{name}
-								</div>
+								</h1>
 								<div
 									className='subtitle has-background-success has-text-light'
 									style={{
@@ -52,7 +54,7 @@ export default ({ data, pageContext }) => {
 										margin: '0px 5px',
 									}}
 								>
-									{title}
+									{credential || jobTitle}
 								</div>
 								<div className={'mb-3 ' + pageStyle.Body}>
 									<RichText document={bio ? bio.json : bio} />
@@ -75,7 +77,8 @@ export const providerQuery = graphql`
 		contentfulProviderProfile(slug: { eq: $pagePath }) {
 			slug
 			name
-			title
+			credential
+			jobTitle
 			headshot {
 				fluid {
 					...GatsbyContentfulFluid

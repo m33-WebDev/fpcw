@@ -38,7 +38,7 @@ export default ({ data }) => {
 
 	return (
 		<Layout>
-			<SEO title='FPCW - Providers' pageDescription={pageDescription} />
+			<SEO title='Psychiatrists, Therapists, and More' pageDescription={pageDescription} />
 			<div className='hero is-fullheight-with-navbar'>
 				<div className='hero-body'>
 					<div className='container'>
@@ -57,7 +57,7 @@ export default ({ data }) => {
 											paddingBottom: '.3em',
 										}}
 									>
-										The Team
+										Find the Right Expert for Your Mental Health Needs
 									</h1>
 									<p className='is-size-5' style={{ textAlign: 'left' }}>
 										Our professional staff consists of board-certified,

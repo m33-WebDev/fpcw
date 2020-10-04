@@ -39,7 +39,10 @@ export default ({ data }) => {
 
 	return (
 		<Layout>
-			<SEO title='Family Psychiatry, Counseling and Wellness' description={pageDescription} />
+			<SEO
+				title='Family Psychiatry, Counseling and Wellness'
+				description={pageDescription}
+			/>
 			<section className='hero is-light is-fullheight-with-navbar'>
 				<div className='hero-body'>
 					<div className='container' style={{ height: '100%' }}>
@@ -53,17 +56,17 @@ export default ({ data }) => {
 										Family Psychiatry <br />
 										Counseling & Wellness
 									</h1>
-									<h2
+									<p
 										className={
 											'subtitle is-size-4 mt-3 mb-5 ' + styles.splashSubtitle
 										}
-										style={{ fontWeight: 'lighter' }}
+										style={{ fontWeight: 'lighter'}}
 									>
 										A comprehensive, integrative psychiatric and wellness clinic
 										serving the mental, physical, emotional and preventative
 										health needs of all members of the family. Find better, one
 										step at a time.
-									</h2>
+									</p>
 									<Link to='/appointments'>
 										<button className='button has-background-grey-lighter has-text-dark'>
 											{' '}
@@ -88,7 +91,6 @@ export default ({ data }) => {
 													<SplashTile
 														title='Services'
 														image={data.serviceSplash}
-														// image='https://anewerapsychiatry.com/wp-content/uploads/2019/06/outpatient-psychiatric-services-550x321.jpg'
 														to='/services'
 													/>
 												</div>
@@ -144,10 +146,10 @@ export default ({ data }) => {
 							/>
 						</div>
 						<div className='column is-6'>
-							<div className='title'>
+							<h2 className='title'>
 								{' '}
 								Holistic Psychiatry for your Mind, Body & Soul{' '}
-							</div>
+							</h2>
 							<div className='content is-size-5 is-size-6-mobile'>
 								At Family Psychiatry Counseling & Wellness, we specialize in
 								performing comprehensive psychiatric and psychological
@@ -170,12 +172,12 @@ export default ({ data }) => {
 							>
 								<div className='column is-3'>
 									<div className=''>
-										<h1
+										<h2
 											className='title is-1 is-size-3-mobile has-text-centered-mobile'
 											style={{ textAlign: 'left' }}
 										>
 											What Our Patients Are Saying
-										</h1>
+										</h2>
 									</div>
 								</div>
 
@@ -262,9 +264,9 @@ export default ({ data }) => {
 									className='is-size-3-mobile'
 								/>
 
-								<h1 className='title is-2 is-size-3-mobile'>
+								<h2 className='title is-2 is-size-3-mobile'>
 									Health Resources
-								</h1>
+								</h2>
 							</div>
 						</div>
 						<hr
@@ -300,7 +302,7 @@ export const query = graphql`
 				shortTitle
 			}
 		}
-		contentfulPage(title: {eq: "Home"}) {
+		contentfulPage(title: { eq: "Home" }) {
 			metaDescription {
 				metaDescription
 			}

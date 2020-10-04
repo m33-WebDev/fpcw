@@ -38,9 +38,9 @@ class SplashTile extends React.Component {
 							alt='Splash'
 							style={{height: '100%'}}
 						/>
-						<div className={'title is-4 has-text-light ' + styles.PostTitle}>
+						<h2 className={'title is-4 has-text-light ' + styles.PostTitle}>
 							{title}
-						</div>
+						</h2>
 					</div>
 				</div>
 			</Link>

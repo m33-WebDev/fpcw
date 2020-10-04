@@ -22,7 +22,7 @@ export default ({data}) => {
 
   return (
     <Layout>
-      <SEO title="FPCW - Contact" description={pageDescription} />
+      <SEO title="Contact Us to Schedule an Appointment Today" description={pageDescription} />
       <section className="hero is-fullheight-with-navbar is-light">
         <div className="hero-body">
           <div className="container">
@@ -31,9 +31,9 @@ export default ({data}) => {
             >
               <div className="column is-6">
                 <div className="content">
-                  <h1 className={"title is-1 is-size-3-mobile " + styles.LocationTitle}>
+                  <h2 className={"title is-1 is-size-3-mobile " + styles.LocationTitle}>
                     Locations
-                  </h1>
+                  </h2>
                 </div>
                 <div className="columns is-centered">
                   <div className="column">
@@ -117,7 +117,7 @@ export default ({data}) => {
               </div>
               <div className="column is-4">
                 <div className="content">
-                  <h1 className="title is-1 is-size-3-mobile ">Contact Info</h1>
+                  <h1 className="title is-1 is-size-3-mobile ">FPCW Contact Information</h1>
                   <table className="table is-completely-borderless has-background-light">
                     <tbody>
                       <tr>

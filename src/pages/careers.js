@@ -11,7 +11,7 @@ export default ({data}) => {
 
   return (
     <Layout>
-      <SEO title="FPCW - Careers" description={pageDescription} />
+      <SEO title="Careers" description={pageDescription} />
       <div className="hero is-fullheight-with-navbar">
         <div className="hero-body">
           <div className="container">

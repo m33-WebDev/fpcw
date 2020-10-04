@@ -27,86 +27,88 @@ function createService(item) {
 }
 
 export default ({ data }) => {
-
 	var pageDescription = data.contentfulPage.metaDescription.metaDescription;
 
 	return (
 		<Layout>
-			<SEO title='FPCW - Services' description={pageDescription} />
-			<section className='hero is-fullheight-with-navbar'>
-				<div className='hero-body'>
-					<div className='container'>
-						<div className='columns is-centered is-variable is-6'>
-							<div className='column is-4'>
-								<div className='content'>
-									<div className='has-text-centered'>
-										<FontAwesomeIcon icon={faHeadSideVirus} size='3x' />
-									</div>
-									<h1 className='title is-4 has-text-centered'>
-										Conditions Treated
-									</h1>
-									<p>
-										We offer expert diagnosis and treatment of most psychiatric
-										conditions, including:
-									</p>
-									<ul>
-										{servicesData.conditions.map((cond) => createService(cond))}
-									</ul>
+			<SEO title='Offering Expert Care for Psychological Conditions' description={pageDescription} />
+			
+			<div className='hero-body'>
+				<div className='container'>
+					<h1 className='title is-size-1 is-size-3-mobile' style={{marginBottom: '8vmin'}}>
+						Mental Health Services Provided at FPCW
+					</h1>
+					<div className='columns is-centered is-variable is-6'>
+						<div className='column is-4'>
+							<div className='content'>
+								<div className='has-text-centered'>
+									<FontAwesomeIcon icon={faHeadSideVirus} size='3x' />
 								</div>
+								<h2 className='title is-4 has-text-centered'>
+									Conditions Treated
+								</h2>
+								<p>
+									We offer expert diagnosis and treatment of most psychiatric
+									conditions, including:
+								</p>
+								<ul>
+									{servicesData.conditions.map((cond) => createService(cond))}
+								</ul>
 							</div>
+						</div>
 
-							<div className='column is-4'>
-								<div className='content'>
-									<div className='has-text-centered'>
-										<FontAwesomeIcon icon={faUserMd} size='3x' />
-									</div>
-									<h1 className='title is-4 has-text-centered'>
-										Services Offered
-									</h1>
-									<p>
-										We offer counseling and treament for a full range of mental
-										health conditions including:
-									</p>
-									<ul>
-										{servicesData.psychTreatments.map((treat) =>
-											createService(treat)
-										)}
-									</ul>
+						<div className='column is-4'>
+							<div className='content'>
+								<div className='has-text-centered'>
+									<FontAwesomeIcon icon={faUserMd} size='3x' />
 								</div>
+								<h2 className='title is-4 has-text-centered'>
+									Services Offered
+								</h2>
+								<p>
+									We offer counseling and treament for a full range of mental
+									health conditions including:
+								</p>
+								<ul>
+									{servicesData.psychTreatments.map((treat) =>
+										createService(treat)
+									)}
+								</ul>
 							</div>
-							<div className='column is-4'>
-								<div className='content'>
-									<div className='has-text-centered'>
-										<FontAwesomeIcon icon={faDiagnoses} size='3x' />
-									</div>
-									<h1 className='title is-4 has-text-centered'>
-										Wellness and Prevention
-									</h1>
-									<p>
-										We also offer a number of alternative therapies designed to
-										promote general wellbeing including:
-									</p>
-									<ul>
-										{servicesData.altTreatments.map((treat) =>
-											createService(treat)
-										)}
-									</ul>
+						</div>
+						<div className='column is-4'>
+							<div className='content'>
+								<div className='has-text-centered'>
+									<FontAwesomeIcon icon={faDiagnoses} size='3x' />
 								</div>
+								<h2 className='title is-4 has-text-centered'>
+									Wellness and Prevention
+								</h2>
+								<p>
+									We also offer a number of alternative therapies designed to
+									promote general wellbeing including:
+								</p>
+								<ul>
+									{servicesData.altTreatments.map((treat) =>
+										createService(treat)
+									)}
+								</ul>
 							</div>
 						</div>
 					</div>
 				</div>
-			</section>
+			</div>
+		
 		</Layout>
 	);
 };
 
 export const query = graphql`
 	query {
-		contentfulPage(title: {eq: "Services"}) {
+		contentfulPage(title: { eq: "Services" }) {
 			metaDescription {
 				metaDescription
 			}
 		}
 	}
-`
+`;

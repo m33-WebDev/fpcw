@@ -18,25 +18,14 @@ export default ({data}) => {
 	
 	return (
 		<Layout>
-			<SEO title='FPCW - Appointments' description={pageDescription} />
+			<SEO title='Now Conducting Telehealth Appointments for Mental Health Needs' description={pageDescription} />
 
 			<div className='hero is-fullheight-with-navbar'>
 				<div className='hero-body'>
 					<div className='container'>
-						{/* <div className='column is-9'>
-        							<figure className='image is-4by3'>
-        								<img
-        									style={{ objectFit: 'cover' }}
-        									alt='West Coast landscape'
-        									src='https://www.totalvoicetech.com/wp-content/uploads/medical-receptionists-productivity.jpg'
-        								/>
-        							</figure>
-        						</div> */}
-
 						<h1 className='title is-size-1 is-size-3-mobile'>
 							Request an Appointment
 						</h1>
-
 						<FormAppointment />
 						<div className={styles.disclaimer}>
 							<p>{disclaimer1}</p>

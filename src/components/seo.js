@@ -18,6 +18,10 @@ function SEO({ title, description, meta, lang, noIndex, noFollow }) {
 		`
 	);
 
+	const metaTitle = ''.concat(
+		title,
+		" | Family Psychiatry, Counseling and Wellness"
+	);
 	const metaDescription = description || site.siteMetadata.description;
 	const metaRobots = ''.concat(
 		noIndex ? 'noindex' : 'index',
@@ -28,7 +32,7 @@ function SEO({ title, description, meta, lang, noIndex, noFollow }) {
 	return (
 		<Helmet
 			htmlAttributes={{ lang }}
-			title={title}
+			title={metaTitle}
 			meta={[
 				{
 					name: `description`,
@@ -56,7 +60,7 @@ function SEO({ title, description, meta, lang, noIndex, noFollow }) {
 				},
 				{
 					name: `twitter:title`,
-					content: title,
+					content: metaTitle,
 				},
 				{
 					name: `twitter:description`,

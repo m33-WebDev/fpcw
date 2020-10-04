@@ -13,7 +13,7 @@ export default ({ data }) => {
 
 	return (
 		<Layout>
-			<SEO title='FPCW - Library' description={pageDescription} />
+			<SEO title='Your Go-To Mental Health Resource' description={pageDescription} />
 			<div className='hero'>
 				<div className='hero-body'>
 					<div className='container'>
