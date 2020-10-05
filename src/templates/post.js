@@ -20,7 +20,7 @@ export default ({ data, pageContext }) => {
 
 	return (
 		<Layout>
-			<SEO title={metaTitle || title} description={metaDescription.metaDescription}/>
+			<SEO title={metaTitle || title} description={metaDescription ? metaDescription.metaDescription : ''}/>
 			<div className='hero is-fullheight-with-navbar'>
 				<div className='hero-body'>
 					<div className='container'>

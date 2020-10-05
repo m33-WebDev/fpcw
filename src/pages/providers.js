@@ -103,7 +103,7 @@ export const query = graphql`
 		profSabira: contentfulProviderProfile(name: { eq: "Sabira Saifuddin" }) {
 			slug
 			name
-			title
+			jobTitle
 			headshot {
 				fluid(maxWidth: 600) {
 					...GatsbyContentfulFluid
@@ -111,12 +111,12 @@ export const query = graphql`
 			}
 		}
 		profPsych: allContentfulProviderProfile(
-			filter: { title: { eq: "MD" }, name: { nin: "Sabira Saifuddin" } }
+			filter: { jobTitle: { eq: "MD" }, name: { nin: "Sabira Saifuddin" } }
 		) {
 			nodes {
 				slug
 				name
-				title
+				jobTitle
 				headshot {
 					fluid(maxWidth: 600) {
 						...GatsbyContentfulFluid
@@ -125,12 +125,12 @@ export const query = graphql`
 			}
 		}
 		profNP: allContentfulProviderProfile(
-			filter: { title: { eq: "PMHNP" }, name: { nin: "Sabira Saifuddin" } }
+			filter: { jobTitle: { eq: "PMHNP" }, name: { nin: "Sabira Saifuddin" } }
 		) {
 			nodes {
 				slug
 				name
-				title
+				jobTitle
 				headshot {
 					fluid(maxWidth: 600) {
 						...GatsbyContentfulFluid
@@ -139,12 +139,12 @@ export const query = graphql`
 			}
 		}
 		profLMFT: allContentfulProviderProfile(
-			filter: { title: { eq: "LMFT" }, name: { nin: "Sabira Saifuddin" } }
+			filter: { jobTitle: { eq: "LMFT" }, name: { nin: "Sabira Saifuddin" } }
 		) {
 			nodes {
 				slug
 				name
-				title
+				jobTitle
 				headshot {
 					fluid(maxWidth: 600) {
 						...GatsbyContentfulFluid
@@ -153,12 +153,12 @@ export const query = graphql`
 			}
 		}
 		profAdmin: allContentfulProviderProfile(
-			filter: { title: { nin: ["MD", "PMHNP", "LMFT"] } }
+			filter: { jobTitle: { nin: ["MD", "PMHNP", "LMFT"] } }
 		) {
 			nodes {
 				slug
 				name
-				title
+				jobTitle
 				headshot {
 					fluid(maxWidth: 600) {
 						...GatsbyContentfulFluid
