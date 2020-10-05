@@ -16,11 +16,11 @@ import pageStyle from './post.module.scss';
 setConfig({ logLevel: 'no-errors-please' });
 
 export default ({ data, pageContext }) => {
-	const { title, feature, body, description } = data.contentfulPost;
+	const { title, metaTitle, feature, body, metaDescription } = data.contentfulPost;
 
 	return (
 		<Layout>
-			<SEO title={title} description={description.description}/>
+			<SEO title={metaTitle || title} description={metaDescription.metaDescription}/>
 			<div className='hero is-fullheight-with-navbar'>
 				<div className='hero-body'>
 					<div className='container'>
@@ -73,6 +73,7 @@ export const postQuery = graphql`
 		contentfulPost(slug: { eq: $pagePath }) {
 			slug
 			title
+			metaTitle
 			feature {
 				fluid(maxWidth: 800) {
 					...GatsbyContentfulFluid
@@ -81,8 +82,8 @@ export const postQuery = graphql`
 			body {
 				json
 			}
-			description {
-				description
+			metaDescription {
+				metaDescription
 			}
 		}
 	}
