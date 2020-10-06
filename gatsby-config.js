@@ -6,7 +6,7 @@
 
 module.exports = {
 	siteMetadata: {
-		siteUrl: `https://www.familypsychiatry.us`,
+		siteUrl: `https://familypsychiatry.us`,
 		title: `Family Psychiatry, Counseling and Wellness`,
 		shortTitle: `FPCW`,
 		description: `A mental health clinic with a focus on overall wellness. Find better, one step at a time.`,
