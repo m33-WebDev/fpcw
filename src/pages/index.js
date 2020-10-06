@@ -35,13 +35,14 @@ export default ({ data }) => {
 		return tiles;
 	}
 
-	var pageDescription = data.contentfulPage.metaDescription.metaDescription;
+	const metaTitle = data.contentfulPage.metaTitle;
+	const metaDescription = data.contentfulPage.metaDescription.metaDescription;
 
 	return (
 		<Layout>
 			<SEO
-				title='Family Psychiatry, Counseling and Wellness'
-				description={pageDescription}
+				title={metaTitle}
+				description={metaDescription}
 			/>
 			<section className='hero is-light is-fullheight-with-navbar'>
 				<div className='hero-body'>
@@ -303,6 +304,7 @@ export const query = graphql`
 			}
 		}
 		contentfulPage(title: { eq: "Home" }) {
+			metaTitle
 			metaDescription {
 				metaDescription
 			}

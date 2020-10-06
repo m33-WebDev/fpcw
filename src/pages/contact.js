@@ -18,11 +18,12 @@ import styles from './contact.module.scss'
 
 export default ({data}) => {
 
-	var pageDescription = data.contentfulPage.metaDescription.metaDescription;
+  const metaTitle = data.contentfulPage.metaTitle;
+	const metaDescription = data.contentfulPage.metaDescription.metaDescription;
 
   return (
     <Layout>
-      <SEO title="Contact Us to Schedule an Appointment Today" description={pageDescription} />
+      <SEO title={metaTitle} description={metaDescription} />
       <section className="hero is-fullheight-with-navbar is-light">
         <div className="hero-body">
           <div className="container">
@@ -159,6 +160,7 @@ export default ({data}) => {
 export const query = graphql`
 	query {
 		contentfulPage(title: {eq: "Contact"}) {
+      metaTitle
 			metaDescription {
 				metaDescription
 			}

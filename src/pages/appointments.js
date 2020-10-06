@@ -14,11 +14,12 @@ const disclaimer2 =
 
 export default ({data}) => {
 
-	var pageDescription = data.contentfulPage.metaDescription.metaDescription;
+	const metaTitle = data.contentfulPage.metaTitle;
+	const metaDescription = data.contentfulPage.metaDescription.metaDescription;
 	
 	return (
 		<Layout>
-			<SEO title='Now Conducting Telehealth Appointments for Mental Health Needs' description={pageDescription} />
+			<SEO title={metaTitle} description={metaDescription} />
 
 			<div className='hero is-fullheight-with-navbar'>
 				<div className='hero-body'>
@@ -42,6 +43,7 @@ export default ({data}) => {
 export const query = graphql`
 	query {
 		contentfulPage(title: {eq: "Appointments"}) {
+			metaTitle
 			metaDescription {
 				metaDescription
 			}

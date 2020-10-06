@@ -27,11 +27,13 @@ function createService(item) {
 }
 
 export default ({ data }) => {
-	var pageDescription = data.contentfulPage.metaDescription.metaDescription;
+
+	const metaTitle = data.contentfulPage.metaTitle;
+	const metaDescription = data.contentfulPage.metaDescription.metaDescription;
 
 	return (
 		<Layout>
-			<SEO title='Offering Expert Care for Psychological Conditions' description={pageDescription} />
+			<SEO title={metaTitle} description={metaDescription} />
 			
 			<div className='hero-body'>
 				<div className='container'>
@@ -106,6 +108,7 @@ export default ({ data }) => {
 export const query = graphql`
 	query {
 		contentfulPage(title: { eq: "Services" }) {
+			metaTitle
 			metaDescription {
 				metaDescription
 			}

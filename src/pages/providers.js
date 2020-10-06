@@ -34,11 +34,12 @@ export default ({ data }) => {
 		);
 	}
 
-	var pageDescription = data.contentfulPage.metaDescription.metaDescription;
+	const metaTitle = data.contentfulPage.metaTitle;
+	const metaDescription = data.contentfulPage.metaDescription.metaDescription;
 
 	return (
 		<Layout>
-			<SEO title='Psychiatrists, Therapists, and More' pageDescription={pageDescription} />
+			<SEO title={metaTitle} pageDescription={metaDescription} />
 			<div className='hero is-fullheight-with-navbar'>
 				<div className='hero-body'>
 					<div className='container'>
@@ -96,6 +97,7 @@ export default ({ data }) => {
 export const query = graphql`
 	query {
 		contentfulPage(title: {eq: "Providers"}) {
+			metaTitle
 			metaDescription {
 				metaDescription
 			}

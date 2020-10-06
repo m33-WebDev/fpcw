@@ -7,11 +7,12 @@ import FormJobApplication from "../components/formjobapplication"
 
 export default ({data}) => {
 
-	var pageDescription = data.contentfulPage.metaDescription.metaDescription;
+  const metaTitle = data.contentfulPage.metaTitle;
+	const metaDescription = data.contentfulPage.metaDescription.metaDescription;
 
   return (
     <Layout>
-      <SEO title="Careers" description={pageDescription} />
+      <SEO title={metaTitle} description={metaDescription} />
       <div className="hero is-fullheight-with-navbar">
         <div className="hero-body">
           <div className="container">
@@ -59,6 +60,7 @@ export default ({data}) => {
 export const query = graphql`
 	query {
 		contentfulPage(title: {eq: "Careers"}) {
+      metaTitle
 			metaDescription {
 				metaDescription
 			}
