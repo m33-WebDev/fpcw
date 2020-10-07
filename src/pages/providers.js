@@ -113,7 +113,7 @@ export const query = graphql`
 			}
 		}
 		profPsych: allContentfulProviderProfile(
-			filter: { jobTitle: { eq: "MD" }, name: { nin: "Sabira Saifuddin" } }
+			filter: { credential: { eq: "MD" }, name: { nin: "Sabira Saifuddin" } }
 		) {
 			nodes {
 				slug
@@ -127,7 +127,7 @@ export const query = graphql`
 			}
 		}
 		profNP: allContentfulProviderProfile(
-			filter: { jobTitle: { eq: "PMHNP" }, name: { nin: "Sabira Saifuddin" } }
+			filter: { credential: { eq: "PMHNP" }, name: { nin: "Sabira Saifuddin" } }
 		) {
 			nodes {
 				slug
@@ -141,7 +141,7 @@ export const query = graphql`
 			}
 		}
 		profLMFT: allContentfulProviderProfile(
-			filter: { jobTitle: { eq: "LMFT" }, name: { nin: "Sabira Saifuddin" } }
+			filter: { credential: { eq: "LMFT" }, name: { nin: "Sabira Saifuddin" } }
 		) {
 			nodes {
 				slug
@@ -155,7 +155,7 @@ export const query = graphql`
 			}
 		}
 		profAdmin: allContentfulProviderProfile(
-			filter: { jobTitle: { nin: ["MD", "PMHNP", "LMFT"] } }
+			filter: { credential: { nin: ["MD", "PMHNP", "LMFT"] } }
 		) {
 			nodes {
 				slug
