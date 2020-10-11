@@ -31,7 +31,16 @@ module.exports = {
 				],
 			},
 		},
-		`gatsby-plugin-advanced-sitemap`,
+		{
+			resolve: `gatsby-plugin-advanced-sitemap`,
+			options: {
+				exclude: [
+					`/dev-404-page`,
+					`/404`,
+					`/formsuccess`
+				]
+			}
+		},
 		`gatsby-plugin-react-helmet`,
 		{
 			resolve: `gatsby-source-contentful`,
