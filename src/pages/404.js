@@ -7,7 +7,7 @@ import SEO from "../components/seo"
 export default () => {
   return (
     <Layout>
-      <SEO title='FPCW - 404'/>
+      <SEO title='404' noIndex/>
       <div className='section'>
         <div className='content has-text-centered'>
             <p>
