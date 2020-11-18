@@ -132,7 +132,7 @@ export default ({data}) => {
                           <FontAwesomeIcon icon={faEnvelope} />
                         </td>
 
-                        <td>familypsychiatry101@gmail.com</td>
+                        <td>fpcw@familypsychiatry101.com</td>
                       </tr>
                       <tr>
                         <td>
