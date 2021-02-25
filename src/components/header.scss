@@ -7,3 +7,11 @@
 // // #nav-toggle-state:checked~.navbar-menu {
 //   display: block;
 // }
+
+.patient-portal {
+    @media screen and (min-width: 769px) {
+        background: darken(#48c774, 10%);
+        border-radius: 5px;
+        padding: 5px;
+    }
+}

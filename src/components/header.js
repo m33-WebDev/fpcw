@@ -40,7 +40,10 @@ export default () => {
 
 					<a
 						role='button'
-						className={'navbar-burger burger has-text-dark ' + (active ? 'is-active' : '')}
+						className={
+							'navbar-burger burger has-text-dark ' +
+							(active ? 'is-active' : '')
+						}
 						aria-label='menu'
 						aria-expanded='false'
 						onClick={(e) => {
@@ -108,6 +111,12 @@ export default () => {
 							to='/library'
 						>
 							Library
+						</Link>
+						<Link
+							className='navbar-item'
+							to='https://www.valant.io/portal/FamilyPsychiatryCounseling'
+						>
+							<p className='has-text-dark patient-portal'>Patient Portal</p>
 						</Link>
 						<div className='navbar-item has-dropdown is-hoverable' href='/'>
 							<a href='#' className='navbar-link has-text-dark'>
