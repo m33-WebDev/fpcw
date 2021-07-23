@@ -49,9 +49,9 @@ module.exports = {
 				accessToken: `uU3iwop7LhREN5CerJI5sONtkwBUMfCC_9yTKjDAXWE`,
 			},
 		},
-		// `gatsby-transformer-sharp`,
-		// `gatsby-plugin-sharp`,
 		`gatsby-plugin-image`,
+		`gatsby-transformer-sharp`,
+		`gatsby-plugin-sharp`,
 		{
 			resolve: `gatsby-plugin-manifest`,
 			options: {

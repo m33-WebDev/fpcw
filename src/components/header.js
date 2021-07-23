@@ -1,6 +1,7 @@
 /* eslint-disable */
 import React, { useState } from "react";
-import { graphql, useStaticQuery, Link } from "gatsby";
+import { Link } from "gatsby";
+import { StaticImage } from "gatsby-plugin-image";
 import "./header.scss";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -8,15 +9,6 @@ import { faExclamationCircle } from "@fortawesome/free-solid-svg-icons";
 
 function Header() {
   const [active, setActive] = useState(false);
-
-  const data = useStaticQuery(graphql`
-    query MyQuery {
-      file(relativePath: { eq: "images/logo-fitted.png" }) {
-        name
-        publicURL
-      }
-    }
-  `);
 
   return (
     <nav
@@ -29,7 +21,7 @@ function Header() {
         <div className="navbar-brand">
           <a className="navbar-item" href="/">
             <div style={{ width: "80px" }}>
-              <img src={data.file.publicURL}/>
+              <StaticImage src="../images/logo-fitted.png" alt="Logo"/>
             </div>
           </a>
 
