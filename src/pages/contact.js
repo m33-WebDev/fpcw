@@ -1,25 +1,25 @@
-import React from "react"
-import { Link, graphql } from "gatsby"
+import React from "react";
+import { Link, graphql } from "gatsby";
 
-import Layout from "../components/layout"
-import Seo from "../components/seo"
+import Layout from "../components/layout";
+import Seo from "../components/seo";
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faEnvelope,
   faPhone,
   faCalendar,
   faExternalLinkAlt,
   faAngleUp,
-} from "@fortawesome/free-solid-svg-icons"
+} from "@fortawesome/free-solid-svg-icons";
 
-import "bulma-helpers/css/bulma-helpers.min.css"
-import * as styles from './contact.module.scss'
+import "bulma-helpers/css/bulma-helpers.min.css";
+import * as styles from "./contact.module.scss";
+import { StaticImage } from "gatsby-plugin-image";
 
-function Contact({data}) {
-
+function Contact({ data }) {
   const metaTitle = data.contentfulPage.metaTitle;
-	const metaDescription = data.contentfulPage.metaDescription.metaDescription;
+  const metaDescription = data.contentfulPage.metaDescription.metaDescription;
 
   return (
     <Layout>
@@ -27,12 +27,14 @@ function Contact({data}) {
       <section className="hero is-fullheight-with-navbar is-light">
         <div className="hero-body">
           <div className="container">
-            <div
-              className="columns is-centered is-variable is-8 is-desktop"
-            >
+            <div className="columns is-centered is-variable is-8 is-desktop">
               <div className="column is-6">
                 <div className="content">
-                  <h2 className={"title is-1 is-size-3-mobile " + styles.LocationTitle}>
+                  <h2
+                    className={
+                      "title is-1 is-size-3-mobile " + styles.LocationTitle
+                    }
+                  >
                     Locations
                   </h2>
                 </div>
@@ -48,12 +50,12 @@ function Contact({data}) {
                         style={{ position: "relative" }}
                       >
                         <figure
-                          className="image is-square"
                           style={{ marginBottom: "3vmin" }}
                         >
-                          <img
+                          <StaticImage
                             src="https://maps.googleapis.com/maps/api/streetview?source=outdoor&size=700x480&location=31194%20LA%20Baya%20Dr%20%23107%2C%20Westlake%20Village%2C%20CA%2091362&sensor=false&key=AIzaSyChs1A5cJJOcGqcdqNj2YBOULaJlZKCktM&channel=propertyshark-standard&signature=qFjUMV_Nmp2YKXRyktRHTZIz5_Q"
                             alt="La Baya Drive location exterior"
+                            height={200}
                             style={{ objectFit: "cover" }}
                           />
                         </figure>
@@ -83,13 +85,11 @@ function Contact({data}) {
                         className="box has-background-light"
                         style={{ position: "relative" }}
                       >
-                        <figure
-                          className="image is-square"
-                          style={{ marginBottom: "3vmin" }}
-                        >
-                          <img
+                        <figure style={{ marginBottom: "3vmin" }}>
+                          <StaticImage
                             src="https://images.squarespace-cdn.com/content/56412ff6e4b09a51a6703186/1563487713368-OFJHMDD4SJZBKFSQXNE4/image-asset.jpeg?content-type=image%2Fjpeg"
                             alt="Agoura Road location exterior"
+                            height={200}
                             style={{ objectFit: "cover" }}
                           />
                         </figure>
@@ -118,7 +118,9 @@ function Contact({data}) {
               </div>
               <div className="column is-4">
                 <div className="content">
-                  <h1 className="title is-1 is-size-3-mobile ">FPCW Contact Information</h1>
+                  <h1 className="title is-1 is-size-3-mobile ">
+                    FPCW Contact Information
+                  </h1>
                   <table className="table is-completely-borderless has-background-light">
                     <tbody>
                       <tr>
@@ -154,18 +156,18 @@ function Contact({data}) {
         </div>
       </section>
     </Layout>
-  )
+  );
 }
 
 export const query = graphql`
-	query {
-		contentfulPage(title: {eq: "Contact"}) {
+  query {
+    contentfulPage(title: { eq: "Contact" }) {
       metaTitle
-			metaDescription {
-				metaDescription
-			}
-		}
-	}
-`
+      metaDescription {
+        metaDescription
+      }
+    }
+  }
+`;
 
 export default Contact;
