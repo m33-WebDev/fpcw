@@ -18,6 +18,8 @@ import {
 
 import { faFacebookSquare, faGoogle } from "@fortawesome/free-brands-svg-icons";
 
+import * as styles from './index.module.scss'
+
 function Index({ data }) {
   function getNewsTiles() {
     var tiles = [];
@@ -53,7 +55,7 @@ function Index({ data }) {
                     Counseling & Wellness
                   </h1>
                   <p
-                    className={"subtitle is-size-4 mt-3 mb-5 "}
+                    className={"subtitle is-size-4 mt-3 mb-5 " + styles.splashSubtitle}
                     style={{ fontWeight: "lighter" }}
                   >
                     A comprehensive, integrative psychiatric and wellness clinic
