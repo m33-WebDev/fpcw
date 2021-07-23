@@ -34,7 +34,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 	const profileTemplate = path.resolve(`./src/templates/providerprofile.js`);
 	result.data.allContentfulProviderProfile.edges.forEach(({ node }) => {
 		const path = 'providers/' + node.slug;
-		console.log('Creating page: ' + path);
 		createPage({
 			path,
 			component: profileTemplate,
@@ -47,7 +46,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 	const postTemplate = path.resolve(`./src/templates/post.js`);
 	result.data.allContentfulPost.edges.forEach(({ node }) => {
 		const path = 'library/' + node.slug;
-		console.log('Creating page: ' + path);
 		createPage({
 			path,
 			component: postTemplate,
