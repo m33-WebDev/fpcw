@@ -1,6 +1,6 @@
 import React from "react";
 import { Link, graphql } from "gatsby";
-import Img from "gatsby-image";
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
 import Layout from "../components/layout";
 import Seo from "../components/seo";
@@ -37,8 +37,8 @@ function Post({ data }) {
                       {title}
                     </h1>
                   </div>
-                  <Img
-                    fluid={feature.fluid}
+                  <GatsbyImage
+                    image={getImage(feature)}
                     alt="Post feature"
                     style={{ objectFit: "cover", marginBottom: "5vmin" }}
                   />
@@ -80,9 +80,10 @@ export const query = graphql`
       title
       metaTitle
       feature {
-        fluid(maxWidth: 800) {
-          ...GatsbyContentfulFluid
-        }
+		gatsbyImageData(
+			width: 800
+			placeholder: BLURRED
+		)
       }
       metaDescription {
         metaDescription
