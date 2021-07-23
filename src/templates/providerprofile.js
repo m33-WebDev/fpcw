@@ -11,7 +11,7 @@ import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 
 import * as pageStyle from "./providerprofile.module.scss";
 
-function ProviderProfile({ data, pageContext }) {
+function ProviderProfile({ data }) {
   const {
     name,
     credential,
