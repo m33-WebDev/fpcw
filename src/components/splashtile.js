@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import Img from 'gatsby-image';
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 
 import * as styles from './splashtile.module.scss';
 
@@ -13,6 +13,7 @@ class SplashTile extends React.Component {
 
 	render() {
 		var { title, image, to } = this.props;
+		console.log(image);
 
 		return (
 			<Link
@@ -33,11 +34,11 @@ class SplashTile extends React.Component {
 						className='card-image'
 						style={{ position: 'relative', height: '100%' }}
 					>
-						{/* <Img
-							fluid={image ? image.childImageSharp.fluid : {}}
+						<GatsbyImage
+							image={getImage(image)}
 							alt='Splash'
 							style={{height: '100%'}}
-						/> */}
+						/>
 						<h2 className={'title is-4 has-text-light ' + styles.PostTitle}>
 							{title}
 						</h2>
