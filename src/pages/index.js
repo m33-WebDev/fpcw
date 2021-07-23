@@ -18,8 +18,6 @@ import {
 
 import { faFacebookSquare, faGoogle } from "@fortawesome/free-brands-svg-icons";
 
-import * as styles from "./index.module.scss";
-
 function Index({ data }) {
   function getNewsTiles() {
     var tiles = [];

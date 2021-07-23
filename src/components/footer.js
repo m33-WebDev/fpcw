@@ -7,7 +7,6 @@ import {
   faCalendar,
 } from "@fortawesome/free-solid-svg-icons";
 
-import * as styles from "./footer.module.scss";
 import "./footer.scss";
 
 function Divider() {
