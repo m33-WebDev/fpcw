@@ -79,7 +79,7 @@ function ProviderProfile({ data }) {
   );
 }
 
-export const providerQuery = graphql`
+export const query = graphql`
   query($pagePath: String!) {
     contentfulProviderProfile(slug: { eq: $pagePath }) {
       slug
