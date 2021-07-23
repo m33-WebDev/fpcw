@@ -53,7 +53,7 @@ function Post({ data }) {
               </div>
               <div className="column is-6">
                 <div className={pageStyle.body}>
-                  {/* <RichText document={body.json} /> */}
+                  <RichText src={body} />
                   <p>---</p>
                   <p style={{ fontStyle: "italic" }}>
                     If you are experiencing symptoms of mental or physical
@@ -80,13 +80,13 @@ export const query = graphql`
       title
       metaTitle
       feature {
-		gatsbyImageData(
-			width: 800
-			placeholder: BLURRED
-		)
+        gatsbyImageData(width: 800, placeholder: BLURRED)
       }
       metaDescription {
         metaDescription
+      }
+      body {
+        raw
       }
     }
   }
