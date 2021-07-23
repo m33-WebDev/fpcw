@@ -52,7 +52,7 @@ function Contact({data}) {
                           style={{ marginBottom: "3vmin" }}
                         >
                           <img
-                            src="https://42floors.com/images/Hd8216713d023e525024253c5987cddc2ea7287bfS1560x1040W0seB505153O/978a35bfd12f5e9a8c8c547cf2dc17a0d003d928"
+                            src="https://maps.googleapis.com/maps/api/streetview?source=outdoor&size=700x480&location=31194%20LA%20Baya%20Dr%20%23107%2C%20Westlake%20Village%2C%20CA%2091362&sensor=false&key=AIzaSyChs1A5cJJOcGqcdqNj2YBOULaJlZKCktM&channel=propertyshark-standard&signature=qFjUMV_Nmp2YKXRyktRHTZIz5_Q"
                             alt="La Baya Drive location exterior"
                             style={{ objectFit: "cover" }}
                           />
