@@ -316,6 +316,9 @@ export const query = graphql`
             url
           }
         }
+        body {
+          raw
+        }
       }
     }
     serviceSplash: file(relativePath: { eq: "images/servicesplash.jpg" }) {
@@ -326,19 +329,19 @@ export const query = graphql`
     telehealthSplash: file(
       relativePath: { eq: "images/telehealthsplash.jpg" }
     ) {
-		childImageSharp {
-			gatsbyImageData(width: 500)
-		  }
+      childImageSharp {
+        gatsbyImageData(width: 500)
+      }
     }
     librarySplash: file(relativePath: { eq: "images/librarysplash.jpg" }) {
-		childImageSharp {
-			gatsbyImageData(width: 500)
-		  }
+      childImageSharp {
+        gatsbyImageData(width: 500)
+      }
     }
     locationsSplash: file(relativePath: { eq: "images/locationsplash.jpg" }) {
-		childImageSharp {
-			gatsbyImageData(width: 500)
-		  }
+      childImageSharp {
+        gatsbyImageData(width: 500)
+      }
     }
   }
 `;
