@@ -2,12 +2,12 @@ import React from "react"
 import { Link } from "gatsby"
 
 import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Seo from "../components/seo"
 
-export default () => {
+function FormSuccess() {
   return (
     <Layout>
-      <SEO title='FPCW - Success' noIndex/>
+      <Seo title='FPCW - Success' noIndex/>
       <section className='section'>
         <div className='container'>
           <div className='content has-text-centered'>
@@ -20,3 +20,5 @@ export default () => {
     </Layout>
   )
 }
+
+export default FormSuccess;

@@ -21,7 +21,7 @@ function Divider() {
 	);
 }
 
-export default () => (
+function Footer() {
 	<footer
 		className={'footer has-background-success has-text-dark '}
 	>
@@ -83,4 +83,6 @@ export default () => (
 			</div>
 		</div>
 	</footer>
-);
+}
+
+export default Footer;

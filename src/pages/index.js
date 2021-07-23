@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, graphql } from 'gatsby';
 
 import Layout from '../components/layout';
-import SEO from '../components/seo';
+import Seo from '../components/seo';
 import SplashTile from '../components/splashtile';
 import NewsTile from '../components/newstile';
 import Carousel from '../components/carousel';
@@ -20,7 +20,7 @@ import { faFacebookSquare, faGoogle } from '@fortawesome/free-brands-svg-icons';
 
 import * as styles from './index.module.scss';
 
-export default ({ data }) => {
+function Index({ data }) {
 	function getNewsTiles() {
 		var tiles = [];
 
@@ -40,7 +40,7 @@ export default ({ data }) => {
 
 	return (
 		<Layout>
-			<SEO
+			<Seo
 				title={metaTitle}
 				description={metaDescription}
 			/>
@@ -340,3 +340,5 @@ export const query = graphql`
 		}
 	}
 `;
+
+export default Index;

@@ -3,11 +3,11 @@ import { graphql, Link } from 'gatsby';
 import Img from 'gatsby-image';
 
 import Layout from '../components/layout';
-import SEO from '../components/seo';
+import Seo from '../components/seo';
 
 import * as styles from './providers.module.scss';
 
-export default ({ data }) => {
+function Providers({ data }) {
 
 	function createProfileCard(profile, i) {
 		var { slug, name, headshot } = profile;
@@ -39,7 +39,7 @@ export default ({ data }) => {
 
 	return (
 		<Layout>
-			<SEO title={metaTitle} pageDescription={metaDescription} />
+			<Seo title={metaTitle} pageDescription={metaDescription} />
 			<div className='hero is-fullheight-with-navbar'>
 				<div className='hero-body'>
 					<div className='container'>
@@ -170,3 +170,5 @@ export const query = graphql`
 		}
 	}
 `;
+
+export default Providers;

@@ -3,7 +3,7 @@ import { Link, graphql } from 'gatsby';
 import Img from 'gatsby-image';
 
 import Layout from '../components/layout';
-import SEO from '../components/seo';
+import Seo from '../components/seo';
 import RichText from '../components/richtext';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -11,12 +11,12 @@ import { faChevronLeft } from '@fortawesome/free-solid-svg-icons';
 
 import * as pageStyle from './post.module.scss';
 
-export default ({ data, pageContext }) => {
+function Post({ data, pageContext }) {
 	const { title, metaTitle, feature, body, metaDescription } = data.contentfulPost;
 
 	return (
 		<Layout>
-			<SEO title={metaTitle || title} description={metaDescription ? metaDescription.metaDescription : ''}/>
+			<Seo title={metaTitle || title} description={metaDescription ? metaDescription.metaDescription : ''}/>
 			<div className='hero is-fullheight-with-navbar'>
 				<div className='hero-body'>
 					<div className='container'>
@@ -81,3 +81,5 @@ export const postQuery = graphql`
 		}
 	}
 `;
+
+export default Post;

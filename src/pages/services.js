@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, graphql } from 'gatsby';
 
 import Layout from '../components/layout';
-import SEO from '../components/seo';
+import Seo from '../components/seo';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
 	faDiagnoses,
@@ -26,14 +26,14 @@ function createService(item) {
 	}
 }
 
-export default ({ data }) => {
+function Services({ data }) {
 
 	const metaTitle = data.contentfulPage.metaTitle;
 	const metaDescription = data.contentfulPage.metaDescription.metaDescription;
 
 	return (
 		<Layout>
-			<SEO title={metaTitle} description={metaDescription} />
+			<Seo title={metaTitle} description={metaDescription} />
 			
 			<div className='hero-body'>
 				<div className='container'>
@@ -115,3 +115,5 @@ export const query = graphql`
 		}
 	}
 `;
+
+export default Services;

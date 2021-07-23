@@ -19,7 +19,7 @@ function getFavicon(size, icon) {
 	};
 }
 
-export default ({ children }) => (
+function Layout({ children }) {
 	<>
 		<div className='site'>
 			<Helmet
@@ -38,4 +38,6 @@ export default ({ children }) => (
 		</div>
 		<Footer />
 	</>
-);
+}
+
+export default Layout;

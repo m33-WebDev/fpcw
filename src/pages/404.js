@@ -2,12 +2,12 @@ import React from "react"
 import { Link } from "gatsby"
 
 import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Seo from "../components/seo"
 
-export default () => {
+function Page404() {
   return (
     <Layout>
-      <SEO title='Page Not Found' noIndex/>
+      <Seo title='Page Not Found' noIndex/>
       <div className='section'>
         <div className='content has-text-centered'>
             <p>
@@ -18,3 +18,5 @@ export default () => {
     </Layout>
   )
 }
+
+export default Page404;

@@ -3,18 +3,18 @@ import { graphql, Link } from 'gatsby';
 import Img from 'gatsby-image';
 
 import Layout from '../components/layout';
-import SEO from '../components/seo';
+import Seo from '../components/seo';
 
 import * as styles from './library.module.scss';
 
-export default ({ data }) => {
+function Library({ data }) {
 
 	const metaTitle = data.contentfulPage.metaTitle;
 	const metaDescription = data.contentfulPage.metaDescription.metaDescription;
 
 	return (
 		<Layout>
-			<SEO title={metaTitle} description={metaDescription} />
+			<Seo title={metaTitle} description={metaDescription} />
 			<div className='hero'>
 				<div className='hero-body'>
 					<div className='container'>
@@ -99,3 +99,5 @@ export const query = graphql`
 		}
 	}
 `;
+
+export default Library;

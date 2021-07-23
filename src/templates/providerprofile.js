@@ -3,7 +3,7 @@ import { Link, graphql } from 'gatsby';
 import Img from 'gatsby-image';
 
 import Layout from '../components/layout';
-import SEO from '../components/seo';
+import Seo from '../components/seo';
 import RichText from '../components/richtext';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -11,14 +11,14 @@ import { faChevronLeft } from '@fortawesome/free-solid-svg-icons';
 
 import * as pageStyle from './providerprofile.module.scss';
 
-export default ({ data, pageContext }) => {
+function ProviderProfile({ data, pageContext }) {
 	const { name, credential, jobTitle, headshot, bio, description } = data.contentfulProviderProfile;
 
 	var metaTitle = ''.concat(name, ", ", jobTitle, " | Providers");
 
 	return (
 		<Layout>
-			<SEO title={metaTitle} description={description} />
+			<Seo title={metaTitle} description={description} />
 			<div className='hero is-fullheight-with-navbar'>
 				<div className='columns'>
 					<div className='column is-6' style={{ position: 'relative' }}>
@@ -90,3 +90,5 @@ export const providerQuery = graphql`
 		}
 	}
 `;
+
+export default ProviderProfile;

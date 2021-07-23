@@ -2,7 +2,7 @@ import React from 'react';
 import { graphql } from 'gatsby'
 
 import Layout from '../components/layout';
-import SEO from '../components/seo';
+import Seo from '../components/seo';
 import FormAppointment from '../components/formappointment';
 
 import * as styles from './appointments.module.scss';
@@ -12,14 +12,14 @@ const disclaimer1 =
 const disclaimer2 =
 	'\nIf you prefer to request an appointment by telephone, please contact our office directly at (805) 341-3416 during normal business hours.';
 
-export default ({data}) => {
+function Appointments({data}) {
 
 	const metaTitle = data.contentfulPage.metaTitle;
 	const metaDescription = data.contentfulPage.metaDescription.metaDescription;
 	
 	return (
 		<Layout>
-			<SEO title={metaTitle} description={metaDescription} />
+			<Seo title={metaTitle} description={metaDescription} />
 
 			<div className='hero is-fullheight-with-navbar'>
 				<div className='hero-body'>
@@ -50,3 +50,5 @@ export const query = graphql`
 		}
 	}
 `
+
+export default Appointments;

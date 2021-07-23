@@ -8,7 +8,7 @@ import {
 
 import { graphql, useStaticQuery } from "gatsby"
 
-export default () => {
+function Carousel() {
   const { reviews } = useStaticQuery(graphql`
     query {
       reviews: allContentfulReview(
@@ -74,3 +74,5 @@ export default () => {
     </CarouselProvider>
   )
 }
+
+export default Carousel;

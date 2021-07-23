@@ -1,13 +1,13 @@
 import React from 'react';
 
 import Layout from '../components/layout';
-import SEO from '../components/seo';
+import Seo from '../components/seo';
 import FormBrainTesting from '../components/formbraintesting';
 
-export default () => {
+function BrainTesting() {
 	return (
 		<Layout>
-			<SEO title='Schedule a brain testing appointment' />
+			<Seo title='Schedule a brain testing appointment' />
 			<section className='section'>
 				<div className='container'>
                     <div class="columns">
@@ -20,4 +20,6 @@ export default () => {
 			</section>
 		</Layout>
 	);
-};
+}
+
+export default BrainTesting;

@@ -2,17 +2,17 @@ import React from "react"
 import { graphql } from 'gatsby'
 
 import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Seo from "../components/seo"
 import FormJobApplication from "../components/formjobapplication"
 
-export default ({data}) => {
+function Careers({data}) {
 
   const metaTitle = data.contentfulPage.metaTitle;
 	const metaDescription = data.contentfulPage.metaDescription.metaDescription;
 
   return (
     <Layout>
-      <SEO title={metaTitle} description={metaDescription} />
+      <Seo title={metaTitle} description={metaDescription} />
       <div className="hero is-fullheight-with-navbar">
         <div className="hero-body">
           <div className="container">
@@ -67,3 +67,5 @@ export const query = graphql`
 		}
 	}
 `
+
+export default Careers;
