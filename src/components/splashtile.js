@@ -13,7 +13,6 @@ class SplashTile extends React.Component {
 
 	render() {
 		var { title, image, to } = this.props;
-		console.log(image);
 
 		return (
 			<Link
