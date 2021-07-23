@@ -124,6 +124,9 @@ function Header() {
                 <a href="/contact" className="navbar-item">
                   Contact
                 </a>
+                <a href="/gallery" className="navbar-item">
+                  Gallery
+                </a>
               </div>
             </div>
           </div>
