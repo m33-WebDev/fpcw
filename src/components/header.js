@@ -1,7 +1,6 @@
 /* eslint-disable */
 import React, { useState } from "react";
 import { graphql, useStaticQuery, Link } from "gatsby";
-import Img from "gatsby-image";
 import "./header.scss";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -14,6 +13,7 @@ function Header() {
     query MyQuery {
       file(relativePath: { eq: "images/logo-fitted.png" }) {
         name
+        publicURL
       }
     }
   `);
@@ -29,7 +29,7 @@ function Header() {
         <div className="navbar-brand">
           <a className="navbar-item" href="/">
             <div style={{ width: "80px" }}>
-              {/* <img src={data.file.path}/> */}
+              <img src={data.file.publicURL}/>
             </div>
           </a>
 
