@@ -2,8 +2,6 @@ import React from 'react';
 import { Link, graphql } from 'gatsby';
 import Img from 'gatsby-image';
 
-import { setConfig } from 'react-hot-loader';
-
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 import RichText from '../components/richtext';
@@ -11,9 +9,7 @@ import RichText from '../components/richtext';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft } from '@fortawesome/free-solid-svg-icons';
 
-import pageStyle from './post.module.scss';
-
-setConfig({ logLevel: 'no-errors-please' });
+import * as pageStyle from './post.module.scss';
 
 export default ({ data, pageContext }) => {
 	const { title, metaTitle, feature, body, metaDescription } = data.contentfulPost;
@@ -48,7 +44,7 @@ export default ({ data, pageContext }) => {
 							</div>
 							<div className='column is-6'>
 								<div className={pageStyle.body}>
-									<RichText document={body.json} />
+									{/* <RichText document={body.json} /> */}
 									<p>---</p>
 									<p style={{ fontStyle: 'italic' }}>
 										If you are experiencing symptoms of mental or physical
@@ -78,9 +74,6 @@ export const postQuery = graphql`
 				fluid(maxWidth: 800) {
 					...GatsbyContentfulFluid
 				}
-			}
-			body {
-				json
 			}
 			metaDescription {
 				metaDescription

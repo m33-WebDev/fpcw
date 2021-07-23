@@ -5,7 +5,7 @@ import Img from 'gatsby-image';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 
-import styles from './library.module.scss';
+import * as styles from './library.module.scss';
 
 export default ({ data }) => {
 

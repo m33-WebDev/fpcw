@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'gatsby';
 import Img from 'gatsby-image';
 
-import styles from './splashtile.module.scss';
+import * as styles from './splashtile.module.scss';
 
 class SplashTile extends React.Component {
 	state = { scale: 1, backgroundColor: 'rgba(72, 199, 116, .7)' };
@@ -33,11 +33,11 @@ class SplashTile extends React.Component {
 						className='card-image'
 						style={{ position: 'relative', height: '100%' }}
 					>
-						<Img
+						{/* <Img
 							fluid={image ? image.childImageSharp.fluid : {}}
 							alt='Splash'
 							style={{height: '100%'}}
-						/>
+						/> */}
 						<h2 className={'title is-4 has-text-light ' + styles.PostTitle}>
 							{title}
 						</h2>

@@ -18,7 +18,7 @@ import {
 
 import { faFacebookSquare, faGoogle } from '@fortawesome/free-brands-svg-icons';
 
-import styles from './index.module.scss';
+import * as styles from './index.module.scss';
 
 export default ({ data }) => {
 	function getNewsTiles() {
@@ -59,7 +59,7 @@ export default ({ data }) => {
 									</h1>
 									<p
 										className={
-											'subtitle is-size-4 mt-3 mb-5 ' + styles.splashSubtitle
+											'subtitle is-size-4 mt-3 mb-5 '
 										}
 										style={{ fontWeight: 'lighter'}}
 									>
@@ -321,40 +321,22 @@ export const query = graphql`
 						url
 					}
 				}
-				body {
-					json
-				}
+
 			}
 		}
 		serviceSplash: file(relativePath: { eq: "images/servicesplash.jpg" }) {
-			childImageSharp {
-				fluid {
-					...GatsbyImageSharpFluid
-				}
-			}
+			name
 		}
 		telehealthSplash: file(
 			relativePath: { eq: "images/telehealthsplash.jpg" }
 		) {
-			childImageSharp {
-				fluid {
-					...GatsbyImageSharpFluid
-				}
-			}
+			name
 		}
 		librarySplash: file(relativePath: { eq: "images/librarysplash.jpg" }) {
-			childImageSharp {
-				fluid {
-					...GatsbyImageSharpFluid
-				}
-			}
+			name
 		}
 		locationsSplash: file(relativePath: { eq: "images/locationsplash.jpg" }) {
-			childImageSharp {
-				fluid {
-					...GatsbyImageSharpFluid
-				}
-			}
+			name
 		}
 	}
 `;

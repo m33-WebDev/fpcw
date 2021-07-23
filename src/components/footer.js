@@ -7,7 +7,7 @@ import {
 	faCalendar,
 } from '@fortawesome/free-solid-svg-icons';
 
-import styles from './footer.module.scss';
+import * as styles from './footer.module.scss';
 import './footer.scss';
 
 function Divider() {
@@ -23,7 +23,7 @@ function Divider() {
 
 export default () => (
 	<footer
-		className={'footer has-background-success has-text-dark ' + styles.Footer}
+		className={'footer has-background-success has-text-dark '}
 	>
 		<div className='container'>
 			<div className='columns is-desktop is-vcentered is-centered'>

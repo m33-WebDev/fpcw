@@ -25,7 +25,7 @@ function NewsTile({ post, style }) {
 						ellipsis={<span style={{ color: '#48C774' }}> ...</span>}
                                                 className='is-hidden-mobile'
 					>
-						<RichText document={body.json} />
+						{/* <RichText document={body.json} /> */}
 					</Truncate>
 				</div>
 			</div>

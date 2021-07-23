@@ -14,7 +14,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons"
 
 import "bulma-helpers/css/bulma-helpers.min.css"
-import styles from './contact.module.scss'
+import * as styles from './contact.module.scss'
 
 export default ({data}) => {
 

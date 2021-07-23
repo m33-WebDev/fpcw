@@ -5,7 +5,7 @@ import Layout from '../components/layout';
 import SEO from '../components/seo';
 import FormAppointment from '../components/formappointment';
 
-import styles from './appointments.module.scss';
+import * as styles from './appointments.module.scss';
 
 const disclaimer1 =
 	'This appointment request form requires you to provide personal information for the purposes of scheduling your appointment. By completing and transmitting this form, you consent to disclose such information to a Family Psychiatry Counseling and Wellness affiliated representative. Also, general data (excluding patient identifiable information) may be used for internal analysis purposes.';

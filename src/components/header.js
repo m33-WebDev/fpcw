@@ -14,11 +14,6 @@ export default () => {
 		query MyQuery {
 			file(relativePath: { eq: "images/logo-fitted.png" }) {
 				name
-				childImageSharp {
-					fluid(maxWidth: 256) {
-						...GatsbyImageSharpFluid_noBase64
-					}
-				}
 			}
 		}
 	`);
@@ -34,7 +29,7 @@ export default () => {
 				<div className='navbar-brand'>
 					<a className='navbar-item' href='/'>
 						<div style={{ width: '80px' }}>
-							<Img fluid={data.file.childImageSharp.fluid} alt='Logo' />
+							{/* <img src={data.file.path}/> */}
 						</div>
 					</a>
 

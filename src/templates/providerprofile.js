@@ -9,7 +9,7 @@ import RichText from '../components/richtext';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft } from '@fortawesome/free-solid-svg-icons';
 
-import pageStyle from './providerprofile.module.scss';
+import * as pageStyle from './providerprofile.module.scss';
 
 export default ({ data, pageContext }) => {
 	const { name, credential, jobTitle, headshot, bio, description } = data.contentfulProviderProfile;
@@ -57,7 +57,7 @@ export default ({ data, pageContext }) => {
 									{credential || jobTitle}
 								</div>
 								<div className={'mb-3 ' + pageStyle.Body}>
-									<RichText document={bio ? bio.json : bio} />
+									{/* <RichText document={bio ? bio.json : bio} /> */}
 								</div>
 								<Link to='/providers' className='has-text-success'>
 									<FontAwesomeIcon icon={faChevronLeft} />
@@ -83,9 +83,6 @@ export const providerQuery = graphql`
 				fluid {
 					...GatsbyContentfulFluid
 				}
-			}
-			bio {
-				json
 			}
 			description {
 				description
