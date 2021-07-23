@@ -7,6 +7,8 @@ import "./header.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faExclamationCircle } from "@fortawesome/free-solid-svg-icons";
 
+const officeAvailabilityCallout = "Now offering in-person and telehealth appointments."
+
 function Header() {
   const [active, setActive] = useState(false);
 
@@ -69,7 +71,7 @@ function Header() {
                 }}
                 className="has-text-dark"
               >
-                Telehealth appointments now available
+                {officeAvailabilityCallout}
               </div>
               <FontAwesomeIcon
                 icon={faExclamationCircle}
