@@ -11,7 +11,7 @@ import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 
 import * as pageStyle from "./post.module.scss";
 
-function Post({ data, pageContext }) {
+function Post({ data }) {
   const {
     title,
     metaTitle,
