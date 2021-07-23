@@ -75,7 +75,7 @@ function Footer() {
           <Divider />
           <div className="column is-3">
             <div className="content">
-              <p>© 2020 Family Psychiatry Counseling and Wellness.</p>
+              <p>© 2021 Family Psychiatry Counseling and Wellness.</p>
             </div>
           </div>
         </div>
