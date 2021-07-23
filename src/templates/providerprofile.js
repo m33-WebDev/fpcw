@@ -1,6 +1,6 @@
 import React from "react";
 import { Link, graphql } from "gatsby";
-import Img from "gatsby-image";
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
 import Layout from "../components/layout";
 import Seo from "../components/seo";
@@ -30,13 +30,9 @@ function ProviderProfile({ data }) {
         <div className="columns">
           <div className="column is-6" style={{ position: "relative" }}>
             <div className={pageStyle.Frontmatter}>
-              <Img
-                fluid={
-                  headshot
-                    ? headshot.fluid
-                    : "https://images.theconversation.com/files/304957/original/file-20191203-66986-im7o5.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=926&fit=clip"
-                }
-                alt=""
+              <GatsbyImage
+                image={getImage(headshot)}
+                alt="Headshot"
                 style={{ objectFit: "cover", height: "100vmin" }}
               />
             </div>
@@ -87,9 +83,7 @@ export const query = graphql`
       credential
       jobTitle
       headshot {
-        fluid {
-          ...GatsbyContentfulFluid
-        }
+        gatsbyImageData(width: 1000 placeholder: BLURRED)
       }
       description {
         description
