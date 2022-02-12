@@ -7,7 +7,8 @@ import "./header.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faExclamationCircle } from "@fortawesome/free-solid-svg-icons";
 
-const officeAvailabilityCallout = "Now offering in-person and telehealth appointments."
+const officeAvailabilityCallout =
+  "Now offering in-person and telehealth appointments.";
 
 function Header() {
   const [active, setActive] = useState(false);
@@ -23,7 +24,7 @@ function Header() {
         <div className="navbar-brand">
           <a className="navbar-item" href="/">
             <div style={{ width: "80px" }}>
-              <StaticImage src="../images/logo-fitted.png" alt="Logo"/>
+              <StaticImage src="../images/logo-fitted.png" alt="Logo" />
             </div>
           </a>
 
@@ -95,11 +96,11 @@ function Header() {
               Appointments
             </Link>
             <Link
+              href="/contact"
               className="navbar-item has-text-dark"
               activeClassName="navbar-item is-active"
-              to="/library"
             >
-              Library
+              Contact
             </Link>
             <Link
               className="navbar-item"
@@ -112,21 +113,21 @@ function Header() {
                 About
               </a>
               <div className="navbar-dropdown">
-                <a href="/services" className="navbar-item">
+                <Link href="/services" className="navbar-item">
                   Services
-                </a>
-                <a href="/providers" className="navbar-item">
+                </Link>
+                <Link href="/providers" className="navbar-item">
                   Providers
-                </a>
-                <a href="/careers" className="navbar-item">
+                </Link>
+                <Link href="/careers" className="navbar-item">
                   Careers
-                </a>
-                <a href="/contact" className="navbar-item">
-                  Contact
-                </a>
-                <a href="/gallery" className="navbar-item">
+                </Link>
+                <Link href="/library" className="navbar-item">
+                  Library
+                </Link>
+                <Link href="/gallery" className="navbar-item">
                   Gallery
-                </a>
+                </Link>
               </div>
             </div>
           </div>
