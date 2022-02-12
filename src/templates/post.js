@@ -10,6 +10,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 
 import * as pageStyle from "./post.module.scss";
+import NewsletterSignup from "../components/newsletter-signup";
 
 function Post({ data }) {
   const {
@@ -54,14 +55,15 @@ function Post({ data }) {
               <div className="column is-6">
                 <div className={pageStyle.body}>
                   <RichText src={body} />
-                  <p>---</p>
-                  <p style={{ fontStyle: "italic" }}>
-                    If you are experiencing symptoms of mental or physical
-                    distress and would like to discuss your treatment options,
-                    schedule an appointment with one of our providers today by
-                    using our <Link to="/appointments/">online form</Link> or by
-                    calling (805) 341-3416 during normal business hours.
-                  </p>
+                  <hr
+                    style={{
+                      border: 0,
+                      height: "1px",
+                      backgroundImage:
+                        "linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0))",
+                    }}
+                  />
+                  <NewsletterSignup />
                 </div>
                 <div />
               </div>
