@@ -8,7 +8,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faExclamationCircle } from "@fortawesome/free-solid-svg-icons";
 
 const officeAvailabilityCallout =
-  "Now offering in-person and telehealth appointments.";
+  "Now offering telehealth appointments.";
 
 function Header() {
   const [active, setActive] = useState(false);
