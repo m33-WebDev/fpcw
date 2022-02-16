@@ -31,6 +31,7 @@ module.exports = {
 				],
 			},
 		},
+		'gatsby-plugin-fontawesome-css',
 		{
 			resolve: `gatsby-plugin-advanced-sitemap`,
 			options: {
@@ -89,11 +90,11 @@ module.exports = {
 				trackingId: 'UA-122920911-4',
 			},
 		},
-		{ 
-			resolve: `gatsby-plugin-canonical-urls`, 
+		{
+			resolve: `gatsby-plugin-canonical-urls`,
 			options: {
 				siteUrl: `https://familypsychiatry.us`
-			} 
+			}
 		},
 		`gatsby-plugin-netlify`,
 		`gatsby-plugin-offline`,
