@@ -24,7 +24,7 @@ function Footer() {
   return (
     <footer className={"footer has-background-success has-text-dark "}>
       <div className="container">
-        <div className="columns is-desktop is-vcentered is-centered">
+        <div className="columns is-desktop is-vcentered">
           <div className="column is-3">
             <div className="content">
               <table
@@ -63,14 +63,6 @@ function Footer() {
             Suite 202
             <br />
             Westlake Village, CA 91362
-          </div>
-          <Divider />
-          <div className="column is-2">
-            30851 Agoura Road
-            <br />
-            Suite 304
-            <br />
-            Agoura Hills, CA 91301
           </div>
           <Divider />
           <div className="column is-3">
