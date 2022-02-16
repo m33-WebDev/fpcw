@@ -18,7 +18,7 @@ import {
 
 import { faFacebookSquare, faGoogle } from "@fortawesome/free-brands-svg-icons";
 
-import * as styles from './index.module.scss'
+import * as styles from "./index.module.scss";
 
 function Index({ data }) {
   function getNewsTiles() {
@@ -55,7 +55,9 @@ function Index({ data }) {
                     Counseling & Wellness
                   </h1>
                   <p
-                    className={"subtitle is-size-4 mt-3 mb-5 " + styles.splashSubtitle}
+                    className={
+                      "subtitle is-size-4 mt-3 mb-5 " + styles.splashSubtitle
+                    }
                     style={{ fontWeight: "lighter" }}
                   >
                     A comprehensive, integrative psychiatric and wellness clinic
@@ -103,6 +105,15 @@ function Index({ data }) {
                     </div>
                     <div className="tile">
                       <div className="tile is-parent">
+                        <div className="tile is-child">
+                          <SplashTile
+                            title="Transcranial Magnetic Stimulation (TMS)"
+                            image={data.tmsSplash}
+                            to="/tms"
+                          />
+                        </div>
+                      </div>
+                      <div className="tile is-parent">
                         <div
                           className="tile is-child"
                           style={{ minHeight: "40vmin" }}
@@ -114,15 +125,6 @@ function Index({ data }) {
                           />
                         </div>
                       </div>{" "}
-                      <div className="tile is-parent">
-                        <div className="tile is-child">
-                          <SplashTile
-                            title="Locations"
-                            image={data.locationsSplash}
-                            to="/contact"
-                          />
-                        </div>
-                      </div>
                     </div>{" "}
                   </div>
                 </div>
@@ -333,12 +335,12 @@ export const query = graphql`
         gatsbyImageData(width: 500)
       }
     }
-    librarySplash: file(relativePath: { eq: "images/librarysplash.jpg" }) {
+    tmsSplash: file(relativePath: { eq: "images/tmssplash.jpg" }) {
       childImageSharp {
         gatsbyImageData(width: 500)
       }
     }
-    locationsSplash: file(relativePath: { eq: "images/locationsplash.jpg" }) {
+    librarySplash: file(relativePath: { eq: "images/librarysplash.jpg" }) {
       childImageSharp {
         gatsbyImageData(width: 500)
       }
