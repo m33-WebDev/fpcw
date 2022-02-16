@@ -33,9 +33,9 @@ function Layout({ children }) {
           <html className="has-navbar-fixed-top" lang="en" />
         </Helmet>
         <Header />
-        <section className="section has-background-light site-content is-paddingless">
-          <div className="">{children}</div>
-        </section>
+        <div className="has-background-light site-content">
+          {children}
+        </div>
       </div>
       <Footer />
     </>
