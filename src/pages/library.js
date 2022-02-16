@@ -57,7 +57,7 @@ function Library({ data }) {
 																style={{ height: '100%' }}
 															/>
 															<div className={'content ' + styles.PostTitle}>
-																<div className='title is-5 has-text-light'>
+																<div className='title is-6 has-text-light'>
 																	{title}
 																</div>
 															</div>
