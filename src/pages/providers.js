@@ -25,7 +25,7 @@ function Providers({ data }) {
 							style={{ objectFit: 'cover', height: '100%' }}
 						/>
 
-						<div className={'title is-4 has-text-light ' + styles.PostTitle}>
+						<div className={'title is-6 has-text-light ' + styles.PostTitle}>
 							{name}
 						</div>
 					</div>
