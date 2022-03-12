@@ -67,6 +67,7 @@
     "voca": "^1.4.0"
   },
   "devDependencies": {
+    "gatsby-cli": "^4.9.1",
     "prettier": "^1.19.1"
   },
   "repository": {
