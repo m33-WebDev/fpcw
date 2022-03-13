@@ -65,6 +65,7 @@
     "react-truncate": "^2.4.0",
     "react-truncate-markup": "^5.0.0",
     "sass": "^1.35.2",
+    "styled-components": "^5.3.3",
     "voca": "^1.4.0"
   },
   "devDependencies": {
