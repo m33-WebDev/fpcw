@@ -27,7 +27,12 @@ export default function Tms() {
       <Seo title="Transcranial Magnetic Stimulation (TMS)" />
 
       {/* Splash / intro */}
-      <Hero size="fullheight" color="success" hasNavbar={navbar}>
+      <Hero
+        size="fullheight"
+        color="success"
+        hasNavbar={navbar}
+        style={{ position: "relative" }}
+      >
         <Hero.Body>
           <Container style={{ position: "relative" }}>
             <Content>
@@ -161,7 +166,7 @@ export default function Tms() {
         <Hero.Body>
           <Container textAlign="center">
             <Heading renderAs="h2">Our partners</Heading>
-            <a href="https://neurostar.com/" target="_blank">
+            <a href="https://neurostar.com/" target="_blank" rel="noreferrer">
               <img src={neurostar} alt="Neurostar Logo" />
             </a>
           </Container>
