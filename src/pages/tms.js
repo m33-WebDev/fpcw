@@ -15,12 +15,9 @@ import neurostar from "../images/neurostar-logo.webp";
 import styled from "styled-components";
 import FormAppointment from "../components/formappointment";
 
-const imageSmilingMan =
-  "https://images.unsplash.com/photo-1520451644838-906a72aa7c86?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=850&q=80";
-const imageTMSCoil =
-  "https://images.unsplash.com/photo-1641792324071-d39bc9b73c40?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80";
-const imageVeryHappy =
-  "https://images.pexels.com/photos/941693/pexels-photo-941693.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260";
+import tmsSmilingMan from "../images/tms/HatDude-extended-top-background.jpg";
+import tmsLateralHead from "../images/tms/HP-LateralHead_coil_2021.jpg";
+import tmsMalePatient from "../images/tms/MalePatientDr-closeup.jpg";
 
 export default function Tms() {
   return (
@@ -36,7 +33,7 @@ export default function Tms() {
           <Columns vCentered={true}>
             <Columns.Column textAlign="center">
               <FancyImage
-                src={imageSmilingMan}
+                src={tmsSmilingMan}
                 width="512px"
                 height="512px"
                 radius="30% 70% 70% 30% / 30% 30% 70% 70%"
@@ -101,7 +98,7 @@ export default function Tms() {
             </Columns.Column>
             <Columns.Column textAlign="center">
               <FancyImage
-                src={imageTMSCoil}
+                src={tmsLateralHead}
                 width="512px"
                 height="512px"
                 radius="30% 70% 20% 80% / 70% 30% 70% 30%"
@@ -118,7 +115,7 @@ export default function Tms() {
           <Columns vCentered={true}>
             <Columns.Column textAlign="center">
               <FancyImage
-                src={imageVeryHappy}
+                src={tmsMalePatient}
                 width="512px"
                 height="512px"
                 radius="16% 84% 24% 76% / 70% 15% 85% 30%"
@@ -270,7 +267,8 @@ function Quizlet() {
 const FancyImage = styled.img`
   padding: 5px;
   border: dotted 5px;
-  border-radius: ${(props) => props.radius};
+  /* border-radius: ${(props) =>
+    props.radius}; @disabled: Doesn't look great with non-square photos. */
   border-color: ${(props) =>
     props.color === "success" ? "#48C774" : "#F5F5F5"};
 `;
