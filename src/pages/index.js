@@ -1,11 +1,7 @@
 import React from "react";
 import { Link, graphql } from "gatsby";
 
-import Layout from "../components/layout";
-import Seo from "../components/seo";
-import SplashTile from "../components/splashtile";
-import NewsTile from "../components/newstile";
-import Carousel from "../components/carousel";
+import { Layout, Seo, SplashTile, NewsTile, Carousel } from "../components";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {

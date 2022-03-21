@@ -1,9 +1,7 @@
 import React from "react";
 import { graphql } from "gatsby";
 
-import Layout from "../components/layout";
-import Seo from "../components/seo";
-import FormAppointment from "../components/formappointment";
+import { Layout, Seo, FormAppointment } from "../components";
 
 import * as styles from "./appointments.module.scss";
 

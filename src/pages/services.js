@@ -1,8 +1,7 @@
 import React from "react";
 import { Link, graphql } from "gatsby";
 
-import Layout from "../components/layout";
-import Seo from "../components/seo";
+import { Layout, Seo } from "../components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDiagnoses, faHeadSideVirus, faUserMd } from "@fortawesome/free-solid-svg-icons";
 

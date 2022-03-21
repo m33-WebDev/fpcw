@@ -1,10 +1,8 @@
 import React, { useState } from "react";
 import { Heading, Content, Container, Columns, Form, Button, Level, Section } from "react-bulma-components";
-import Layout from "../components/layout";
-import Seo from "../components/seo";
+import { Layout, Seo, FormAppointment } from "../components";
 import neurostar from "../images/neurostar-logo.webp";
 import styled from "styled-components";
-import FormAppointment from "../components/formappointment";
 
 import tmsSmilingMan from "../images/tms/HatDude-extended-top-background.jpg";
 import tmsLateralHead from "../images/tms/HP-LateralHead_coil_2021.jpg";
@@ -165,7 +163,8 @@ const assertions = [
     { id: 4, val: "My doctor or therapist suggested I try TMS therapy" },
     {
         id: 5,
-        val: "I am currently experiencing symptoms of depression (sadness, low energy, poor concentration, appetite changes, irritability)"
+        val:
+            "I am currently experiencing symptoms of depression (sadness, low energy, poor concentration, appetite changes, irritability)"
     }
 ];
 

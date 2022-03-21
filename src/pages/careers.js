@@ -1,9 +1,7 @@
 import React from "react";
 import { graphql } from "gatsby";
 
-import Layout from "../components/layout";
-import Seo from "../components/seo";
-import FormJobApplication from "../components/formjobapplication";
+import { Layout, Seo, FormJobApplication } from "../components";
 
 function Careers({ data }) {
     const metaTitle = data.contentfulPage.metaTitle;

@@ -2,15 +2,12 @@ import React from "react";
 import { Link, graphql } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
-import Layout from "../components/layout";
-import Seo from "../components/seo";
-import RichText from "../components/richtext";
+import { Layout, Seo, RichText, NewsletterSignup } from "../components";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 
 import * as pageStyle from "./post.module.scss";
-import NewsletterSignup from "../components/newsletter-signup";
 
 function Post({ data }) {
     const { title, metaTitle, feature, body, metaDescription } = data.contentfulPost;
@@ -64,7 +61,7 @@ function Post({ data }) {
 }
 
 export const query = graphql`
-    query ($pagePath: String!) {
+    query($pagePath: String!) {
         contentfulPost(slug: { eq: $pagePath }) {
             slug
             title

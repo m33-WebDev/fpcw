@@ -1,8 +1,6 @@
 import React from "react";
 
-import Layout from "../components/layout";
-import Seo from "../components/seo";
-import FormBrainTesting from "../components/formbraintesting";
+import { Layout, Seo, FormBrainTesting } from "../components";
 
 function BrainTesting() {
     return (
