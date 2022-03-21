@@ -70,7 +70,7 @@
   },
   "devDependencies": {
     "gatsby-cli": "^4.9.1",
-    "prettier": "^1.19.1"
+    "prettier": "^2.0.0"
   },
   "repository": {
     "type": "git",

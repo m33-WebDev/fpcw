@@ -19,7 +19,7 @@ Netlify hooks into this repository and runs/deploys a new build automatically wh
 
 ## Responsive Design
 
-Bulma is a *mobile-first* CSS framework. This means that content styled once with Bulma will look good on a computer and on a smartphone.
+Bulma is a _mobile-first_ CSS framework. This means that content styled once with Bulma will look good on a computer and on a smartphone.
 
 ![Library desktop](https://i.imgur.com/ZCOL6sd.png)
 ![Library mobile](https://i.imgur.com/J1sd6qx.png)
