@@ -1,9 +1,8 @@
-@import './variables.scss';
+@import "./variables.scss";
 
 html {
-  scrollbar-width: thin;
+    scrollbar-width: thin;
 }
 
-@import '~bulma/bulma.sass';
+@import "~bulma/bulma.sass";
 @import "~bulma/sass/utilities/mixins";
-@import '@creativebulma/bulma-divider'

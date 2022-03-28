@@ -65,20 +65,7 @@ module.exports = {
             }
         },
         `gatsby-plugin-sass`,
-        {
-            resolve: `gatsby-transformer-remark`,
-            options: {
-                plugins: [
-                    {
-                        resolve: `gatsby-remark-autolink-headers`,
-                        options: {
-                            icon: false
-                            // isIconAfterHeader: true,
-                        }
-                    }
-                ]
-            }
-        },
+        `gatsby-transformer-remark`,
         `gatsby-plugin-catch-links`,
         {
             resolve: `gatsby-plugin-google-analytics`,
