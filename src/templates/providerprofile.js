@@ -36,7 +36,11 @@ export default function ProviderProfile({ data }) {
                                     </Heading>
                                 </Block>
                                 <Content size="medium">
-                                    <RichText src={bio} />
+                                    {bio ? (
+                                        <RichText src={bio} />
+                                    ) : (
+                                        <p>No information available at this time. Please check back again later.</p>
+                                    )}
                                 </Content>
                                 <Link to="/providers">
                                     <Block display="flex" alignItems="center" textColor="success">
