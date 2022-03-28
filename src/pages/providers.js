@@ -1,89 +1,114 @@
 import React from "react";
 import { graphql, Link } from "gatsby";
 import Img from "gatsby-image";
-
+import { Card, Columns, Container, Content, Heading, Section } from "react-bulma-components";
+import styled from "styled-components";
 import { Layout, Seo } from "../components";
 
-import * as styles from "./providers.module.scss";
-
-function Providers({ data }) {
-    function createProfileCard(profile, i) {
-        var { slug, name, headshot } = profile;
-        return (
-            <div className="column is-4" key={i}>
-                <Link to={slug ? "/providers/" + slug : "/"}>
-                    <div className={"card " + styles.Card}>
-                        <Img
-                            fluid={
-                                headshot
-                                    ? headshot.fluid
-                                    : "https://images.theconversation.com/files/304957/original/file-20191203-66986-im7o5.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=926&fit=clip"
-                            }
-                            alt="Post Feature"
-                            style={{ objectFit: "cover", height: "100%" }}
-                        />
-
-                        <div className={"title is-6 has-text-light " + styles.PostTitle}>{name}</div>
-                    </div>
-                </Link>
-            </div>
-        );
-    }
-
+export default function Providers({ data }) {
     const metaTitle = data.contentfulPage.metaTitle;
     const metaDescription = data.contentfulPage.metaDescription.metaDescription;
+    const profiles = [].concat(
+        data.profSabira,
+        data.profPsych.nodes,
+        data.profNP.nodes,
+        data.profLMFT.nodes,
+        data.profAdmin.nodes
+    );
 
     return (
-        <Layout>
+        <>
             <Seo title={metaTitle} pageDescription={metaDescription} />
-            <div className="hero is-fullheight-with-navbar">
-                <div className="hero-body">
-                    <div className="container">
-                        <div className="columns is-desktop is-variable is-4">
-                            <div className="column is-4">
-                                <div className={"content has-text-centered " + styles.PageDescription}>
-                                    <h1
-                                        className="title"
-                                        style={{
-                                            borderBottom: "4px solid #48C774",
-                                            textAlign: "left",
-                                            paddingBottom: ".3em"
-                                        }}
-                                    >
-                                        Find the Right Expert for Your Mental Health Needs
-                                    </h1>
-                                    <p className="is-size-5" style={{ textAlign: "left" }}>
-                                        Our professional staff consists of board-certified, experienced psychiatrists,
-                                        therapists, nurse practitioners, and others. We are, individually and
-                                        collectively, committed to providing the highest quality care to our patients
-                                        and to advancing wellness of the mind, body, and spirit.
-                                    </p>
-                                </div>
-                            </div>
-                            <div className="column is-8">
-                                <div className={"columns is-multiline "}>
-                                    {createProfileCard(data.profSabira, 0)}
-                                    {data.profPsych.nodes.map((profile, i) => {
-                                        return createProfileCard(profile, i);
-                                    })}
-                                    {data.profNP.nodes.map((profile, i) => {
-                                        return createProfileCard(profile, i);
-                                    })}
-                                    {data.profLMFT.nodes.map((profile, i) => {
-                                        return createProfileCard(profile, i);
-                                    })}
-                                    {data.profAdmin.nodes.map((profile, i) => {
-                                        return createProfileCard(profile, i);
-                                    })}
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </Layout>
+            <Layout>
+                <Section>
+                    <Container>
+                        <Columns gap={4}>
+                            <Columns.Column size={4}>
+                                <FancyBlurb>
+                                    <FancyHeading>Find the Right Expert for Your Mental Health Needs</FancyHeading>
+                                    <Content size="medium">
+                                        <p>
+                                            Our professional staff consists of board-certified, experienced
+                                            psychiatrists, therapists, nurse practitioners, and others. We are,
+                                            individually and collectively, committed to providing the highest quality
+                                            care to our patients and to advancing wellness of the mind, body, and
+                                            spirit.
+                                        </p>
+                                    </Content>
+                                </FancyBlurb>
+                            </Columns.Column>
+                            <Columns.Column size={8}>
+                                <Columns multiline={true}>
+                                    {profiles.map(({ slug, name, headshot }, i) => (
+                                        <Columns.Column size={4} key={i}>
+                                            <Link to={`/providers/${slug}`}>
+                                                <FancyCard>
+                                                    <FancyPostImage
+                                                        fluid={
+                                                            headshot
+                                                                ? headshot.fluid
+                                                                : "https://images.theconversation.com/files/304957/original/file-20191203-66986-im7o5.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=926&fit=clip"
+                                                        }
+                                                        key={headshot.fluid.src}
+                                                        alt={headshot.fluid.title}
+                                                    />
+                                                    <FancyPostTitle>
+                                                        <Heading size={6} textColor="light">
+                                                            {name}
+                                                        </Heading>
+                                                    </FancyPostTitle>
+                                                </FancyCard>
+                                            </Link>
+                                        </Columns.Column>
+                                    ))}
+                                </Columns>
+                            </Columns.Column>
+                        </Columns>
+                    </Container>
+                </Section>
+            </Layout>
+        </>
     );
 }
+
+const FancyBlurb = styled.div`
+    @media (min-width: 1024px) {
+        position: sticky;
+        top: 15vh;
+    }
+`;
+
+const FancyHeading = styled(Heading)`
+    border-bottom: 4px solid #48c774;
+    text-align: left;
+    padding-bottom: 0.3em;
+`;
+
+const FancyCard = styled(Card)`
+    @media (max-width: 769px) {
+        height: 70vmin;
+    }
+    @media (min-width: 769px) {
+        height: 30vmin;
+    }
+`;
+
+const FancyPostTitle = styled.div`
+    border: 3px solid #48c774;
+    border-right: 0px;
+
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 0.3em;
+    text-align: left;
+    background: rgba(72, 199, 116, 0.7);
+    max-width: 70%;
+`;
+
+const FancyPostImage = styled(Img)`
+    height: 100%;
+`;
 
 export const query = graphql`
     query {
@@ -159,5 +184,3 @@ export const query = graphql`
         }
     }
 `;
-
-export default Providers;

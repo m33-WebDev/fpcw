@@ -1,23 +1,23 @@
 import React from "react";
-
+import { Columns, Container, Heading, Section } from "react-bulma-components";
 import { Layout, Seo, FormBrainTesting } from "../components";
 
-function BrainTesting() {
+export default function BrainTesting() {
     return (
-        <Layout>
+        <>
             <Seo title="Schedule a brain testing appointment" />
-            <section className="section">
-                <div className="container">
-                    <div class="columns">
-                        <div class="column is-6">
-                            <h1 className="title is-size-1-desktop">Schedule a Brain Testing Appointment Today!</h1>
-                            <FormBrainTesting />
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </Layout>
+            <Layout>
+                <Section>
+                    <Container>
+                        <Columns>
+                            <Columns.Column size={6}>
+                                <Heading size={1}>Schedule a Brain Testing Appointment Today!</Heading>
+                                <FormBrainTesting />
+                            </Columns.Column>
+                        </Columns>
+                    </Container>
+                </Section>
+            </Layout>
+        </>
     );
 }
-
-export default BrainTesting;

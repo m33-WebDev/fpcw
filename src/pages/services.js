@@ -1,81 +1,96 @@
 import React from "react";
 import { Link, graphql } from "gatsby";
-
-import { Layout, Seo } from "../components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDiagnoses, faHeadSideVirus, faUserMd } from "@fortawesome/free-solid-svg-icons";
+import { Block, Columns, Container, Content, Heading, Section } from "react-bulma-components";
+import { Layout, Seo } from "../components";
+import services from "../content/services.json";
 
-import servicesData from "../content/services.json";
-
-function createService(item) {
-    if (item && item.article) {
-        return (
-            <li key={item.name}>
-                <Link href={item.article ? "/library/" + item.article : ""}>{item.name}</Link>
-            </li>
-        );
-    } else {
-        return <li key={item.name}>{item.name}</li>;
-    }
-}
-
-function Services({ data }) {
+export default function Services({ data }) {
     const metaTitle = data.contentfulPage.metaTitle;
     const metaDescription = data.contentfulPage.metaDescription.metaDescription;
+    const { conditions, psychTreatments, altTreatments } = services;
 
     return (
-        <Layout>
+        <>
             <Seo title={metaTitle} description={metaDescription} />
+            <Layout>
+                <Section>
+                    <Container>
+                        <Heading size={1} mb={6}>
+                            Mental Health Services Provided at FPCW
+                        </Heading>
+                        <Columns gap={6}>
+                            <Columns.Column size={4}>
+                                <Content>
+                                    <Block textAlign="center">
+                                        <FontAwesomeIcon icon={faHeadSideVirus} size="3x" />
+                                    </Block>
+                                    <Heading size={4} renderAs="h2" textAlign="center">
+                                        Conditions Treated
+                                    </Heading>
+                                    <p>
+                                        We offer expert diagnosis and treatment of most psychiatric conditions,
+                                        including:
+                                    </p>
+                                    <ul>
+                                        {conditions.map(service => (
+                                            <Service service={service} />
+                                        ))}
+                                    </ul>
+                                </Content>
+                            </Columns.Column>
+                            <Columns.Column size={4}>
+                                <Content>
+                                    <Block textAlign="center">
+                                        <FontAwesomeIcon icon={faUserMd} size="3x" />
+                                    </Block>
+                                    <Heading size={4} renderAs="h2" textAlign="center">
+                                        Services Offered
+                                    </Heading>
+                                    <p>
+                                        We offer counseling and treament for a full range of mental health conditions
+                                        including:
+                                    </p>
+                                    <ul>
+                                        {psychTreatments.map(service => (
+                                            <Service service={service} />
+                                        ))}
+                                    </ul>
+                                </Content>
+                            </Columns.Column>
+                            <Columns.Column size={4}>
+                                <Content>
+                                    <Block textAlign="center">
+                                        <FontAwesomeIcon icon={faDiagnoses} size="3x" />
+                                    </Block>
+                                    <Heading size={4} renderAs="h2" textAlign="center">
+                                        Wellness and Prevention
+                                    </Heading>
+                                    <p>
+                                        We also offer a number of alternative therapies designed to promote general
+                                        wellbeing including:
+                                    </p>
+                                    <ul>
+                                        {altTreatments.map(service => (
+                                            <Service service={service} />
+                                        ))}
+                                    </ul>
+                                </Content>
+                            </Columns.Column>
+                        </Columns>
+                    </Container>
+                </Section>
+            </Layout>
+        </>
+    );
+}
 
-            <div className="hero-body">
-                <div className="container">
-                    <h1 className="title is-size-1 is-size-3-mobile" style={{ marginBottom: "8vmin" }}>
-                        Mental Health Services Provided at FPCW
-                    </h1>
-                    <div className="columns is-centered is-variable is-6">
-                        <div className="column is-4">
-                            <div className="content">
-                                <div className="has-text-centered">
-                                    <FontAwesomeIcon icon={faHeadSideVirus} size="3x" />
-                                </div>
-                                <h2 className="title is-4 has-text-centered">Conditions Treated</h2>
-                                <p>
-                                    We offer expert diagnosis and treatment of most psychiatric conditions, including:
-                                </p>
-                                <ul>{servicesData.conditions.map(cond => createService(cond))}</ul>
-                            </div>
-                        </div>
-
-                        <div className="column is-4">
-                            <div className="content">
-                                <div className="has-text-centered">
-                                    <FontAwesomeIcon icon={faUserMd} size="3x" />
-                                </div>
-                                <h2 className="title is-4 has-text-centered">Services Offered</h2>
-                                <p>
-                                    We offer counseling and treament for a full range of mental health conditions
-                                    including:
-                                </p>
-                                <ul>{servicesData.psychTreatments.map(treat => createService(treat))}</ul>
-                            </div>
-                        </div>
-                        <div className="column is-4">
-                            <div className="content">
-                                <div className="has-text-centered">
-                                    <FontAwesomeIcon icon={faDiagnoses} size="3x" />
-                                </div>
-                                <h2 className="title is-4 has-text-centered">Wellness and Prevention</h2>
-                                <p>
-                                    We also offer a number of alternative therapies designed to promote general
-                                    wellbeing including:
-                                </p>
-                                <ul>{servicesData.altTreatments.map(treat => createService(treat))}</ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </Layout>
+function Service({ service }) {
+    return (
+        <li key={service.name}>
+            {service.article ? <Link to={`/library/${service.article}`}>{service.name}</Link> : service.name}
+        </li>
     );
 }
 
@@ -89,5 +104,3 @@ export const query = graphql`
         }
     }
 `;
-
-export default Services;

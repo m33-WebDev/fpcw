@@ -1,29 +1,9 @@
 import React, { useState } from "react";
-
-/* eslint-disable no-useless-concat */
-
+import { Button, Columns, Form, Icon } from "react-bulma-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope, faPhone, faCalendar, faUserFriends, faUser } from "@fortawesome/free-solid-svg-icons";
 
-import "react-datepicker/dist/react-datepicker-cssmodules.css";
-
-function BulmaControl({ children, name, hasLeftIcons, hasRightIcons }) {
-    function getControlClass() {
-        var className = "control";
-        className = className.concat(hasLeftIcons ? " " + "has-icons-left" : "");
-        className = className.concat(hasRightIcons ? " " + "has-icons-right" : "");
-        return className;
-    }
-
-    return (
-        <div className="field">
-            <label className="label">{name}</label>
-            <div className={getControlClass()}>{children}</div>
-        </div>
-    );
-}
-
-let refSources = [
+const referralSources = [
     "Search Engine (Google, Yahoo, etc.)",
     "Social Media (Facebook, Instagram, etc.)",
     "Insurance Referral",
@@ -31,16 +11,16 @@ let refSources = [
     "Other"
 ];
 
-let insuranceOp = refSources[2];
-let womOp = refSources[3];
-let otherOp = refSources[4];
+const insuranceReferral = referralSources[2];
+const wordOfMouthReferral = referralSources[3];
+const otherReferral = referralSources[4];
 
-function FormAppointment() {
-    let [referralSource, setReferralSource] = useState("");
+export function FormAppointment() {
+    const [referralSource, setReferralSource] = useState("");
 
-    function handleChange(event) {
+    const handleChange = event => {
         setReferralSource(event.target.value);
-    }
+    };
 
     return (
         <form name="appointmentrequest" method="POST" netlify="true" action="/formsuccess/">
@@ -50,115 +30,132 @@ function FormAppointment() {
             <input type="hidden" name="referral-wordofmouth-phone" />
             <input type="hidden" name="referral-other-details" />
 
-            <div className="columns">
-                <div className="column is-6">
-                    <div className="columns">
-                        <div className="column">
-                            <BulmaControl name="First Name">
-                                <input className="input" type="text" placeholder="John" name="first-name" required />
-                            </BulmaControl>
-                        </div>
-                        <div className="column">
-                            <BulmaControl name="Last Name">
-                                <input className="input" type="text" placeholder="Smith" name="last-name" required />
-                            </BulmaControl>
-                        </div>
-                    </div>
-                    <BulmaControl name="Email" hasLeftIcons>
-                        <input className="input" type="email" placeholder="johnsmith@gmail.com" name="email" required />{" "}
-                        <span className="icon is-small is-left">
-                            <FontAwesomeIcon icon={faEnvelope} />
-                        </span>
-                    </BulmaControl>
-                    <BulmaControl name="Phone" hasLeftIcons>
-                        <input className="input" type="phone" placeholder="(123) 456-7890" name="phone" required />{" "}
-                        <span className="icon is-small is-left">
-                            <FontAwesomeIcon icon={faPhone} />
-                        </span>
-                    </BulmaControl>
-                    <BulmaControl name="Desired Appointment Date" hasLeftIcons>
-                        <input
-                            className="input"
-                            type="date"
-                            placeholder="12/05/1993"
-                            name="appt-requested-date"
-                            required
-                        />{" "}
-                        <span className="icon is-small is-left">
-                            <FontAwesomeIcon icon={faCalendar} />
-                        </span>
-                    </BulmaControl>
-                </div>
-                <div className="column is-6">
-                    <BulmaControl name="How Did You Hear About Us?" hasLeftIcons>
-                        <div className="select is-success is-fullwidth">
-                            <select
+            <Columns>
+                <Columns.Column size={6}>
+                    <Columns>
+                        <Columns.Column>
+                            <Form.Field>
+                                <Form.Label>First Name</Form.Label>
+                                <Form.Control>
+                                    <Form.Input placeholder="John" name="first-name" required></Form.Input>
+                                </Form.Control>
+                            </Form.Field>
+                        </Columns.Column>
+                        <Columns.Column>
+                            <Form.Field>
+                                <Form.Label>Last Name</Form.Label>
+                                <Form.Control>
+                                    <Form.Input placeholder="Smith" name="last-name" required></Form.Input>
+                                </Form.Control>
+                            </Form.Field>
+                        </Columns.Column>
+                    </Columns>
+                    <Form.Field>
+                        <Form.Label>Email</Form.Label>
+                        <Form.Control>
+                            <Form.Input placeholder="johnsmith@gmail.com" name="email" required />
+                            <Icon align="left">
+                                <FontAwesomeIcon icon={faEnvelope} />
+                            </Icon>
+                        </Form.Control>
+                    </Form.Field>
+                    <Form.Field>
+                        <Form.Label>Phone</Form.Label>
+                        <Form.Control>
+                            <Form.Input placeholder="(123) 456-7890" name="phone" required />
+                            <Icon align="left">
+                                <FontAwesomeIcon icon={faPhone} />
+                            </Icon>
+                        </Form.Control>
+                    </Form.Field>
+                    <Form.Field>
+                        <Form.Label>Desired Appointment Date</Form.Label>
+                        <Form.Control>
+                            <input
+                                className="input"
+                                type="date"
+                                placeholder="12/05/1993"
+                                name="appt-requested-date"
+                                required
+                            />
+                            <Icon align="left">
+                                <FontAwesomeIcon icon={faCalendar} />
+                            </Icon>
+                        </Form.Control>
+                    </Form.Field>
+                </Columns.Column>
+                <Columns.Column size={6}>
+                    <Form.Field>
+                        <Form.Label>How Did You Hear About Us?</Form.Label>
+                        <Form.Control>
+                            <Form.Select
+                                color="success"
+                                fullwidth={true}
                                 name="referral-source"
                                 value={referralSource}
                                 onChange={handleChange}
                                 onBlur={handleChange}
                                 required
                             >
-                                {refSources.map(source => {
+                                {referralSources.map(source => {
                                     return <option key={source}>{source}</option>;
                                 })}
-                            </select>
-                        </div>
-                        <span className="icon is-small is-left">
-                            <FontAwesomeIcon icon={faUserFriends} />
-                        </span>
-                    </BulmaControl>
-                    {referralSource === insuranceOp && (
-                        <BulmaControl name="Referring Insurer" hasLeftIcons>
-                            <input className="input" type="text" placeholder="Insurer" name="referral-insurer" />
-                            <span className="icon is-small is-left">
-                                <FontAwesomeIcon icon={faUser} />
-                            </span>
-                        </BulmaControl>
-                    )}
-                    {referralSource === womOp && (
-                        <>
-                            <BulmaControl name="Word of Mouth Referrer" hasLeftIcons>
-                                <input
-                                    className="input"
-                                    type="text"
-                                    placeholder="Name"
-                                    name="referral-wordofmouth-name"
-                                />
-                                <span className="icon is-small is-left">
+                            </Form.Select>
+                            <Icon align="left">
+                                <FontAwesomeIcon icon={faUserFriends} />
+                            </Icon>
+                        </Form.Control>
+                    </Form.Field>
+                    {referralSource === insuranceReferral && (
+                        <Form.Field>
+                            <Form.Label>Referring Insurer</Form.Label>
+                            <Form.Control>
+                                <Form.Input placeholder="Insurer" name="referral-insurer" />
+                                <Icon align="left">
                                     <FontAwesomeIcon icon={faUser} />
-                                </span>
-                            </BulmaControl>
-                            <BulmaControl name="" hasLeftIcons>
-                                <input
-                                    className="input"
-                                    type="text"
-                                    placeholder="(123) 456-7890"
-                                    name="referral-wordofmouth-phone"
-                                />
-                                <span className="icon is-small is-left">
-                                    <FontAwesomeIcon icon={faPhone} />
-                                </span>
-                            </BulmaControl>
+                                </Icon>
+                            </Form.Control>
+                        </Form.Field>
+                    )}
+                    {referralSource === wordOfMouthReferral && (
+                        <>
+                            <Form.Field>
+                                <Form.Label>Word of Mouth Referrer</Form.Label>
+                                <Form.Control>
+                                    <Form.Input placeholder="Name" name="referral-wordofmouth-name" />
+                                    <Icon align="left">
+                                        <FontAwesomeIcon icon={faUser} />
+                                    </Icon>
+                                </Form.Control>
+                            </Form.Field>
+                            <Form.Field>
+                                <Form.Control>
+                                    <Form.Input placeholder="(123) 456-7890" name="referral-wordofmouth-phone" />
+                                    <Icon align="left">
+                                        <FontAwesomeIcon icon={faPhone} />
+                                    </Icon>
+                                </Form.Control>
+                            </Form.Field>
                         </>
                     )}
-                    {referralSource === otherOp && (
-                        <BulmaControl name="Please Specify" hasLeftIcons>
-                            <input className="input" type="text" placeholder="..." name="referral-other-details" />
-                            <span className="icon is-small is-left">
-                                <FontAwesomeIcon icon={faUser} />
-                            </span>
-                        </BulmaControl>
+                    {referralSource === otherReferral && (
+                        <Form.Field>
+                            <Form.Label>Please Specify</Form.Label>
+                            <Form.Control>
+                                <Form.Input placeholder="..." name="referral-other-details" />
+                                <Icon align="left">
+                                    <FontAwesomeIcon icon={faUser} />
+                                </Icon>
+                            </Form.Control>
+                        </Form.Field>
                     )}
-                </div>
-            </div>
-            <BulmaControl>
-                <button className="button is-success is-outlined" type="submit" style={{ width: "100%" }}>
+                </Columns.Column>
+            </Columns>
+            <Form.Field>
+                <Button color="success" outlined={true} fullwidth={true} type="submit">
                     Submit
-                </button>
-            </BulmaControl>
+                </Button>
+            </Form.Field>
         </form>
     );
 }
-
-export default FormAppointment;

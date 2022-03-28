@@ -1,27 +1,9 @@
-import React from "react";
-
-/* eslint-disable no-useless-concat */
-
+import React, { useState } from "react";
+import { Button, Columns, Form, Heading, Icon } from "react-bulma-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope, faPhone, faUpload, faStethoscope } from "@fortawesome/free-solid-svg-icons";
 
-function BulmaControl({ children, name, hasLeftIcons, hasRightIcons }) {
-    function getControlClass() {
-        var className = "control";
-        className = className.concat(hasLeftIcons ? " " + "has-icons-left" : "");
-        className = className.concat(hasRightIcons ? " " + "has-icons-right" : "");
-        return className;
-    }
-
-    return (
-        <div className="field">
-            <label className="label">{name}</label>
-            <div className={getControlClass()}>{children}</div>
-        </div>
-    );
-}
-
-var positions = [
+const positions = [
     "Psychiatrist",
     "Psychiatric Nurse Practitioner",
     "Licensed Marriage and Family Therapist",
@@ -29,91 +11,88 @@ var positions = [
     "Licensed Clinical Social Worker"
 ];
 
-class FormJobApplication extends React.Component {
-    constructor(props) {
-        super(props);
-        this.onUpload = this.onUpload.bind(this);
-        this.state = {
-            resume: {}
-        };
-    }
-    onUpload(event) {
-        var files = event.target.files;
-        this.setState({ resume: files[0] });
-        console.log("Uploading file: %s", files[0].name);
+export function FormJobApplication() {
+    const [resume, setResume] = useState();
+
+    function onUpload(event) {
+        const files = event.target.files;
+        setResume(files);
     }
 
-    render() {
-        return (
-            <form
-                name="jobapplication"
-                method="POST"
-                netlify="true"
-                action="/formsuccess/"
-                encType="multipart/form-data"
-            >
-                <input type="hidden" name="form-name" value="jobapplication" />
-                <h1 className="title">Application</h1>
-
-                <BulmaControl name="Position" hasLeftIcons>
-                    <div className="select is-success is-fullwidth">
-                        <select name="position">
-                            {positions.map(pos => {
-                                return <option key={pos}>{pos}</option>;
-                            })}
-                        </select>
-                    </div>
-                    <span className="icon is-small is-left">
+    return (
+        <form name="jobapplication" method="POST" netlify="true" action="/formsuccess/" encType="multipart/form-data">
+            <input type="hidden" name="form-name" value="jobapplication" />
+            <Heading>Application</Heading>
+            <Form.Field>
+                <Form.Label>Position</Form.Label>
+                <Form.Control>
+                    <Form.Select color="success">
+                        {positions.map(pos => {
+                            return <option key={pos}>{pos}</option>;
+                        })}
+                    </Form.Select>
+                    <Icon align="left">
                         <FontAwesomeIcon icon={faStethoscope} />
-                    </span>
-                </BulmaControl>
-
-                <div className="columns">
-                    <div className="column">
-                        <BulmaControl name="First Name">
-                            <input className="input" type="text" placeholder="John" name="firstname" />
-                        </BulmaControl>
-                    </div>
-                    <div className="column">
-                        <BulmaControl name="Last Name">
-                            <input className="input" type="text" placeholder="Smith" name="lastname" />
-                        </BulmaControl>
-                    </div>
-                </div>
-                <BulmaControl name="Email" hasLeftIcons>
-                    <input className="input" type="email" placeholder="johnsmith@gmail.com" name="email" />{" "}
-                    <span className="icon is-small is-left">
+                    </Icon>
+                </Form.Control>
+            </Form.Field>
+            <Columns>
+                <Columns.Column>
+                    <Form.Field>
+                        <Form.Label>First Name</Form.Label>
+                        <Form.Control>
+                            <Form.Input placeholder="John" name="firstname" />
+                        </Form.Control>
+                    </Form.Field>
+                </Columns.Column>
+                <Columns.Column>
+                    <Form.Field>
+                        <Form.Label>Last Name</Form.Label>
+                        <Form.Control>
+                            <Form.Input placeholder="Smith" name="lastname" />
+                        </Form.Control>
+                    </Form.Field>
+                </Columns.Column>
+            </Columns>
+            <Form.Field>
+                <Form.Label>Email</Form.Label>
+                <Form.Control>
+                    <Form.Input placeholder="johnsmith@gmail.com" name="email" />
+                    <Icon align="left">
                         <FontAwesomeIcon icon={faEnvelope} />
-                    </span>
-                </BulmaControl>
-                <BulmaControl name="Phone" hasLeftIcons>
-                    <input className="input" type="phone" placeholder="(123) 456-7890" name="phone" />{" "}
-                    <span className="icon is-small is-left">
+                    </Icon>
+                </Form.Control>
+            </Form.Field>
+            <Form.Field>
+                <Form.Label>Phone</Form.Label>
+                <Form.Control>
+                    <Form.Input placeholder="(123) 456-7890" name="phone" />
+                    <Icon align="left">
                         <FontAwesomeIcon icon={faPhone} />
-                    </span>
-                </BulmaControl>
-                <BulmaControl name="Resume" hasLeftIcons>
-                    <div className="file is-success is-right is-fullwidth" style={{ width: "100%" }}>
-                        <label className="file-label">
-                            <input className="file-input" type="file" name="resume" onChange={this.onUpload} />
-                            <span className="file-cta">
-                                <span className="file-icon">
-                                    <FontAwesomeIcon icon={faUpload} />
-                                </span>
-                                <span className="file-label">Upload</span>
-                            </span>
-                            <span className="file-name">{this.state.resume ? this.state.resume.name : ""}</span>
-                        </label>
-                    </div>
-                </BulmaControl>
-                <BulmaControl>
-                    <button className="button is-success is-outlined" type="submit" style={{ width: "100%" }}>
-                        Submit
-                    </button>
-                </BulmaControl>
-            </form>
-        );
-    }
+                    </Icon>
+                </Form.Control>
+            </Form.Field>
+            <Form.Field>
+                <Form.Label>Resume</Form.Label>
+                <Form.Control>
+                    <Form.InputFile
+                        color="success"
+                        fullwidth={true}
+                        align="right"
+                        label="Upload"
+                        icon={<FontAwesomeIcon icon={faUpload} />}
+                        filename={resume ? resume[0].name : " "}
+                        value={resume ? resume : undefined}
+                        onChange={onUpload}
+                        name="resume"
+                    />
+                </Form.Control>
+            </Form.Field>
+            <Form.Field>
+                <Button color="success" outlined={true} fullwidth={true} type="submit">
+                    Submit
+                </Button>
+            </Form.Field>
+        </form>
+    );
 }
-
-export default FormJobApplication;

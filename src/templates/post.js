@@ -1,67 +1,71 @@
 import React from "react";
 import { Link, graphql } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
-
-import { Layout, Seo, RichText, NewsletterSignup } from "../components";
-
+import { Block, Columns, Container, Content, Heading, Icon, Section } from "react-bulma-components";
+import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
+import { Layout, Seo, RichText, NewsletterSignup } from "../components";
 
-import * as pageStyle from "./post.module.scss";
-
-function Post({ data }) {
+export default function Post({ data }) {
     const { title, metaTitle, feature, body, metaDescription } = data.contentfulPost;
 
     return (
-        <Layout>
+        <>
             <Seo title={metaTitle || title} description={metaDescription ? metaDescription.metaDescription : ""} />
-            <div className="hero is-fullheight-with-navbar">
-                <div className="hero-body">
-                    <div className="container">
-                        <div className="columns is-centered is-desktop is-variable is-8">
-                            <div className="column is-6">
-                                <div className={pageStyle.Frontmatter}>
-                                    <div className="content">
-                                        <h1 className="title" style={{ textAlign: "left" }}>
-                                            {title}
-                                        </h1>
-                                    </div>
-                                    <GatsbyImage
-                                        image={getImage(feature)}
-                                        alt="Post feature"
-                                        style={{ objectFit: "cover", marginBottom: "5vmin" }}
-                                    />
-                                    <Link to="/library" className="has-text-success is-hidden-mobile">
-                                        <FontAwesomeIcon icon={faChevronLeft} />
-                                        {" Back to library"}
+            <Layout>
+                <Section>
+                    <Container>
+                        <Columns centered={true} gap={8}>
+                            <Columns.Column size={6}>
+                                <FancyFrontmatter>
+                                    <Heading>{title}</Heading>
+                                    <FancyFeatureImage image={getImage(feature)} alt="Post feature" />
+                                    <Link to="/library">
+                                        <Block display="flex" alignItems="center" textColor="success">
+                                            <Icon>
+                                                <FontAwesomeIcon icon={faChevronLeft} />
+                                            </Icon>
+                                            <span>Back to library</span>
+                                        </Block>
                                     </Link>
-                                </div>
-                            </div>
-                            <div className="column is-6">
-                                <div className={pageStyle.body}>
+                                </FancyFrontmatter>
+                            </Columns.Column>
+                            <Columns.Column size={6}>
+                                <Content size="medium">
                                     <RichText src={body} />
-                                    <hr
-                                        style={{
-                                            border: 0,
-                                            height: "1px",
-                                            backgroundImage:
-                                                "linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0))"
-                                        }}
-                                    />
+                                    <FancyDivider />
                                     <NewsletterSignup />
-                                </div>
-                                <div />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </Layout>
+                                </Content>
+                            </Columns.Column>
+                        </Columns>
+                    </Container>
+                </Section>
+            </Layout>
+        </>
     );
 }
 
+const FancyFrontmatter = styled.div`
+    @media (min-width: 1024px) {
+        position: sticky;
+        top: 10vh;
+    }
+`;
+
+const FancyFeatureImage = styled(GatsbyImage)`
+    object-fit: cover;
+    margin-bottom: 5vmin;
+`;
+
+const FancyDivider = styled.hr`
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+`;
+
 export const query = graphql`
-    query($pagePath: String!) {
+    query ($pagePath: String!) {
         contentfulPost(slug: { eq: $pagePath }) {
             slug
             title
@@ -78,5 +82,3 @@ export const query = graphql`
         }
     }
 `;
-
-export default Post;

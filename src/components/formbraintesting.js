@@ -1,75 +1,64 @@
 import React from "react";
-
-/* eslint-disable no-useless-concat */
-
+import { Button, Columns, Form, Icon } from "react-bulma-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope, faPhone } from "@fortawesome/free-solid-svg-icons";
 
-import "react-datepicker/dist/react-datepicker-cssmodules.css";
-
-function BulmaControl({ children, name, hasLeftIcons, hasRightIcons }) {
-    function getControlClass() {
-        var className = "control";
-        className = className.concat(hasLeftIcons ? " " + "has-icons-left" : "");
-        className = className.concat(hasRightIcons ? " " + "has-icons-right" : "");
-        return className;
-    }
-
-    return (
-        <div className="field">
-            <label className="label">{name}</label>
-            <div className={getControlClass()}>{children}</div>
-        </div>
-    );
-}
-
-function FormBrainTesting() {
+export function FormBrainTesting() {
     return (
         <form name="braintestingappointment" method="POST" netlify="true" action="/formsuccess/">
             <input type="hidden" name="form-name" value="braintestingappointment" />
-
-            <div className="columns">
-                <div className="column">
-                    <BulmaControl name="First Name">
-                        <input className="input" type="text" placeholder="John" name="first-name" required />
-                    </BulmaControl>
-                </div>
-                <div className="column">
-                    <BulmaControl name="Last Name">
-                        <input className="input" type="text" placeholder="Smith" name="last-name" required />
-                    </BulmaControl>
-                </div>
-            </div>
-            <BulmaControl name="Email" hasLeftIcons>
-                <input className="input" type="email" placeholder="johnsmith@gmail.com" name="email" required />{" "}
-                <span className="icon is-small is-left">
-                    <FontAwesomeIcon icon={faEnvelope} />
-                </span>
-            </BulmaControl>
-            <BulmaControl name="Phone" hasLeftIcons>
-                <input className="input" type="phone" placeholder="(123) 456-7890" name="phone" required />{" "}
-                <span className="icon is-small is-left">
-                    <FontAwesomeIcon icon={faPhone} />
-                </span>
-            </BulmaControl>
-            <BulmaControl name="Existing Patient?">
-                <label class="radio">
-                    <input type="radio" name="existing-patient" value="Yes" />
-                    Yes
-                </label>
-                <label class="radio">
-                    <input type="radio" name="existing-patient" value="No" />
-                    No
-                </label>
-            </BulmaControl>
-
-            <BulmaControl>
-                <button className="button is-success is-outlined" type="submit" style={{ width: "100%" }}>
+            <Columns>
+                <Columns.Column>
+                    <Form.Field>
+                        <Form.Label>First Name</Form.Label>
+                        <Form.Control>
+                            <Form.Input placeholder="John" name="first-name" required />
+                        </Form.Control>
+                    </Form.Field>
+                </Columns.Column>
+                <Columns.Column>
+                    <Form.Field>
+                        <Form.Label>Last Name</Form.Label>
+                        <Form.Control>
+                            <Form.Input placeholder="Smith" name="last-name" required />
+                        </Form.Control>
+                    </Form.Field>
+                </Columns.Column>
+            </Columns>
+            <Form.Field>
+                <Form.Label>Email</Form.Label>
+                <Form.Control>
+                    <Form.Input placeholder="johnsmith@gmail.com" name="email" required />
+                    <Icon align="left">
+                        <FontAwesomeIcon icon={faEnvelope} />
+                    </Icon>
+                </Form.Control>
+            </Form.Field>
+            <Form.Field>
+                <Form.Label>Phone</Form.Label>
+                <Form.Control>
+                    <Form.Input placeholder="(123) 456-7890" name="phone" required />
+                    <Icon align="left">
+                        <FontAwesomeIcon icon={faPhone} />
+                    </Icon>
+                </Form.Control>
+            </Form.Field>
+            <Form.Field>
+                <Form.Label>Existing Patient?</Form.Label>
+                <Form.Control>
+                    <Form.Radio name="existing-patient" value="Yes">
+                        Yes
+                    </Form.Radio>
+                    <Form.Radio name="existing-patient" value="No">
+                        No
+                    </Form.Radio>
+                </Form.Control>
+            </Form.Field>
+            <Form.Field>
+                <Button color="success" outlined={true} fullwidth={true} type="submit">
                     Submit
-                </button>
-            </BulmaControl>
+                </Button>
+            </Form.Field>
         </form>
     );
 }
-
-export default FormBrainTesting;

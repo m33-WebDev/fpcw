@@ -1,261 +1,230 @@
 import React from "react";
 import { Link, graphql } from "gatsby";
-
-import { Layout, Seo, SplashTile, NewsTile, Carousel } from "../components";
-
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-    faStar,
-    faHandHoldingMedical,
-    faChevronRight,
-    faHeartbeat,
-    faStethoscope
-} from "@fortawesome/free-solid-svg-icons";
-
+    Block,
+    Button,
+    Columns,
+    Container,
+    Content,
+    Heading,
+    Hero,
+    Icon,
+    Level,
+    Section,
+    Tile
+} from "react-bulma-components";
+import styled from "styled-components";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faStar, faHandHoldingMedical, faChevronRight, faHeartbeat } from "@fortawesome/free-solid-svg-icons";
 import { faFacebookSquare, faGoogle } from "@fortawesome/free-brands-svg-icons";
+import { Layout, Seo, SplashTile, NewsTile, Reviews } from "../components";
 
-import * as styles from "./index.module.scss";
-
-function Index({ data }) {
-    function getNewsTiles() {
-        var tiles = [];
-
-        data.newsPosts.nodes.forEach((post, i) => {
-            tiles.push(
-                <div className="column is-3" key={i} style={{ height: "100%" }}>
-                    <NewsTile post={post} style={{ height: "100%" }} />
-                </div>
-            );
-        });
-
-        return tiles;
+const ratings = [
+    {
+        link: "https://www.google.com/search?sxsrf=ALeKk00VCh2E4hyk89Nj9ExwQPWMR02uAg%3A1586936272331&source=hp&ei=0LmWXob-EYWw0PEPtPiGsAs&q=family+psychiatry+and+wellness&oq=famil&gs_lcp=CgZwc3ktYWIQARgAMgQIIxAnMgQIIxAnMgQIIxAnMgQIABBDMgQIABBDMgQIABBDMgQIABBDMgIIADICCAAyAggAOgcIABCDARBDOgUIABCRAjoFCAAQgwE6BggAEAoQQ0oVCBcSETItMTczZzIzNmcyOTNnMzAySg0IGBIJMi0xZzFnMWcxUKLF_QJYnMb9AmCE0v0CaANwAHgAgAGgAogB4QaSAQUxLjAuM5gBAKABAaoBB2d3cy13aXo&sclient=psy-ab",
+        icon: faGoogle,
+        rating: 4.8
+    },
+    {
+        link: "https://www.facebook.com/www.familypsychiatry101.net/",
+        icon: faFacebookSquare,
+        rating: 4.1
+    },
+    {
+        link: "https://www.vitals.com/doctors/Dr_Sabira_Saifuddin/reviews",
+        icon: faHeartbeat,
+        rating: 5.0
     }
+];
 
+export default function Index({ data }) {
     const metaTitle = data.contentfulPage.metaTitle;
     const metaDescription = data.contentfulPage.metaDescription.metaDescription;
 
     return (
-        <Layout>
+        <>
             <Seo title={metaTitle} description={metaDescription} />
-            <section className="hero is-light is-fullheight-with-navbar">
-                <div className="hero-body">
-                    <div className="container" style={{ height: "100%" }}>
-                        <div className="columns is-vcentered" style={{ height: "100%" }}>
-                            <div className="column is-6" style={{ position: "relative", display: "inline-block" }}>
-                                <div>
-                                    <h1 className="title is-1 is-size-3-mobile">
+            <Layout>
+                <Hero size="fullheight" hasNavbar={true}>
+                    <Hero.Body>
+                        <Container>
+                            <Columns vCentered={true}>
+                                <Columns.Column size={6}>
+                                    <Heading size={1} spaced={true}>
                                         Family Psychiatry <br />
                                         Counseling & Wellness
-                                    </h1>
-                                    <p
-                                        className={"subtitle is-size-4 mt-3 mb-5 " + styles.splashSubtitle}
-                                        style={{ fontWeight: "lighter" }}
-                                    >
+                                    </Heading>
+                                    <FancySubtitle subtitle={true} size={4} weight="light">
                                         A comprehensive, integrative psychiatric and wellness clinic serving the mental,
                                         physical, emotional and preventative health needs of all members of the family.
                                         Find better, one step at a time.
-                                    </p>
+                                    </FancySubtitle>
                                     <Link to="/appointments">
-                                        <button className="button has-background-grey-lighter has-text-dark">
-                                            {" "}
-                                            <p>Schedule an appointment today</p>
-                                            <FontAwesomeIcon icon={faChevronRight} style={{ marginLeft: ".8em" }} />
-                                        </button>
+                                        <Button color="light">
+                                            <span>Schedule an appointment today</span>
+                                            <Icon>
+                                                <FontAwesomeIcon icon={faChevronRight} />
+                                            </Icon>
+                                        </Button>
                                     </Link>
-                                </div>
-                            </div>
-                            <div className="column is-6">
-                                <div className="tile is-ancestor">
-                                    <div className="tile is-vertical">
-                                        <div className="tile">
-                                            <div className="tile is-parent">
-                                                <div className="tile is-child" style={{ minHeight: "40vmin" }}>
-                                                    <SplashTile
-                                                        title="Services"
-                                                        image={data.serviceSplash}
-                                                        to="/services"
-                                                    />
-                                                </div>
-                                            </div>{" "}
-                                            <div className="tile is-parent">
-                                                <div className="tile is-child">
-                                                    <SplashTile
-                                                        title="Telehealth"
-                                                        image={data.telehealthSplash}
-                                                        to="/library/telepsychiatry-telecounseling"
-                                                    />
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div className="tile">
-                                            <div className="tile is-parent">
-                                                <div className="tile is-child">
-                                                    <SplashTile
-                                                        title="Transcranial Magnetic Stimulation (TMS)"
-                                                        image={data.tmsSplash}
-                                                        to="/tms"
-                                                    />
-                                                </div>
-                                            </div>
-                                            <div className="tile is-parent">
-                                                <div className="tile is-child" style={{ minHeight: "40vmin" }}>
-                                                    <SplashTile
-                                                        title="Health Library"
-                                                        image={data.librarySplash}
-                                                        to="/library"
-                                                    />
-                                                </div>
-                                            </div>{" "}
-                                        </div>{" "}
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <section className="hero has-background-grey-lighter">
-                <div className="hero-body">
-                    <div className="columns is-vcentered is-centered is-desktop">
-                        <div className="column is-2 has-text-centered">
-                            <FontAwesomeIcon icon={faHandHoldingMedical} size="8x" className="is-size-3-mobile" />
-                        </div>
-                        <div className="column is-6">
-                            <h2 className="title"> Holistic Psychiatry for your Mind, Body & Soul </h2>
-                            <div className="content is-size-5 is-size-6-mobile">
-                                At Family Psychiatry Counseling & Wellness, we specialize in performing comprehensive
-                                psychiatric and psychological evaluations to establish accurate diagnoses and prepare
-                                individualized treatment plans. We combine advanced conventional methods with safe
-                                alternative treatment approaches to bring about lasting relief and improved quality of
-                                life.
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <section className="hero is-light">
-                <div className="hero-body">
-                    <section className="section">
-                        <div className="container" style={{ height: "100%" }}>
-                            <div className="columns is-desktop is-fullheight" style={{ height: "100%" }}>
-                                <div className="column is-3">
-                                    <div className="">
-                                        <h2
-                                            className="title is-1 is-size-3-mobile has-text-centered-mobile"
-                                            style={{ textAlign: "left" }}
-                                        >
-                                            What Our Patients Are Saying
-                                        </h2>
-                                    </div>
-                                </div>
-
-                                <div className="column is-1" />
-                                <div className="column is-2">
-                                    <a
-                                        href="https://www.google.com/search?sxsrf=ALeKk00VCh2E4hyk89Nj9ExwQPWMR02uAg%3A1586936272331&source=hp&ei=0LmWXob-EYWw0PEPtPiGsAs&q=family+psychiatry+and+wellness&oq=famil&gs_lcp=CgZwc3ktYWIQARgAMgQIIxAnMgQIIxAnMgQIIxAnMgQIABBDMgQIABBDMgQIABBDMgQIABBDMgIIADICCAAyAggAOgcIABCDARBDOgUIABCRAjoFCAAQgwE6BggAEAoQQ0oVCBcSETItMTczZzIzNmcyOTNnMzAySg0IGBIJMi0xZzFnMWcxUKLF_QJYnMb9AmCE0v0CaANwAHgAgAGgAogB4QaSAQUxLjAuM5gBAKABAaoBB2d3cy13aXo&sclient=psy-ab"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                    >
-                                        <div className="level">
-                                            <div className="level-item has-text-success">
-                                                <FontAwesomeIcon icon={faGoogle} size="3x" />
-                                            </div>
-                                            <div className="level-item title">
-                                                4.8
-                                                <FontAwesomeIcon
-                                                    icon={faStar}
-                                                    size="xs"
-                                                    style={{ marginLeft: ".2em" }}
-                                                />
-                                            </div>
-                                        </div>
-                                    </a>
-                                    <hr />
-                                    <a
-                                        href="https://www.facebook.com/www.familypsychiatry101.net/"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                    >
-                                        <div className="level">
-                                            <div className="level-item has-text-success">
-                                                <FontAwesomeIcon icon={faFacebookSquare} size="3x" />
-                                            </div>
-                                            <div className="level-item title">
-                                                4.1
-                                                <FontAwesomeIcon
-                                                    icon={faStar}
-                                                    size="xs"
-                                                    style={{ marginLeft: ".2em" }}
-                                                />
-                                            </div>
-                                        </div>
-                                    </a>
-                                    <hr />
-                                    <a
-                                        href="https://www.vitals.com/doctors/Dr_Sabira_Saifuddin/reviews"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                    >
-                                        <div className="level">
-                                            <div className="level-item  has-text-success">
-                                                <FontAwesomeIcon icon={faHeartbeat} size="3x" />
-                                            </div>
-                                            <div className="level-item title">
-                                                5.0
-                                                <FontAwesomeIcon
-                                                    icon={faStar}
-                                                    size="xs"
-                                                    style={{ marginLeft: ".2em" }}
-                                                />
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-
-                                <div className="column is-1" />
-                                <div className="column is-4">
-                                    <Carousel />
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-                </div>
-            </section>
-            <section className="hero has-background-grey-lighter is-medium">
-                <div className="hero-body">
-                    <div className="container">
-                        <div className="content has-text-centered">
-                            <div>
-                                <FontAwesomeIcon icon={faStethoscope} size="3x" className="is-size-3-mobile" />
-
-                                <h2 className="title is-2 is-size-3-mobile">Health Resources</h2>
-                            </div>
-                        </div>
-                        <hr
-                            style={{
-                                backgroundColor: "#48C774",
-                                width: "15%",
-                                marginLeft: "auto",
-                                marginRight: "auto",
-                                height: "5px"
-                            }}
-                        />
-                        <div className="columns is-centered">{getNewsTiles()}</div>
-                        <hr
-                            style={{
-                                backgroundColor: "#48C774",
-                                width: "15%",
-                                marginLeft: "auto",
-                                marginRight: "auto",
-                                height: "5px"
-                            }}
-                        />
-                    </div>
-                </div>
-            </section>
-        </Layout>
+                                </Columns.Column>
+                                <Columns.Column size={6}>
+                                    <Tile kind="ancestor">
+                                        <Tile className="tile is-vertical">
+                                            <Tile className="tile">
+                                                <Tile kind="parent">
+                                                    <FancyTile kind="child">
+                                                        <SplashTile
+                                                            title="Services"
+                                                            image={data.serviceSplash}
+                                                            to="/services"
+                                                        />
+                                                    </FancyTile>
+                                                </Tile>
+                                                <Tile kind="parent">
+                                                    <Tile kind="child">
+                                                        <SplashTile
+                                                            title="Telehealth"
+                                                            image={data.telehealthSplash}
+                                                            to="/library/telepsychiatry-telecounseling"
+                                                        />
+                                                    </Tile>
+                                                </Tile>
+                                            </Tile>
+                                            <Tile className="tile">
+                                                <Tile kind="parent">
+                                                    <Tile kind="child">
+                                                        <SplashTile
+                                                            title="Transcranial Magnetic Stimulation (TMS)"
+                                                            image={data.tmsSplash}
+                                                            to="/tms"
+                                                        />
+                                                    </Tile>
+                                                </Tile>
+                                                <Tile kind="parent">
+                                                    <FancyTile kind="child">
+                                                        <SplashTile
+                                                            title="Health Library"
+                                                            image={data.librarySplash}
+                                                            to="/library"
+                                                        />
+                                                    </FancyTile>
+                                                </Tile>
+                                            </Tile>
+                                        </Tile>
+                                    </Tile>
+                                </Columns.Column>
+                            </Columns>
+                        </Container>
+                    </Hero.Body>
+                </Hero>
+                <Section backgroundColor="grey-lighter">
+                    <Columns vCentered={true} centered={true}>
+                        <Columns.Column size={2} textAlign="center">
+                            <FontAwesomeIcon icon={faHandHoldingMedical} size="8x" />
+                        </Columns.Column>
+                        <Columns.Column size={6}>
+                            <Content size="medium">
+                                <Heading> Holistic Psychiatry for your Mind, Body & Soul</Heading>
+                                <p>
+                                    At Family Psychiatry Counseling & Wellness, we specialize in performing
+                                    comprehensive psychiatric and psychological evaluations to establish accurate
+                                    diagnoses and prepare individualized treatment plans. We combine advanced
+                                    conventional methods with safe alternative treatment approaches to bring about
+                                    lasting relief and improved quality of life.{" "}
+                                </p>
+                            </Content>
+                        </Columns.Column>
+                    </Columns>
+                </Section>
+                <Section my={6}>
+                    <Container>
+                        <Columns>
+                            <Columns.Column size={3}>
+                                <Heading renderAs="h2" size={1}>
+                                    What Our Patients Are Saying
+                                </Heading>
+                            </Columns.Column>
+                            <Columns.Column size={1} />
+                            <Columns.Column size={2}>
+                                {ratings.map(rating => (
+                                    <Rating {...rating} />
+                                ))}
+                            </Columns.Column>
+                            <Columns.Column size={1} />
+                            <Columns.Column size={4}>
+                                <Reviews />
+                            </Columns.Column>
+                        </Columns>
+                    </Container>
+                </Section>
+                <Section backgroundColor="grey-lighter">
+                    <Container py={6}>
+                        <Heading renderAs="h2" size={2} textAlign="center">
+                            Health Resources
+                        </Heading>
+                        <FancyDivider />
+                        <Columns centered={true}>
+                            {data.newsPosts.nodes.map((post, i) => (
+                                <Columns.Column size={3} key={i}>
+                                    <NewsTile post={post} />
+                                </Columns.Column>
+                            ))}
+                        </Columns>
+                        <FancyDivider />
+                    </Container>
+                </Section>
+            </Layout>
+        </>
     );
 }
+
+function Rating({ link, icon, rating }) {
+    return (
+        <Block>
+            <a href={link} target="_blank" rel="noopener noreferrer">
+                <Level>
+                    <Level.Side align="left">
+                        <Level.Item>
+                            <Icon color="success">
+                                <FontAwesomeIcon icon={icon} size="3x" />
+                            </Icon>
+                        </Level.Item>
+                    </Level.Side>
+                    <Level.Side align="right">
+                        <Level.Item>
+                            <Heading renderAs="h3">
+                                <span>{rating}</span>
+                                <Icon ml={2}>
+                                    <FontAwesomeIcon icon={faStar} size="xs" />
+                                </Icon>
+                            </Heading>
+                        </Level.Item>
+                    </Level.Side>
+                </Level>
+            </a>
+        </Block>
+    );
+}
+
+const FancySubtitle = styled(Heading)`
+    @media (min-width: 768px) {
+        max-width: 30vw;
+        text-align: left;
+    }
+`;
+
+const FancyTile = styled(Tile)`
+    min-height: 40vmin;
+`;
+
+const FancyDivider = styled.hr`
+    background-color: #48c774;
+    width: 15%;
+    margin-left: auto;
+    margin-right: auto;
+    height: 5px;
+`;
 
 export const query = graphql`
     query {
@@ -309,5 +278,3 @@ export const query = graphql`
         }
     }
 `;
-
-export default Index;

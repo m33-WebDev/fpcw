@@ -1,23 +1,23 @@
 import React from "react";
 import { Link } from "gatsby";
-
+import { Content, Section } from "react-bulma-components";
 import { Layout, Seo } from "../components";
 
-function Page404() {
+export default function Page404() {
     return (
-        <Layout>
+        <>
             <Seo title="Page Not Found" noIndex />
-            <div className="section">
-                <div className="content has-text-centered">
-                    <p>
-                        It looks like something went wrong :(
-                        <br />
-                        Return to <Link to="/">Home</Link>.
-                    </p>
-                </div>
-            </div>
-        </Layout>
+            <Layout>
+                <Section>
+                    <Content textAlign="center">
+                        <p>
+                            It looks like this page no longer exists.
+                            <br />
+                            Return to <Link to="/">Home</Link>.
+                        </p>
+                    </Content>
+                </Section>
+            </Layout>
+        </>
     );
 }
-
-export default Page404;
