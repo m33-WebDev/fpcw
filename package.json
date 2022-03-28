@@ -41,7 +41,6 @@
     "gatsby-plugin-sharp": "^3.10.2",
     "gatsby-source-contentful": "^5.10.0",
     "gatsby-source-filesystem": "^3.10.0",
-    "gatsby-transformer-remark": "^4.7.0",
     "gatsby-transformer-sharp": "^3.10.0",
     "pure-react-carousel": "^1.27.0",
     "react": "^16.13.0",

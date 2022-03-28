@@ -2,6 +2,7 @@ import React from "react";
 import { graphql, useStaticQuery } from "gatsby";
 import { CarouselProvider, Slider, Slide, Dot } from "pure-react-carousel";
 import { Block, Button, Content } from "react-bulma-components";
+import { RichText } from "./richtext";
 
 export function Reviews() {
     const { reviews } = useStaticQuery(graphql`
@@ -10,10 +11,7 @@ export function Reviews() {
                 nodes {
                     author
                     content {
-                        content
-                        childMarkdownRemark {
-                            html
-                        }
+                        raw
                     }
                     link
                 }
@@ -37,11 +35,9 @@ export function Reviews() {
                     {reviews.nodes.map(({ author, content }, i) => {
                         return (
                             <Slide index={i} key={i}>
-                                <Content
-                                    dangerouslySetInnerHTML={{
-                                        __html: content.childMarkdownRemark.html
-                                    }}
-                                />
+                                <Content>
+                                    <RichText src={content} />
+                                </Content>
                                 <Content textAlign="right">
                                     <p>
                                         <em>{author}</em>

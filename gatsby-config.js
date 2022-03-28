@@ -65,7 +65,6 @@ module.exports = {
             }
         },
         `gatsby-plugin-sass`,
-        `gatsby-transformer-remark`,
         `gatsby-plugin-catch-links`,
         {
             resolve: `gatsby-plugin-google-analytics`,
