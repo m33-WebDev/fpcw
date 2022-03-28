@@ -4,81 +4,85 @@
  * See: https://www.gatsbyjs.org/docs/gatsby-config/
  */
 
+const url = "https://familypsychiatry.us";
+const title = "Family Psychiatry, Counseling, and Wellness";
+const shortTitle = "FPCW";
+
 module.exports = {
     siteMetadata: {
-        siteUrl: `https://familypsychiatry.us`,
-        title: `Family Psychiatry, Counseling and Wellness`,
-        shortTitle: `FPCW`,
-        description: `A mental health clinic with a focus on overall wellness. Find better, one step at a time.`,
-        author: `Sabira Saifuddin, M.D.`
+        siteUrl: url,
+        title: title,
+        shortTitle: shortTitle,
+        description: "A mental health clinic with a focus on overall wellness. Find better, one step at a time.",
+        author: "Sabira Saifuddin, M.D."
     },
     plugins: [
         {
-            resolve: `gatsby-source-filesystem`,
+            resolve: "gatsby-source-filesystem",
             options: {
                 path: `${__dirname}/src`
             }
         },
         {
-            resolve: `gatsby-plugin-robots-txt`,
+            resolve: "gatsby-plugin-robots-txt",
             options: {
+                sitemap: `${url}/sitemap.xml`,
                 policy: [
                     {
                         userAgent: "*",
                         allow: "/"
-                        // crawlDelay: 2,
                     }
                 ]
             }
         },
         "gatsby-plugin-fontawesome-css",
         {
-            resolve: `gatsby-plugin-advanced-sitemap`,
+            resolve: "gatsby-plugin-advanced-sitemap",
             options: {
-                exclude: [`/dev-404-page`, `/404`, `/formsuccess`]
+                exclude: ["/dev-404-page", "/404", "/formsuccess"]
             }
         },
-        `gatsby-plugin-react-helmet`,
+        "gatsby-plugin-react-helmet",
         {
-            resolve: `gatsby-source-contentful`,
+            resolve: "gatsby-source-contentful",
             options: {
-                spaceId: `85wb86zbaewe`,
-                accessToken: `uU3iwop7LhREN5CerJI5sONtkwBUMfCC_9yTKjDAXWE`
+                spaceId: "85wb86zbaewe",
+                accessToken: "uU3iwop7LhREN5CerJI5sONtkwBUMfCC_9yTKjDAXWE"
             }
         },
-        `gatsby-plugin-image`,
-        `gatsby-transformer-sharp`,
-        `gatsby-plugin-sharp`,
+        "gatsby-plugin-image",
+        "gatsby-transformer-sharp",
+        "gatsby-plugin-sharp",
         {
-            resolve: `gatsby-plugin-manifest`,
+            resolve: "gatsby-plugin-manifest",
             options: {
-                name: `Family Psychiatry, Counseling and Wellness`,
-                short_name: `FPCW`,
-                start_url: `/`,
-                background_color: `#f5f5f5`,
-                theme_color: `#f5f5f5`,
-                display: `standalone`,
-                icon: `src/images/maskable_icon.png`,
+                name: title,
+                short_name: shortTitle,
+                start_url: "/",
+                background_color: "#f5f5f5",
+                theme_color: "#f5f5f5",
+                display: "standalone",
+                icon: "src/images/maskable_icon.png",
                 icon_options: {
-                    purpose: `maskable any`
+                    purpose: "maskable any"
                 }
             }
         },
-        `gatsby-plugin-sass`,
-        `gatsby-plugin-catch-links`,
+        "gatsby-plugin-sass",
+        "gatsby-plugin-catch-links",
         {
-            resolve: `gatsby-plugin-google-analytics`,
+            resolve: "gatsby-plugin-google-analytics",
             options: {
                 trackingId: "UA-122920911-4"
             }
         },
         {
-            resolve: `gatsby-plugin-canonical-urls`,
+            resolve: "gatsby-plugin-canonical-urls",
             options: {
-                siteUrl: `https://familypsychiatry.us`
+                siteUrl: url
             }
         },
-        `gatsby-plugin-netlify`,
-        `gatsby-plugin-offline`
+        "gatsby-plugin-netlify",
+        "gatsby-plugin-offline"
     ]
 };
