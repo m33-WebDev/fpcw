@@ -30,4 +30,5 @@ function getFavicon(size, icon) {
 
 const Site = styled.div`
     min-height: calc(100vh - 3.25rem);
+    background-color: hsl(0, 0%, 96%);
 `;
