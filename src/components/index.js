@@ -1,3 +1,4 @@
+export * from "./style";
 export * from "./layout";
 export { default as Seo } from "./seo";
 export * from "./reviews";

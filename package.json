@@ -18,6 +18,8 @@
   "dependencies": {
     "@contentful/rich-text-react-renderer": "^13.4.0",
     "@contentful/rich-text-types": "^14.1.0",
+    "@fontsource/nunito": "^4.5.8",
+    "@fontsource/playfair-display": "^4.5.6",
     "@fortawesome/fontawesome-svg-core": "^1.2.27",
     "@fortawesome/free-brands-svg-icons": "^5.13.0",
     "@fortawesome/free-solid-svg-icons": "^5.12.1",
@@ -51,6 +53,7 @@
     "styled-components": "^5.3.3"
   },
   "devDependencies": {
+    "@types/styled-components": "^5.1.25",
     "gatsby-cli": "^4.9.1",
     "prettier": "^2.0.0"
   },
