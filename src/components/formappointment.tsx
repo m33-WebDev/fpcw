@@ -30,7 +30,7 @@ export function FormAppointment(props: FormAppointmentProps) {
     return (
         // @ts-expect-error: 'netlify' attribute does not exist on HTML form tag
         <form name={props.name ?? "appointmentrequest"} method="POST" netlify="true" action="/formsuccess/">
-            <input type="hidden" name="form-name" value="appointmentrequest" />
+            <input type="hidden" name="form-name" value={props.name ?? "appointmentrequest"} />
             <input type="hidden" name="referral-insurer" />
             <input type="hidden" name="referral-wordofmouth-name" />
             <input type="hidden" name="referral-wordofmouth-phone" />
