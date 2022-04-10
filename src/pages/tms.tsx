@@ -215,7 +215,7 @@ function Quizlet() {
                 <Content>
                     <strong>Based on your answers, this treatment may be right for you.</strong>
                 </Content>
-                <FormAppointment name="tmsappointment" />
+                <FormAppointment />
             </div>
         );
     }
