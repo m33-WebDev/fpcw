@@ -1,10 +1,10 @@
 import React from "react";
 import { Link, graphql } from "gatsby";
 import { StaticImage } from "gatsby-plugin-image";
-import { Block, Box, Columns, Container, Content, Heading, Hero, Table } from "react-bulma-components";
+import { Block, Box, Columns, Container, Content, Hero, Table } from "react-bulma-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope, faPhone, faCalendar, faAngleUp } from "@fortawesome/free-solid-svg-icons";
-import { Layout, Seo } from "../components";
+import { Layout, Seo, Typography } from "../components";
 
 export default function Contact({ data }) {
     const metaTitle = data.contentfulPage.metaTitle;
@@ -17,10 +17,13 @@ export default function Contact({ data }) {
                 <Hero size="fullheight" hasNavbar={true}>
                     <Hero.Body>
                         <Container>
+                            {/* @ts-ignore: @todo: not sure why gap is not found on Columns component */}
                             <Columns centered={true} gap={8}>
                                 <Columns.Column size={6}>
                                     <Content>
-                                        <Heading size={1}>Locations</Heading>
+                                        <Typography as="h1" family="secondary" size="xxl">
+                                            Locations
+                                        </Typography>
                                     </Content>
                                     <Columns centered={true}>
                                         <Columns.Column>
@@ -40,10 +43,10 @@ export default function Contact({ data }) {
                                                         </figure>
                                                     </Block>
                                                     <Block>
-                                                        <p>
+                                                        <Typography>
                                                             31194 La Baya Drive <br />
                                                             Suite 202 <br /> Westlake Village, CA 91362
-                                                        </p>
+                                                        </Typography>
                                                     </Block>
                                                 </Box>
                                             </a>
@@ -65,11 +68,11 @@ export default function Contact({ data }) {
                                                         </figure>
                                                     </Block>
                                                     <Block>
-                                                        <p>
+                                                        <Typography>
                                                             30851 Agoura Road <br />
                                                             Suite 304 <br />
                                                             Agoura Hills, CA 91301
-                                                        </p>
+                                                        </Typography>
                                                     </Block>
                                                 </Box>
                                             </a>
@@ -77,14 +80,16 @@ export default function Contact({ data }) {
                                     </Columns>
                                     <Content textAlign="center">
                                         <FontAwesomeIcon icon={faAngleUp} />
-                                        <p>Click for directions</p>
+                                        <Typography>Click for directions</Typography>
                                     </Content>
                                 </Columns.Column>
                                 <Columns.Column size={4}>
                                     <Content>
-                                        <Heading size={1}>FPCW Contact Information</Heading>
+                                        <Typography as="h2" family="secondary" size="xl">
+                                            FPCW Contact Information
+                                        </Typography>
                                         <Table>
-                                            <tbody>
+                                            <Typography as="tbody">
                                                 <tr>
                                                     <td>
                                                         <FontAwesomeIcon icon={faPhone} />
@@ -104,12 +109,12 @@ export default function Contact({ data }) {
                                                     </td>
                                                     <td>Monday - Friday, 9:00am - 6:00pm</td>
                                                 </tr>
-                                            </tbody>
+                                            </Typography>
                                         </Table>
-                                        <p>
+                                        <Typography>
                                             If you would like to request an appointment outside of business hours,
                                             please use this <Link to="/appointments">form</Link>.
-                                        </p>
+                                        </Typography>
                                     </Content>
                                 </Columns.Column>
                             </Columns>

@@ -3,6 +3,7 @@ import { graphql, useStaticQuery } from "gatsby";
 import { CarouselProvider, Slider, Slide, Dot } from "pure-react-carousel";
 import { Block, Button, Content } from "react-bulma-components";
 import { RichText } from "./richtext";
+import { Typography } from "./style";
 
 export function Reviews() {
     const { reviews } = useStaticQuery(graphql`
@@ -39,9 +40,9 @@ export function Reviews() {
                                     <RichText src={content} />
                                 </Content>
                                 <Content textAlign="right">
-                                    <p>
+                                    <Typography>
                                         <em>{author}</em>
-                                    </p>
+                                    </Typography>
                                 </Content>
                             </Slide>
                         );

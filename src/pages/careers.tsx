@@ -1,7 +1,7 @@
 import React from "react";
 import { graphql } from "gatsby";
-import { Columns, Container, Content, Heading, Section } from "react-bulma-components";
-import { Layout, Seo, FormJobApplication } from "../components";
+import { Block, Columns, Container, Content, Section } from "react-bulma-components";
+import { Layout, Seo, FormJobApplication, Typography } from "../components";
 
 export default function Careers({ data }) {
     const metaTitle = data.contentfulPage.metaTitle;
@@ -15,24 +15,30 @@ export default function Careers({ data }) {
                     <Container>
                         <Columns>
                             <Columns.Column size={3}>
-                                <Heading size={1}>Careers</Heading>
+                                <Block>
+                                    <Typography as="h1" family="secondary" size="xxl">
+                                        Careers
+                                    </Typography>
+                                </Block>
                                 <Content>
-                                    <p>
+                                    <Typography>
                                         Want to join a team that is passionate about patient care? FPCW is expanding,
                                         and we are looking to meet great providers with various types of qualifications.
-                                    </p>
+                                    </Typography>
                                     <br />
-                                    <p>
+                                    <Typography>
                                         We offer competitive compensation, a fun work environment, and unparalleled
                                         work-life balance.
-                                    </p>
+                                    </Typography>
                                     <br />
-                                    <p>Interested in joining our team? Submit an application today!</p>
+                                    <Typography>
+                                        Interested in joining our team? Submit an application today!
+                                    </Typography>
                                 </Content>
                             </Columns.Column>
                             <Columns.Column size={6}>
                                 <img
-                                    alt="West Coast landscape"
+                                    alt="Woman speaking with therapist"
                                     src="https://www.helpguide.org/wp-content/uploads/woman-on-couch-speaking-with-therapist.jpg"
                                 />
                             </Columns.Column>

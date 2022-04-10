@@ -3,7 +3,27 @@ import PropTypes from "prop-types";
 import Helmet from "react-helmet";
 import { useStaticQuery, graphql } from "gatsby";
 
-function Seo({ title, description, meta, lang, noIndex, noFollow }) {
+type NameMetaObj = {
+    name: string;
+    content: string;
+};
+
+type PropertyMetaObject = {
+    property: string;
+    content: string;
+};
+
+type Meta = (NameMetaObj | PropertyMetaObject)[];
+
+export interface SeoProps {
+    title: string;
+    description: string;
+    meta?: Meta;
+    noIndex?: boolean;
+    noFollow?: boolean;
+}
+
+function Seo(props: SeoProps) {
     const { site } = useStaticQuery(
         graphql`
             query {
@@ -18,13 +38,13 @@ function Seo({ title, description, meta, lang, noIndex, noFollow }) {
         `
     );
 
-    const metaTitle = "".concat(title, " | Family Psychiatry, Counseling and Wellness");
-    const metaDescription = description || site.siteMetadata.description;
-    const metaRobots = "".concat(noIndex ? "noindex" : "index", ", ", noFollow ? "nofollow" : "follow");
+    const metaTitle = "".concat(props.title, " | Family Psychiatry, Counseling and Wellness");
+    const metaDescription = props.description || site.siteMetadata.description;
+    const metaRobots = "".concat(props.noIndex ? "noindex" : "index", ", ", props.noFollow ? "nofollow" : "follow");
 
     return (
         <Helmet
-            htmlAttributes={{ lang }}
+            htmlAttributes={{ lang: "en" }}
             title={metaTitle}
             meta={[
                 {
@@ -33,7 +53,7 @@ function Seo({ title, description, meta, lang, noIndex, noFollow }) {
                 },
                 {
                     property: `og:title`,
-                    content: title
+                    content: props.title
                 },
                 {
                     property: `og:description`,
@@ -63,15 +83,13 @@ function Seo({ title, description, meta, lang, noIndex, noFollow }) {
                     name: `robots`,
                     content: metaRobots
                 }
-            ].concat(meta)}
+            ].concat(props.meta)}
         />
     );
 }
 
 Seo.defaultProps = {
-    lang: `en`,
-    meta: [],
-    description: ``
+    meta: []
 };
 
 Seo.propTypes = {

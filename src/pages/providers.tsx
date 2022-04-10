@@ -1,9 +1,9 @@
 import React from "react";
 import { graphql, Link } from "gatsby";
 import Img from "gatsby-image";
-import { Card, Columns, Container, Content, Heading, Section } from "react-bulma-components";
+import { Block, Card, Columns, Container, Content, Heading, Section } from "react-bulma-components";
 import styled from "styled-components";
-import { Layout, Seo } from "../components";
+import { Layout, Seo, Typography } from "../components";
 
 export default function Providers({ data }) {
     const metaTitle = data.contentfulPage.metaTitle;
@@ -18,22 +18,27 @@ export default function Providers({ data }) {
 
     return (
         <>
-            <Seo title={metaTitle} pageDescription={metaDescription} />
+            <Seo title={metaTitle} description={metaDescription} />
             <Layout>
                 <Section>
                     <Container>
+                        {/* @ts-ignore: @todo: not sure why gap is not found on Columns component */}
                         <Columns gap={4}>
                             <Columns.Column size={4}>
                                 <FancyBlurb>
-                                    <FancyHeading>Find the Right Expert for Your Mental Health Needs</FancyHeading>
+                                    <Block>
+                                        <Typography as="h1" family="secondary" size="xxl">
+                                            Find the Right Expert for Your Mental Health Needs
+                                        </Typography>
+                                    </Block>
                                     <Content size="medium">
-                                        <p>
+                                        <Typography>
                                             Our professional staff consists of board-certified, experienced
                                             psychiatrists, therapists, nurse practitioners, and others. We are,
                                             individually and collectively, committed to providing the highest quality
                                             care to our patients and to advancing wellness of the mind, body, and
                                             spirit.
-                                        </p>
+                                        </Typography>
                                     </Content>
                                 </FancyBlurb>
                             </Columns.Column>
@@ -53,9 +58,7 @@ export default function Providers({ data }) {
                                                         alt={headshot.fluid.title}
                                                     />
                                                     <FancyPostTitle>
-                                                        <Heading size={6} textColor="light">
-                                                            {name}
-                                                        </Heading>
+                                                        <Typography>{name}</Typography>
                                                     </FancyPostTitle>
                                                 </FancyCard>
                                             </Link>

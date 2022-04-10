@@ -1,13 +1,13 @@
 import styled from "styled-components";
 
-export interface Props {
+export interface TypographyProps {
     family?: "primary" | "secondary";
     size?: "xxs" | "xs" | "s" | "m" | "l" | "xl" | "xxl";
     color?: "primary" | "secondary" | "interactive" | "disabled" | "error";
     weight?: "light" | "regular" | "heavy";
 }
 
-export const Typography = styled.p<Props>`
+export const Typography = styled.p<TypographyProps>`
     font-family: ${({ family }) => families[family ?? "primary"]}, sans-serif;
     font-weight: ${({ weight }) => weights[weight ?? "regular"]};
     font-size: ${({ size }) => sizes[size ?? "xs"]};
@@ -49,7 +49,7 @@ const lineHeights = {
 const colors = {
     primary: "#494949",
     secondary: "hsl(0, 0%, 71%)",
-    interactive: "#1B7887",
+    interactive: "#48C774",
     disabled: "#EAEAEA",
     error: "#CB4A4D"
 };

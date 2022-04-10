@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-import { Link } from "gatsby";
+import Link from "gatsby-link";
 import { StaticImage } from "gatsby-plugin-image";
 import { Container, Level, Navbar } from "react-bulma-components";
 import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faExclamationCircle } from "@fortawesome/free-solid-svg-icons";
+import { Typography } from "../style";
 
 const telehealthCallout = "Now offering telehealth appointments.";
 
@@ -31,9 +32,9 @@ export function Header() {
             <Container>
                 <Navbar.Brand>
                     <Navbar.Item href="/">
-                        <StaticImage width="80px" src="../../images/logo-fitted.png" alt="Logo" />
+                        <StaticImage width={80} src="../../images/logo-fitted.png" alt="Logo" />
                     </Navbar.Item>
-                    <Navbar.Burger onClick={_ => setActive(prev => !prev)} />
+                    <Navbar.Burger onClick={() => setActive(prev => !prev)} />
                 </Navbar.Brand>
                 <Navbar.Menu>
                     <Navbar.Container align="left" mobile={{ display: "hidden" }}>
@@ -43,8 +44,8 @@ export function Header() {
                                     <Level.Item textColor="warning">
                                         <FontAwesomeIcon icon={faExclamationCircle} />
                                     </Level.Item>
-                                    <Level.Item mx={3} textColor="dark">
-                                        {telehealthCallout}
+                                    <Level.Item mx={3}>
+                                        <Typography as="span">{telehealthCallout}</Typography>
                                     </Level.Item>
                                     <Level.Item textColor="warning">
                                         <FontAwesomeIcon icon={faExclamationCircle} />
@@ -56,26 +57,28 @@ export function Header() {
                     <Navbar.Container align="right">
                         {primaryLinks.map(([name, value]) =>
                             value.startsWith("/") ? (
-                                <Navbar.Item renderAs={Link} to={value} textColor="dark">
-                                    {name}
+                                <Navbar.Item renderAs={Link} to={value}>
+                                    <Typography as="span">{name}</Typography>
                                 </Navbar.Item>
                             ) : (
-                                <Navbar.Item href={value} textColor="dark">
-                                    {name}
+                                <Navbar.Item href={value}>
+                                    <Typography as="span">{name}</Typography>
                                 </Navbar.Item>
                             )
                         )}
                         <Navbar.Item href="#" hoverable={true}>
-                            <Navbar.Link textColor="dark">About</Navbar.Link>
+                            <Navbar.Link>
+                                <Typography>About</Typography>
+                            </Navbar.Link>
                             <Navbar.Dropdown>
                                 {secondaryLinks.map(([name, value]) =>
                                     value.startsWith("/") ? (
-                                        <Navbar.Item renderAs={Link} to={value} textColor="dark">
-                                            {name}
+                                        <Navbar.Item renderAs={Link} to={value}>
+                                            <Typography as="span">{name}</Typography>
                                         </Navbar.Item>
                                     ) : (
                                         <Navbar.Item href={value} textColor="dark">
-                                            {name}
+                                            <Typography as="span">{name}</Typography>
                                         </Navbar.Item>
                                     )
                                 )}

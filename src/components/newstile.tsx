@@ -2,9 +2,10 @@ import React from "react";
 import { Link } from "gatsby";
 import Img from "gatsby-image";
 import Truncate from "react-truncate";
-import { Block, Card, Content, Heading } from "react-bulma-components";
+import { Block, Card, Content } from "react-bulma-components";
 import styled from "styled-components";
 import { RichText } from "./richtext";
+import { Typography } from "./style";
 
 export function NewsTile({ post }) {
     const { title, feature, body, slug } = post;
@@ -14,12 +15,18 @@ export function NewsTile({ post }) {
             <Card>
                 <FancyImage fluid={feature.fluid} key={feature.fluid.src} alt={feature.title} />
                 <Card.Content>
-                    <Heading size={5}>{title}</Heading>
+                    <Block>
+                        <Typography as="h5" size="s">
+                            {title}
+                        </Typography>
+                    </Block>
                     <Block mobile={{ display: "hidden" }}>
                         <Content>
-                            <Truncate lines={1} width={1000} ellipsis={<span> ...</span>}>
-                                <RichText src={body} />
-                            </Truncate>
+                            <Typography>
+                                <Truncate lines={1} width={1000} ellipsis={<Typography as="span"> ...</Typography>}>
+                                    <RichText src={body} />
+                                </Truncate>
+                            </Typography>
                         </Content>
                     </Block>
                 </Card.Content>

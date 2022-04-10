@@ -5,7 +5,7 @@ import { Block, Columns, Container, Content, Heading, Icon, Section } from "reac
 import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
-import { Layout, Seo, RichText, NewsletterSignup } from "../components";
+import { Layout, Seo, RichText, NewsletterSignup, Typography } from "../components";
 
 export default function Post({ data }) {
     const { title, metaTitle, feature, body, metaDescription } = data.contentfulPost;
@@ -16,17 +16,22 @@ export default function Post({ data }) {
             <Layout>
                 <Section>
                     <Container>
+                        {/* @ts-ignore: @todo: not sure why gap is not found on Columns component */}
                         <Columns centered={true} gap={8}>
                             <Columns.Column size={6}>
                                 <FancyFrontmatter>
-                                    <Heading>{title}</Heading>
+                                    <Block>
+                                        <Typography as="h1" family="secondary" size="xxl">
+                                            {title}
+                                        </Typography>
+                                    </Block>
                                     <FancyFeatureImage image={getImage(feature)} alt="Post feature" />
                                     <Link to="/library">
                                         <Block display="flex" alignItems="center" textColor="success">
                                             <Icon>
                                                 <FontAwesomeIcon icon={faChevronLeft} />
                                             </Icon>
-                                            <span>Back to library</span>
+                                            <Typography as="span">Back to library</Typography>
                                         </Block>
                                     </Link>
                                 </FancyFrontmatter>

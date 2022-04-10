@@ -1,23 +1,11 @@
 import React from "react";
 import { Link, graphql } from "gatsby";
-import {
-    Block,
-    Button,
-    Columns,
-    Container,
-    Content,
-    Heading,
-    Hero,
-    Icon,
-    Level,
-    Section,
-    Tile
-} from "react-bulma-components";
+import { Block, Button, Columns, Container, Heading, Hero, Icon, Level, Section, Tile } from "react-bulma-components";
 import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar, faHandHoldingMedical, faChevronRight, faHeartbeat } from "@fortawesome/free-solid-svg-icons";
 import { faFacebookSquare, faGoogle } from "@fortawesome/free-brands-svg-icons";
-import { Layout, Seo, SplashTile, NewsTile, Reviews } from "../components";
+import { Layout, Seo, SplashTile, NewsTile, Reviews, Typography } from "../components";
 
 const ratings = [
     {
@@ -50,18 +38,24 @@ export default function Index({ data }) {
                         <Container>
                             <Columns vCentered={true}>
                                 <Columns.Column size={6}>
-                                    <Heading size={1} spaced={true}>
-                                        Family Psychiatry <br />
-                                        Counseling & Wellness
-                                    </Heading>
-                                    <FancySubtitle subtitle={true} size={4} weight="light">
-                                        A comprehensive, integrative psychiatric and wellness clinic serving the mental,
-                                        physical, emotional and preventative health needs of all members of the family.
-                                        Find better, one step at a time.
-                                    </FancySubtitle>
+                                    <Block>
+                                        <Typography family="secondary" size="xxl">
+                                            Family Psychiatry <br />
+                                            Counseling and Wellness
+                                        </Typography>
+                                    </Block>
+                                    <Block>
+                                        <Typography size="l" color="secondary">
+                                            A comprehensive, integrative psychiatric and wellness clinic serving the
+                                            mental, physical, emotional and preventative health needs of all members of
+                                            the family. Find better, one step at a time.
+                                        </Typography>
+                                    </Block>
                                     <Link to="/appointments">
                                         <Button color="light">
-                                            <span>Schedule an appointment today</span>
+                                            <Typography as="span" color="interactive">
+                                                Schedule an appointment today
+                                            </Typography>
                                             <Icon>
                                                 <FontAwesomeIcon icon={faChevronRight} />
                                             </Icon>
@@ -124,16 +118,18 @@ export default function Index({ data }) {
                             <FontAwesomeIcon icon={faHandHoldingMedical} size="8x" />
                         </Columns.Column>
                         <Columns.Column size={6}>
-                            <Content size="medium">
-                                <Heading> Holistic Psychiatry for your Mind, Body & Soul</Heading>
-                                <p>
-                                    At Family Psychiatry Counseling & Wellness, we specialize in performing
-                                    comprehensive psychiatric and psychological evaluations to establish accurate
-                                    diagnoses and prepare individualized treatment plans. We combine advanced
-                                    conventional methods with safe alternative treatment approaches to bring about
-                                    lasting relief and improved quality of life.{" "}
-                                </p>
-                            </Content>
+                            <Block>
+                                <Typography as="h2" family="secondary" size="xl">
+                                    Holistic Psychiatry for your Mind, Body and Soul
+                                </Typography>
+                            </Block>
+                            <Typography>
+                                At Family Psychiatry Counseling and Wellness, we specialize in performing comprehensive
+                                psychiatric and psychological evaluations to establish accurate diagnoses and prepare
+                                individualized treatment plans. We combine advanced conventional methods with safe
+                                alternative treatment approaches to bring about lasting relief and improved quality of
+                                life.
+                            </Typography>
                         </Columns.Column>
                     </Columns>
                 </Section>
@@ -141,9 +137,9 @@ export default function Index({ data }) {
                     <Container>
                         <Columns>
                             <Columns.Column size={3}>
-                                <Heading renderAs="h2" size={1}>
+                                <Typography as="h2" family="secondary" size="xl">
                                     What Our Patients Are Saying
-                                </Heading>
+                                </Typography>
                             </Columns.Column>
                             <Columns.Column size={1} />
                             <Columns.Column size={2}>
@@ -160,9 +156,11 @@ export default function Index({ data }) {
                 </Section>
                 <Section backgroundColor="grey-lighter">
                     <Container py={6}>
-                        <Heading renderAs="h2" size={2} textAlign="center">
-                            Health Resources
-                        </Heading>
+                        <Block textAlign="center">
+                            <Typography as="h2" family="secondary" size="xl">
+                                Health Resources
+                            </Typography>
+                        </Block>
                         <FancyDivider />
                         <Columns centered={true}>
                             {data.newsPosts.nodes.map((post, i) => (
@@ -186,19 +184,23 @@ function Rating({ link, icon, rating }) {
                 <Level>
                     <Level.Side align="left">
                         <Level.Item>
-                            <Icon color="success">
-                                <FontAwesomeIcon icon={icon} size="3x" />
-                            </Icon>
+                            <Typography as="div" color="interactive">
+                                <Icon>
+                                    <FontAwesomeIcon icon={icon} size="3x" />
+                                </Icon>
+                            </Typography>
                         </Level.Item>
                     </Level.Side>
                     <Level.Side align="right">
                         <Level.Item>
-                            <Heading renderAs="h3">
-                                <span>{rating}</span>
+                            <Typography as="span" size="l">
+                                {rating.toFixed(1)}
+                            </Typography>
+                            <Typography as="span" size="l" color="interactive">
                                 <Icon ml={2}>
                                     <FontAwesomeIcon icon={faStar} size="xs" />
                                 </Icon>
-                            </Heading>
+                            </Typography>
                         </Level.Item>
                     </Level.Side>
                 </Level>

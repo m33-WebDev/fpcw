@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import { Button, Columns, Form, Heading, Icon } from "react-bulma-components";
+import { Block, Button, Columns, Form, Icon } from "react-bulma-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope, faPhone, faUpload, faStethoscope } from "@fortawesome/free-solid-svg-icons";
+import { Typography } from "./style";
 
 const positions = [
     "Psychiatrist",
@@ -12,7 +13,7 @@ const positions = [
 ];
 
 export function FormJobApplication() {
-    const [resume, setResume] = useState();
+    const [resume, setResume] = useState<any>();
 
     function onUpload(event) {
         const files = event.target.files;
@@ -20,11 +21,18 @@ export function FormJobApplication() {
     }
 
     return (
+        // @ts-expect-error: 'netlify' attribute does not exist on HTML form tag
         <form name="jobapplication" method="POST" netlify="true" action="/formsuccess/" encType="multipart/form-data">
             <input type="hidden" name="form-name" value="jobapplication" />
-            <Heading>Application</Heading>
+            <Block>
+                <Typography as="h1" family="secondary" size="xxl">
+                    Application
+                </Typography>
+            </Block>
             <Form.Field>
-                <Form.Label>Position</Form.Label>
+                <Form.Label>
+                    <Typography>Position</Typography>
+                </Form.Label>
                 <Form.Control>
                     <Form.Select color="success">
                         {positions.map(pos => {
@@ -39,7 +47,9 @@ export function FormJobApplication() {
             <Columns>
                 <Columns.Column>
                     <Form.Field>
-                        <Form.Label>First Name</Form.Label>
+                        <Form.Label>
+                            <Typography>First Name</Typography>
+                        </Form.Label>
                         <Form.Control>
                             <Form.Input placeholder="John" name="firstname" />
                         </Form.Control>
@@ -47,7 +57,9 @@ export function FormJobApplication() {
                 </Columns.Column>
                 <Columns.Column>
                     <Form.Field>
-                        <Form.Label>Last Name</Form.Label>
+                        <Form.Label>
+                            <Typography>Last Name</Typography>
+                        </Form.Label>
                         <Form.Control>
                             <Form.Input placeholder="Smith" name="lastname" />
                         </Form.Control>
@@ -55,7 +67,9 @@ export function FormJobApplication() {
                 </Columns.Column>
             </Columns>
             <Form.Field>
-                <Form.Label>Email</Form.Label>
+                <Form.Label>
+                    <Typography>Email</Typography>
+                </Form.Label>
                 <Form.Control>
                     <Form.Input placeholder="johnsmith@gmail.com" name="email" />
                     <Icon align="left">
@@ -64,7 +78,9 @@ export function FormJobApplication() {
                 </Form.Control>
             </Form.Field>
             <Form.Field>
-                <Form.Label>Phone</Form.Label>
+                <Form.Label>
+                    <Typography>Phone</Typography>
+                </Form.Label>
                 <Form.Control>
                     <Form.Input placeholder="(123) 456-7890" name="phone" />
                     <Icon align="left">
@@ -73,7 +89,9 @@ export function FormJobApplication() {
                 </Form.Control>
             </Form.Field>
             <Form.Field>
-                <Form.Label>Resume</Form.Label>
+                <Form.Label>
+                    <Typography>Resume</Typography>
+                </Form.Label>
                 <Form.Control>
                     <Form.InputFile
                         color="success"
@@ -84,13 +102,14 @@ export function FormJobApplication() {
                         filename={resume ? resume[0].name : " "}
                         value={resume ? resume : undefined}
                         onChange={onUpload}
+                        // @ts-expect-error: @todo: need to sort out input file typing
                         name="resume"
                     />
                 </Form.Control>
             </Form.Field>
             <Form.Field>
                 <Button color="success" outlined={true} fullwidth={true} type="submit">
-                    Submit
+                    <Typography>Submit</Typography>
                 </Button>
             </Form.Field>
         </form>

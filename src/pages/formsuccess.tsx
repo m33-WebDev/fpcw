@@ -1,23 +1,27 @@
 import React from "react";
 import { Link } from "gatsby";
 import { Container, Content, Section } from "react-bulma-components";
-import { Layout, Seo } from "../components";
+import { Layout, Seo, Typography } from "../components";
 
 export default function FormSuccess() {
     return (
         <>
-            <Seo title="FPCW - Success" noIndex />
+            <Seo
+                title="FPCW - Success"
+                description="Form submission successful. Please return to the main page."
+                noIndex
+            />
             <Layout>
                 <Section>
                     <Container>
                         <Content textAlign="center">
-                            <p>
+                            <Typography>
                                 Thanks for your submission!
                                 <br />
                                 We'll be in touch.
                                 <br />
                                 Return to <Link to="/">Home</Link>.
-                            </p>
+                            </Typography>
                         </Content>
                     </Container>
                 </Section>

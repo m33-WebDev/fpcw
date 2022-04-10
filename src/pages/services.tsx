@@ -1,9 +1,7 @@
 import React from "react";
 import { Link, graphql } from "gatsby";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faDiagnoses, faHeadSideVirus, faUserMd } from "@fortawesome/free-solid-svg-icons";
-import { Block, Columns, Container, Content, Heading, Section } from "react-bulma-components";
-import { Layout, Seo } from "../components";
+import { Block, Columns, Container, Content, Section } from "react-bulma-components";
+import { Layout, Seo, Typography } from "../components";
 import services from "../content/services.json";
 
 export default function Services({ data }) {
@@ -17,22 +15,22 @@ export default function Services({ data }) {
             <Layout>
                 <Section>
                     <Container>
-                        <Heading size={1} mb={6}>
-                            Mental Health Services Provided at FPCW
-                        </Heading>
+                        <Block>
+                            <Typography as="h1" family="secondary" size="xxl">
+                                Mental Health Services Provided at FPCW
+                            </Typography>
+                        </Block>
+                        {/* @ts-ignore: @todo: not sure why gap is not found on Columns component */}
                         <Columns gap={6}>
                             <Columns.Column size={4}>
                                 <Content>
-                                    <Block textAlign="center">
-                                        <FontAwesomeIcon icon={faHeadSideVirus} size="3x" />
-                                    </Block>
-                                    <Heading size={4} renderAs="h2" textAlign="center">
+                                    <Typography as="h2" size="xl">
                                         Conditions Treated
-                                    </Heading>
-                                    <p>
+                                    </Typography>
+                                    <Typography>
                                         We offer expert diagnosis and treatment of most psychiatric conditions,
                                         including:
-                                    </p>
+                                    </Typography>
                                     <ul>
                                         {conditions.map(service => (
                                             <Service service={service} />
@@ -42,16 +40,13 @@ export default function Services({ data }) {
                             </Columns.Column>
                             <Columns.Column size={4}>
                                 <Content>
-                                    <Block textAlign="center">
-                                        <FontAwesomeIcon icon={faUserMd} size="3x" />
-                                    </Block>
-                                    <Heading size={4} renderAs="h2" textAlign="center">
+                                    <Typography as="h2" size="xl">
                                         Services Offered
-                                    </Heading>
-                                    <p>
+                                    </Typography>
+                                    <Typography>
                                         We offer counseling and treament for a full range of mental health conditions
                                         including:
-                                    </p>
+                                    </Typography>
                                     <ul>
                                         {psychTreatments.map(service => (
                                             <Service service={service} />
@@ -61,16 +56,13 @@ export default function Services({ data }) {
                             </Columns.Column>
                             <Columns.Column size={4}>
                                 <Content>
-                                    <Block textAlign="center">
-                                        <FontAwesomeIcon icon={faDiagnoses} size="3x" />
-                                    </Block>
-                                    <Heading size={4} renderAs="h2" textAlign="center">
+                                    <Typography as="h2" size="xl">
                                         Wellness and Prevention
-                                    </Heading>
-                                    <p>
+                                    </Typography>
+                                    <Typography>
                                         We also offer a number of alternative therapies designed to promote general
                                         wellbeing including:
-                                    </p>
+                                    </Typography>
                                     <ul>
                                         {altTreatments.map(service => (
                                             <Service service={service} />
@@ -88,9 +80,9 @@ export default function Services({ data }) {
 
 function Service({ service }) {
     return (
-        <li key={service.name}>
+        <Typography as="li" key={service.name}>
             {service.article ? <Link to={`/library/${service.article}`}>{service.name}</Link> : service.name}
-        </li>
+        </Typography>
     );
 }
 

@@ -1,9 +1,9 @@
 import React from "react";
 import { graphql, Link } from "gatsby";
 import Img from "gatsby-image";
-import { Card, Columns, Container, Content, Heading, Section } from "react-bulma-components";
+import { Block, Card, Columns, Container, Content, Heading, Section } from "react-bulma-components";
 import styled from "styled-components";
-import { Layout, Seo } from "../components";
+import { Layout, Seo, Typography } from "../components";
 
 export default function Library({ data }) {
     const metaTitle = data.contentfulPage.metaTitle;
@@ -15,15 +15,20 @@ export default function Library({ data }) {
             <Layout>
                 <Section>
                     <Container>
+                        {/* @ts-ignore: @todo: not sure why gap is not found on Columns component */}
                         <Columns gap={4}>
                             <Columns.Column size={4}>
                                 <FancyBlurb>
-                                    <FancyHeading>The Health Library</FancyHeading>
+                                    <Block>
+                                        <Typography as="h1" family="secondary" size="xxl">
+                                            The Health Library
+                                        </Typography>
+                                    </Block>
                                     <Content size="medium">
-                                        <p>
+                                        <Typography>
                                             Read up on the conditions we treat, the treatments we offer, and
                                             developments in the fields of psychiatry, mental health, and wellness.
-                                        </p>
+                                        </Typography>
                                     </Content>
                                 </FancyBlurb>
                             </Columns.Column>
@@ -39,9 +44,7 @@ export default function Library({ data }) {
                                                         alt={feature.fluid.title}
                                                     />
                                                     <FancyPostTitle>
-                                                        <Heading size={6} textColor="light">
-                                                            {title}
-                                                        </Heading>
+                                                        <Typography>{title}</Typography>
                                                     </FancyPostTitle>
                                                 </FancyCard>
                                             </Link>

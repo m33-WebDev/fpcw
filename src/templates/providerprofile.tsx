@@ -1,11 +1,10 @@
 import React from "react";
 import { Link, graphql } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
-import { Block, Columns, Container, Content, Heading, Icon, Level as span, Section } from "react-bulma-components";
-import styled from "styled-components";
+import { Block, Columns, Container, Content, Icon, Section } from "react-bulma-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
-import { Layout, Seo, RichText } from "../components";
+import { Layout, Seo, RichText, Typography } from "../components";
 
 export default function ProviderProfile({ data }) {
     const { name, credential, jobTitle, headshot, bio, description } = data.contentfulProviderProfile;
@@ -17,29 +16,25 @@ export default function ProviderProfile({ data }) {
             <Layout>
                 <Section>
                     <Container>
+                        {/* @ts-ignore: @todo: not sure why gap is not found on Columns component */}
                         <Columns gap={8}>
                             <Columns.Column size={6}>
                                 <GatsbyImage image={getImage(headshot)} alt="Headshot" />
                             </Columns.Column>
                             <Columns.Column size={6}>
-                                <Block>
-                                    <FancyName>{name}</FancyName>
-                                    <Heading
-                                        renderAs="span"
-                                        subtitle={true}
-                                        backgroundColor="success"
-                                        textColor="light"
-                                        p={1}
-                                        m={2}
-                                    >
-                                        {credential || jobTitle}
-                                    </Heading>
+                                <Block display="flex">
+                                    <Typography as="h1" family="secondary" size="xxl">
+                                        {name}
+                                    </Typography>
+                                    <Typography as="span">{credential || jobTitle}</Typography>
                                 </Block>
                                 <Content size="medium">
                                     {bio ? (
                                         <RichText src={bio} />
                                     ) : (
-                                        <p>No information available at this time. Please check back again later.</p>
+                                        <Typography>
+                                            No information available at this time. Please check back again later.
+                                        </Typography>
                                     )}
                                 </Content>
                                 <Link to="/providers">
@@ -47,7 +42,7 @@ export default function ProviderProfile({ data }) {
                                         <Icon>
                                             <FontAwesomeIcon icon={faChevronLeft} />
                                         </Icon>
-                                        <span>Back to provider list</span>
+                                        <Typography as="span">Back to provider list</Typography>
                                     </Block>
                                 </Link>
                             </Columns.Column>
@@ -58,11 +53,6 @@ export default function ProviderProfile({ data }) {
         </>
     );
 }
-
-const FancyName = styled(Heading)`
-    border-bottom: 4px solid #48c774;
-    display: inline-block;
-`;
 
 export const query = graphql`
     query ($pagePath: String!) {

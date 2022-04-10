@@ -1,20 +1,20 @@
 import React from "react";
 import { Link } from "gatsby";
 import { Content, Section } from "react-bulma-components";
-import { Layout, Seo } from "../components";
+import { Layout, Seo, Typography } from "../components";
 
 export default function Page404() {
     return (
         <>
-            <Seo title="Page Not Found" noIndex />
+            <Seo title="Page Not Found" description="This resource was not found." noIndex />
             <Layout>
                 <Section>
                     <Content textAlign="center">
-                        <p>
+                        <Typography>
                             It looks like this page no longer exists.
                             <br />
                             Return to <Link to="/">Home</Link>.
-                        </p>
+                        </Typography>
                     </Content>
                 </Section>
             </Layout>

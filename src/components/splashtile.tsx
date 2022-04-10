@@ -3,13 +3,16 @@ import { Link } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import { Card } from "react-bulma-components";
 import styled from "styled-components";
+import { Typography } from "./style";
 
 export function SplashTile(props) {
     return (
         <Link to={props.to ?? "/"}>
             <FancyCard>
                 <FancyImage image={getImage(props.image)} alt="Splash" />
-                <FancyTitle>{props.title}</FancyTitle>
+                <FancyTitle>
+                    <Typography>{props.title}</Typography>
+                </FancyTitle>
             </FancyCard>
         </Link>
     );

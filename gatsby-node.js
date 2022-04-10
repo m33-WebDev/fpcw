@@ -31,7 +31,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         return;
     }
 
-    const profileTemplate = path.resolve(`./src/templates/providerprofile.js`);
+    const profileTemplate = path.resolve("./src/templates/providerprofile.tsx");
     result.data.allContentfulProviderProfile.edges.forEach(({ node }) => {
         const path = "providers/" + node.slug;
         createPage({
@@ -43,7 +43,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         });
     });
 
-    const postTemplate = path.resolve(`./src/templates/post.js`);
+    const postTemplate = path.resolve("./src/templates/post.tsx");
     result.data.allContentfulPost.edges.forEach(({ node }) => {
         const path = "library/" + node.slug;
         createPage({

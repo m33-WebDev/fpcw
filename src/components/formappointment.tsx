@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Button, Columns, Form, Icon } from "react-bulma-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope, faPhone, faCalendar, faUserFriends, faUser } from "@fortawesome/free-solid-svg-icons";
+import { Typography } from "./style";
 
 const referralSources = [
     "Search Engine (Google, Yahoo, etc.)",
@@ -15,7 +16,11 @@ const insuranceReferral = referralSources[2];
 const wordOfMouthReferral = referralSources[3];
 const otherReferral = referralSources[4];
 
-export function FormAppointment() {
+export interface FormAppointmentProps {
+    name?: string;
+}
+
+export function FormAppointment(props: FormAppointmentProps) {
     const [referralSource, setReferralSource] = useState("");
 
     const handleChange = event => {
@@ -23,7 +28,8 @@ export function FormAppointment() {
     };
 
     return (
-        <form name="appointmentrequest" method="POST" netlify="true" action="/formsuccess/">
+        // @ts-expect-error: 'netlify' attribute does not exist on HTML form tag
+        <form name={props.name ?? "appointmentrequest"} method="POST" netlify="true" action="/formsuccess/">
             <input type="hidden" name="form-name" value="appointmentrequest" />
             <input type="hidden" name="referral-insurer" />
             <input type="hidden" name="referral-wordofmouth-name" />
@@ -35,7 +41,9 @@ export function FormAppointment() {
                     <Columns>
                         <Columns.Column>
                             <Form.Field>
-                                <Form.Label>First Name</Form.Label>
+                                <Form.Label>
+                                    <Typography>First Name</Typography>
+                                </Form.Label>
                                 <Form.Control>
                                     <Form.Input placeholder="John" name="first-name" required></Form.Input>
                                 </Form.Control>
@@ -43,7 +51,9 @@ export function FormAppointment() {
                         </Columns.Column>
                         <Columns.Column>
                             <Form.Field>
-                                <Form.Label>Last Name</Form.Label>
+                                <Form.Label>
+                                    <Typography>Last Name</Typography>
+                                </Form.Label>
                                 <Form.Control>
                                     <Form.Input placeholder="Smith" name="last-name" required></Form.Input>
                                 </Form.Control>
@@ -51,7 +61,9 @@ export function FormAppointment() {
                         </Columns.Column>
                     </Columns>
                     <Form.Field>
-                        <Form.Label>Email</Form.Label>
+                        <Form.Label>
+                            <Typography>Email</Typography>
+                        </Form.Label>
                         <Form.Control>
                             <Form.Input placeholder="johnsmith@gmail.com" name="email" required />
                             <Icon align="left">
@@ -60,7 +72,9 @@ export function FormAppointment() {
                         </Form.Control>
                     </Form.Field>
                     <Form.Field>
-                        <Form.Label>Phone</Form.Label>
+                        <Form.Label>
+                            <Typography>Phone</Typography>
+                        </Form.Label>
                         <Form.Control>
                             <Form.Input placeholder="(123) 456-7890" name="phone" required />
                             <Icon align="left">
@@ -69,7 +83,9 @@ export function FormAppointment() {
                         </Form.Control>
                     </Form.Field>
                     <Form.Field>
-                        <Form.Label>Desired Appointment Date</Form.Label>
+                        <Form.Label>
+                            <Typography>Desired Appointment Date</Typography>
+                        </Form.Label>
                         <Form.Control>
                             <input
                                 className="input"
@@ -86,7 +102,9 @@ export function FormAppointment() {
                 </Columns.Column>
                 <Columns.Column size={6}>
                     <Form.Field>
-                        <Form.Label>How Did You Hear About Us?</Form.Label>
+                        <Form.Label>
+                            <Typography>How Did You Hear About Us?</Typography>
+                        </Form.Label>
                         <Form.Control>
                             <Form.Select
                                 color="success"
@@ -108,7 +126,9 @@ export function FormAppointment() {
                     </Form.Field>
                     {referralSource === insuranceReferral && (
                         <Form.Field>
-                            <Form.Label>Referring Insurer</Form.Label>
+                            <Form.Label>
+                                <Typography>Referring Insurer</Typography>
+                            </Form.Label>
                             <Form.Control>
                                 <Form.Input placeholder="Insurer" name="referral-insurer" />
                                 <Icon align="left">
@@ -120,7 +140,9 @@ export function FormAppointment() {
                     {referralSource === wordOfMouthReferral && (
                         <>
                             <Form.Field>
-                                <Form.Label>Word of Mouth Referrer</Form.Label>
+                                <Form.Label>
+                                    <Typography>Word of Mouth Referrer</Typography>
+                                </Form.Label>
                                 <Form.Control>
                                     <Form.Input placeholder="Name" name="referral-wordofmouth-name" />
                                     <Icon align="left">
@@ -140,7 +162,9 @@ export function FormAppointment() {
                     )}
                     {referralSource === otherReferral && (
                         <Form.Field>
-                            <Form.Label>Please Specify</Form.Label>
+                            <Form.Label>
+                                <Typography>Please Specify</Typography>
+                            </Form.Label>
                             <Form.Control>
                                 <Form.Input placeholder="..." name="referral-other-details" />
                                 <Icon align="left">
@@ -153,7 +177,7 @@ export function FormAppointment() {
             </Columns>
             <Form.Field>
                 <Button color="success" outlined={true} fullwidth={true} type="submit">
-                    Submit
+                    <Typography>Submit</Typography>
                 </Button>
             </Form.Field>
         </form>
