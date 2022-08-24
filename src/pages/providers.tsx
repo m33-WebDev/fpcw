@@ -121,7 +121,7 @@ export const query = graphql`
                 metaDescription
             }
         }
-        profSabira: contentfulProviderProfile(name: { eq: "Sabira Saifuddin" }) {
+        profSabira: contentfulProviderProfile(slug: { eq: "sabira-saifuddin" }) {
             slug
             name
             jobTitle
@@ -132,7 +132,7 @@ export const query = graphql`
             }
         }
         profPsych: allContentfulProviderProfile(
-            filter: { credential: { eq: "MD" }, name: { nin: "Sabira Saifuddin" } }
+            filter: { credential: { eq: "MD" }, slug: { ne: "sabira-saifuddin" } }
         ) {
             nodes {
                 slug
