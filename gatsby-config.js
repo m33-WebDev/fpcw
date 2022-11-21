@@ -35,7 +35,6 @@ module.exports = {
                 ]
             }
         },
-        "gatsby-plugin-fontawesome-css",
         {
             resolve: "gatsby-plugin-advanced-sitemap",
             options: {
