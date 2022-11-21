@@ -4,7 +4,9 @@ import { Container, Content, Section } from "react-bulma-components";
 import { Layout, Seo, Typography } from "../components";
 
 export function Head() {
-    <Seo title="FPCW - Success" description="Form submission successful. Please return to the main page." noIndex />;
+    return (
+        <Seo title="FPCW - Success" description="Form submission successful. Please return to the main page." noIndex />
+    );
 }
 
 export default function FormSuccess() {
