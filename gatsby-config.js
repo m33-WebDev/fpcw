@@ -82,7 +82,6 @@ module.exports = {
                 siteUrl: url
             }
         },
-        "gatsby-plugin-netlify",
         "gatsby-plugin-offline"
     ]
 };
