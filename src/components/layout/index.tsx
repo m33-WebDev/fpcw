@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import { Helmet } from "react-helmet";
 import { Header } from "./header";
 import { Footer } from "./footer";
 
@@ -8,10 +7,17 @@ import favicon16 from "../../images/favicon16.png";
 import favicon32 from "../../images/favicon32.png";
 import favicon64 from "../../images/favicon64.png";
 
+export function Head() {
+    return [
+        [favicon16, 16],
+        [favicon32, 32],
+        [favicon64, 64]
+    ].map(([icon, size]) => <link rel="icon" type="image/png" sizes={`${size}x${size}`} href={`${icon}`} />);
+}
+
 export function Layout({ children }) {
     return (
         <>
-            <Helmet link={[getFavicon(16, favicon16), getFavicon(32, favicon32), getFavicon(64, favicon64)]} />
             <Header />
             <Site>{children}</Site>
             <Footer />

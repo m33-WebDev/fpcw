@@ -5,9 +5,13 @@ import { Block, Card, Columns, Container, Content, Heading, Section } from "reac
 import styled from "styled-components";
 import { Layout, Seo, Typography } from "../components";
 
+export function Head({ data }) {
+    const title = data.contentfulPage.metaTitle;
+    const description = data.contentfulPage.metaDescription.metaDescription;
+    return <Seo title={title} description={description} />;
+}
+
 export default function Providers({ data }) {
-    const metaTitle = data.contentfulPage.metaTitle;
-    const metaDescription = data.contentfulPage.metaDescription.metaDescription;
     const profiles = [].concat(
         data.profSabira,
         data.profPsych.nodes,
@@ -17,60 +21,56 @@ export default function Providers({ data }) {
     );
 
     return (
-        <>
-            <Seo title={metaTitle} description={metaDescription} />
-            <Layout>
-                <Section>
-                    <Container>
-                        {/* @ts-ignore: @todo: not sure why gap is not found on Columns component */}
-                        <Columns gap={4}>
-                            <Columns.Column size={4}>
-                                <FancyBlurb>
-                                    <Block>
-                                        <Typography as="h1" family="secondary" size="xxl">
-                                            Find the Right Expert for Your Mental Health Needs
-                                        </Typography>
-                                    </Block>
-                                    <Content size="medium">
-                                        <Typography>
-                                            Our professional staff consists of board-certified, experienced
-                                            psychiatrists, therapists, nurse practitioners, and others. We are,
-                                            individually and collectively, committed to providing the highest quality
-                                            care to our patients and to advancing wellness of the mind, body, and
-                                            spirit.
-                                        </Typography>
-                                    </Content>
-                                </FancyBlurb>
-                            </Columns.Column>
-                            <Columns.Column size={8}>
-                                <Columns multiline={true}>
-                                    {profiles.map(({ slug, name, headshot }, i) => (
-                                        <Columns.Column size={4} key={i}>
-                                            <Link to={`/providers/${slug}`}>
-                                                <FancyCard>
-                                                    <FancyPostImage
-                                                        fluid={
-                                                            headshot
-                                                                ? headshot.fluid
-                                                                : "https://images.theconversation.com/files/304957/original/file-20191203-66986-im7o5.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=926&fit=clip"
-                                                        }
-                                                        key={headshot.fluid.src}
-                                                        alt={headshot.fluid.title}
-                                                    />
-                                                    <FancyPostTitle>
-                                                        <Typography>{name}</Typography>
-                                                    </FancyPostTitle>
-                                                </FancyCard>
-                                            </Link>
-                                        </Columns.Column>
-                                    ))}
-                                </Columns>
-                            </Columns.Column>
-                        </Columns>
-                    </Container>
-                </Section>
-            </Layout>
-        </>
+        <Layout>
+            <Section>
+                <Container>
+                    {/* @ts-ignore: @todo: not sure why gap is not found on Columns component */}
+                    <Columns gap={4}>
+                        <Columns.Column size={4}>
+                            <FancyBlurb>
+                                <Block>
+                                    <Typography as="h1" family="secondary" size="xxl">
+                                        Find the Right Expert for Your Mental Health Needs
+                                    </Typography>
+                                </Block>
+                                <Content size="medium">
+                                    <Typography>
+                                        Our professional staff consists of board-certified, experienced psychiatrists,
+                                        therapists, nurse practitioners, and others. We are, individually and
+                                        collectively, committed to providing the highest quality care to our patients
+                                        and to advancing wellness of the mind, body, and spirit.
+                                    </Typography>
+                                </Content>
+                            </FancyBlurb>
+                        </Columns.Column>
+                        <Columns.Column size={8}>
+                            <Columns multiline={true}>
+                                {profiles.map(({ slug, name, headshot }, i) => (
+                                    <Columns.Column size={4} key={i}>
+                                        <Link to={`/providers/${slug}`}>
+                                            <FancyCard>
+                                                <FancyPostImage
+                                                    fluid={
+                                                        headshot
+                                                            ? headshot.fluid
+                                                            : "https://images.theconversation.com/files/304957/original/file-20191203-66986-im7o5.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=926&fit=clip"
+                                                    }
+                                                    key={headshot.fluid.src}
+                                                    alt={headshot.fluid.title}
+                                                />
+                                                <FancyPostTitle>
+                                                    <Typography>{name}</Typography>
+                                                </FancyPostTitle>
+                                            </FancyCard>
+                                        </Link>
+                                    </Columns.Column>
+                                ))}
+                            </Columns>
+                        </Columns.Column>
+                    </Columns>
+                </Container>
+            </Section>
+        </Layout>
     );
 }
 

@@ -25,155 +25,154 @@ const ratings = [
     }
 ];
 
-export default function Index({ data }) {
-    const metaTitle = data.contentfulPage.metaTitle;
-    const metaDescription = data.contentfulPage.metaDescription.metaDescription;
+export function Head({ data }) {
+    const title = data.contentfulPage.metaTitle;
+    const description = data.contentfulPage.metaDescription.metaDescription;
+    return <Seo title={title} description={description} />;
+}
 
+export default function Index({ data }) {
     return (
-        <>
-            <Seo title={metaTitle} description={metaDescription} />
-            <Layout>
-                <Hero size="fullheight" hasNavbar={true}>
-                    <Hero.Body>
-                        <Container>
-                            <Columns vCentered={true}>
-                                <Columns.Column size={6}>
-                                    <Block>
-                                        <Typography family="secondary" size="xxl">
-                                            Family Psychiatry <br />
-                                            Counseling and Wellness
+        <Layout>
+            <Hero size="fullheight" hasNavbar={true}>
+                <Hero.Body>
+                    <Container>
+                        <Columns vCentered={true}>
+                            <Columns.Column size={6}>
+                                <Block>
+                                    <Typography family="secondary" size="xxl">
+                                        Family Psychiatry <br />
+                                        Counseling and Wellness
+                                    </Typography>
+                                </Block>
+                                <Block>
+                                    <Typography size="l" color="secondary">
+                                        A comprehensive, integrative psychiatric and wellness clinic serving the mental,
+                                        physical, emotional and preventative health needs of all members of the family.
+                                        Find better, one step at a time.
+                                    </Typography>
+                                </Block>
+                                <Link to="/appointments">
+                                    <Button color="light">
+                                        <Typography as="span" color="interactive">
+                                            Schedule an appointment today
                                         </Typography>
-                                    </Block>
-                                    <Block>
-                                        <Typography size="l" color="secondary">
-                                            A comprehensive, integrative psychiatric and wellness clinic serving the
-                                            mental, physical, emotional and preventative health needs of all members of
-                                            the family. Find better, one step at a time.
-                                        </Typography>
-                                    </Block>
-                                    <Link to="/appointments">
-                                        <Button color="light">
-                                            <Typography as="span" color="interactive">
-                                                Schedule an appointment today
-                                            </Typography>
-                                            <Icon>
-                                                <FontAwesomeIcon icon={faChevronRight} />
-                                            </Icon>
-                                        </Button>
-                                    </Link>
-                                </Columns.Column>
-                                <Columns.Column size={6}>
-                                    <Tile kind="ancestor">
-                                        <Tile className="tile is-vertical">
-                                            <Tile className="tile">
-                                                <Tile kind="parent">
-                                                    <FancyTile kind="child">
-                                                        <SplashTile
-                                                            title="Services"
-                                                            image={data.serviceSplash}
-                                                            to="/services"
-                                                        />
-                                                    </FancyTile>
-                                                </Tile>
-                                                <Tile kind="parent">
-                                                    <Tile kind="child">
-                                                        <SplashTile
-                                                            title="Telehealth"
-                                                            image={data.telehealthSplash}
-                                                            to="/library/telepsychiatry-telecounseling"
-                                                        />
-                                                    </Tile>
-                                                </Tile>
+                                        <Icon>
+                                            <FontAwesomeIcon icon={faChevronRight} />
+                                        </Icon>
+                                    </Button>
+                                </Link>
+                            </Columns.Column>
+                            <Columns.Column size={6}>
+                                <Tile kind="ancestor">
+                                    <Tile className="tile is-vertical">
+                                        <Tile className="tile">
+                                            <Tile kind="parent">
+                                                <FancyTile kind="child">
+                                                    <SplashTile
+                                                        title="Services"
+                                                        image={data.serviceSplash}
+                                                        to="/services"
+                                                    />
+                                                </FancyTile>
                                             </Tile>
-                                            <Tile className="tile">
-                                                <Tile kind="parent">
-                                                    <Tile kind="child">
-                                                        <SplashTile
-                                                            title="Transcranial Magnetic Stimulation (TMS)"
-                                                            image={data.tmsSplash}
-                                                            to="/tms"
-                                                        />
-                                                    </Tile>
-                                                </Tile>
-                                                <Tile kind="parent">
-                                                    <FancyTile kind="child">
-                                                        <SplashTile
-                                                            title="Health Library"
-                                                            image={data.librarySplash}
-                                                            to="/library"
-                                                        />
-                                                    </FancyTile>
+                                            <Tile kind="parent">
+                                                <Tile kind="child">
+                                                    <SplashTile
+                                                        title="Telehealth"
+                                                        image={data.telehealthSplash}
+                                                        to="/library/telepsychiatry-telecounseling"
+                                                    />
                                                 </Tile>
                                             </Tile>
                                         </Tile>
+                                        <Tile className="tile">
+                                            <Tile kind="parent">
+                                                <Tile kind="child">
+                                                    <SplashTile
+                                                        title="Transcranial Magnetic Stimulation (TMS)"
+                                                        image={data.tmsSplash}
+                                                        to="/tms"
+                                                    />
+                                                </Tile>
+                                            </Tile>
+                                            <Tile kind="parent">
+                                                <FancyTile kind="child">
+                                                    <SplashTile
+                                                        title="Health Library"
+                                                        image={data.librarySplash}
+                                                        to="/library"
+                                                    />
+                                                </FancyTile>
+                                            </Tile>
+                                        </Tile>
                                     </Tile>
-                                </Columns.Column>
-                            </Columns>
-                        </Container>
-                    </Hero.Body>
-                </Hero>
-                <Section backgroundColor="grey-lighter">
-                    <Columns vCentered={true} centered={true}>
-                        <Columns.Column size={2} textAlign="center">
-                            <FontAwesomeIcon icon={faHandHoldingMedical} size="8x" />
-                        </Columns.Column>
-                        <Columns.Column size={6}>
-                            <Block>
-                                <Typography as="h2" family="secondary" size="xl">
-                                    Holistic Psychiatry for your Mind, Body and Soul
-                                </Typography>
-                            </Block>
-                            <Typography>
-                                At Family Psychiatry Counseling and Wellness, we specialize in performing comprehensive
-                                psychiatric and psychological evaluations to establish accurate diagnoses and prepare
-                                individualized treatment plans. We combine advanced conventional methods with safe
-                                alternative treatment approaches to bring about lasting relief and improved quality of
-                                life.
-                            </Typography>
-                        </Columns.Column>
-                    </Columns>
-                </Section>
-                <Section my={6}>
-                    <Container>
-                        <Columns>
-                            <Columns.Column size={3}>
-                                <Typography as="h2" family="secondary" size="xl">
-                                    What Our Patients Are Saying
-                                </Typography>
-                            </Columns.Column>
-                            <Columns.Column size={1} />
-                            <Columns.Column size={2}>
-                                {ratings.map(rating => (
-                                    <Rating {...rating} />
-                                ))}
-                            </Columns.Column>
-                            <Columns.Column size={1} />
-                            <Columns.Column size={4}>
-                                <Reviews />
+                                </Tile>
                             </Columns.Column>
                         </Columns>
                     </Container>
-                </Section>
-                <Section backgroundColor="grey-lighter">
-                    <Container py={6}>
-                        <Block textAlign="center">
+                </Hero.Body>
+            </Hero>
+            <Section backgroundColor="grey-lighter">
+                <Columns vCentered={true} centered={true}>
+                    <Columns.Column size={2} textAlign="center">
+                        <FontAwesomeIcon icon={faHandHoldingMedical} size="8x" />
+                    </Columns.Column>
+                    <Columns.Column size={6}>
+                        <Block>
                             <Typography as="h2" family="secondary" size="xl">
-                                Health Resources
+                                Holistic Psychiatry for your Mind, Body and Soul
                             </Typography>
                         </Block>
-                        <FancyDivider />
-                        <Columns centered={true}>
-                            {data.newsPosts.nodes.map((post, i) => (
-                                <Columns.Column size={3} key={i}>
-                                    <NewsTile post={post} />
-                                </Columns.Column>
+                        <Typography>
+                            At Family Psychiatry Counseling and Wellness, we specialize in performing comprehensive
+                            psychiatric and psychological evaluations to establish accurate diagnoses and prepare
+                            individualized treatment plans. We combine advanced conventional methods with safe
+                            alternative treatment approaches to bring about lasting relief and improved quality of life.
+                        </Typography>
+                    </Columns.Column>
+                </Columns>
+            </Section>
+            <Section my={6}>
+                <Container>
+                    <Columns>
+                        <Columns.Column size={3}>
+                            <Typography as="h2" family="secondary" size="xl">
+                                What Our Patients Are Saying
+                            </Typography>
+                        </Columns.Column>
+                        <Columns.Column size={1} />
+                        <Columns.Column size={2}>
+                            {ratings.map(rating => (
+                                <Rating {...rating} />
                             ))}
-                        </Columns>
-                        <FancyDivider />
-                    </Container>
-                </Section>
-            </Layout>
-        </>
+                        </Columns.Column>
+                        <Columns.Column size={1} />
+                        <Columns.Column size={4}>
+                            <Reviews />
+                        </Columns.Column>
+                    </Columns>
+                </Container>
+            </Section>
+            <Section backgroundColor="grey-lighter">
+                <Container py={6}>
+                    <Block textAlign="center">
+                        <Typography as="h2" family="secondary" size="xl">
+                            Health Resources
+                        </Typography>
+                    </Block>
+                    <FancyDivider />
+                    <Columns centered={true}>
+                        {data.newsPosts.nodes.map((post, i) => (
+                            <Columns.Column size={3} key={i}>
+                                <NewsTile post={post} />
+                            </Columns.Column>
+                        ))}
+                    </Columns>
+                    <FancyDivider />
+                </Container>
+            </Section>
+        </Layout>
     );
 }
 

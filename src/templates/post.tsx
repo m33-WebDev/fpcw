@@ -7,47 +7,49 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 import { Layout, Seo, RichText, NewsletterSignup, Typography } from "../components";
 
+export function Head({ data }) {
+    const { title, metaTitle, metaDescription } = data.contentfulPost;
+    return <Seo title={metaTitle ?? title} description={metaDescription?.metaDescription ?? ""} />;
+}
+
 export default function Post({ data }) {
-    const { title, metaTitle, feature, body, metaDescription } = data.contentfulPost;
+    const { title, feature, body } = data.contentfulPost;
 
     return (
-        <>
-            <Seo title={metaTitle || title} description={metaDescription ? metaDescription.metaDescription : ""} />
-            <Layout>
-                <Section>
-                    <Container>
-                        {/* @ts-ignore: @todo: not sure why gap is not found on Columns component */}
-                        <Columns centered={true} gap={8}>
-                            <Columns.Column size={6}>
-                                <FancyFrontmatter>
-                                    <Block>
-                                        <Typography as="h1" family="secondary" size="xxl">
-                                            {title}
-                                        </Typography>
+        <Layout>
+            <Section>
+                <Container>
+                    {/* @ts-ignore: @todo: not sure why gap is not found on Columns component */}
+                    <Columns centered={true} gap={8}>
+                        <Columns.Column size={6}>
+                            <FancyFrontmatter>
+                                <Block>
+                                    <Typography as="h1" family="secondary" size="xxl">
+                                        {title}
+                                    </Typography>
+                                </Block>
+                                <FancyFeatureImage image={getImage(feature)!} alt="Post feature" />
+                                <Link to="/library">
+                                    <Block display="flex" alignItems="center" textColor="success">
+                                        <Icon>
+                                            <FontAwesomeIcon icon={faChevronLeft} />
+                                        </Icon>
+                                        <Typography as="span">Back to library</Typography>
                                     </Block>
-                                    <FancyFeatureImage image={getImage(feature)} alt="Post feature" />
-                                    <Link to="/library">
-                                        <Block display="flex" alignItems="center" textColor="success">
-                                            <Icon>
-                                                <FontAwesomeIcon icon={faChevronLeft} />
-                                            </Icon>
-                                            <Typography as="span">Back to library</Typography>
-                                        </Block>
-                                    </Link>
-                                </FancyFrontmatter>
-                            </Columns.Column>
-                            <Columns.Column size={6}>
-                                <Content size="medium">
-                                    <RichText src={body} />
-                                    <FancyDivider />
-                                    <NewsletterSignup />
-                                </Content>
-                            </Columns.Column>
-                        </Columns>
-                    </Container>
-                </Section>
-            </Layout>
-        </>
+                                </Link>
+                            </FancyFrontmatter>
+                        </Columns.Column>
+                        <Columns.Column size={6}>
+                            <Content size="medium">
+                                <RichText src={body} />
+                                <FancyDivider />
+                                <NewsletterSignup />
+                            </Content>
+                        </Columns.Column>
+                    </Columns>
+                </Container>
+            </Section>
+        </Layout>
     );
 }
 

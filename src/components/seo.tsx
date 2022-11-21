@@ -1,102 +1,43 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import PropTypes from "prop-types";
-import Helmet from "react-helmet";
-import { useStaticQuery, graphql } from "gatsby";
-
-type NameMetaObj = {
-    name: string;
-    content: string;
-};
-
-type PropertyMetaObject = {
-    property: string;
-    content: string;
-};
-
-type Meta = (NameMetaObj | PropertyMetaObject)[];
+import { useSiteMetadata } from "../hooks";
 
 export interface SeoProps {
     title: string;
     description: string;
-    meta?: Meta;
     noIndex?: boolean;
     noFollow?: boolean;
+    children?: ReactNode;
 }
 
 function Seo(props: SeoProps) {
-    const { site } = useStaticQuery(
-        graphql`
-            query {
-                site {
-                    siteMetadata {
-                        title
-                        description
-                        author
-                    }
-                }
-            }
-        `
-    );
+    const siteMetadata = useSiteMetadata();
 
-    const metaTitle = "".concat(props.title, " | Family Psychiatry, Counseling and Wellness");
-    const metaDescription = props.description || site.siteMetadata.description;
-    const metaRobots = "".concat(props.noIndex ? "noindex" : "index", ", ", props.noFollow ? "nofollow" : "follow");
+    const title = `${props.title} | Family Psychiatry, Counseling and Wellness`;
+    const description = props.description || siteMetadata.description;
+    const author = siteMetadata.author;
+    const robots = `${props.noIndex ? "noindex" : "index"}, ${props.noFollow ? "nofollow" : "follow"}`;
 
     return (
-        <Helmet
-            htmlAttributes={{ lang: "en" }}
-            title={metaTitle}
-            meta={[
-                {
-                    name: `description`,
-                    content: metaDescription
-                },
-                {
-                    property: `og:title`,
-                    content: props.title
-                },
-                {
-                    property: `og:description`,
-                    content: metaDescription
-                },
-                {
-                    property: `og:type`,
-                    content: `website`
-                },
-                {
-                    name: `twitter:card`,
-                    content: `summary`
-                },
-                {
-                    name: `twitter:creator`,
-                    content: site.siteMetadata.author
-                },
-                {
-                    name: `twitter:title`,
-                    content: metaTitle
-                },
-                {
-                    name: `twitter:description`,
-                    content: metaDescription
-                },
-                {
-                    name: `robots`,
-                    content: metaRobots
-                }
-            ].concat(props.meta)}
-        />
+        <>
+            <title>{title}</title>
+            <meta name="description" content={description} />
+            <meta name="og:title" content={title} />
+            <meta name="og:description" content={description} />
+            <meta name="og:type" content="website" />
+            <meta name="twitter:card" content="summary" />
+            <meta name="twitter:creator" content={author} />
+            <meta name="twitter:title" content={title} />
+            <meta name="twitter:description" content={description} />
+            <meta name="robots" content={robots} />
+            {props.children}
+        </>
     );
 }
 
-Seo.defaultProps = {
-    meta: []
-};
-
 Seo.propTypes = {
-    description: PropTypes.string,
-    lang: PropTypes.string,
-    meta: PropTypes.arrayOf(PropTypes.object),
-    title: PropTypes.string.isRequired
+    title: PropTypes.string.isRequired,
+    description: PropTypes.string
 };
 
 export default Seo;

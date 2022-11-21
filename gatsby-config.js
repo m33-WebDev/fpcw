@@ -41,7 +41,6 @@ module.exports = {
                 exclude: ["/dev-404-page", "/404", "/formsuccess"]
             }
         },
-        "gatsby-plugin-react-helmet",
         {
             resolve: "gatsby-source-contentful",
             options: {

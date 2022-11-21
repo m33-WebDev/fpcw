@@ -1,7 +1,7 @@
 import React from "react";
 import { graphql } from "gatsby";
 import styled from "styled-components";
-import { Block, Container, Heading, Section } from "react-bulma-components";
+import { Block, Container, Section } from "react-bulma-components";
 import { Layout, Seo, FormAppointment, Typography } from "../components";
 
 const disclaimer1 =
@@ -9,31 +9,31 @@ const disclaimer1 =
 const disclaimer2 =
     "\nIf you prefer to request an appointment by telephone, please contact our office directly at (805) 341-3416 during normal business hours.";
 
-export default function Appointments({ data }) {
-    const metaTitle = data.contentfulPage.metaTitle;
-    const metaDescription = data.contentfulPage.metaDescription.metaDescription;
+export function Head({ data }) {
+    const title = data.contentfulPage.metaTitle;
+    const description = data.contentfulPage.metaDescription.metaDescription;
+    return <Seo title={title} description={description} />;
+}
 
+export default function Appointments() {
     return (
-        <>
-            <Seo title={metaTitle} description={metaDescription} />
-            <Layout>
-                <Section>
-                    <Container>
-                        <Block>
-                            <Typography as="h1" family="secondary" size="xxl">
-                                Request an Appointment
-                            </Typography>
-                        </Block>
-                        <FormAppointment />
-                        <Disclaimer>
-                            <Typography>{disclaimer1}</Typography>
-                            <br />
-                            <Typography>{disclaimer2}</Typography>
-                        </Disclaimer>
-                    </Container>
-                </Section>
-            </Layout>
-        </>
+        <Layout>
+            <Section>
+                <Container>
+                    <Block>
+                        <Typography as="h1" family="secondary" size="xxl">
+                            Request an Appointment
+                        </Typography>
+                    </Block>
+                    <FormAppointment />
+                    <Disclaimer>
+                        <Typography>{disclaimer1}</Typography>
+                        <br />
+                        <Typography>{disclaimer2}</Typography>
+                    </Disclaimer>
+                </Container>
+            </Section>
+        </Layout>
     );
 }
 

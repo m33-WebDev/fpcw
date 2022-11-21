@@ -5,58 +5,58 @@ import { Block, Card, Columns, Container, Content, Heading, Section } from "reac
 import styled from "styled-components";
 import { Layout, Seo, Typography } from "../components";
 
-export default function Library({ data }) {
-    const metaTitle = data.contentfulPage.metaTitle;
-    const metaDescription = data.contentfulPage.metaDescription.metaDescription;
+export function Head({ data }) {
+    const title = data.contentfulPage.metaTitle;
+    const description = data.contentfulPage.metaDescription.metaDescription;
+    return <Seo title={title} description={description} />;
+}
 
+export default function Library({ data }) {
     return (
-        <>
-            <Seo title={metaTitle} description={metaDescription} />
-            <Layout>
-                <Section>
-                    <Container>
-                        {/* @ts-ignore: @todo: not sure why gap is not found on Columns component */}
-                        <Columns gap={4}>
-                            <Columns.Column size={4}>
-                                <FancyBlurb>
-                                    <Block>
-                                        <Typography as="h1" family="secondary" size="xxl">
-                                            The Health Library
-                                        </Typography>
-                                    </Block>
-                                    <Content size="medium">
-                                        <Typography>
-                                            Read up on the conditions we treat, the treatments we offer, and
-                                            developments in the fields of psychiatry, mental health, and wellness.
-                                        </Typography>
-                                    </Content>
-                                </FancyBlurb>
-                            </Columns.Column>
-                            <Columns.Column size={8}>
-                                <Columns multiline={true}>
-                                    {data.allContentfulPost.nodes.map(({ slug, title, feature }, i) => (
-                                        <Columns.Column size={4} key={i}>
-                                            <Link to={`/library/${slug}`}>
-                                                <FancyCard>
-                                                    <FancyPostImage
-                                                        fluid={feature.fluid}
-                                                        key={feature.fluid.src}
-                                                        alt={feature.fluid.title}
-                                                    />
-                                                    <FancyPostTitle>
-                                                        <Typography>{title}</Typography>
-                                                    </FancyPostTitle>
-                                                </FancyCard>
-                                            </Link>
-                                        </Columns.Column>
-                                    ))}
-                                </Columns>
-                            </Columns.Column>
-                        </Columns>
-                    </Container>
-                </Section>
-            </Layout>
-        </>
+        <Layout>
+            <Section>
+                <Container>
+                    {/* @ts-ignore: @todo: not sure why gap is not found on Columns component */}
+                    <Columns gap={4}>
+                        <Columns.Column size={4}>
+                            <FancyBlurb>
+                                <Block>
+                                    <Typography as="h1" family="secondary" size="xxl">
+                                        The Health Library
+                                    </Typography>
+                                </Block>
+                                <Content size="medium">
+                                    <Typography>
+                                        Read up on the conditions we treat, the treatments we offer, and developments in
+                                        the fields of psychiatry, mental health, and wellness.
+                                    </Typography>
+                                </Content>
+                            </FancyBlurb>
+                        </Columns.Column>
+                        <Columns.Column size={8}>
+                            <Columns multiline={true}>
+                                {data.allContentfulPost.nodes.map(({ slug, title, feature }, i) => (
+                                    <Columns.Column size={4} key={i}>
+                                        <Link to={`/library/${slug}`}>
+                                            <FancyCard>
+                                                <FancyPostImage
+                                                    fluid={feature.fluid}
+                                                    key={feature.fluid.src}
+                                                    alt={feature.fluid.title}
+                                                />
+                                                <FancyPostTitle>
+                                                    <Typography>{title}</Typography>
+                                                </FancyPostTitle>
+                                            </FancyCard>
+                                        </Link>
+                                    </Columns.Column>
+                                ))}
+                            </Columns>
+                        </Columns.Column>
+                    </Columns>
+                </Container>
+            </Section>
+        </Layout>
     );
 }
 
