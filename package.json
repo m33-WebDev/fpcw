@@ -5,15 +5,13 @@
   "version": "0.1.0",
   "license": "MIT",
   "scripts": {
+    "clean": "gatsby clean",
+    "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "build": "gatsby build",
     "develop": "gatsby develop",
-    "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
-    "start": "npm run develop",
+    "start": "gatsby develop",
     "serve": "gatsby serve",
-    "clean": "gatsby clean",
-    "deploy": "git push -u origin main",
-    "surge": "surge public/ fpcw.surge.sh",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+    "deploy": "git push -u origin main"
   },
   "dependencies": {
     "@contentful/rich-text-react-renderer": "^13.4.0",
