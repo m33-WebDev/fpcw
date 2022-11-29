@@ -7,7 +7,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faExclamationCircle } from "@fortawesome/free-solid-svg-icons";
 import { Typography } from "../style";
 
-const telehealthCallout = "Now offering telehealth appointments.";
+const telehealthCallout = "Now Offering Telehealth Services all across California.";
 
 const primaryLinks = [
     ["Home", "/"],
