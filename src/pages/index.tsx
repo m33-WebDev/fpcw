@@ -47,15 +47,23 @@ export default function Index({ data }) {
                                 </Block>
                                 <Block>
                                     <Typography size="l" color="secondary">
-                                        A comprehensive, integrative psychiatric and wellness clinic serving the mental,
-                                        physical, emotional and preventative health needs of all members of the family.
-                                        Find better, one step at a time.
+                                        A comprehensive psychiatric clinic serving the mental & emotional health needs of all members of the family. 
+                                        Our mission is to help you live your best life. 
+                                    </Typography>
+
+                                    <Typography size="l" color="secondary">
+                                        We diagnose and treat a variety of mental health symptoms and 
+                                        conditions—with or without medications. We also offer TMS & Ketamine therapies. 
+                                    </Typography>
+                                    <Typography size="l" color="secondary">
+                                        We accept most commercial insurances. 
+                                        Same day appointments available. Prescriptions are sent electronically to your pharmacy    
                                     </Typography>
                                 </Block>
                                 <Link to="/appointments">
                                     <Button color="light">
                                         <Typography as="span" color="interactive">
-                                            Schedule an appointment today
+                                            MAKE AN APPOINTMENT TODAY 
                                         </Typography>
                                         <Icon>
                                             <FontAwesomeIcon icon={faChevronRight} />
