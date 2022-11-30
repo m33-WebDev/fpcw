@@ -56,16 +56,16 @@ export default function Index({ data }) {
                                     </Button>
                                 </Link>
                                 <Block>
-                                    <Typography size="l" color="secondary">
+                                    <Typography size="m" color="secondary">
                                         A comprehensive psychiatric clinic serving the mental & emotional health needs of all members of the family. 
                                         Our mission is to help you live your best life. 
                                     </Typography>
 
-                                    <Typography size="l" color="secondary">
+                                    <Typography size="m" color="secondary">
                                         We diagnose and treat a variety of mental health symptoms and 
                                         conditions—with or without medications. We also offer TMS & Ketamine therapies. 
                                     </Typography>
-                                    <Typography size="l" color="secondary">
+                                    <Typography size="m" color="secondary">
                                         We accept most commercial insurances. 
                                         Same day appointments available. Prescriptions are sent electronically to your pharmacy    
                                     </Typography>
