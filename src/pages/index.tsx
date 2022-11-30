@@ -45,6 +45,18 @@ export default function Index({ data }) {
                                         Counseling and Wellness
                                     </Typography>
                                 </Block>
+                                <Link to="/appointments">
+                                    <Button color="light">
+                                        <Typography as="span" color="interactive">
+                                            <div style='font-size:xx-large'>
+                                             MAKE AN APPOINTMENT TODAY 
+                                            </div>
+                                        </Typography>
+                                        <Icon>
+                                            <FontAwesomeIcon icon={faChevronRight} />
+                                        </Icon>
+                                    </Button>
+                                </Link>
                                 <Block>
                                     <Typography size="l" color="secondary">
                                         A comprehensive psychiatric clinic serving the mental & emotional health needs of all members of the family. 
@@ -60,16 +72,7 @@ export default function Index({ data }) {
                                         Same day appointments available. Prescriptions are sent electronically to your pharmacy    
                                     </Typography>
                                 </Block>
-                                <Link to="/appointments">
-                                    <Button color="light">
-                                        <Typography as="span" color="interactive">
-                                            MAKE AN APPOINTMENT TODAY 
-                                        </Typography>
-                                        <Icon>
-                                            <FontAwesomeIcon icon={faChevronRight} />
-                                        </Icon>
-                                    </Button>
-                                </Link>
+                                
                             </Columns.Column>
                             <Columns.Column size={6}>
                                 <Tile kind="ancestor">
