@@ -126,10 +126,6 @@ export default function Contact() {
                                     <Typography>
                                     Offices Closed on Weekends and Holidays.
                                     </Typography>
-                                    {/* <Typography>
-                                        If you would like to request an appointment outside of business hours, please
-                                        use this <Link to="/appointments">form</Link>.
-                                    </Typography> */}
                                 </Content>
                             </Columns.Column>
                         </Columns>
