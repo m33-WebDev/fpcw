@@ -23,7 +23,10 @@ export default function Contact() {
                             <Columns.Column size={6}>
                                 <Content>
                                     <Typography as="h1" family="secondary" size="xxl">
-                                        Locations
+                                    FPCW is serving patients all across California via Hippa Compliant 
+                                    Telehealth Platform.  Our TMS & Ketamine Therapy Services Provided 
+                                    at our main office in Westlake Village California.
+
                                     </Typography>
                                 </Content>
                                 <Columns centered={true}>
@@ -108,14 +111,25 @@ export default function Contact() {
                                                 <td>
                                                     <FontAwesomeIcon icon={faCalendar} />
                                                 </td>
-                                                <td>Monday - Friday, 9:00am - 6:00pm</td>
+                                                <td>Monday - Thursday - 9:00am - 5:00pm PST</td>
                                             </tr>
+                                            <tr>
+                                                <td>
+                                                    <FontAwesomeIcon icon={faCalendar} />
+                                                </td>
+                                                <td>Friday - 8:00am - 3:00pm PST</td>
+                                            </tr>
+
                                         </Typography>
                                     </Table>
+
                                     <Typography>
+                                    Offices Closed on Weekends and Holidays.
+                                    </Typography>
+                                    {/* <Typography>
                                         If you would like to request an appointment outside of business hours, please
                                         use this <Link to="/appointments">form</Link>.
-                                    </Typography>
+                                    </Typography> */}
                                 </Content>
                             </Columns.Column>
                         </Columns>
