@@ -48,9 +48,7 @@ export default function Index({ data }) {
                                 <Link to="/appointments">
                                     <Button color="light">
                                         <Typography as="span" color="interactive">
-                                            <div style='font-size:xx-large'>
                                              MAKE AN APPOINTMENT TODAY 
-                                            </div>
                                         </Typography>
                                         <Icon>
                                             <FontAwesomeIcon icon={faChevronRight} />
