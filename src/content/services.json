@@ -47,18 +47,6 @@
             "article": "psychotherapy-and-counseling-services"
         },
         {
-            "name": "Medication Management",
-            "article": "psychiatric-medication-management"
-        },
-        {
-            "name": "Transcranial Magnetic Stimulation ",
-            "article": ""
-        },
-        {
-            "name": "Ketamine Therapy ",
-            "article": ""
-        },
-        {
             "name": "Family Therapy",
             "article": "psychotherapy-and-counseling-services"
         },
@@ -70,7 +58,10 @@
             "name": "Cognitive Behavior Therapy",
             "article": "psychotherapy-and-counseling-services"
         },
-       
+        {
+            "name": "Medication Management",
+            "article": "psychiatric-medication-management"
+        },
         {
             "name": "Anger Management",
             "article": "psychotherapy-and-counseling-services"
@@ -78,6 +69,10 @@
         {
             "name": "Health, Wellness, Prevention",
             "article": "feeling-happy-is-essential-for-survival-during-quarantine"
+        },
+        {
+            "name": "Social Skills Training",
+            "article": ""
         }
     ],
     "altTreatments": [
@@ -111,18 +106,6 @@
         },
         {
             "name": "Life Coaching",
-            "article": ""
-        },
-        {
-            "name": "Mindfulness",
-            "article": ""
-        },
-        {
-            "name": "Relaxation Techniques ",
-            "article": ""
-        },
-        {
-            "name": "Problem Solving Skills ",
             "article": ""
         }
     ]
