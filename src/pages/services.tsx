@@ -19,7 +19,7 @@ export default function Services() {
                 <Container>
                     <Block>
                         <Typography as="h1" family="secondary" size="xxl">
-                            Mental Health Services Provided at FPCW
+                            Testing Mental Health Services Provided at FPCW
                         </Typography>
                     </Block>
                     {/* @ts-ignore: @todo: not sure why gap is not found on Columns component */}
