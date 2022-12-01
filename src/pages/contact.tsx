@@ -5,7 +5,6 @@ import { Block, Box, Columns, Container, Content, Hero, Table } from "react-bulm
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope, faPhone, faCalendar, faAngleUp } from "@fortawesome/free-solid-svg-icons";
 import { Layout, Seo, Typography } from "../components";
-import img1 from "../images/location1.png";
 
 export function Head({ data }) {
     const title = data.contentfulPage.metaTitle;
@@ -41,7 +40,8 @@ export default function Contact() {
                                                 <Block>
                                                     <figure>
                                                         <StaticImage
-                                                            src="https://maps.googleapis.com/maps/api/streetview?source=outdoor&size=700x480&location=31194%20LA%20Baya%20Dr%20%23107%2C%20Westlake%20Village%2C%20CA%2091362&sensor=false&key=AIzaSyChs1A5cJJOcGqcdqNj2YBOULaJlZKCktM&channel=propertyshark-standard&signature=qFjUMV_Nmp2YKXRyktRHTZIz5_Q"
+                                                            // src="https://maps.googleapis.com/maps/api/streetview?source=outdoor&size=700x480&location=31194%20LA%20Baya%20Dr%20%23107%2C%20Westlake%20Village%2C%20CA%2091362&sensor=false&key=AIzaSyChs1A5cJJOcGqcdqNj2YBOULaJlZKCktM&channel=propertyshark-standard&signature=qFjUMV_Nmp2YKXRyktRHTZIz5_Q"
+                                                            src="./images/location1.png"
                                                             alt="La Baya Drive location exterior"
                                                             height={200}
                                                         />
@@ -66,7 +66,8 @@ export default function Contact() {
                                                 <Block>
                                                     <figure>
                                                         <StaticImage
-                                                            src="https://images.squarespace-cdn.com/content/56412ff6e4b09a51a6703186/1563487713368-OFJHMDD4SJZBKFSQXNE4/image-asset.jpeg?content-type=image%2Fjpeg"
+                                                            // src="https://images.squarespace-cdn.com/content/56412ff6e4b09a51a6703186/1563487713368-OFJHMDD4SJZBKFSQXNE4/image-asset.jpeg?content-type=image%2Fjpeg"
+                                                            src={require("./images/location1.png")}
                                                             alt="Agoura Road location exterior"
                                                             height={200}
                                                         />
@@ -94,7 +95,8 @@ export default function Contact() {
                                                 <Block>
                                                     <figure>
                                                         <StaticImage
-                                                            src="https://maps.googleapis.com/maps/api/streetview?source=outdoor&size=700x480&location=31194%20LA%20Baya%20Dr%20%23107%2C%20Westlake%20Village%2C%20CA%2091362&sensor=false&key=AIzaSyChs1A5cJJOcGqcdqNj2YBOULaJlZKCktM&channel=propertyshark-standard&signature=qFjUMV_Nmp2YKXRyktRHTZIz5_Q"
+                                                            // src="https://maps.googleapis.com/maps/api/streetview?source=outdoor&size=700x480&location=31194%20LA%20Baya%20Dr%20%23107%2C%20Westlake%20Village%2C%20CA%2091362&sensor=false&key=AIzaSyChs1A5cJJOcGqcdqNj2YBOULaJlZKCktM&channel=propertyshark-standard&signature=qFjUMV_Nmp2YKXRyktRHTZIz5_Q"
+                                                            src="../images/location1.png"
                                                             alt="La Baya Drive location exterior"
                                                             height={200}
                                                         />
@@ -119,7 +121,7 @@ export default function Contact() {
                                                 <Block>
                                                     <figure>
                                                         <StaticImage
-                                                            src={img1}
+                                                            src={require("../images/location1.png")}
                                                             alt="Agoura Road location exterior test3"
                                                             height={200}
                                                         />
