@@ -124,7 +124,7 @@ export default function Contact() {
                                     </Table>
 
                                     <Typography>
-                                    Offices Closed on Weekends and Holidays.
+                                    Offices Closed on Weekends and Holidays Test.
                                     </Typography>
                                 </Content>
                             </Columns.Column>
