@@ -42,7 +42,7 @@ export default function Index({ data }) {
                                 <Block>
                                     <Typography family="secondary" size="xxl">
                                         Family Psychiatry<br />
-                                        Counseling and Wellness Test
+                                        Counseling and Wellness Test12
                                     </Typography>
                                 </Block>
                                 <Link to="/appointments">
