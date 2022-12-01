@@ -5,6 +5,7 @@ import { Block, Box, Columns, Container, Content, Hero, Table } from "react-bulm
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope, faPhone, faCalendar, faAngleUp } from "@fortawesome/free-solid-svg-icons";
 import { Layout, Seo, Typography } from "../components";
+import img1 from "../images/location1.png";
 
 export function Head({ data }) {
     const title = data.contentfulPage.metaTitle;
@@ -117,9 +118,9 @@ export default function Contact() {
                                             <Box backgroundColor="light">
                                                 <Block>
                                                     <figure>
-                                                        <img
-                                                            src={require("../images/logo-new.png")}
-                                                            alt="Agoura Road location exterior test1"
+                                                        <StaticImage
+                                                            src={img1}
+                                                            alt="Agoura Road location exterior test3"
                                                             height={200}
                                                         />
                                                     </figure>
