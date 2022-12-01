@@ -82,6 +82,59 @@ export default function Contact() {
                                         </a>
                                     </Columns.Column>
                                 </Columns>
+                                <Columns centered={true}>
+                                    <Columns.Column>
+                                        <a
+                                            href="https://www.google.com/maps/search/?api=1&query=family+psychiatry-counseling-wellness"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                        >
+                                            <Box backgroundColor="light">
+                                                <Block>
+                                                    <figure>
+                                                        <StaticImage
+                                                            src="https://maps.googleapis.com/maps/api/streetview?source=outdoor&size=700x480&location=31194%20LA%20Baya%20Dr%20%23107%2C%20Westlake%20Village%2C%20CA%2091362&sensor=false&key=AIzaSyChs1A5cJJOcGqcdqNj2YBOULaJlZKCktM&channel=propertyshark-standard&signature=qFjUMV_Nmp2YKXRyktRHTZIz5_Q"
+                                                            alt="La Baya Drive location exterior"
+                                                            height={200}
+                                                        />
+                                                    </figure>
+                                                </Block>
+                                                <Block>
+                                                    <Typography>
+                                                        31194 La Baya Drive <br />
+                                                        Suite 202 <br /> Westlake Village, CA 91362
+                                                    </Typography>
+                                                </Block>
+                                            </Box>
+                                        </a>
+                                    </Columns.Column>
+                                    <Columns.Column>
+                                        <a
+                                            href="https://www.google.com/maps/search/?api=1&query=30851+agoura+rd"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                        >
+                                            <Box backgroundColor="light">
+                                                <Block>
+                                                    <figure>
+                                                        <StaticImage
+                                                            src="https://images.squarespace-cdn.com/content/56412ff6e4b09a51a6703186/1563487713368-OFJHMDD4SJZBKFSQXNE4/image-asset.jpeg?content-type=image%2Fjpeg"
+                                                            alt="Agoura Road location exterior"
+                                                            height={200}
+                                                        />
+                                                    </figure>
+                                                </Block>
+                                                <Block>
+                                                    <Typography>
+                                                        30851 Agoura Road <br />
+                                                        Suite 304 <br />
+                                                        Agoura Hills, CA 91301
+                                                    </Typography>
+                                                </Block>
+                                            </Box>
+                                        </a>
+                                    </Columns.Column>
+                                </Columns>
                                 <Content textAlign="center">
                                     <FontAwesomeIcon icon={faAngleUp} />
                                     <Typography>Click for directions</Typography>
