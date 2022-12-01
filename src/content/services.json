@@ -78,11 +78,8 @@
         {
             "name": "Health, Wellness, Prevention",
             "article": "feeling-happy-is-essential-for-survival-during-quarantine"
-        },
-        {
-            "name": "Social Skills Training",
-            "article": ""
         }
+       
     ],
     "altTreatments": [
         {
@@ -116,6 +113,18 @@
         {
             "name": "Life Coaching",
             "article": ""
+        },
+        {
+            "name": "Mindfulness",
+            "article": ""
+        },
+        { 
+            "name": "Relaxation Techniques ",
+            "article" :""
+        },
+        {
+            "name" : "Problem Solving Skills ",
+            "article":""
         }
     ]
 }
