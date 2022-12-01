@@ -101,7 +101,7 @@ export default function Contact() {
                                                 </Block>
                                                 <Block>
                                                     <Typography>
-                                                        31194 La Baya Drive test <br />
+                                                        31194 La Baya Drive <br />
                                                         Suite 202 <br /> Westlake Village, CA 91362
                                                     </Typography>
                                                 </Block>
@@ -118,7 +118,7 @@ export default function Contact() {
                                                 <Block>
                                                     <figure>
                                                         <StaticImage
-                                                            src="../images/location1.png "
+                                                            src={require("../images/location1.png")}
                                                             alt="Agoura Road location exterior"
                                                             height={200}
                                                         />
@@ -126,7 +126,7 @@ export default function Contact() {
                                                 </Block>
                                                 <Block>
                                                     <Typography>
-                                                        30851 Agoura Road <br />
+                                                        30851 Agoura Road test <br />
                                                         Suite 304 <br />
                                                         Agoura Hills, CA 91301
                                                     </Typography>
