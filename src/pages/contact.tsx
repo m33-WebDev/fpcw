@@ -117,7 +117,7 @@ export default function Contact() {
                                             <Box backgroundColor="light">
                                                 <Block>
                                                     <figure>
-                                                        <StaticImage
+                                                        <img
                                                             src={require("../images/location1.png")}
                                                             alt="Agoura Road location exterior"
                                                             height={200}
@@ -126,7 +126,7 @@ export default function Contact() {
                                                 </Block>
                                                 <Block>
                                                     <Typography>
-                                                        30851 Agoura Road test <br />
+                                                        30851 Agoura Road test2 <br />
                                                         Suite 304 <br />
                                                         Agoura Hills, CA 91301
                                                     </Typography>
