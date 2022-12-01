@@ -118,8 +118,8 @@ export default function Contact() {
                                                 <Block>
                                                     <figure>
                                                         <StaticImage
-                                                            src="https://images.squarespace-cdn.com/content/56412ff6e4b09a51a6703186/1563487713368-OFJHMDD4SJZBKFSQXNE4/image-asset.jpeg?content-type=image%2Fjpeg"
-                                                            alt="Agoura Road location exterior"
+                                                            src="https://www.google.com/maps/place/Family+Psychiatry,+Counseling+and+Wellness/@34.1553484,-118.8015327,3a,75y,90t/data=!3m8!1e2!3m6!1sAF1QipOnwU59U4Ikofz75_GDud_YA85WJEgoBH98mI4u!2e10!3e12!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipOnwU59U4Ikofz75_GDud_YA85WJEgoBH98mI4u%3Dw203-h151-k-no!7i1024!8i766!4m5!3m4!1s0x80e82442c23a100b:0xee538eb6fd661b6c!8m2!3d34.1554929!4d-118.8015055"
+                                                            alt="Agoura Road location exterior 1"
                                                             height={200}
                                                         />
                                                     </figure>
