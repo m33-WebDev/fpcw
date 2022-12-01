@@ -118,7 +118,7 @@ export default function Contact() {
                                                 <Block>
                                                     <figure>
                                                         <StaticImage
-                                                            src="../../images/location1.png"
+                                                            src=" src\images\location1.png"
                                                             alt="Agoura Road location exterior"
                                                             height={200}
                                                         />
