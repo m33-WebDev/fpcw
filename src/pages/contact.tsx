@@ -118,15 +118,15 @@ export default function Contact() {
                                                 <Block>
                                                     <figure>
                                                         <img
-                                                            src={require("../images/location1.png")}
-                                                            alt="Agoura Road location exterior"
+                                                            src={require("../images/logo-new.png")}
+                                                            alt="Agoura Road location exterior test1"
                                                             height={200}
                                                         />
                                                     </figure>
                                                 </Block>
                                                 <Block>
                                                     <Typography>
-                                                        30851 Agoura Road test2 <br />
+                                                        30851 Agoura Road <br />
                                                         Suite 304 <br />
                                                         Agoura Hills, CA 91301
                                                     </Typography>
