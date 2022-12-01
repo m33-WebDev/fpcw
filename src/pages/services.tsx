@@ -19,7 +19,7 @@ export default function Services() {
                 <Container>
                     <Block>
                         <Typography as="h1" family="secondary" size="xxl">
-                            Testing Mental Health Services Provided at FPCW
+                            Mental Health Services Provided at FPCW
                         </Typography>
                     </Block>
                     {/* @ts-ignore: @todo: not sure why gap is not found on Columns component */}
@@ -45,7 +45,8 @@ export default function Services() {
                                     Services Offered
                                 </Typography>
                                 <Typography>
-                                We provide holistic therapies to promote emotional  wellbeing :
+                                    We offer counseling and treatment  for a full range of mental health conditiond
+                                    including :
                                 </Typography>
                                 <ul>
                                     {psychTreatments.map(service => (

@@ -43,6 +43,18 @@
             "article": "psychotherapy-and-counseling-services"
         },
         {
+            "name": "Medication Management",
+            "article": "psychiatric-medication-management"
+        },
+        {
+            "name": "Transcranial Magnetic Stimulation (TMS )  Therapy",
+            "article": ""
+        },
+        {
+            "name": "Ketamine Therapy ",
+            "article": ""
+        },
+        {
             "name": "Psychotherapy",
             "article": "psychotherapy-and-counseling-services"
         },
@@ -58,10 +70,7 @@
             "name": "Cognitive Behavior Therapy",
             "article": "psychotherapy-and-counseling-services"
         },
-        {
-            "name": "Medication Management",
-            "article": "psychiatric-medication-management"
-        },
+       
         {
             "name": "Anger Management",
             "article": "psychotherapy-and-counseling-services"
