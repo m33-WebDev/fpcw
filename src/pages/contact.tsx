@@ -118,7 +118,7 @@ export default function Contact() {
                                                 <Block>
                                                     <figure>
                                                         <StaticImage
-                                                            src="https://images.squarespace-cdn.com/content/56412ff6e4b09a51a6703186/1563487713368-OFJHMDD4SJZBKFSQXNE4/image-asset.jpeg?content-type=image%2Fjpeg"
+                                                            src="../../images/location1.png"
                                                             alt="Agoura Road location exterior"
                                                             height={200}
                                                         />
