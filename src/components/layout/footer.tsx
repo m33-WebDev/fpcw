@@ -7,7 +7,10 @@ import { Typography } from "../style";
 const contactDetails: [IconDefinition, string][] = [
     [faPhone, "(805) 341-3416"],
     [faEnvelope, "fpcw@familypsychiatry101.com"],
-    [faCalendar, "Monday - Friday, 9:00am - 6:00pm"]
+    [faCalendar, "Monday - Thursday - 9:00am - 5:00pm"],
+    [faCalendar, "Friday - 8:00am - 3:00pm"],
+    [ , "Same day appointments available . We are closed on Weekends and Holidays. "]
+
 ];
 
 export function Footer() {
