@@ -60,8 +60,7 @@ export default function Services() {
                                     Wellness and Prevention
                                 </Typography>
                                 <Typography>
-                                    We also offer a number of alternative therapies designed to promote general
-                                    wellbeing including:
+                                We provide holistic therapies to promote emotional  wellbeing :
                                 </Typography>
                                 <ul>
                                     {altTreatments.map(service => (
