@@ -22,7 +22,7 @@ export default function Contact() {
                         <Columns centered={true} gap={8}>
                             <Columns.Column size={6}>
                                 <Content>
-                                    <Typography  family="secondary" size="xxl">
+                                    <Typography  family="secondary" size="xl">
                                     FPCW is serving patients all across California via Hippa Compliant 
                                     Telehealth Platform.  Our TMS & Ketamine Therapy Services Provided 
                                     at our main office in Westlake Village California.
