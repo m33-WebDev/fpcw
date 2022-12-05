@@ -71,13 +71,13 @@ export default function Contact() {
                                                         />
                                                     </figure>
                                                 </Block>
-                                                <Block>
+                                                {/* <Block>
                                                     <Typography>
                                                         30851 Agoura Road <br />
                                                         Suite 304 <br />
                                                         Agoura Hills, CA 91301
                                                     </Typography>
-                                                </Block>
+                                                </Block> */}
                                             </Box>
                                         </a>
                                     </Columns.Column>
