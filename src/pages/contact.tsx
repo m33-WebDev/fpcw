@@ -84,11 +84,11 @@ export default function Contact() {
                                 </Columns>
                                   <Columns centered={true}>
                                     <Columns.Column>
-                                        <a
+                                        {/* <a
                                             href="https://www.google.com/maps/search/?api=1&query=family+psychiatry-counseling-wellness"
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                        >
+                                        > */}
                                             <Box backgroundColor="light">
                                                 <Block>
                                                     <figure>
@@ -100,20 +100,20 @@ export default function Contact() {
                                                     </figure>
                                                 </Block>
                                                 <Block>
-                                                    <Typography>
+                                                    {/* <Typography>
                                                         31194 La Baya Drive <br />
                                                         Suite 202 <br /> Westlake Village, CA 91362
-                                                    </Typography>
+                                                    </Typography> */}
                                                 </Block>
                                             </Box>
-                                        </a>
+                                        {/* </a> */}
                                     </Columns.Column>
                                     <Columns.Column>
-                                        <a
+                                        {/* <a
                                             href="https://www.google.com/maps/search/?api=1&query=30851+agoura+rd"
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                        >
+                                        > */}
                                             <Box backgroundColor="light">
                                                 <Block>
                                                     <figure>
@@ -125,14 +125,14 @@ export default function Contact() {
                                                     </figure>
                                                 </Block>
                                                 <Block>
-                                                    <Typography>
+                                                    {/* <Typography>
                                                         30851 Agoura Road <br />
                                                         Suite 304 <br />
                                                         Agoura Hills, CA 91301
-                                                    </Typography>
+                                                    </Typography> */}
                                                 </Block>
                                             </Box>
-                                        </a>
+                                        {/* </a> */}
                                     </Columns.Column>
                                 </Columns>
                                 <Content textAlign="center">
