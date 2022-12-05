@@ -31,6 +31,7 @@ export function Footer() {
                     <Divider />
                     <Columns.Column size={2}>
                         <Content>
+                            
                             <Typography>
                                 31194 La Baya Drive
                                 <br />
