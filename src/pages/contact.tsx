@@ -137,7 +137,7 @@ export default function Contact() {
                                 </Columns>
                                 <Content textAlign="center">
                                     <FontAwesomeIcon icon={faAngleUp} />
-                                    <Typography>Click for directions 1</Typography>
+                                    <Typography>Click for directions</Typography>
                                 </Content>
                             </Columns.Column>
                             <Columns.Column size={4}>
