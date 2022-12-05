@@ -22,10 +22,10 @@ export default function Contact() {
                         <Columns centered={true} gap={8}>
                             <Columns.Column size={6}>
                                 <Content>
-                                    <Typography  family="secondary" size="xl">
+                                    <Typography  family="secondary" size="l">
                                     FPCW is serving patients all across California via Hippa Compliant 
                                     Telehealth Platform.  Our TMS & Ketamine Therapy Services Provided 
-                                    at our main office in Westlake Village California1.
+                                    at our main office in Westlake Village California.
 
                                     </Typography>
                                 </Content>
