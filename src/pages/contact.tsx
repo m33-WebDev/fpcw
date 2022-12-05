@@ -25,7 +25,7 @@ export default function Contact() {
                                     <Typography  family="secondary" size="xl">
                                     FPCW is serving patients all across California via Hippa Compliant 
                                     Telehealth Platform.  Our TMS & Ketamine Therapy Services Provided 
-                                    at our main office in Westlake Village California.
+                                    at our main office in Westlake Village California1.
 
                                     </Typography>
                                 </Content>
