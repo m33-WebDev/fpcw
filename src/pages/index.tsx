@@ -42,13 +42,13 @@ export default function Index({ data }) {
                                 <Block>
                                     <Typography family="secondary" size="xxl">
                                         Family Psychiatry<br />
-                                        Counseling and Wellness 
+                                        Counseling and Wellness Testing
                                     </Typography>
                                 </Block>
                                 <Link to="/appointments">
                                     <Button color="light">
                                         <Typography as="span" color="interactive">
-                                             MAKE AN APPOINTMENT TODAY
+                                             MAKE AN APPOINTMENT TODAY 112233 
                                         </Typography>
                                         <Icon>
                                             <FontAwesomeIcon icon={faChevronRight} />
