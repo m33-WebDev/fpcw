@@ -48,7 +48,7 @@ export default function Index({ data }) {
                                 <Link to="/appointments">
                                     <Button color="light">
                                         <Typography as="span" color="interactive">
-                                             MAKE AN APPOINTMENT TODAY 123321
+                                             MAKE AN APPOINTMENT TODAY 1122
                                         </Typography>
                                         <Icon>
                                             <FontAwesomeIcon icon={faChevronRight} />
