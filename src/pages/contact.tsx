@@ -56,11 +56,11 @@ export default function Contact() {
                                         </a>
                                     </Columns.Column>
                                     <Columns.Column>
-                                        <a
+                                        {/* <a
                                             href="https://www.google.com/maps/search/?api=1&query=30851+agoura+rd"
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                        >
+                                        > */}
                                             <Box backgroundColor="light">
                                                 <Block>
                                                     <figure>
@@ -79,7 +79,7 @@ export default function Contact() {
                                                     </Typography>
                                                 </Block> */}
                                             </Box>
-                                        </a>
+                                        {/* </a> */}
                                     </Columns.Column>
                                 </Columns>
                                   <Columns centered={true}>
