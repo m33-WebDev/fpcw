@@ -67,7 +67,7 @@ export default function Contact() {
                                                         <StaticImage
                                                             src="../images/location2.png"
                                                             alt="Agoura Road location exterior"
-                                                            height={200}
+                                                            height={300}
                                                         />
                                                     </figure>
                                                 </Block>
