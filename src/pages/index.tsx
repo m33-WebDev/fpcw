@@ -41,14 +41,14 @@ export default function Index({ data }) {
                             <Columns.Column size={6}>
                                 <Block>
                                     <Typography family="secondary" size="xxl">
-                                        test Family Psychiatry<br />
+                                        Family Psychiatry<br />
                                         Counseling and Wellness 
                                     </Typography>
                                 </Block>
                                 <Link to="/appointments">
                                     <Button color="light">
                                         <Typography as="span" color="interactive">
-                                             MAKE AN APPOINTMENT TODAY hello
+                                             MAKE AN APPOINTMENT TODAY
                                         </Typography>
                                         <Icon>
                                             <FontAwesomeIcon icon={faChevronRight} />
