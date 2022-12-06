@@ -1,5 +1,5 @@
 import React from "react";
-import { Columns, Container,Level, Content,Block, Footer as BulmaFooter, Icon } from "react-bulma-components";
+import { Columns, Container,Level, Column, Content,Block, Footer as BulmaFooter, Icon } from "react-bulma-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope, faPhone, faCalendar, IconDefinition } from "@fortawesome/free-solid-svg-icons";
 import { Typography } from "../style";
@@ -22,7 +22,8 @@ export function Footer() {
     return (
         <BulmaFooter backgroundColor="success">
             <Container>
-            <Columns  className="is-half">
+            <Columns.Column offset={2} size={6}>
+            
             <Container px={4} py={2}>
                     <Block alignItems="center" alignContent="center" textAlign="center">
                     <Link to="/appointments">
@@ -40,7 +41,7 @@ export function Footer() {
                             </Link>
                     </Block>
                 </Container>
-            </Columns>
+            </Columns.Column>
                 <Columns vCentered={true}>
                     
                
