@@ -22,7 +22,7 @@ export function Footer() {
     return (
         <BulmaFooter backgroundColor="success">
             <Container>
-            <Container py={6}>
+            <Container px={4} py={1}>
                     <Block alignItems="center" alignContent="center" textAlign="center">
                     <Link to="/appointments">
                                 <Level>
