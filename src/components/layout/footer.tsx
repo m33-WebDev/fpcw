@@ -22,7 +22,8 @@ export function Footer() {
     return (
         <BulmaFooter backgroundColor="success">
             <Container>
-            <Container px={4} py={1}>
+            <Columns  className="is-half">
+            <Container px={4} py={2}>
                     <Block alignItems="center" alignContent="center" textAlign="center">
                     <Link to="/appointments">
                                 <Level>
@@ -30,7 +31,7 @@ export function Footer() {
                                         <FontAwesomeIcon icon={faExclamationCircle} />
                                     </Level.Item>
                                     <Level.Item mx={1}>
-                                        <Typography weight="heavy" as="span">{telehealthCallout}</Typography>
+                                        <Typography weight="heavy" as="h1">{telehealthCallout}</Typography>
                                     </Level.Item>
                                     <Level.Item textColor="warning">
                                         <FontAwesomeIcon icon={faExclamationCircle} />
@@ -39,6 +40,7 @@ export function Footer() {
                             </Link>
                     </Block>
                 </Container>
+            </Columns>
                 <Columns vCentered={true}>
                     
                
