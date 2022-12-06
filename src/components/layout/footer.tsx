@@ -1,5 +1,5 @@
 import React from "react";
-import { Columns, Container,Level, Content, Footer as BulmaFooter, Icon } from "react-bulma-components";
+import { Columns, Container,Level, Content,Block, Footer as BulmaFooter, Icon } from "react-bulma-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope, faPhone, faCalendar, IconDefinition } from "@fortawesome/free-solid-svg-icons";
 import { Typography } from "../style";
@@ -22,8 +22,9 @@ export function Footer() {
     return (
         <BulmaFooter backgroundColor="success">
             <Container>
-                <Columns vCentered={true}>
-                <Link to="/appointments">
+            <Container py={6}>
+                    <Block alignItems="center" alignContent="center" textAlign="center">
+                    <Link to="/appointments">
                                 <Level>
                                     <Level.Item textColor="warning">
                                         <FontAwesomeIcon icon={faExclamationCircle} />
@@ -36,6 +37,11 @@ export function Footer() {
                                     </Level.Item>
                                 </Level>
                             </Link>
+                    </Block>
+                </Container>
+                <Columns vCentered={true}>
+                    
+               
                     <Columns.Column size={3}>
                         {contactDetails.map(([icon, text]) => (
                             <Icon.Text mb={2}>
