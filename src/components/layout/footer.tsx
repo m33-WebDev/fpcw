@@ -22,9 +22,9 @@ export function Footer() {
     return (
         <BulmaFooter backgroundColor="success">
             <Container>
-            <Columns.Column offset={2} size={6}>
+            <Columns.Column offset={3} size={6}>
             
-            <Container px={4} py={2}>
+            <Container px={4}>
                     <Block alignItems="center" alignContent="center" textAlign="center">
                     <Link to="/appointments">
                                 <Level>
