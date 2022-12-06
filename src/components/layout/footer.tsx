@@ -1,8 +1,13 @@
 import React from "react";
-import { Columns, Container, Content, Footer as BulmaFooter, Icon } from "react-bulma-components";
+import { Columns, Container,Level, Content, Footer as BulmaFooter, Icon } from "react-bulma-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope, faPhone, faCalendar, IconDefinition } from "@fortawesome/free-solid-svg-icons";
 import { Typography } from "../style";
+import { faExclamationCircle } from "@fortawesome/free-solid-svg-icons";
+import Link from "gatsby-link";
+
+
+const telehealthCallout = "Now Offering Telehealth Services all across California.";
 
 const contactDetails: [IconDefinition, string][] = [
     [faPhone, "(805) 341-3416"],
@@ -18,6 +23,19 @@ export function Footer() {
         <BulmaFooter backgroundColor="success">
             <Container>
                 <Columns vCentered={true}>
+                <Link to="/appointments">
+                                <Level>
+                                    <Level.Item textColor="warning">
+                                        <FontAwesomeIcon icon={faExclamationCircle} />
+                                    </Level.Item>
+                                    <Level.Item mx={3}>
+                                        <Typography as="span">{telehealthCallout}</Typography>
+                                    </Level.Item>
+                                    <Level.Item textColor="warning">
+                                        <FontAwesomeIcon icon={faExclamationCircle} />
+                                    </Level.Item>
+                                </Level>
+                            </Link>
                     <Columns.Column size={3}>
                         {contactDetails.map(([icon, text]) => (
                             <Icon.Text mb={2}>
