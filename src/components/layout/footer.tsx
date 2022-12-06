@@ -29,8 +29,8 @@ export function Footer() {
                                     <Level.Item textColor="warning">
                                         <FontAwesomeIcon icon={faExclamationCircle} />
                                     </Level.Item>
-                                    <Level.Item mx={3}>
-                                        <Typography as="span">{telehealthCallout}</Typography>
+                                    <Level.Item mx={1}>
+                                        <Typography weight="heavy" as="span">{telehealthCallout}</Typography>
                                     </Level.Item>
                                     <Level.Item textColor="warning">
                                         <FontAwesomeIcon icon={faExclamationCircle} />
