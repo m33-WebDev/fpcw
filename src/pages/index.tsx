@@ -27,13 +27,6 @@ const ratings = [
 
 export function Head({ data }) {
     const title = data.contentfulPage.metaTitle;
-    caches.keys().then((names) => {
-        names.forEach(item => {
-            caches.delete(item);
-        });
-    }).catch((error)=>{
-        console.log(error);
-    })
     const description = data.contentfulPage.metaDescription.metaDescription;
     return <Seo title={title} description={description} />;
 }
