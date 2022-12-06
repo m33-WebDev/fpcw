@@ -41,7 +41,7 @@ export default function Index({ data }) {
                             <Columns.Column size={6}>
                                 <Block>
                                     <Typography family="secondary" size="xxl">
-                                        Family Psychiatry<br />
+                                        test Family Psychiatry<br />
                                         Counseling and Wellness 
                                     </Typography>
                                 </Block>
