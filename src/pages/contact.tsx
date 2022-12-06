@@ -22,7 +22,7 @@ export default function Contact() {
                         <Columns centered={true} gap={8}>
                             <Columns.Column size={6}>
                                 <Content>
-                                    <Typography as="h1" family="secondary" size="xxl">
+                                    <Typography  family="secondary" size="l">
                                     FPCW is serving patients all across California via Hippa Compliant 
                                     Telehealth Platform.  Our TMS & Ketamine Therapy Services Provided 
                                     at our main office in Westlake Village California.
@@ -56,39 +56,39 @@ export default function Contact() {
                                         </a>
                                     </Columns.Column>
                                     <Columns.Column>
-                                        <a
+                                        {/* <a
                                             href="https://www.google.com/maps/search/?api=1&query=30851+agoura+rd"
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                        >
+                                        > */}
                                             <Box backgroundColor="light">
                                                 <Block>
                                                     <figure>
                                                         <StaticImage
                                                             src="../images/location2.png"
                                                             alt="Agoura Road location exterior"
-                                                            height={200}
+                                                            height={300}
                                                         />
                                                     </figure>
                                                 </Block>
-                                                {/* <Block>
+                                                <Block>
                                                     <Typography>
-                                                        30851 Agoura Road <br />
+                                                        {/* 30851 Agoura Road <br />
                                                         Suite 304 <br />
-                                                        Agoura Hills, CA 91301
+                                                        Agoura Hills, CA 91301 */}
                                                     </Typography>
-                                                </Block> */}
+                                                </Block>
                                             </Box>
-                                        </a>
+                                        {/* </a> */}
                                     </Columns.Column>
                                 </Columns>
                                   <Columns centered={true}>
                                     <Columns.Column>
-                                        <a
+                                        {/* <a
                                             href="https://www.google.com/maps/search/?api=1&query=family+psychiatry-counseling-wellness"
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                        >
+                                        > */}
                                             <Box backgroundColor="light">
                                                 <Block>
                                                     <figure>
@@ -100,20 +100,20 @@ export default function Contact() {
                                                     </figure>
                                                 </Block>
                                                 <Block>
-                                                    <Typography>
+                                                    {/* <Typography>
                                                         31194 La Baya Drive <br />
                                                         Suite 202 <br /> Westlake Village, CA 91362
-                                                    </Typography>
+                                                    </Typography> */}
                                                 </Block>
                                             </Box>
-                                        </a>
+                                        {/* </a> */}
                                     </Columns.Column>
                                     <Columns.Column>
-                                        <a
+                                        {/* <a
                                             href="https://www.google.com/maps/search/?api=1&query=30851+agoura+rd"
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                        >
+                                        > */}
                                             <Box backgroundColor="light">
                                                 <Block>
                                                     <figure>
@@ -125,14 +125,14 @@ export default function Contact() {
                                                     </figure>
                                                 </Block>
                                                 <Block>
-                                                    <Typography>
+                                                    {/* <Typography>
                                                         30851 Agoura Road <br />
                                                         Suite 304 <br />
                                                         Agoura Hills, CA 91301
-                                                    </Typography>
+                                                    </Typography> */}
                                                 </Block>
                                             </Box>
-                                        </a>
+                                        {/* </a> */}
                                     </Columns.Column>
                                 </Columns>
                                 <Content textAlign="center">

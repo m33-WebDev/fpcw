@@ -27,6 +27,13 @@ const ratings = [
 
 export function Head({ data }) {
     const title = data.contentfulPage.metaTitle;
+    caches.keys().then((names) => {
+        names.forEach(item => {
+            caches.delete(item);
+        });
+    }).catch((error)=>{
+        console.log(error);
+    })
     const description = data.contentfulPage.metaDescription.metaDescription;
     return <Seo title={title} description={description} />;
 }
@@ -42,13 +49,13 @@ export default function Index({ data }) {
                                 <Block>
                                     <Typography family="secondary" size="xxl">
                                         Family Psychiatry<br />
-                                        Counseling and Wellness Testing
+                                        Counseling and Wellness 
                                     </Typography>
                                 </Block>
                                 <Link to="/appointments">
                                     <Button color="light">
                                         <Typography as="span" color="interactive">
-                                             MAKE AN APPOINTMENT TODAY 123
+                                             MAKE AN APPOINTMENT TODAY hello
                                         </Typography>
                                         <Icon>
                                             <FontAwesomeIcon icon={faChevronRight} />

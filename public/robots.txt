@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Sitemap: https://familypsychiatry.us/sitemap.xml
+Host: https://familypsychiatry.us
