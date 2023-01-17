@@ -24,18 +24,6 @@ module.exports = {
             }
         },
         {
-            resolve: "gatsby-plugin-robots-txt",
-            options: {
-                sitemap: `${url}/sitemap.xml`,
-                policy: [
-                    {
-                        userAgent: "*",
-                        allow: "/"
-                    }
-                ]
-            }
-        },
-        {
             resolve: "gatsby-plugin-advanced-sitemap",
             options: {
                 exclude: ["/dev-404-page", "/404", "/formsuccess"]
