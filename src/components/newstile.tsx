@@ -1,10 +1,8 @@
 import React from "react";
 import { Link } from "gatsby";
 import Img from "gatsby-image";
-import Truncate from "react-truncate";
 import { Block, Card, Content } from "react-bulma-components";
 import styled from "styled-components";
-import { RichText } from "./richtext";
 import { Typography } from "./style";
 
 export function NewsTile({ post }) {
@@ -21,13 +19,7 @@ export function NewsTile({ post }) {
                         </Typography>
                     </Block>
                     <Block mobile={{ display: "hidden" }}>
-                        <Content>
-                            <Typography>
-                                <Truncate lines={1} width={1000} ellipsis={<Typography as="span"> ...</Typography>}>
-                                    <RichText src={body} />
-                                </Truncate>
-                            </Typography>
-                        </Content>
+                        <Content>{extractExcerptFromRichText(body.raw, 20)}</Content>
                     </Block>
                 </Card.Content>
             </Card>
@@ -39,3 +31,11 @@ const FancyImage = styled(Img)`
     object-fit: cover;
     height: 30vmin;
 `;
+
+function extractExcerptFromRichText(raw: string, length: number): string {
+    const document = JSON.parse(raw);
+    const firstParagraph = document?.content.find(({ nodeType }) => nodeType === "paragraph");
+    const firstText = firstParagraph?.content.find(({ nodeType }) => nodeType === "text");
+    const excerpt = firstText?.value.split(" ").slice(0, length).join(" ");
+    return excerpt ? `${excerpt}...` : "Excerpt could not be generated for this content.";
+}

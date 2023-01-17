@@ -42,7 +42,6 @@
     "react": "^16.13.0",
     "react-bulma-components": "^4.1.0",
     "react-dom": "^16.13.0",
-    "react-truncate": "^2.4.0",
     "sass": "^1.35.2",
     "styled-components": "^5.3.6"
   },
