@@ -70,3 +70,6 @@ yarn-error.log
 
 # Transition files
 transition/*
+
+# Visual Studio Code config
+.vscode
