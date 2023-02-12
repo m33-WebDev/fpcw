@@ -1,58 +1,48 @@
-import type { CreatePagesArgs } from "gatsby";
+import { CreatePagesArgs } from "gatsby";
 import { resolve } from "path";
 
 export async function createPages({ graphql, actions, reporter }: CreatePagesArgs) {
     const { createPage } = actions;
 
-    const result = await graphql(
+    const { data, errors } = await graphql<Queries.CreatePagesQuery>(
         `
-            {
-                allContentfulProviderProfile {
-                    edges {
-                        node {
-                            id
-                            slug
-                        }
+            query CreatePages {
+                profiles: allContentfulProviderProfile {
+                    nodes {
+                        id
+                        slug
                     }
                 }
-                allContentfulPost {
-                    edges {
-                        node {
-                            slug
-                        }
+                posts: allContentfulPost {
+                    nodes {
+                        slug
                     }
                 }
             }
         `
     );
 
-    if (result.errors) {
-        reporter.panicOnBuild(`Error while running GraphQL query.`);
+    if (errors) {
+        reporter.panicOnBuild("Error while running GraphQL query.");
         return;
     }
 
-    const profileTemplate = resolve("./src/templates/providerprofile.tsx");
-    // @ts-ignore: need to add types
-    result.data.allContentfulProviderProfile.edges.forEach(({ node }) => {
-        const path = "providers/" + node.slug;
+    data?.profiles.nodes.forEach(profile => {
         createPage({
-            path,
-            component: profileTemplate,
+            path: `providers/${profile.slug}`,
+            component: resolve("./src/templates/providerprofile.tsx"),
             context: {
-                pagePath: node.slug
+                pagePath: profile.slug
             }
         });
     });
 
-    const postTemplate = resolve("./src/templates/post.tsx");
-    // @ts-ignore: need to add types
-    result.data.allContentfulPost.edges.forEach(({ node }) => {
-        const path = "library/" + node.slug;
+    data?.posts.nodes.forEach(post => {
         createPage({
-            path,
-            component: postTemplate,
+            path: `library/${post.slug}`,
+            component: resolve("./src/templates/post.tsx"),
             context: {
-                pagePath: node.slug
+                pagePath: post.slug
             }
         });
     });
