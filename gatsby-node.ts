@@ -30,7 +30,7 @@ export async function createPages({ graphql, actions, reporter }: CreatePagesArg
     data?.profiles.nodes.forEach(profile => {
         createPage({
             path: `providers/${profile.slug}`,
-            component: resolve("./src/templates/providerprofile.tsx"),
+            component: resolve("./src/templates/provider-profile.tsx"),
             context: {
                 pagePath: profile.slug
             }
