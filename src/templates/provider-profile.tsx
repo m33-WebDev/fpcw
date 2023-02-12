@@ -1,9 +1,7 @@
 import React from "react";
-import { Link, graphql, HeadProps, PageProps } from "gatsby";
+import { graphql, HeadProps, PageProps } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
-import { Block, Columns, Container, Content, Icon, Section } from "react-bulma-components";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
+import { Block, Columns, Container, Content, Section } from "react-bulma-components";
 import { Layout, Seo, RichText, Typography } from "../components";
 
 export function Head({ data }: HeadProps<Queries.ProviderProfileQuery>) {
@@ -40,14 +38,6 @@ export default function ProviderProfile({ data }: PageProps<Queries.ProviderProf
                                     </Typography>
                                 )}
                             </Content>
-                            <Link to="/providers">
-                                <Block display="flex" alignItems="center" textColor="success">
-                                    <Icon>
-                                        <FontAwesomeIcon icon={faChevronLeft} />
-                                    </Icon>
-                                    <Typography as="span">Back to provider list</Typography>
-                                </Block>
-                            </Link>
                         </Columns.Column>
                     </Columns>
                 </Container>

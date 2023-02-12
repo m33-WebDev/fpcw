@@ -1,10 +1,8 @@
 import React from "react";
-import { Link, graphql, HeadProps, PageProps } from "gatsby";
+import { graphql, HeadProps, PageProps } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
-import { Block, Columns, Container, Content, Heading, Icon, Section } from "react-bulma-components";
+import { Block, Columns, Container, Content, Section } from "react-bulma-components";
 import styled from "styled-components";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 import { Layout, Seo, RichText, NewsletterSignup, Typography } from "../components";
 
 export function Head({ data }: HeadProps<Queries.PostQuery>) {
@@ -29,14 +27,6 @@ export default function Post({ data }: PageProps<Queries.PostQuery>) {
                                     </Typography>
                                 </Block>
                                 <FancyFeatureImage image={getImage(feature)!} alt="Post feature" />
-                                <Link to="/library">
-                                    <Block display="flex" alignItems="center" textColor="success">
-                                        <Icon>
-                                            <FontAwesomeIcon icon={faChevronLeft} />
-                                        </Icon>
-                                        <Typography as="span">Back to library</Typography>
-                                    </Block>
-                                </Link>
                             </FancyFrontmatter>
                         </Columns.Column>
                         <Columns.Column size={6}>
