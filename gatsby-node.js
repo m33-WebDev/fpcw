@@ -1,5 +1,4 @@
 const path = require(`path`);
-const slash = require(`slash`);
 
 exports.createPages = async ({ graphql, actions, reporter }) => {
     const { createPage } = actions;
