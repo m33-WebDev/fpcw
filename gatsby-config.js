@@ -9,6 +9,7 @@ const title = "Family Psychiatry, Counseling, and Wellness";
 const shortTitle = "FPCW";
 
 module.exports = {
+    graphqlTypegen: true,
     siteMetadata: {
         siteUrl: url,
         title: title,
@@ -20,7 +21,8 @@ module.exports = {
         {
             resolve: "gatsby-source-filesystem",
             options: {
-                path: `${__dirname}/src`
+                path: `${__dirname}/src`,
+                ignore: [`${__dirname}/src/gatsby-types.d.ts`]
             }
         },
         {

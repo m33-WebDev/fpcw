@@ -73,3 +73,6 @@ transition/*
 
 # Visual Studio Code config
 .vscode
+
+# Generated query types
+src/gatsby-types.d.ts
