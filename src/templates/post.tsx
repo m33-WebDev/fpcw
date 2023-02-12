@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, graphql } from "gatsby";
+import { Link, graphql, HeadProps, PageProps } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import { Block, Columns, Container, Content, Heading, Icon, Section } from "react-bulma-components";
 import styled from "styled-components";
@@ -7,13 +7,13 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 import { Layout, Seo, RichText, NewsletterSignup, Typography } from "../components";
 
-export function Head({ data }) {
-    const { title, metaTitle, metaDescription } = data.contentfulPost;
-    return <Seo title={metaTitle ?? title} description={metaDescription?.metaDescription ?? ""} />;
+export function Head({ data }: HeadProps<Queries.PostQuery>) {
+    const { title, metaTitle, metaDescription } = data.post!;
+    return <Seo title={metaTitle ?? title!} description={metaDescription?.metaDescription ?? ""} />;
 }
 
-export default function Post({ data }) {
-    const { title, feature, body } = data.contentfulPost;
+export default function Post({ data }: PageProps<Queries.PostQuery>) {
+    const { title, feature, body } = data.post!;
 
     return (
         <Layout>
@@ -72,8 +72,8 @@ const FancyDivider = styled.hr`
 `;
 
 export const query = graphql`
-    query ($pagePath: String!) {
-        contentfulPost(slug: { eq: $pagePath }) {
+    query Post($id: String!) {
+        post: contentfulPost(id: { eq: $id }) {
             slug
             title
             metaTitle

@@ -15,6 +15,7 @@ export async function createPages({ graphql, actions, reporter }: CreatePagesArg
                 }
                 posts: allContentfulPost {
                     nodes {
+                        id
                         slug
                     }
                 }
@@ -42,7 +43,7 @@ export async function createPages({ graphql, actions, reporter }: CreatePagesArg
             path: `library/${post.slug}`,
             component: resolve("./src/templates/post.tsx"),
             context: {
-                pagePath: post.slug
+                id: post.id
             }
         });
     });
