@@ -1,6 +1,7 @@
-const path = require(`path`);
+import type { CreatePagesArgs } from "gatsby";
+import { resolve } from "path";
 
-exports.createPages = async ({ graphql, actions, reporter }) => {
+export async function createPages({ graphql, actions, reporter }: CreatePagesArgs) {
     const { createPage } = actions;
 
     const result = await graphql(
@@ -30,7 +31,8 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         return;
     }
 
-    const profileTemplate = path.resolve("./src/templates/providerprofile.tsx");
+    const profileTemplate = resolve("./src/templates/providerprofile.tsx");
+    // @ts-ignore: need to add types
     result.data.allContentfulProviderProfile.edges.forEach(({ node }) => {
         const path = "providers/" + node.slug;
         createPage({
@@ -42,7 +44,8 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         });
     });
 
-    const postTemplate = path.resolve("./src/templates/post.tsx");
+    const postTemplate = resolve("./src/templates/post.tsx");
+    // @ts-ignore: need to add types
     result.data.allContentfulPost.edges.forEach(({ node }) => {
         const path = "library/" + node.slug;
         createPage({
@@ -53,4 +56,4 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
             }
         });
     });
-};
+}
