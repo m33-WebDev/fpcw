@@ -1,19 +1,19 @@
 import React from "react";
-import { Link, graphql } from "gatsby";
+import { Link, graphql, HeadProps, PageProps } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import { Block, Columns, Container, Content, Icon, Section } from "react-bulma-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 import { Layout, Seo, RichText, Typography } from "../components";
 
-export function Head({ data }) {
-    const { name, jobTitle, description } = data.contentfulProviderProfile;
+export function Head({ data }: HeadProps<Queries.ProviderProfileQuery>) {
+    const { name, jobTitle, description } = data.profile!;
     const title = `${name}, ${jobTitle} | Providers`;
-    return <Seo title={title} description={description} />;
+    return <Seo title={title} description={description?.description!} />;
 }
 
-export default function ProviderProfile({ data }) {
-    const { name, credential, jobTitle, headshot, bio } = data.contentfulProviderProfile;
+export default function ProviderProfile({ data }: PageProps<Queries.ProviderProfileQuery>) {
+    const { name, credential, jobTitle, headshot, bio } = data.profile!;
 
     return (
         <Layout>
@@ -57,9 +57,8 @@ export default function ProviderProfile({ data }) {
 }
 
 export const query = graphql`
-    query ($pagePath: String!) {
-        contentfulProviderProfile(slug: { eq: $pagePath }) {
-            slug
+    query ProviderProfile($id: String!) {
+        profile: contentfulProviderProfile(id: { eq: $id }) {
             name
             credential
             jobTitle
