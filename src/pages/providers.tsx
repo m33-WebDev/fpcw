@@ -45,7 +45,7 @@ export default function Providers({ data }) {
                         </Columns.Column>
                         <Columns.Column size={8}>
                             <Columns multiline={true}>
-                                {profiles.map(({ slug, name, headshot }, i) => (
+                                {profiles.map(({ slug, name, credential, headshot }, i) => (
                                     <Columns.Column size={4} key={i}>
                                         <Link to={`/providers/${slug}`}>
                                             <FancyCard>
@@ -59,7 +59,10 @@ export default function Providers({ data }) {
                                                     alt={headshot.fluid.title}
                                                 />
                                                 <FancyPostTitle>
-                                                    <Typography>{name}</Typography>
+                                                    <Typography>
+                                                        {name}
+                                                        {credential ? `, ${credential}` : ""}
+                                                    </Typography>
                                                 </FancyPostTitle>
                                             </FancyCard>
                                         </Link>
@@ -124,6 +127,7 @@ export const query = graphql`
         profSabira: contentfulProviderProfile(slug: { eq: "sabira-saifuddin" }) {
             slug
             name
+            credential
             jobTitle
             headshot {
                 fluid(maxWidth: 600) {
@@ -137,6 +141,7 @@ export const query = graphql`
             nodes {
                 slug
                 name
+                credential
                 jobTitle
                 headshot {
                     fluid(maxWidth: 600) {
@@ -151,6 +156,7 @@ export const query = graphql`
             nodes {
                 slug
                 name
+                credential
                 jobTitle
                 headshot {
                     fluid(maxWidth: 600) {
@@ -165,6 +171,7 @@ export const query = graphql`
             nodes {
                 slug
                 name
+                credential
                 jobTitle
                 headshot {
                     fluid(maxWidth: 600) {
@@ -177,6 +184,7 @@ export const query = graphql`
             nodes {
                 slug
                 name
+                credential
                 jobTitle
                 headshot {
                     fluid(maxWidth: 600) {
