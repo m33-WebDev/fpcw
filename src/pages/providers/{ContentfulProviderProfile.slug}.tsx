@@ -9,7 +9,7 @@ import { ContentfulRichText, Nullable } from "../../types";
 export function Head({ data }: HeadProps<Queries.ProviderProfileQuery>) {
     const { name, jobTitle, description } = data.profile!;
     const title = `${name}, ${jobTitle} | Providers`;
-    return <Seo title={title} description={description?.description!} />;
+    return <Seo title={title} description={description?.description ?? ""} />;
 }
 
 export default function ProviderProfile({ data }: PageProps<Queries.ProviderProfileQuery>) {
