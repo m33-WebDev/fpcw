@@ -23,26 +23,49 @@ export default function ProviderProfile({ data }: PageProps<Queries.ProviderProf
                             <GatsbyImage image={getImage(headshot)!} alt="Headshot" />
                         </Columns.Column>
                         <Columns.Column size={6}>
-                            <Block display="flex">
-                                <Typography as="h1" family="secondary" size="xxl">
-                                    {name}
-                                </Typography>
-                                <Typography as="span">{credential || jobTitle}</Typography>
-                            </Block>
-                            <Content size="medium">
-                                {bio ? (
-                                    <RichText src={bio} />
-                                ) : (
-                                    <Typography>
-                                        No information available at this time. Please check back again later.
-                                    </Typography>
-                                )}
-                            </Content>
+                            <Frontmatter name={name!} credential={credential} jobTitle={jobTitle!} />
+                            <Body bio={bio} />
                         </Columns.Column>
                     </Columns>
                 </Container>
             </Section>
         </Layout>
+    );
+}
+
+function Frontmatter({ name, credential, jobTitle }: { name: string; credential: string | null; jobTitle: string }) {
+    return (
+        <>
+            <Block>
+                <Typography as="h1" family="secondary" size="xxl">
+                    {name}
+                    {credential && `, ${credential}`}
+                </Typography>
+            </Block>
+            <Block>
+                <Typography as="h2" size="s">
+                    {jobTitle}
+                </Typography>
+            </Block>
+        </>
+    );
+}
+
+function Body({
+    bio
+}: {
+    bio: {
+        readonly raw: string | null;
+    } | null;
+}) {
+    return (
+        <Content size="medium">
+            {bio ? (
+                <RichText src={bio} />
+            ) : (
+                <Typography>No information available at this time. Please check back again later.</Typography>
+            )}
+        </Content>
     );
 }
 
