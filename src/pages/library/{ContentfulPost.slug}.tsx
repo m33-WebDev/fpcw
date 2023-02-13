@@ -18,23 +18,29 @@ export default function Post({ data }: PageProps<Queries.PostQuery>) {
             <Section>
                 <Container>
                     {/* @ts-ignore: @todo: not sure why gap is not found on Columns component */}
-                    <Columns centered={true} gap={8}>
-                        <Columns.Column size={6}>
-                            <FancyFrontmatter>
-                                <Block>
-                                    <Typography as="h1" family="secondary" size="xxl">
-                                        {title}
-                                    </Typography>
-                                </Block>
-                                <FancyFeatureImage image={getImage(feature)!} alt="Post feature" />
-                            </FancyFrontmatter>
+                    <Columns multiline={true}>
+                        <Columns.Column size="half" offset={2}>
+                            <Typography as="h1" family="secondary" size="xxl">
+                                {title}
+                            </Typography>
                         </Columns.Column>
-                        <Columns.Column size={6}>
-                            <Content size="medium">
-                                <RichText src={body} />
-                                <FancyDivider />
-                                <NewsletterSignup />
-                            </Content>
+                        <Columns.Column size="two-thirds" offset={2}>
+                            {/* @ts-ignore: @todo: not sure why gap is not found on Columns component */}
+                            <Columns gap={4}>
+                                <Columns.Column size="three-quarters">
+                                    <Block>
+                                        <GatsbyImage image={getImage(feature!)!} alt="Post feature" />
+                                    </Block>
+                                    <Content size="medium">
+                                        <RichText src={body} />
+                                    </Content>
+                                </Columns.Column>
+                                <Columns.Column size="one-quarter">
+                                    <Content>
+                                        <NewsletterSignup />
+                                    </Content>
+                                </Columns.Column>
+                            </Columns>
                         </Columns.Column>
                     </Columns>
                 </Container>
@@ -42,18 +48,6 @@ export default function Post({ data }: PageProps<Queries.PostQuery>) {
         </Layout>
     );
 }
-
-const FancyFrontmatter = styled.div`
-    @media (min-width: 1024px) {
-        position: sticky;
-        top: 10vh;
-    }
-`;
-
-const FancyFeatureImage = styled(GatsbyImage)`
-    object-fit: cover;
-    margin-bottom: 5vmin;
-`;
 
 const FancyDivider = styled.hr`
     border: 0;
@@ -64,7 +58,6 @@ const FancyDivider = styled.hr`
 export const query = graphql`
     query Post($id: String) {
         post: contentfulPost(id: { eq: $id }) {
-            slug
             title
             metaTitle
             feature {
