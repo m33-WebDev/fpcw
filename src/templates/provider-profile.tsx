@@ -19,10 +19,10 @@ export default function ProviderProfile({ data }: PageProps<Queries.ProviderProf
                 <Container>
                     {/* @ts-ignore: @todo: not sure why gap is not found on Columns component */}
                     <Columns gap={8}>
-                        <Columns.Column size={6}>
+                        <Columns.Column>
                             <GatsbyImage image={getImage(headshot)!} alt="Headshot" />
                         </Columns.Column>
-                        <Columns.Column size={6}>
+                        <Columns.Column>
                             <Frontmatter name={name!} credential={credential} jobTitle={jobTitle!} />
                             <Body bio={bio} />
                         </Columns.Column>
