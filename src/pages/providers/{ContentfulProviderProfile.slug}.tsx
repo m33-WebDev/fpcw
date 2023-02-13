@@ -2,7 +2,7 @@ import React from "react";
 import { graphql, HeadProps, PageProps } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import { Block, Columns, Container, Content, Section } from "react-bulma-components";
-import { Layout, Seo, RichText, Typography } from "../components";
+import { Layout, Seo, RichText, Typography } from "../../components";
 
 export function Head({ data }: HeadProps<Queries.ProviderProfileQuery>) {
     const { name, jobTitle, description } = data.profile!;
@@ -70,7 +70,7 @@ function Body({
 }
 
 export const query = graphql`
-    query ProviderProfile($id: String!) {
+    query ProviderProfile($id: String) {
         profile: contentfulProviderProfile(id: { eq: $id }) {
             name
             credential

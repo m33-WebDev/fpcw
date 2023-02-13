@@ -3,7 +3,7 @@ import { graphql, HeadProps, PageProps } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import { Block, Columns, Container, Content, Section } from "react-bulma-components";
 import styled from "styled-components";
-import { Layout, Seo, RichText, NewsletterSignup, Typography } from "../components";
+import { Layout, Seo, RichText, NewsletterSignup, Typography } from "../../components";
 
 export function Head({ data }: HeadProps<Queries.PostQuery>) {
     const { title, metaTitle, metaDescription } = data.post!;
@@ -62,7 +62,7 @@ const FancyDivider = styled.hr`
 `;
 
 export const query = graphql`
-    query Post($id: String!) {
+    query Post($id: String) {
         post: contentfulPost(id: { eq: $id }) {
             slug
             title
