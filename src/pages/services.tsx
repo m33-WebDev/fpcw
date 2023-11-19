@@ -45,7 +45,7 @@ export default function Services() {
                                     Services Offered
                                 </Typography>
                                 <Typography>
-                                    We offer counseling and treatment  for a full range of mental health conditiond
+                                    We offer counseling and treatment for a full range of mental health conditiond
                                     including :
                                 </Typography>
                                 <ul>
@@ -60,9 +60,7 @@ export default function Services() {
                                 <Typography as="h2" size="xl">
                                     Wellness and Prevention
                                 </Typography>
-                                <Typography>
-                                We provide holistic therapies to promote emotional  wellbeing :
-                                </Typography>
+                                <Typography>We provide holistic therapies to promote emotional wellbeing :</Typography>
                                 <ul>
                                     {altTreatments.map(service => (
                                         <Service service={service} />

@@ -70,7 +70,7 @@
             "name": "Cognitive Behavior Therapy",
             "article": "psychotherapy-and-counseling-services"
         },
-       
+
         {
             "name": "Anger Management",
             "article": "psychotherapy-and-counseling-services"
@@ -79,7 +79,6 @@
             "name": "Health, Wellness, Prevention",
             "article": "feeling-happy-is-essential-for-survival-during-quarantine"
         }
-       
     ],
     "altTreatments": [
         {
@@ -118,13 +117,13 @@
             "name": "Mindfulness",
             "article": ""
         },
-        { 
+        {
             "name": "Relaxation Techniques ",
-            "article" :""
+            "article": ""
         },
         {
-            "name" : "Problem Solving Skills ",
-            "article":""
+            "name": "Problem Solving Skills ",
+            "article": ""
         }
     ]
 }

@@ -22,11 +22,10 @@ export default function Contact() {
                         <Columns centered={true} gap={8}>
                             <Columns.Column size={6}>
                                 <Content>
-                                    <Typography  family="secondary" size="l">
-                                    FPCW is serving patients all across California via Hippa Compliant 
-                                    Telehealth Platform.  Our TMS & Ketamine Therapy Services Provided 
-                                    at our main office in Westlake Village California.
-
+                                    <Typography family="secondary" size="l">
+                                        FPCW is serving patients all across California via Hippa Compliant Telehealth
+                                        Platform. Our TMS & Ketamine Therapy Services Provided at our main office in
+                                        Westlake Village California.
                                     </Typography>
                                 </Content>
                                 <Columns centered={true}>
@@ -61,51 +60,51 @@ export default function Contact() {
                                             target="_blank"
                                             rel="noopener noreferrer"
                                         > */}
-                                            <Box backgroundColor="light">
-                                                <Block>
-                                                    <figure>
-                                                        <StaticImage
-                                                            src="../images/location2.png"
-                                                            alt="Agoura Road location exterior"
-                                                            height={300}
-                                                        />
-                                                    </figure>
-                                                </Block>
-                                                <Block>
-                                                    <Typography>
-                                                        {/* 30851 Agoura Road <br />
+                                        <Box backgroundColor="light">
+                                            <Block>
+                                                <figure>
+                                                    <StaticImage
+                                                        src="../images/location2.png"
+                                                        alt="Agoura Road location exterior"
+                                                        height={300}
+                                                    />
+                                                </figure>
+                                            </Block>
+                                            <Block>
+                                                <Typography>
+                                                    {/* 30851 Agoura Road <br />
                                                         Suite 304 <br />
                                                         Agoura Hills, CA 91301 */}
-                                                    </Typography>
-                                                </Block>
-                                            </Box>
+                                                </Typography>
+                                            </Block>
+                                        </Box>
                                         {/* </a> */}
                                     </Columns.Column>
                                 </Columns>
-                                  <Columns centered={true}>
+                                <Columns centered={true}>
                                     <Columns.Column>
                                         {/* <a
                                             href="https://www.google.com/maps/search/?api=1&query=family+psychiatry-counseling-wellness"
                                             target="_blank"
                                             rel="noopener noreferrer"
                                         > */}
-                                            <Box backgroundColor="light">
-                                                <Block>
-                                                    <figure>
-                                                        <StaticImage
-                                                            src="../images/location3.png"
-                                                            alt="La Baya Drive location exterior"
-                                                            height={200}
-                                                        />
-                                                    </figure>
-                                                </Block>
-                                                <Block>
-                                                    {/* <Typography>
+                                        <Box backgroundColor="light">
+                                            <Block>
+                                                <figure>
+                                                    <StaticImage
+                                                        src="../images/location3.png"
+                                                        alt="La Baya Drive location exterior"
+                                                        height={200}
+                                                    />
+                                                </figure>
+                                            </Block>
+                                            <Block>
+                                                {/* <Typography>
                                                         31194 La Baya Drive <br />
                                                         Suite 202 <br /> Westlake Village, CA 91362
                                                     </Typography> */}
-                                                </Block>
-                                            </Box>
+                                            </Block>
+                                        </Box>
                                         {/* </a> */}
                                     </Columns.Column>
                                     <Columns.Column>
@@ -114,24 +113,24 @@ export default function Contact() {
                                             target="_blank"
                                             rel="noopener noreferrer"
                                         > */}
-                                            <Box backgroundColor="light">
-                                                <Block>
-                                                    <figure>
-                                                        <StaticImage
-                                                            src="../images/location4.png"
-                                                            alt="Agoura Road location exterior test3"
-                                                            height={200}
-                                                        />
-                                                    </figure>
-                                                </Block>
-                                                <Block>
-                                                    {/* <Typography>
+                                        <Box backgroundColor="light">
+                                            <Block>
+                                                <figure>
+                                                    <StaticImage
+                                                        src="../images/location4.png"
+                                                        alt="Agoura Road location exterior test3"
+                                                        height={200}
+                                                    />
+                                                </figure>
+                                            </Block>
+                                            <Block>
+                                                {/* <Typography>
                                                         30851 Agoura Road <br />
                                                         Suite 304 <br />
                                                         Agoura Hills, CA 91301
                                                     </Typography> */}
-                                                </Block>
-                                            </Box>
+                                            </Block>
+                                        </Box>
                                         {/* </a> */}
                                     </Columns.Column>
                                 </Columns>
@@ -172,13 +171,10 @@ export default function Contact() {
                                                 </td>
                                                 <td>Friday - 8:00am - 3:00pm PST</td>
                                             </tr>
-
                                         </Typography>
                                     </Table>
 
-                                    <Typography>
-                                    Offices Closed on Weekends and Holidays.
-                                    </Typography>
+                                    <Typography>Offices Closed on Weekends and Holidays.</Typography>
                                 </Content>
                             </Columns.Column>
                         </Columns>

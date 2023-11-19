@@ -41,14 +41,15 @@ export default function Index({ data }) {
                             <Columns.Column size={6}>
                                 <Block>
                                     <Typography family="secondary" size="xxl">
-                                        Family Psychiatry<br />
-                                        Counseling and Wellness 
+                                        Family Psychiatry
+                                        <br />
+                                        Counseling and Wellness
                                     </Typography>
                                 </Block>
                                 <Link to="/appointments">
                                     <Button color="light">
                                         <Typography as="span" color="interactive">
-                                             MAKE AN APPOINTMENT TODAY
+                                            MAKE AN APPOINTMENT TODAY
                                         </Typography>
                                         <Icon>
                                             <FontAwesomeIcon icon={faChevronRight} />
@@ -57,20 +58,19 @@ export default function Index({ data }) {
                                 </Link>
                                 <Block>
                                     <Typography size="m" color="secondary">
-                                        A comprehensive psychiatric clinic serving the mental & emotional health needs of all members of the family. 
-                                        Our mission is to help you live your best life. 
+                                        A comprehensive psychiatric clinic serving the mental & emotional health needs
+                                        of all members of the family. Our mission is to help you live your best life.
                                     </Typography>
 
                                     <Typography size="m" color="secondary">
-                                        We diagnose and treat a variety of mental health symptoms and 
-                                        conditions—with or without medications. We also offer TMS & Ketamine therapies. 
+                                        We diagnose and treat a variety of mental health symptoms and conditions—with or
+                                        without medications. We also offer TMS & Ketamine therapies.
                                     </Typography>
                                     <Typography size="m" color="secondary">
-                                        We accept most commercial insurances. 
-                                        Same day appointments available. Prescriptions are sent electronically to your pharmacy    
+                                        We accept most commercial insurances. Same day appointments available.
+                                        Prescriptions are sent electronically to your pharmacy
                                     </Typography>
                                 </Block>
-                                
                             </Columns.Column>
                             <Columns.Column size={6}>
                                 <Tile kind="ancestor">
