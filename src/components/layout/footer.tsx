@@ -71,7 +71,7 @@ export function Footer() {
                     <Divider />
                     <Columns.Column size={3}>
                         <Content>
-                            <Typography>© 2021 Family Psychiatry Counseling and Wellness.</Typography>
+                            <Typography>© 2023 Family Psychiatry Counseling and Wellness.</Typography>
                         </Content>
                     </Columns.Column>
                 </Columns>
