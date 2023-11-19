@@ -1,5 +1,5 @@
-import React from "react";
 import { Link, graphql } from "gatsby";
+import React from "react";
 import { Block, Columns, Container, Content, Section } from "react-bulma-components";
 import { Layout, Seo, Typography } from "../components";
 import services from "../content/services.json";
@@ -45,8 +45,8 @@ export default function Services() {
                                     Services Offered
                                 </Typography>
                                 <Typography>
-                                    We offer counseling and treatment for a full range of mental health conditiond
-                                    including :
+                                    We offer counseling and treatment for a full range of mental health conditions
+                                    including:
                                 </Typography>
                                 <ul>
                                     {psychTreatments.map(service => (
@@ -60,7 +60,7 @@ export default function Services() {
                                 <Typography as="h2" size="xl">
                                     Wellness and Prevention
                                 </Typography>
-                                <Typography>We provide holistic therapies to promote emotional wellbeing :</Typography>
+                                <Typography>We provide holistic therapies to promote emotional wellbeing:</Typography>
                                 <ul>
                                     {altTreatments.map(service => (
                                         <Service service={service} />
