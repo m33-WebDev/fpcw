@@ -1,7 +1,7 @@
-import React from "react";
 import { graphql } from "gatsby";
+import React from "react";
 import { Block, Columns, Container, Content, Section } from "react-bulma-components";
-import { Layout, Seo, FormJobApplication, Typography } from "../components";
+import { FormJobApplication, Layout, Seo, Typography } from "../components";
 
 export function Head({ data }) {
     const title = data.contentfulPage.metaTitle;
@@ -17,22 +17,24 @@ export default function Careers() {
                     <Columns>
                         <Columns.Column size={3}>
                             <Block>
-                                <Typography as="h1" family="secondary" size="xxl">
+                                <Typography as="h1" size="xxl">
                                     Careers
                                 </Typography>
                             </Block>
                             <Content>
-                                <Typography>
+                                <Typography family="secondary">
                                     Want to join a team that is passionate about patient care? FPCW is expanding, and we
                                     are looking to meet great providers with various types of qualifications.
                                 </Typography>
                                 <br />
-                                <Typography>
+                                <Typography family="secondary">
                                     We offer competitive compensation, a fun work environment, and unparalleled
                                     work-life balance.
                                 </Typography>
                                 <br />
-                                <Typography>Interested in joining our team? Submit an application today!</Typography>
+                                <Typography family="secondary">
+                                    Interested in joining our team? Submit an application today!
+                                </Typography>
                             </Content>
                         </Columns.Column>
                         <Columns.Column size={6}>

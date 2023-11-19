@@ -9,10 +9,10 @@ const action =
 export function NewsletterSignup() {
     return (
         <>
-            <Typography as="h5" size="s">
+            <Typography family="secondary" as="h5" size="s">
                 Connect with us
             </Typography>
-            <Typography>
+            <Typography family="secondary">
                 Want to learn more? Sign up for our newsletter and stay up to date with the latest developments in
                 mental health management.
             </Typography>
@@ -26,7 +26,7 @@ export function NewsletterSignup() {
                     <Honeypot type="text" name="b_facdc7abe706e043dbfd4ead6_2b9b2f9f34" tabIndex={-1} value="" />
                 </div>
                 <Button type="submit" color="success" outlined={true} fullwidth={true}>
-                    <Typography>Subscribe</Typography>
+                    <Typography family="secondary">Subscribe</Typography>
                 </Button>
             </form>
         </>

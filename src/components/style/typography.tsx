@@ -16,8 +16,8 @@ export const Typography = styled.p<TypographyProps>`
 `;
 
 const families = {
-    primary: "Nunito",
-    secondary: "Playfair Display"
+    primary: "Playfair Display",
+    secondary: "Nunito"
 };
 
 const weights = {

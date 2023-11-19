@@ -1,6 +1,6 @@
-import React from "react";
 import { graphql, useStaticQuery } from "gatsby";
-import { CarouselProvider, Slider, Slide, Dot } from "pure-react-carousel";
+import { CarouselProvider, Dot, Slide, Slider } from "pure-react-carousel";
+import React from "react";
 import { Block, Button, Content } from "react-bulma-components";
 import { RichText } from "./richtext";
 import { Typography } from "./style";
@@ -40,7 +40,7 @@ export function Reviews() {
                                     <RichText src={content} />
                                 </Content>
                                 <Content textAlign="right">
-                                    <Typography>
+                                    <Typography family="secondary">
                                         <em>{author}</em>
                                     </Typography>
                                 </Content>

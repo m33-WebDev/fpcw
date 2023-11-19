@@ -1,6 +1,6 @@
-import React from "react";
 import { Link } from "gatsby";
 import Img from "gatsby-image";
+import React from "react";
 import { Block, Card, Content } from "react-bulma-components";
 import styled from "styled-components";
 import { Typography } from "./style";
@@ -14,7 +14,7 @@ export function NewsTile({ post }) {
                 <FancyImage fluid={feature.fluid} key={feature.fluid.src} alt={feature.title} />
                 <Card.Content>
                     <Block>
-                        <Typography as="h5" size="s">
+                        <Typography family="secondary" as="h5" size="s">
                             {title}
                         </Typography>
                     </Block>

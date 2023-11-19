@@ -1,8 +1,8 @@
-import React from "react";
 import { graphql } from "gatsby";
-import styled from "styled-components";
+import React from "react";
 import { Block, Container, Section } from "react-bulma-components";
-import { Layout, Seo, FormAppointment, Typography } from "../components";
+import styled from "styled-components";
+import { FormAppointment, Layout, Seo, Typography } from "../components";
 
 const disclaimer1 =
     "This appointment request form requires you to provide personal information for the purposes of scheduling your appointment. By completing and transmitting this form, you consent to disclose such information to a Family Psychiatry Counseling and Wellness affiliated representative. Also, general data (excluding patient identifiable information) may be used for internal analysis purposes.";
@@ -21,15 +21,15 @@ export default function Appointments() {
             <Section>
                 <Container>
                     <Block>
-                        <Typography as="h1" family="secondary" size="xxl">
+                        <Typography as="h1" size="xxl">
                             Request an Appointment
                         </Typography>
                     </Block>
                     <FormAppointment />
                     <Disclaimer>
-                        <Typography>{disclaimer1}</Typography>
+                        <Typography family="secondary">{disclaimer1}</Typography>
                         <br />
-                        <Typography>{disclaimer2}</Typography>
+                        <Typography family="secondary">{disclaimer2}</Typography>
                     </Disclaimer>
                 </Container>
             </Section>

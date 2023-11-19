@@ -1,5 +1,5 @@
-import React from "react";
 import { Link } from "gatsby";
+import React from "react";
 import { Container, Content, Section } from "react-bulma-components";
 import { Layout, Seo, Typography } from "../components";
 
@@ -15,7 +15,7 @@ export default function FormSuccess() {
             <Section>
                 <Container>
                     <Content textAlign="center">
-                        <Typography>
+                        <Typography family="secondary">
                             Thanks for your submission!
                             <br />
                             We'll be in touch.

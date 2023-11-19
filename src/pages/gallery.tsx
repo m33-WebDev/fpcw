@@ -1,6 +1,6 @@
-import React from "react";
 import { graphql } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import React from "react";
 import { Block, Box, Columns, Container, Section } from "react-bulma-components";
 import { Layout, Typography } from "../components";
 
@@ -12,7 +12,7 @@ export default function Gallery({ data }) {
             <Section>
                 <Container>
                     <Block>
-                        <Typography as="h1" family="secondary" size="xxl">
+                        <Typography as="h1" size="xxl">
                             Photo Gallery
                         </Typography>
                     </Block>
@@ -22,7 +22,7 @@ export default function Gallery({ data }) {
                                 <Box>
                                     {/* @ts-ignore: @todo: Missing props on Gatsby image */}
                                     <GatsbyImage image={getImage(photo)} alt="Image" height={400} width={400} />
-                                    <Typography>{photo.description}</Typography>
+                                    <Typography family="secondary">{photo.description}</Typography>
                                 </Box>
                             </Columns.Column>
                         ))}

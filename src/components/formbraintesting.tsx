@@ -1,7 +1,7 @@
+import { faEnvelope, faPhone } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import { Button, Columns, Form, Icon } from "react-bulma-components";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEnvelope, faPhone } from "@fortawesome/free-solid-svg-icons";
 import { Typography } from "./style";
 
 export function FormBrainTesting() {
@@ -13,7 +13,7 @@ export function FormBrainTesting() {
                 <Columns.Column>
                     <Form.Field>
                         <Form.Label>
-                            <Typography>First Name</Typography>
+                            <Typography family="secondary">First Name</Typography>
                         </Form.Label>
                         <Form.Control>
                             <Form.Input placeholder="John" name="first-name" required />
@@ -23,7 +23,7 @@ export function FormBrainTesting() {
                 <Columns.Column>
                     <Form.Field>
                         <Form.Label>
-                            <Typography>Last Name</Typography>
+                            <Typography family="secondary">Last Name</Typography>
                         </Form.Label>
                         <Form.Control>
                             <Form.Input placeholder="Smith" name="last-name" required />
@@ -33,7 +33,7 @@ export function FormBrainTesting() {
             </Columns>
             <Form.Field>
                 <Form.Label>
-                    <Typography>Email</Typography>
+                    <Typography family="secondary">Email</Typography>
                 </Form.Label>
                 <Form.Control>
                     <Form.Input placeholder="johnsmith@gmail.com" name="email" required />
@@ -44,7 +44,7 @@ export function FormBrainTesting() {
             </Form.Field>
             <Form.Field>
                 <Form.Label>
-                    <Typography>Phone</Typography>
+                    <Typography family="secondary">Phone</Typography>
                 </Form.Label>
                 <Form.Control>
                     <Form.Input placeholder="(123) 456-7890" name="phone" required />
@@ -55,20 +55,20 @@ export function FormBrainTesting() {
             </Form.Field>
             <Form.Field>
                 <Form.Label>
-                    <Typography>Existing Patient?</Typography>
+                    <Typography family="secondary">Existing Patient?</Typography>
                 </Form.Label>
                 <Form.Control>
                     <Form.Radio name="existing-patient" value="Yes">
-                        <Typography>Yes</Typography>
+                        <Typography family="secondary">Yes</Typography>
                     </Form.Radio>
                     <Form.Radio name="existing-patient" value="No">
-                        <Typography>No</Typography>
+                        <Typography family="secondary">No</Typography>
                     </Form.Radio>
                 </Form.Control>
             </Form.Field>
             <Form.Field>
                 <Button color="success" outlined={true} fullwidth={true} type="submit">
-                    <Typography>Submit</Typography>
+                    <Typography family="secondary">Submit</Typography>
                 </Button>
             </Form.Field>
         </form>

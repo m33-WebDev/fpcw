@@ -1,10 +1,15 @@
-import React from "react";
-import { Columns, Container, Level, Column, Content, Block, Footer as BulmaFooter, Icon } from "react-bulma-components";
+import {
+    IconDefinition,
+    faCalendar,
+    faEnvelope,
+    faExclamationCircle,
+    faPhone
+} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEnvelope, faPhone, faCalendar, IconDefinition } from "@fortawesome/free-solid-svg-icons";
-import { Typography } from "../style";
-import { faExclamationCircle } from "@fortawesome/free-solid-svg-icons";
 import Link from "gatsby-link";
+import React from "react";
+import { Block, Footer as BulmaFooter, Columns, Container, Content, Icon, Level } from "react-bulma-components";
+import { Typography } from "../style";
 
 const telehealthCallout = "Now Offering Telehealth Services all across California.";
 
@@ -29,7 +34,7 @@ export function Footer() {
                                         <FontAwesomeIcon icon={faExclamationCircle} />
                                     </Level.Item>
                                     <Level.Item mx={1}>
-                                        <Typography weight="heavy" as="h1">
+                                        <Typography family="secondary" weight="heavy" as="h1">
                                             {telehealthCallout}
                                         </Typography>
                                     </Level.Item>
@@ -48,14 +53,14 @@ export function Footer() {
                                 <Icon>
                                     <FontAwesomeIcon icon={icon} />
                                 </Icon>
-                                <Typography>{text}</Typography>
+                                <Typography family="secondary">{text}</Typography>
                             </Icon.Text>
                         ))}
                     </Columns.Column>
                     <Divider />
                     <Columns.Column size={2}>
                         <Content>
-                            <Typography>
+                            <Typography family="secondary">
                                 31194 La Baya Drive
                                 <br />
                                 Suite 202
@@ -67,7 +72,9 @@ export function Footer() {
                     <Divider />
                     <Columns.Column size={3}>
                         <Content>
-                            <Typography>© 2023 Family Psychiatry Counseling and Wellness.</Typography>
+                            <Typography family="secondary">
+                                © 2023 Family Psychiatry Counseling and Wellness.
+                            </Typography>
                         </Content>
                     </Columns.Column>
                 </Columns>

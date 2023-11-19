@@ -1,9 +1,9 @@
-import React from "react";
-import { Link, graphql } from "gatsby";
-import { StaticImage } from "gatsby-plugin-image";
-import { Block, Box, Columns, Container, Content, Hero, Table } from "react-bulma-components";
+import { faAngleUp, faCalendar, faEnvelope, faPhone } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEnvelope, faPhone, faCalendar, faAngleUp } from "@fortawesome/free-solid-svg-icons";
+import { graphql } from "gatsby";
+import { StaticImage } from "gatsby-plugin-image";
+import React from "react";
+import { Block, Box, Columns, Container, Content, Hero, Table } from "react-bulma-components";
 import { Layout, Seo, Typography } from "../components";
 
 export function Head({ data }) {
@@ -22,7 +22,7 @@ export default function Contact() {
                         <Columns centered={true} gap={8}>
                             <Columns.Column size={6}>
                                 <Content>
-                                    <Typography family="secondary" size="l">
+                                    <Typography size="l">
                                         FPCW is serving patients all across California via Hippa Compliant Telehealth
                                         Platform. Our TMS & Ketamine Therapy Services Provided at our main office in
                                         Westlake Village California.
@@ -46,7 +46,7 @@ export default function Contact() {
                                                     </figure>
                                                 </Block>
                                                 <Block>
-                                                    <Typography>
+                                                    <Typography family="secondary">
                                                         31194 La Baya Drive <br />
                                                         Suite 202 <br /> Westlake Village, CA 91362
                                                     </Typography>
@@ -136,16 +136,16 @@ export default function Contact() {
                                 </Columns>
                                 <Content textAlign="center">
                                     <FontAwesomeIcon icon={faAngleUp} />
-                                    <Typography>Click for directions</Typography>
+                                    <Typography family="secondary">Click for directions</Typography>
                                 </Content>
                             </Columns.Column>
                             <Columns.Column size={4}>
                                 <Content>
-                                    <Typography as="h2" family="secondary" size="xl">
+                                    <Typography as="h2" size="xl">
                                         FPCW Contact Information
                                     </Typography>
                                     <Table>
-                                        <Typography as="tbody">
+                                        <Typography family="secondary" as="tbody">
                                             <tr>
                                                 <td>
                                                     <FontAwesomeIcon icon={faPhone} />
@@ -174,7 +174,7 @@ export default function Contact() {
                                         </Typography>
                                     </Table>
 
-                                    <Typography>Offices Closed on Weekends and Holidays.</Typography>
+                                    <Typography family="secondary">Offices Closed on Weekends and Holidays.</Typography>
                                 </Content>
                             </Columns.Column>
                         </Columns>

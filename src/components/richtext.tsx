@@ -1,6 +1,6 @@
-import React from "react";
-import { BLOCKS, MARKS, INLINES } from "@contentful/rich-text-types";
+import { BLOCKS, INLINES, MARKS } from "@contentful/rich-text-types";
 import { renderRichText } from "gatsby-source-contentful/rich-text";
+import React from "react";
 import styled from "styled-components";
 import { Typography } from "./style";
 
@@ -12,12 +12,32 @@ const options = {
         [MARKS.CODE]: text => <code>{text}</code>
     },
     renderNode: {
-        [BLOCKS.PARAGRAPH]: (_, children) => <Typography>{children}</Typography>,
-        [BLOCKS.HEADING_1]: (_, children) => <Typography as="h2">{children}</Typography>,
-        [BLOCKS.HEADING_2]: (_, children) => <Typography as="h3">{children}</Typography>,
-        [BLOCKS.HEADING_3]: (_, children) => <Typography as="h4">{children}</Typography>,
-        [BLOCKS.HEADING_4]: (_, children) => <Typography as="h5">{children}</Typography>,
-        [BLOCKS.HEADING_5]: (_, children) => <Typography as="h6">{children}</Typography>,
+        [BLOCKS.PARAGRAPH]: (_, children) => <Typography family="secondary">{children}</Typography>,
+        [BLOCKS.HEADING_1]: (_, children) => (
+            <Typography family="secondary" as="h2">
+                {children}
+            </Typography>
+        ),
+        [BLOCKS.HEADING_2]: (_, children) => (
+            <Typography family="secondary" as="h3">
+                {children}
+            </Typography>
+        ),
+        [BLOCKS.HEADING_3]: (_, children) => (
+            <Typography family="secondary" as="h4">
+                {children}
+            </Typography>
+        ),
+        [BLOCKS.HEADING_4]: (_, children) => (
+            <Typography family="secondary" as="h5">
+                {children}
+            </Typography>
+        ),
+        [BLOCKS.HEADING_5]: (_, children) => (
+            <Typography family="secondary" as="h6">
+                {children}
+            </Typography>
+        ),
         [INLINES.HYPERLINK]: node => {
             if (node.data.uri.includes("player.vimeo.com/video")) {
                 return (

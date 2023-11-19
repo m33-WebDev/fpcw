@@ -21,7 +21,9 @@ export function Body(props: BodyProps) {
             {props.bio ? (
                 <RichText src={props.bio} />
             ) : (
-                <Typography>No information available at this time. Please check back again later.</Typography>
+                <Typography family="secondary">
+                    No information available at this time. Please check back again later.
+                </Typography>
             )}
         </Content>
     );

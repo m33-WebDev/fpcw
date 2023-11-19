@@ -1,6 +1,6 @@
-import React from "react";
 import { Link } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import React from "react";
 import { Card } from "react-bulma-components";
 import styled from "styled-components";
 import { Typography } from "./style";
@@ -11,7 +11,7 @@ export function SplashTile(props) {
             <FancyCard>
                 <FancyImage image={getImage(props.image)} alt="Splash" />
                 <FancyTitle>
-                    <Typography>{props.title}</Typography>
+                    <Typography family="secondary">{props.title}</Typography>
                 </FancyTitle>
             </FancyCard>
         </Link>

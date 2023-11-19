@@ -1,9 +1,9 @@
-import React from "react";
 import { graphql, HeadProps, PageProps } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import React from "react";
 import { Block, Columns, Container, Content, Section } from "react-bulma-components";
 import styled from "styled-components";
-import { Layout, Seo, RichText, NewsletterSignup, Typography } from "../../components";
+import { Layout, NewsletterSignup, RichText, Seo, Typography } from "../../components";
 
 export function Head({ data }: HeadProps<Queries.PostQuery>) {
     const { title, metaTitle, metaDescription } = data.post!;
@@ -20,7 +20,7 @@ export default function Post({ data }: PageProps<Queries.PostQuery>) {
                     {/* @ts-ignore: @todo: not sure why gap is not found on Columns component */}
                     <Columns multiline={true}>
                         <Columns.Column size="half" offset={2}>
-                            <Typography as="h1" family="secondary" size="xxl">
+                            <Typography as="h1" size="xxl">
                                 {title}
                             </Typography>
                         </Columns.Column>

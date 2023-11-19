@@ -1,7 +1,7 @@
+import { faCalendar, faEnvelope, faPhone, faUser, faUserFriends } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState } from "react";
 import { Button, Columns, Form, Icon } from "react-bulma-components";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEnvelope, faPhone, faCalendar, faUserFriends, faUser } from "@fortawesome/free-solid-svg-icons";
 import { Typography } from "./style";
 
 const referralSources = [
@@ -42,7 +42,7 @@ export function FormAppointment(props: FormAppointmentProps) {
                         <Columns.Column>
                             <Form.Field>
                                 <Form.Label>
-                                    <Typography>First Name</Typography>
+                                    <Typography family="secondary">First Name</Typography>
                                 </Form.Label>
                                 <Form.Control>
                                     <Form.Input placeholder="John" name="first-name" required></Form.Input>
@@ -52,7 +52,7 @@ export function FormAppointment(props: FormAppointmentProps) {
                         <Columns.Column>
                             <Form.Field>
                                 <Form.Label>
-                                    <Typography>Last Name</Typography>
+                                    <Typography family="secondary">Last Name</Typography>
                                 </Form.Label>
                                 <Form.Control>
                                     <Form.Input placeholder="Smith" name="last-name" required></Form.Input>
@@ -62,7 +62,7 @@ export function FormAppointment(props: FormAppointmentProps) {
                     </Columns>
                     <Form.Field>
                         <Form.Label>
-                            <Typography>Email</Typography>
+                            <Typography family="secondary">Email</Typography>
                         </Form.Label>
                         <Form.Control>
                             <Form.Input placeholder="johnsmith@gmail.com" name="email" required />
@@ -73,7 +73,7 @@ export function FormAppointment(props: FormAppointmentProps) {
                     </Form.Field>
                     <Form.Field>
                         <Form.Label>
-                            <Typography>Phone</Typography>
+                            <Typography family="secondary">Phone</Typography>
                         </Form.Label>
                         <Form.Control>
                             <Form.Input placeholder="(123) 456-7890" name="phone" required />
@@ -84,7 +84,7 @@ export function FormAppointment(props: FormAppointmentProps) {
                     </Form.Field>
                     <Form.Field>
                         <Form.Label>
-                            <Typography>Desired Appointment Date</Typography>
+                            <Typography family="secondary">Desired Appointment Date</Typography>
                         </Form.Label>
                         <Form.Control>
                             <input
@@ -103,7 +103,7 @@ export function FormAppointment(props: FormAppointmentProps) {
                 <Columns.Column size={6}>
                     <Form.Field>
                         <Form.Label>
-                            <Typography>How Did You Hear About Us?</Typography>
+                            <Typography family="secondary">How Did You Hear About Us?</Typography>
                         </Form.Label>
                         <Form.Control>
                             <Form.Select
@@ -127,7 +127,7 @@ export function FormAppointment(props: FormAppointmentProps) {
                     {referralSource === insuranceReferral && (
                         <Form.Field>
                             <Form.Label>
-                                <Typography>Referring Insurer</Typography>
+                                <Typography family="secondary">Referring Insurer</Typography>
                             </Form.Label>
                             <Form.Control>
                                 <Form.Input placeholder="Insurer" name="referral-insurer" />
@@ -141,7 +141,7 @@ export function FormAppointment(props: FormAppointmentProps) {
                         <>
                             <Form.Field>
                                 <Form.Label>
-                                    <Typography>Word of Mouth Referrer</Typography>
+                                    <Typography family="secondary">Word of Mouth Referrer</Typography>
                                 </Form.Label>
                                 <Form.Control>
                                     <Form.Input placeholder="Name" name="referral-wordofmouth-name" />
@@ -163,7 +163,7 @@ export function FormAppointment(props: FormAppointmentProps) {
                     {referralSource === otherReferral && (
                         <Form.Field>
                             <Form.Label>
-                                <Typography>Please Specify</Typography>
+                                <Typography family="secondary">Please Specify</Typography>
                             </Form.Label>
                             <Form.Control>
                                 <Form.Input placeholder="..." name="referral-other-details" />
@@ -177,7 +177,7 @@ export function FormAppointment(props: FormAppointmentProps) {
             </Columns>
             <Form.Field>
                 <Button color="success" outlined={true} fullwidth={true} type="submit">
-                    <Typography>Submit</Typography>
+                    <Typography family="secondary">Submit</Typography>
                 </Button>
             </Form.Field>
         </form>

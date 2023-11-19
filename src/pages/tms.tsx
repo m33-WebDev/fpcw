@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import { Content, Container, Columns, Form, Button, Level, Section, Block } from "react-bulma-components";
+import { Block, Button, Columns, Container, Content, Form, Level, Section } from "react-bulma-components";
 import styled from "styled-components";
-import { Layout, Seo, FormAppointment, Typography } from "../components";
+import { FormAppointment, Layout, Seo, Typography } from "../components";
 import neurostar from "../images/neurostar-logo.webp";
-import tmsSmilingMan from "../images/tms/HatDude-extended-top-background.jpg";
 import tmsLateralHead from "../images/tms/HP-LateralHead_coil_2021.jpg";
+import tmsSmilingMan from "../images/tms/HatDude-extended-top-background.jpg";
 import tmsMalePatient from "../images/tms/MalePatientDr-closeup.jpg";
 
 export function Head() {
@@ -28,16 +28,16 @@ export default function Tms() {
                         </Columns.Column>
                         <Columns.Column>
                             <Block>
-                                <Typography as="h1" family="secondary" size="xxl">
+                                <Typography as="h1" size="xxl">
                                     Transcranial Magnetic Stimulation
                                 </Typography>
                             </Block>
                             <Block>
-                                <Typography size="l" color="secondary">
+                                <Typography family="secondary" size="l" color="secondary">
                                     Tap into a new possibility for depression
                                 </Typography>
                             </Block>
-                            <Typography>
+                            <Typography family="secondary">
                                 Transcranial magnetic stimulation, or TMS for short, is a safe, effective, non-invasive,
                                 non-drug treatment for depression without the side effects of medications. The treatment
                                 requires no sedation or anesthesia. It also has no recovery time, meaning patients can
@@ -47,7 +47,7 @@ export default function Tms() {
                             <Level>
                                 <Level.Side align="left" />
                                 <Level.Side align="right">
-                                    <Typography>
+                                    <Typography family="secondary">
                                         <strong>Powered by</strong>{" "}
                                     </Typography>
                                     <a href="https://neurostar.com/" target="_blank" rel="noreferrer">
@@ -66,16 +66,16 @@ export default function Tms() {
                     <Columns vCentered={true}>
                         <Columns.Column>
                             <Block>
-                                <Typography as="h2" family="secondary" size="xl">
+                                <Typography as="h2" size="xl">
                                     How TMS Works
                                 </Typography>
                             </Block>
                             <Block>
-                                <Typography size="m" color="secondary">
+                                <Typography family="secondary" size="m" color="secondary">
                                     Stimulating the brain with magnetic pulses
                                 </Typography>
                             </Block>
-                            <Typography>
+                            <Typography family="secondary">
                                 TMS uses focused magnetic pulses, similar to an MRI, to stimulate underactive areas of
                                 the brain which results in improvement of depression. It is <strong>not</strong> a drug,
                                 shock therapy, or surgery.
@@ -97,16 +97,16 @@ export default function Tms() {
                         </Columns.Column>
                         <Columns.Column>
                             <Block>
-                                <Typography as="h2" family="secondary" size="xl">
+                                <Typography as="h2" size="xl">
                                     Lasting Relief from Depression
                                 </Typography>
                             </Block>
                             <Block>
-                                <Typography size="m" color="secondary">
+                                <Typography family="secondary" size="m" color="secondary">
                                     The #1 physician-recommended treatment for non-responsive depression
                                 </Typography>
                             </Block>
-                            <Typography>
+                            <Typography family="secondary">
                                 Over 80% of patients who completed TMS treatments experienced significant relief, and
                                 out of those, 62% saw full remission of their depression symptoms.
                             </Typography>
@@ -122,16 +122,16 @@ export default function Tms() {
                     <Columns vCentered={true} gap={8}>
                         <Columns.Column>
                             <Block>
-                                <Typography as="h2" family="secondary" size="xl">
+                                <Typography as="h2" size="xl">
                                     Find Out If TMS Is Right for You
                                 </Typography>
                             </Block>
                             <Block>
-                                <Typography size="m" color="secondary">
+                                <Typography family="secondary" size="m" color="secondary">
                                     Take the quiz and set up a free consultation
                                 </Typography>
                             </Block>
-                            <Typography>
+                            <Typography family="secondary">
                                 TMS is FDA-approved for the treatment of moderate to severe depression in patients who
                                 have partially responded or not responded to medications and talk therapy. If you fit
                                 these criteria, adding TMS therapy to your existing treatment plan may help you achieve

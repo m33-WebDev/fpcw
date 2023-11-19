@@ -1,11 +1,11 @@
-import React from "react";
+import { faFacebookSquare, faGoogle } from "@fortawesome/free-brands-svg-icons";
+import { faChevronRight, faHandHoldingMedical, faHeartbeat, faStar } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link, graphql } from "gatsby";
+import React from "react";
 import { Block, Button, Columns, Container, Heading, Hero, Icon, Level, Section, Tile } from "react-bulma-components";
 import styled from "styled-components";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faStar, faHandHoldingMedical, faChevronRight, faHeartbeat } from "@fortawesome/free-solid-svg-icons";
-import { faFacebookSquare, faGoogle } from "@fortawesome/free-brands-svg-icons";
-import { Layout, Seo, SplashTile, NewsTile, Reviews, Typography } from "../components";
+import { Layout, NewsTile, Reviews, Seo, SplashTile, Typography } from "../components";
 
 const ratings = [
     {
@@ -40,7 +40,7 @@ export default function Index({ data }) {
                         <Columns vCentered={true}>
                             <Columns.Column size={6}>
                                 <Block>
-                                    <Typography family="secondary" size="xxl">
+                                    <Typography size="xxl">
                                         Family Psychiatry
                                         <br />
                                         Counseling and Wellness
@@ -48,7 +48,7 @@ export default function Index({ data }) {
                                 </Block>
                                 <Link to="/appointments">
                                     <Button color="light">
-                                        <Typography as="span" color="interactive">
+                                        <Typography family="secondary" as="span" color="interactive">
                                             MAKE AN APPOINTMENT TODAY
                                         </Typography>
                                         <Icon>
@@ -57,16 +57,16 @@ export default function Index({ data }) {
                                     </Button>
                                 </Link>
                                 <Block>
-                                    <Typography size="m" color="secondary">
+                                    <Typography family="secondary" size="m" color="secondary">
                                         A comprehensive psychiatric clinic serving the mental & emotional health needs
                                         of all members of the family. Our mission is to help you live your best life.
                                     </Typography>
 
-                                    <Typography size="m" color="secondary">
+                                    <Typography family="secondary" size="m" color="secondary">
                                         We diagnose and treat a variety of mental health symptoms and conditions—with or
                                         without medications. We also offer TMS & Ketamine therapies.
                                     </Typography>
-                                    <Typography size="m" color="secondary">
+                                    <Typography family="secondary" size="m" color="secondary">
                                         We accept most commercial insurances. Same day appointments available.
                                         Prescriptions are sent electronically to your pharmacy
                                     </Typography>
@@ -129,11 +129,11 @@ export default function Index({ data }) {
                     </Columns.Column>
                     <Columns.Column size={6}>
                         <Block>
-                            <Typography as="h2" family="secondary" size="xl">
+                            <Typography as="h2" size="xl">
                                 Holistic Psychiatry for your Mind, Body and Soul
                             </Typography>
                         </Block>
-                        <Typography>
+                        <Typography family="secondary">
                             At Family Psychiatry Counseling and Wellness, we specialize in performing comprehensive
                             psychiatric and psychological evaluations to establish accurate diagnoses and prepare
                             individualized treatment plans. We combine advanced conventional methods with safe
@@ -146,7 +146,7 @@ export default function Index({ data }) {
                 <Container>
                     <Columns>
                         <Columns.Column size={3}>
-                            <Typography as="h2" family="secondary" size="xl">
+                            <Typography as="h2" size="xl">
                                 What Our Patients Are Saying
                             </Typography>
                         </Columns.Column>
@@ -166,7 +166,7 @@ export default function Index({ data }) {
             <Section backgroundColor="grey-lighter">
                 <Container py={6}>
                     <Block textAlign="center">
-                        <Typography as="h2" family="secondary" size="xl">
+                        <Typography as="h2" size="xl">
                             Health Resources
                         </Typography>
                     </Block>

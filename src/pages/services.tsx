@@ -18,7 +18,7 @@ export default function Services() {
             <Section>
                 <Container>
                     <Block>
-                        <Typography as="h1" family="secondary" size="xxl">
+                        <Typography as="h1" size="xxl">
                             Mental Health Services Provided at FPCW
                         </Typography>
                     </Block>
@@ -26,10 +26,10 @@ export default function Services() {
                     <Columns gap={6}>
                         <Columns.Column size={4}>
                             <Content>
-                                <Typography as="h2" size="xl">
+                                <Typography family="secondary" as="h2" size="xl">
                                     Conditions Treated
                                 </Typography>
-                                <Typography>
+                                <Typography family="secondary">
                                     We offer expert diagnosis and treatment of most psychiatric conditions, including:
                                 </Typography>
                                 <ul>
@@ -41,10 +41,10 @@ export default function Services() {
                         </Columns.Column>
                         <Columns.Column size={4}>
                             <Content>
-                                <Typography as="h2" size="xl">
+                                <Typography family="secondary" as="h2" size="xl">
                                     Services Offered
                                 </Typography>
-                                <Typography>
+                                <Typography family="secondary">
                                     We offer counseling and treatment for a full range of mental health conditions
                                     including:
                                 </Typography>
@@ -57,10 +57,12 @@ export default function Services() {
                         </Columns.Column>
                         <Columns.Column size={4}>
                             <Content>
-                                <Typography as="h2" size="xl">
+                                <Typography family="secondary" as="h2" size="xl">
                                     Wellness and Prevention
                                 </Typography>
-                                <Typography>We provide holistic therapies to promote emotional wellbeing:</Typography>
+                                <Typography family="secondary">
+                                    We provide holistic therapies to promote emotional wellbeing:
+                                </Typography>
                                 <ul>
                                     {altTreatments.map(service => (
                                         <Service service={service} />
@@ -77,7 +79,7 @@ export default function Services() {
 
 function Service({ service }) {
     return (
-        <Typography as="li" key={service.name}>
+        <Typography family="secondary" as="li" key={service.name}>
             {service.article ? <Link to={`/library/${service.article}`}>{service.name}</Link> : service.name}
         </Typography>
     );

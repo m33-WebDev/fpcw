@@ -1,5 +1,5 @@
-import React from "react";
 import { Link } from "gatsby";
+import React from "react";
 import { Content, Section } from "react-bulma-components";
 import { Layout, Seo, Typography } from "../components";
 
@@ -12,7 +12,7 @@ export default function Page404() {
         <Layout>
             <Section>
                 <Content textAlign="center">
-                    <Typography>
+                    <Typography family="secondary">
                         It looks like this page no longer exists.
                         <br />
                         Return to <Link to="/">Home</Link>.

@@ -1,6 +1,6 @@
-import React from "react";
 import { graphql, Link } from "gatsby";
 import Img from "gatsby-image";
+import React from "react";
 import { Block, Card, Columns, Container, Content, Heading, Section } from "react-bulma-components";
 import styled from "styled-components";
 import { Layout, Seo, Typography } from "../components";
@@ -29,12 +29,12 @@ export default function Providers({ data }) {
                         <Columns.Column size={4}>
                             <FancyBlurb>
                                 <Block>
-                                    <Typography as="h1" family="secondary" size="xxl">
+                                    <Typography as="h1" size="xxl">
                                         Find the Right Expert for Your Mental Health Needs
                                     </Typography>
                                 </Block>
                                 <Content size="medium">
-                                    <Typography>
+                                    <Typography family="secondary">
                                         Our professional staff consists of board-certified, experienced psychiatrists,
                                         therapists, nurse practitioners, and others. We are, individually and
                                         collectively, committed to providing the highest quality care to our patients
@@ -59,7 +59,7 @@ export default function Providers({ data }) {
                                                     alt={headshot.fluid.title}
                                                 />
                                                 <FancyPostTitle>
-                                                    <Typography>
+                                                    <Typography family="secondary">
                                                         {name}
                                                         {credential ? `, ${credential}` : ""}
                                                     </Typography>

@@ -1,6 +1,6 @@
-import React from "react";
 import { graphql, Link } from "gatsby";
 import Img from "gatsby-image";
+import React from "react";
 import { Block, Card, Columns, Container, Content, Heading, Section } from "react-bulma-components";
 import styled from "styled-components";
 import { Layout, Seo, Typography } from "../components";
@@ -21,12 +21,12 @@ export default function Library({ data }) {
                         <Columns.Column size={4}>
                             <FancyBlurb>
                                 <Block>
-                                    <Typography as="h1" family="secondary" size="xxl">
+                                    <Typography as="h1" size="xxl">
                                         The Health Library
                                     </Typography>
                                 </Block>
                                 <Content size="medium">
-                                    <Typography>
+                                    <Typography family="secondary">
                                         Read up on the conditions we treat, the treatments we offer, and developments in
                                         the fields of psychiatry, mental health, and wellness.
                                     </Typography>
@@ -45,7 +45,7 @@ export default function Library({ data }) {
                                                     alt={feature.fluid.title}
                                                 />
                                                 <FancyPostTitle>
-                                                    <Typography>{title}</Typography>
+                                                    <Typography family="secondary">{title}</Typography>
                                                 </FancyPostTitle>
                                             </FancyCard>
                                         </Link>

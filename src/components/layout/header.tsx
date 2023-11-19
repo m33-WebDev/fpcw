@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import { faExclamationCircle } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "gatsby-link";
 import { StaticImage } from "gatsby-plugin-image";
+import React, { useState } from "react";
 import { Container, Level, Navbar } from "react-bulma-components";
 import styled from "styled-components";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faExclamationCircle } from "@fortawesome/free-solid-svg-icons";
 import { Typography } from "../style";
 
 const telehealthCallout = "Now Offering Telehealth Services all across California.";
@@ -45,7 +45,9 @@ export function Header() {
                                         <FontAwesomeIcon icon={faExclamationCircle} />
                                     </Level.Item>
                                     <Level.Item mx={3}>
-                                        <Typography as="span">{telehealthCallout}</Typography>
+                                        <Typography family="secondary" as="span">
+                                            {telehealthCallout}
+                                        </Typography>
                                     </Level.Item>
                                     <Level.Item textColor="warning">
                                         <FontAwesomeIcon icon={faExclamationCircle} />
@@ -58,27 +60,35 @@ export function Header() {
                         {primaryLinks.map(([name, value]) =>
                             value.startsWith("/") ? (
                                 <Navbar.Item renderAs={Link} to={value}>
-                                    <Typography as="span">{name}</Typography>
+                                    <Typography family="secondary" as="span">
+                                        {name}
+                                    </Typography>
                                 </Navbar.Item>
                             ) : (
                                 <Navbar.Item href={value}>
-                                    <Typography as="span">{name}</Typography>
+                                    <Typography family="secondary" as="span">
+                                        {name}
+                                    </Typography>
                                 </Navbar.Item>
                             )
                         )}
                         <Navbar.Item href="#" hoverable={true}>
                             <Navbar.Link>
-                                <Typography>About</Typography>
+                                <Typography family="secondary">About</Typography>
                             </Navbar.Link>
                             <Navbar.Dropdown>
                                 {secondaryLinks.map(([name, value]) =>
                                     value.startsWith("/") ? (
                                         <Navbar.Item renderAs={Link} to={value}>
-                                            <Typography as="span">{name}</Typography>
+                                            <Typography family="secondary" as="span">
+                                                {name}
+                                            </Typography>
                                         </Navbar.Item>
                                     ) : (
                                         <Navbar.Item href={value} textColor="dark">
-                                            <Typography as="span">{name}</Typography>
+                                            <Typography family="secondary" as="span">
+                                                {name}
+                                            </Typography>
                                         </Navbar.Item>
                                     )
                                 )}
