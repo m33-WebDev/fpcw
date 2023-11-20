@@ -19,12 +19,12 @@ export default function Post({ data }: PageProps<Queries.PostQuery>) {
                 <Container>
                     {/* @ts-ignore: @todo: not sure why gap is not found on Columns component */}
                     <Columns multiline={true}>
-                        <Columns.Column size="half" offset={2}>
+                        <Columns.Column size="half">
                             <Typography as="h1" size="xxl">
                                 {title}
                             </Typography>
                         </Columns.Column>
-                        <Columns.Column size="two-thirds" offset={2}>
+                        <Columns.Column size="two-thirds">
                             {/* @ts-ignore: @todo: not sure why gap is not found on Columns component */}
                             <Columns gap={4}>
                                 <Columns.Column size="three-quarters">

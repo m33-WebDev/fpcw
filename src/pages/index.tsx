@@ -1,5 +1,5 @@
 import { faFacebookSquare, faGoogle } from "@fortawesome/free-brands-svg-icons";
-import { faChevronRight, faHandHoldingMedical, faHeartbeat, faStar } from "@fortawesome/free-solid-svg-icons";
+import { faChevronRight, faHeartbeat, faStar } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link, graphql } from "gatsby";
 import React from "react";
@@ -37,7 +37,7 @@ export default function Index({ data }) {
             <Hero size="fullheight" hasNavbar={true}>
                 <Hero.Body>
                     <Container>
-                        <Columns vCentered={true}>
+                        <Columns>
                             <Columns.Column size={6}>
                                 <Block>
                                     <Typography size="xxl">
@@ -123,41 +123,48 @@ export default function Index({ data }) {
                 </Hero.Body>
             </Hero>
             <Section backgroundColor="grey-lighter">
-                <Columns vCentered={true} centered={true}>
-                    <Columns.Column size={2} textAlign="center">
-                        <FontAwesomeIcon icon={faHandHoldingMedical} size="8x" />
-                    </Columns.Column>
-                    <Columns.Column size={6}>
-                        <Block>
-                            <Typography as="h2" size="xl">
-                                Holistic Psychiatry for your Mind, Body and Soul
+                <Container>
+                    <Columns vCentered={true} centered={true}>
+                        <Columns.Column size={6}>
+                            <Block>
+                                <Typography as="h2" size="xl">
+                                    Holistic Psychiatry for your Mind, Body and Soul
+                                </Typography>
+                            </Block>
+                            <Typography family="secondary">
+                                At Family Psychiatry Counseling and Wellness, we specialize in performing comprehensive
+                                psychiatric and psychological evaluations to establish accurate diagnoses and prepare
+                                individualized treatment plans. We combine advanced conventional methods with safe
+                                alternative treatment approaches to bring about lasting relief and improved quality of
+                                life.
                             </Typography>
-                        </Block>
-                        <Typography family="secondary">
-                            At Family Psychiatry Counseling and Wellness, we specialize in performing comprehensive
-                            psychiatric and psychological evaluations to establish accurate diagnoses and prepare
-                            individualized treatment plans. We combine advanced conventional methods with safe
-                            alternative treatment approaches to bring about lasting relief and improved quality of life.
-                        </Typography>
-                    </Columns.Column>
-                </Columns>
+                        </Columns.Column>
+                        <Columns.Column size={6} textAlign="center">
+                            <img src="https://images.unsplash.com/photo-1545205597-3d9d02c29597?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
+                        </Columns.Column>
+                    </Columns>
+                </Container>
             </Section>
             <Section my={6}>
                 <Container>
                     <Columns>
-                        <Columns.Column size={3}>
-                            <Typography as="h2" size="xl">
-                                What Our Patients Are Saying
-                            </Typography>
+                        <Columns.Column size={6}>
+                            <Block>
+                                <Typography as="h2" size="xl">
+                                    What Our Patients Are Saying
+                                </Typography>
+                            </Block>
+                            <Block>
+                                <Columns>
+                                    {ratings.map(rating => (
+                                        <Columns.Column size={3}>
+                                            <Rating {...rating} />
+                                        </Columns.Column>
+                                    ))}
+                                </Columns>
+                            </Block>
                         </Columns.Column>
-                        <Columns.Column size={1} />
-                        <Columns.Column size={2}>
-                            {ratings.map(rating => (
-                                <Rating {...rating} />
-                            ))}
-                        </Columns.Column>
-                        <Columns.Column size={1} />
-                        <Columns.Column size={4}>
+                        <Columns.Column size={6}>
                             <Reviews />
                         </Columns.Column>
                     </Columns>
@@ -165,20 +172,18 @@ export default function Index({ data }) {
             </Section>
             <Section backgroundColor="grey-lighter">
                 <Container py={6}>
-                    <Block textAlign="center">
+                    <Block>
                         <Typography as="h2" size="xl">
                             Health Resources
                         </Typography>
                     </Block>
-                    <FancyDivider />
-                    <Columns centered={true}>
+                    <Columns>
                         {data.newsPosts.nodes.map((post, i) => (
                             <Columns.Column size={3} key={i}>
                                 <NewsTile post={post} />
                             </Columns.Column>
                         ))}
                     </Columns>
-                    <FancyDivider />
                 </Container>
             </Section>
         </Layout>
@@ -194,7 +199,7 @@ function Rating({ link, icon, rating }) {
                         <Level.Item>
                             <Typography as="div" color="interactive">
                                 <Icon>
-                                    <FontAwesomeIcon icon={icon} size="3x" />
+                                    <FontAwesomeIcon icon={icon} size="2x" />
                                 </Icon>
                             </Typography>
                         </Level.Item>
@@ -249,7 +254,7 @@ export const query = graphql`
                 metaDescription
             }
         }
-        newsPosts: allContentfulPost(limit: 3) {
+        newsPosts: allContentfulPost(limit: 4) {
             nodes {
                 slug
                 title
