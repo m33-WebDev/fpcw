@@ -1,7 +1,7 @@
 import React from "react";
-import { Button, Form } from "react-bulma-components";
+import { Form } from "react-bulma-components";
 import styled from "styled-components";
-import { Typography } from "./style";
+import { Button, Typography } from "./style";
 
 const action =
     "https://cuttingedgepsychiatry.us19.list-manage.com/subscribe/post?u=facdc7abe706e043dbfd4ead6&amp;id=2b9b2f9f34";
@@ -25,9 +25,7 @@ export function NewsletterSignup() {
                 <div aria-hidden="true">
                     <Honeypot type="text" name="b_facdc7abe706e043dbfd4ead6_2b9b2f9f34" tabIndex={-1} value="" />
                 </div>
-                <Button type="submit" color="success" outlined={true} fullwidth={true}>
-                    <Typography family="secondary">Subscribe</Typography>
-                </Button>
+                <Button text="Submit" />
             </form>
         </>
     );

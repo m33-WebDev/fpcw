@@ -3,9 +3,9 @@ import { faChevronRight, faHeartbeat, faStar } from "@fortawesome/free-solid-svg
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link, graphql } from "gatsby";
 import React from "react";
-import { Block, Button, Columns, Container, Heading, Hero, Icon, Level, Section, Tile } from "react-bulma-components";
+import { Block, Columns, Container, Heading, Hero, Icon, Level, Section, Tile } from "react-bulma-components";
 import styled from "styled-components";
-import { Layout, NewsTile, Reviews, Seo, SplashTile, Typography } from "../components";
+import { Button, Layout, NewsTile, Reviews, Seo, SplashTile, Typography } from "../components";
 
 const ratings = [
     {
@@ -47,10 +47,7 @@ export default function Index({ data }) {
                                     </Typography>
                                 </Block>
                                 <Link to="/appointments">
-                                    <Button color="light">
-                                        <Typography family="secondary" as="span" color="interactive">
-                                            MAKE AN APPOINTMENT TODAY
-                                        </Typography>
+                                    <Button text="Make an appointment today">
                                         <Icon>
                                             <FontAwesomeIcon icon={faChevronRight} />
                                         </Icon>

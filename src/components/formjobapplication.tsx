@@ -1,8 +1,8 @@
 import { faEnvelope, faPhone, faStethoscope, faUpload } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState } from "react";
-import { Block, Button, Columns, Form, Icon } from "react-bulma-components";
-import { Typography } from "./style";
+import { Block, Columns, Form, Icon } from "react-bulma-components";
+import { Button, Typography } from "./style";
 
 const positions = [
     "Psychiatrist",
@@ -108,9 +108,7 @@ export function FormJobApplication() {
                 </Form.Control>
             </Form.Field>
             <Form.Field>
-                <Button color="success" outlined={true} fullwidth={true} type="submit">
-                    <Typography family="secondary">Submit</Typography>
-                </Button>
+                <Button text="Submit" />
             </Form.Field>
         </form>
     );

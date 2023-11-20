@@ -1,8 +1,8 @@
 import { faEnvelope, faPhone } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
-import { Button, Columns, Form, Icon } from "react-bulma-components";
-import { Typography } from "./style";
+import { Columns, Form, Icon } from "react-bulma-components";
+import { Button, Typography } from "./style";
 
 export function FormBrainTesting() {
     return (
@@ -67,9 +67,7 @@ export function FormBrainTesting() {
                 </Form.Control>
             </Form.Field>
             <Form.Field>
-                <Button color="success" outlined={true} fullwidth={true} type="submit">
-                    <Typography family="secondary">Submit</Typography>
-                </Button>
+                <Button text="Submit" />
             </Form.Field>
         </form>
     );

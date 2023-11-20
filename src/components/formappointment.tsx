@@ -1,8 +1,8 @@
 import { faCalendar, faEnvelope, faPhone, faUser, faUserFriends } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState } from "react";
-import { Button, Columns, Form, Icon } from "react-bulma-components";
-import { Typography } from "./style";
+import { Columns, Form, Icon } from "react-bulma-components";
+import { Button, Typography } from "./style";
 
 const referralSources = [
     "Search Engine (Google, Yahoo, etc.)",
@@ -99,8 +99,6 @@ export function FormAppointment(props: FormAppointmentProps) {
                             </Icon>
                         </Form.Control>
                     </Form.Field>
-                </Columns.Column>
-                <Columns.Column size={6}>
                     <Form.Field>
                         <Form.Label>
                             <Typography family="secondary">How Did You Hear About Us?</Typography>
@@ -176,9 +174,7 @@ export function FormAppointment(props: FormAppointmentProps) {
                 </Columns.Column>
             </Columns>
             <Form.Field>
-                <Button color="success" outlined={true} fullwidth={true} type="submit">
-                    <Typography family="secondary">Submit</Typography>
-                </Button>
+                <Button text="Submit" />
             </Form.Field>
         </form>
     );
