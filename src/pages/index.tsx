@@ -122,7 +122,7 @@ export default function Index({ data }) {
                     </Container>
                 </Hero.Body>
             </Hero>
-            <Section backgroundColor="grey-lighter">
+            <Section>
                 <Container>
                     <Columns vCentered={true} centered={true}>
                         <Columns.Column size={6}>
@@ -170,7 +170,7 @@ export default function Index({ data }) {
                     </Columns>
                 </Container>
             </Section>
-            <Section backgroundColor="grey-lighter">
+            <Section>
                 <Container py={6}>
                     <Block>
                         <Typography as="h2" size="xl">

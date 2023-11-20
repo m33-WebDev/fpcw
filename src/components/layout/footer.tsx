@@ -23,7 +23,7 @@ const contactDetails: [IconDefinition, string][] = [
 
 export function Footer() {
     return (
-        <BulmaFooter backgroundColor="success">
+        <BulmaFooter backgroundColor="white">
             <Container>
                 <Columns.Column offset={3} size={6}>
                     <Container px={4}>

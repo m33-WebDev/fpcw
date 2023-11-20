@@ -28,7 +28,7 @@ export function Header() {
     const [active, setActive] = useState(false);
 
     return (
-        <FancyNavbar fixed="top" color="success" active={active}>
+        <FancyNavbar fixed="top" active={active}>
             <Container>
                 <Navbar.Brand>
                     <Navbar.Item href="/">

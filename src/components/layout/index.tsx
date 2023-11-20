@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import { Header } from "./header";
 import { Footer } from "./footer";
+import { Header } from "./header";
 
 import favicon16 from "../../images/favicon16.png";
 import favicon32 from "../../images/favicon32.png";
@@ -36,5 +36,4 @@ function getFavicon(size, icon) {
 
 const Site = styled.div`
     min-height: calc(100vh - 3.25rem);
-    background-color: hsl(0, 0%, 96%);
 `;
