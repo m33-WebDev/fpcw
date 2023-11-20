@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Block, Button, Columns, Container, Content, Form, Level, Section } from "react-bulma-components";
 import styled from "styled-components";
-import { FormAppointment, Layout, Seo, Typography } from "../components";
+import { AppointmentForm, Layout, Seo, Typography } from "../components";
 import neurostar from "../images/neurostar-logo.webp";
 import tmsLateralHead from "../images/tms/HP-LateralHead_coil_2021.jpg";
 import tmsSmilingMan from "../images/tms/HatDude-extended-top-background.jpg";
@@ -218,7 +218,7 @@ function Quizlet() {
                 <Content>
                     <strong>Based on your answers, this treatment may be right for you.</strong>
                 </Content>
-                <FormAppointment />
+                <AppointmentForm />
             </div>
         );
     } else {

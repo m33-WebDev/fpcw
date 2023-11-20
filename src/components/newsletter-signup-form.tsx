@@ -6,7 +6,7 @@ import { Button, Typography } from "./style";
 const action =
     "https://cuttingedgepsychiatry.us19.list-manage.com/subscribe/post?u=facdc7abe706e043dbfd4ead6&amp;id=2b9b2f9f34";
 
-export function NewsletterSignup() {
+export function NewsletterSignupForm() {
     return (
         <>
             <Typography family="secondary" as="h5" size="s">

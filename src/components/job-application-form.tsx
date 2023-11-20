@@ -12,7 +12,7 @@ const positions = [
     "Licensed Clinical Social Worker"
 ];
 
-export function FormJobApplication() {
+export function JobApplicationForm() {
     const [resume, setResume] = useState<any>();
 
     function onUpload(event) {

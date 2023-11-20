@@ -4,7 +4,7 @@ import React from "react";
 import { Columns, Form, Icon } from "react-bulma-components";
 import { Button, Typography } from "./style";
 
-export function FormBrainTesting() {
+export function BrainTestingForm() {
     return (
         // @ts-expect-error: 'netlify' attribute does not exist on HTML form tag
         <form name="braintestingappointment" method="POST" netlify="true" action="/formsuccess/">

@@ -1,7 +1,7 @@
 import { graphql } from "gatsby";
 import React from "react";
 import { Block, Columns, Container, Content, Section } from "react-bulma-components";
-import { FormJobApplication, Layout, Seo, Typography } from "../components";
+import { JobApplicationForm, Layout, Seo, Typography } from "../components";
 
 export function Head({ data }) {
     const title = data.contentfulPage.metaTitle;
@@ -44,7 +44,7 @@ export default function Careers() {
                             />
                         </Columns.Column>
                         <Columns.Column size={3}>
-                            <FormJobApplication />
+                            <JobApplicationForm />
                         </Columns.Column>
                     </Columns>
                 </Container>

@@ -16,11 +16,11 @@ const insuranceReferral = referralSources[2];
 const wordOfMouthReferral = referralSources[3];
 const otherReferral = referralSources[4];
 
-export interface FormAppointmentProps {
+export interface AppointmentFormProps {
     name?: string;
 }
 
-export function FormAppointment(props: FormAppointmentProps) {
+export function AppointmentForm(props: AppointmentFormProps) {
     const [referralSource, setReferralSource] = useState("");
 
     const handleChange = event => {

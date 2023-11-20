@@ -3,7 +3,7 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import React from "react";
 import { Block, Columns, Container, Content, Section } from "react-bulma-components";
 import styled from "styled-components";
-import { Layout, NewsletterSignup, RichText, Seo, Typography } from "../../components";
+import { Layout, NewsletterSignupForm, RichText, Seo, Typography } from "../../components";
 
 export function Head({ data }: HeadProps<Queries.PostQuery>) {
     const { title, metaTitle, metaDescription } = data.post!;
@@ -37,7 +37,7 @@ export default function Post({ data }: PageProps<Queries.PostQuery>) {
                                 </Columns.Column>
                                 <Columns.Column size="one-quarter">
                                     <Content>
-                                        <NewsletterSignup />
+                                        <NewsletterSignupForm />
                                     </Content>
                                 </Columns.Column>
                             </Columns>

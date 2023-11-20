@@ -1,6 +1,6 @@
 import React from "react";
 import { Block, Columns, Container, Section } from "react-bulma-components";
-import { FormBrainTesting, Layout, Seo, Typography } from "../components";
+import { BrainTestingForm, Layout, Seo, Typography } from "../components";
 
 export function Head() {
     return (
@@ -23,7 +23,7 @@ export default function BrainTesting() {
                                     Schedule a Brain Testing Appointment Today!
                                 </Typography>
                             </Block>
-                            <FormBrainTesting />
+                            <BrainTestingForm />
                         </Columns.Column>
                     </Columns>
                 </Container>
