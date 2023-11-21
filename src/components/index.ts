@@ -7,5 +7,4 @@ export * from "./newstile";
 export * from "./reviews";
 export * from "./richtext";
 export { default as Seo } from "./seo";
-export * from "./splashtile";
 export * from "./style";
