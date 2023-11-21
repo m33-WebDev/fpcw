@@ -2,7 +2,6 @@ import { BLOCKS, INLINES, MARKS } from "@contentful/rich-text-types";
 import { renderRichText } from "gatsby-source-contentful/rich-text";
 import React from "react";
 import styled from "styled-components";
-import { Typography } from "./style";
 
 const options = {
   renderMark: {
@@ -13,32 +12,32 @@ const options = {
   },
   renderNode: {
     [BLOCKS.PARAGRAPH]: (_, children) => (
-      <Typography family="secondary">{children}</Typography>
+      <p className="tw-font-nunito tw-text-lg">{children}</p>
     ),
     [BLOCKS.HEADING_1]: (_, children) => (
-      <Typography family="secondary" as="h2">
+      <h2 className="tw-font-nunito tw-text-3xl tw-underline tw-underline-offset-8 tw-decoration-2 tw-decoration-[#48C744]">
         {children}
-      </Typography>
+      </h2>
     ),
     [BLOCKS.HEADING_2]: (_, children) => (
-      <Typography family="secondary" as="h3">
+      <h3 className="tw-font-nunito tw-text-2xl tw-underline tw-underline-offset-8 tw-decoration-2 tw-decoration-[#48C744]">
         {children}
-      </Typography>
+      </h3>
     ),
     [BLOCKS.HEADING_3]: (_, children) => (
-      <Typography family="secondary" as="h4">
+      <h4 className="tw-font-nunito tw-text-xl tw-underline tw-underline-offset-8 tw-decoration-2 tw-decoration-[#48C744]">
         {children}
-      </Typography>
+      </h4>
     ),
     [BLOCKS.HEADING_4]: (_, children) => (
-      <Typography family="secondary" as="h5">
+      <h5 className="tw-font-nunito tw-text-lg tw-underline tw-underline-offset-8 tw-decoration-2 tw-decoration-[#48C744]">
         {children}
-      </Typography>
+      </h5>
     ),
     [BLOCKS.HEADING_5]: (_, children) => (
-      <Typography family="secondary" as="h6">
+      <h6 className="tw-font-nunito tw-text-lg tw-underline tw-underline-offset-8 tw-decoration-2 tw-decoration-[#48C744]">
         {children}
-      </Typography>
+      </h6>
     ),
     [INLINES.HYPERLINK]: (node) => {
       if (node.data.uri.includes("player.vimeo.com/video")) {

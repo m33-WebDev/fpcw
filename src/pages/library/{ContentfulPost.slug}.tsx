@@ -33,26 +33,19 @@ export default function Post({ data }: PageProps<Queries.PostQuery>) {
     <Layout>
       <Section>
         <Container>
-          {/* @ts-ignore: @todo: not sure why gap is not found on Columns component */}
           <Columns multiline={true}>
             <Columns.Column size="half">
-              <Typography as="h1" size="xxl">
-                {title}
-              </Typography>
+              <h1 className="tw-font-playfair tw-text-6xl">{title}</h1>
             </Columns.Column>
             <Columns.Column size={12}>
-              {/* @ts-ignore: @todo: not sure why gap is not found on Columns component */}
               <Columns>
-                <Columns.Column size="half">
-                  <Block>
-                    <GatsbyImage
-                      image={getImage(feature!)!}
-                      alt="Post feature"
-                    />
-                  </Block>
-                  <Content size="medium">
-                    <RichText src={body} />
-                  </Content>
+                <Columns.Column size="half" className="tw-space-y-6">
+                  <GatsbyImage
+                    image={getImage(feature!)!}
+                    alt="Post feature"
+                    className="tw-rounded-lg"
+                  />
+                  <RichText src={body} />
                 </Columns.Column>
                 <Columns.Column size="one-quarter">
                   <NewsletterSignupForm />
