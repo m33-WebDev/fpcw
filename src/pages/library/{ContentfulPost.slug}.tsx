@@ -8,7 +8,6 @@ import {
   Content,
   Section,
 } from "react-bulma-components";
-import styled from "styled-components";
 import {
   Layout,
   NewsletterSignupForm,
@@ -41,10 +40,10 @@ export default function Post({ data }: PageProps<Queries.PostQuery>) {
                 {title}
               </Typography>
             </Columns.Column>
-            <Columns.Column size="two-thirds">
+            <Columns.Column size={12}>
               {/* @ts-ignore: @todo: not sure why gap is not found on Columns component */}
-              <Columns gap={4}>
-                <Columns.Column size="three-quarters">
+              <Columns>
+                <Columns.Column size="half">
                   <Block>
                     <GatsbyImage
                       image={getImage(feature!)!}
@@ -56,9 +55,7 @@ export default function Post({ data }: PageProps<Queries.PostQuery>) {
                   </Content>
                 </Columns.Column>
                 <Columns.Column size="one-quarter">
-                  <Content>
-                    <NewsletterSignupForm />
-                  </Content>
+                  <NewsletterSignupForm />
                 </Columns.Column>
               </Columns>
             </Columns.Column>
@@ -68,17 +65,6 @@ export default function Post({ data }: PageProps<Queries.PostQuery>) {
     </Layout>
   );
 }
-
-const FancyDivider = styled.hr`
-  border: 0;
-  height: 1px;
-  background-image: linear-gradient(
-    to right,
-    rgba(0, 0, 0, 0),
-    rgba(0, 0, 0, 0.75),
-    rgba(0, 0, 0, 0)
-  );
-`;
 
 export const query = graphql`
   query Post($id: String) {
