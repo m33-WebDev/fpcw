@@ -57,6 +57,7 @@ module.exports = {
         },
       },
     },
+    "gatsby-plugin-postcss",
     "gatsby-plugin-sass",
     "gatsby-plugin-catch-links",
     {

@@ -1,220 +1,151 @@
-import {
-  faCalendar,
-  faEnvelope,
-  faPhone,
-  faUser,
-  faUserFriends,
-} from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState } from "react";
-import { Columns, Form, Icon } from "react-bulma-components";
-import { Button, Typography } from "./style";
 
-const referralSources = [
-  "Search Engine (Google, Yahoo, etc.)",
-  "Social Media (Facebook, Instagram, etc.)",
-  "Insurance Referral",
-  "Word of Mouth",
-  "Other",
-];
-
-const insuranceReferral = referralSources[2];
-const wordOfMouthReferral = referralSources[3];
-const otherReferral = referralSources[4];
-
-export interface AppointmentFormProps {
-  name?: string;
+enum ReferralSource {
+  SearchEngine = "Search engine",
+  SocialMedia = "Social media",
+  InsuranceReferral = "Insurance referral",
+  WordOfMouth = "Word of mouth",
+  Other = "Other",
 }
 
-export function AppointmentForm(props: AppointmentFormProps) {
-  const [referralSource, setReferralSource] = useState("");
-
-  const handleChange = (event) => {
-    setReferralSource(event.target.value);
-  };
+export function AppointmentForm() {
+  const [referralSource, setReferralSource] = useState(
+    ReferralSource.SearchEngine
+  );
 
   return (
-    // @ts-expect-error: 'netlify' attribute does not exist on HTML form tag
     <form
-      name={props.name ?? "appointmentrequest"}
+      name="appointmentrequest"
       method="POST"
-      netlify="true"
+      data-netlify="true"
       action="/formsuccess/"
+      className="lg:tw-bg-white tw-p-6 tw-rounded-lg tw-space-y-6 tw-shadow-2xl tw-max-w-md"
     >
-      <input
-        type="hidden"
-        name="form-name"
-        value={props.name ?? "appointmentrequest"}
+      <h1 className="tw-font-playfair tw-text-3xl lg:tw-text-6xl tw-text-slate-600">
+        Request an appointment
+      </h1>
+
+      <TextInput label="First name" name="first-name" />
+
+      <TextInput label="Last name" name="last-name" />
+
+      <TextInput
+        label="Email address"
+        name="email"
+        placeholder="janesmith@example.com"
       />
+
+      <TextInput
+        label="Phone number"
+        name="phone"
+        placeholder="(123) 456-7890"
+      />
+
+      <DateInput label="Desired appointment date" name="appt-requested-date" />
+
+      <SelectInput
+        label="How did you hear about us?"
+        name="referral-source"
+        options={Object.values(ReferralSource)}
+        value={referralSource}
+        onChange={(value) => setReferralSource(value as ReferralSource)}
+      />
+
+      {referralSource === ReferralSource.InsuranceReferral && (
+        <TextInput label="Referring insurer" name="referral-insurer" />
+      )}
+
+      {referralSource === ReferralSource.WordOfMouth && (
+        <TextInput label="Referrer name" name="referral-wordofmouth-name" />
+      )}
+
+      {referralSource === ReferralSource.WordOfMouth && (
+        <TextInput
+          label="Referrer phone number"
+          name="referral-wordofmouth-phone"
+        />
+      )}
+
+      {referralSource === ReferralSource.Other && (
+        <TextInput label="Referral details" name="referral-other-details" />
+      )}
+
+      <SubmitButton label="Submit" />
+
+      {/**
+       * These placeholders inform Netlify about fields that are not rendered at build time.
+       * This ensures that the fields are recognized and uploaded with the the form submission.
+       */}
       <input type="hidden" name="referral-insurer" />
       <input type="hidden" name="referral-wordofmouth-name" />
       <input type="hidden" name="referral-wordofmouth-phone" />
       <input type="hidden" name="referral-other-details" />
-
-      <Columns>
-        <Columns.Column size={6}>
-          <Columns>
-            <Columns.Column>
-              <Form.Field>
-                <Form.Label>
-                  <Typography family="secondary">First Name</Typography>
-                </Form.Label>
-                <Form.Control>
-                  <Form.Input
-                    placeholder="John"
-                    name="first-name"
-                    required
-                  ></Form.Input>
-                </Form.Control>
-              </Form.Field>
-            </Columns.Column>
-            <Columns.Column>
-              <Form.Field>
-                <Form.Label>
-                  <Typography family="secondary">Last Name</Typography>
-                </Form.Label>
-                <Form.Control>
-                  <Form.Input
-                    placeholder="Smith"
-                    name="last-name"
-                    required
-                  ></Form.Input>
-                </Form.Control>
-              </Form.Field>
-            </Columns.Column>
-          </Columns>
-          <Form.Field>
-            <Form.Label>
-              <Typography family="secondary">Email</Typography>
-            </Form.Label>
-            <Form.Control>
-              <Form.Input
-                placeholder="johnsmith@gmail.com"
-                name="email"
-                required
-              />
-              <Icon align="left">
-                <FontAwesomeIcon icon={faEnvelope} />
-              </Icon>
-            </Form.Control>
-          </Form.Field>
-          <Form.Field>
-            <Form.Label>
-              <Typography family="secondary">Phone</Typography>
-            </Form.Label>
-            <Form.Control>
-              <Form.Input placeholder="(123) 456-7890" name="phone" required />
-              <Icon align="left">
-                <FontAwesomeIcon icon={faPhone} />
-              </Icon>
-            </Form.Control>
-          </Form.Field>
-          <Form.Field>
-            <Form.Label>
-              <Typography family="secondary">
-                Desired Appointment Date
-              </Typography>
-            </Form.Label>
-            <Form.Control>
-              <input
-                className="input"
-                type="date"
-                placeholder="12/05/1993"
-                name="appt-requested-date"
-                required
-              />
-              <Icon align="left">
-                <FontAwesomeIcon icon={faCalendar} />
-              </Icon>
-            </Form.Control>
-          </Form.Field>
-          <Form.Field>
-            <Form.Label>
-              <Typography family="secondary">
-                How Did You Hear About Us?
-              </Typography>
-            </Form.Label>
-            <Form.Control>
-              <Form.Select
-                color="success"
-                fullwidth={true}
-                name="referral-source"
-                value={referralSource}
-                onChange={handleChange}
-                onBlur={handleChange}
-                required
-              >
-                {referralSources.map((source) => {
-                  return <option key={source}>{source}</option>;
-                })}
-              </Form.Select>
-              <Icon align="left">
-                <FontAwesomeIcon icon={faUserFriends} />
-              </Icon>
-            </Form.Control>
-          </Form.Field>
-          {referralSource === insuranceReferral && (
-            <Form.Field>
-              <Form.Label>
-                <Typography family="secondary">Referring Insurer</Typography>
-              </Form.Label>
-              <Form.Control>
-                <Form.Input placeholder="Insurer" name="referral-insurer" />
-                <Icon align="left">
-                  <FontAwesomeIcon icon={faUser} />
-                </Icon>
-              </Form.Control>
-            </Form.Field>
-          )}
-          {referralSource === wordOfMouthReferral && (
-            <>
-              <Form.Field>
-                <Form.Label>
-                  <Typography family="secondary">
-                    Word of Mouth Referrer
-                  </Typography>
-                </Form.Label>
-                <Form.Control>
-                  <Form.Input
-                    placeholder="Name"
-                    name="referral-wordofmouth-name"
-                  />
-                  <Icon align="left">
-                    <FontAwesomeIcon icon={faUser} />
-                  </Icon>
-                </Form.Control>
-              </Form.Field>
-              <Form.Field>
-                <Form.Control>
-                  <Form.Input
-                    placeholder="(123) 456-7890"
-                    name="referral-wordofmouth-phone"
-                  />
-                  <Icon align="left">
-                    <FontAwesomeIcon icon={faPhone} />
-                  </Icon>
-                </Form.Control>
-              </Form.Field>
-            </>
-          )}
-          {referralSource === otherReferral && (
-            <Form.Field>
-              <Form.Label>
-                <Typography family="secondary">Please Specify</Typography>
-              </Form.Label>
-              <Form.Control>
-                <Form.Input placeholder="..." name="referral-other-details" />
-                <Icon align="left">
-                  <FontAwesomeIcon icon={faUser} />
-                </Icon>
-              </Form.Control>
-            </Form.Field>
-          )}
-        </Columns.Column>
-      </Columns>
-      <Form.Field>
-        <Button text="Submit" />
-      </Form.Field>
     </form>
+  );
+}
+
+function TextInput(props: {
+  label: string;
+  name: string;
+  placeholder?: string;
+}) {
+  return (
+    <div className="tw-space-y-2">
+      <label className="tw-font-nunito tw-block">{props.label}</label>
+      <input
+        type="text"
+        name={props.name}
+        placeholder={props.placeholder}
+        className="tw-rounded-xl tw-border-2 tw-p-2 tw-bg-white tw-w-full tw-placeholder:text-slate-300 tw-font-nunito tw-text-sm"
+      />
+    </div>
+  );
+}
+
+function DateInput(props: { label: string; name: string }) {
+  return (
+    <div className="tw-space-y-2">
+      <label className="tw-font-nunito tw-block">{props.label}</label>
+      <input
+        type="date"
+        name={props.name}
+        className="tw-rounded-xl tw-border-2 tw-p-2 tw-bg-white tw-w-full tw-placeholder:text-slate-300 tw-font-nunito tw-text-sm"
+      />
+    </div>
+  );
+}
+
+function SelectInput(props: {
+  label: string;
+  name: string;
+  options: string[];
+  value: string;
+  onChange?: (value: string) => void;
+}) {
+  return (
+    <div className="tw-space-y-2">
+      <label className="tw-font-nunito tw-block">{props.label}</label>
+      <select
+        name={props.name}
+        value={props.value}
+        onChange={(e) => props?.onChange?.(e.target.value)}
+        className="tw-rounded-xl tw-w-full tw-bg-white tw-border-2 tw-p-2 tw-font-nunito tw-text-sm"
+      >
+        {props.options.map((option) => (
+          <option key={option}>{option}</option>
+        ))}
+      </select>
+    </div>
+  );
+}
+
+function SubmitButton(props: { label: string }) {
+  return (
+    <button
+      type="submit"
+      className="tw-rounded-lg tw-px-4 tw-py-2 tw-text-sm tw-w-full tw-font-nunito tw-font-semibold tw-bg-[#48C744] tw-text-white"
+    >
+      {props.label}
+    </button>
   );
 }

@@ -6,11 +6,10 @@ import { Button, Typography } from "./style";
 
 export function BrainTestingForm() {
   return (
-    // @ts-expect-error: 'netlify' attribute does not exist on HTML form tag
     <form
       name="braintestingappointment"
       method="POST"
-      netlify="true"
+      data-netlify="true"
       action="/formsuccess/"
     >
       <input type="hidden" name="form-name" value="braintestingappointment" />
