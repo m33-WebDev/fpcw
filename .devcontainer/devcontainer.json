@@ -1,6 +1,6 @@
 {
-    "name": "Development",
-    "image": "mcr.microsoft.com/devcontainers/typescript-node:18",
-    "extensions": ["esbenp.prettier-vscode"],
-    "forwardPorts": [8000]
+  "name": "Development",
+  "image": "mcr.microsoft.com/devcontainers/typescript-node:18",
+  "extensions": ["esbenp.prettier-vscode"],
+  "forwardPorts": [8000]
 }

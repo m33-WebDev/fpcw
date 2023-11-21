@@ -1,3 +1,3 @@
 export interface ContentfulRichText {
-    raw: string;
+  raw: string;
 }

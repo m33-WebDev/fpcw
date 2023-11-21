@@ -5,10 +5,10 @@ import { RichText } from "../richtext";
 import { Typography } from "../style";
 
 export interface BodyProps {
-    /**
-     * The biographical description for the provider.
-     */
-    bio: Nullable<ContentfulRichText>;
+  /**
+   * The biographical description for the provider.
+   */
+  bio: Nullable<ContentfulRichText>;
 }
 
 /**
@@ -16,15 +16,15 @@ export interface BodyProps {
  * provider's education and professional background.
  */
 export function Body(props: BodyProps) {
-    return (
-        <Content size="medium">
-            {props.bio ? (
-                <RichText src={props.bio} />
-            ) : (
-                <Typography family="secondary">
-                    No information available at this time. Please check back again later.
-                </Typography>
-            )}
-        </Content>
-    );
+  return (
+    <Content size="medium">
+      {props.bio ? (
+        <RichText src={props.bio} />
+      ) : (
+        <Typography family="secondary">
+          No information available at this time. Please check back again later.
+        </Typography>
+      )}
+    </Content>
+  );
 }
