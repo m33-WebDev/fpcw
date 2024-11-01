@@ -24,16 +24,6 @@ async function main() {
             continue;
         }
 
-        // skip anything does that is not typescript
-        if (!entry.name.endsWith(".tsx")) {
-            continue;
-        }
-
-        // todo: find a better way to exclude files
-        if (entry.name.startsWith("main")) {
-            continue;
-        }
-
         const componentPath = `${entry.parentPath}/${entry.name}`;
         const componentAbsPath = resolve(componentPath);
         const mainPath = componentPath.replace(".tsx", ".main.tsx");
@@ -45,7 +35,7 @@ async function main() {
         // render page from react to html
         const node = React.createElement(component.default);
         const body = renderToString(node);
-        const template = await fs.readFile("src/index.html", {
+        const template = await fs.readFile("engine/base.html", {
             encoding: "utf-8",
         });
         const html = template
@@ -66,7 +56,7 @@ async function main() {
         fs.copyFile(componentPath, componentOutPath);
 
         // copy main script
-        const mainContent = await fs.readFile("src/main.tsx", {
+        const mainContent = await fs.readFile("engine/client_main.tsx", {
             encoding: "utf-8",
         });
         const mainCompleteContent = mainContent.replace(
