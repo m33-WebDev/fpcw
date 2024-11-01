@@ -1,0 +1,25 @@
+{
+    "name": "vite-engine",
+    "version": "1.0.0",
+    "type": "module",
+    "license": "ISC",
+    "scripts": {
+        "vite:dev": "vite target\\intermediate",
+        "dev": "tsx --watch-path=src engine\\main.ts",
+        "build": "tsx engine\\main.ts"
+    },
+    "devDependencies": {
+        "@types/node": "^22.8.5",
+        "@types/react": "^18.3.12",
+        "@types/react-dom": "^18.3.1",
+        "@vitejs/plugin-react": "^4.3.3",
+        "prettier": "^3.3.3",
+        "rollup": "^4.24.3",
+        "tsx": "^4.19.2",
+        "vite": "^5.4.10"
+    },
+    "dependencies": {
+        "react": "^18.3.1",
+        "react-dom": "^18.3.1"
+    }
+}
