@@ -2,6 +2,7 @@ import * as fs from "fs/promises";
 import React from "react";
 import { renderToString } from "react-dom/server";
 import { resolve } from "path";
+import { Helmet } from "react-helmet";
 
 async function main() {
     const sourceDir = "src";
@@ -35,10 +36,14 @@ async function main() {
         // render page from react to html
         const node = React.createElement(component.default);
         const body = renderToString(node);
+        const head = Object.values(Helmet.renderStatic())
+            .map((e) => e.toString())
+            .join("\n");
         const template = await fs.readFile("engine/base.html", {
             encoding: "utf-8",
         });
         const html = template
+            .replace("<!--head-->", head)
             .replace("<!--body-->", body)
             .replace("<!--main-->", mainName);
 
