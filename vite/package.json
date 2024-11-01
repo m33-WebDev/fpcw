@@ -2,17 +2,17 @@
     "name": "vite-engine",
     "version": "1.0.0",
     "type": "module",
-    "license": "ISC",
     "scripts": {
         "vite:dev": "vite target\\intermediate",
         "dev": "tsx --watch-path=src engine\\main.ts",
         "build": "tsx engine\\main.ts"
     },
     "devDependencies": {
-        "@types/node": "^22.8.5",
+        "@types/node": "^18.19.63",
         "@types/react": "^18.3.12",
         "@types/react-dom": "^18.3.1",
         "@types/react-helmet": "^6.1.11",
+        "@types/styled-components": "^5.1.34",
         "@vitejs/plugin-react": "^4.3.3",
         "prettier": "^3.3.3",
         "rollup": "^4.24.3",
@@ -21,8 +21,15 @@
         "vite": "^5.4.10"
     },
     "dependencies": {
+        "@fontsource/nunito": "^5.1.0",
+        "@fontsource/playfair-display": "^5.1.0",
+        "@fortawesome/free-solid-svg-icons": "^6.6.0",
+        "@fortawesome/react-fontawesome": "^0.2.2",
+        "bulma": "^1.0.2",
         "react": "^18.3.1",
+        "react-bulma-components": "^4.1.0",
         "react-dom": "^18.3.1",
-        "react-helmet": "^6.1.0"
+        "react-helmet": "^6.1.0",
+        "styled-components": "^6.1.13"
     }
 }

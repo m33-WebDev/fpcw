@@ -18,6 +18,8 @@ async function main() {
         recursive: true,
     });
 
+    const pages = ["src/index.tsx", "src/404.tsx"];
+
     // render all pages to intermediate format
     for (const entry of entries) {
         // skip directories
@@ -29,11 +31,29 @@ async function main() {
         if (!entry.name.endsWith(".tsx")) {
             const inPath = `${entry.parentPath}/${entry.name}`;
             const outPath = inPath.replace(sourceDir, intermediateDir);
-            fs.copyFile(inPath, outPath);
+            const outParent = entry.parentPath.replace(
+                sourceDir,
+                intermediateDir,
+            );
+            await fs.mkdir(outParent, { recursive: true });
+            await fs.copyFile(inPath, outPath);
             continue;
         }
 
+        // blindly copy typescript files that are not marked as pages
         const componentPath = `${entry.parentPath}/${entry.name}`;
+        if (!pages.includes(componentPath)) {
+            const inPath = `${entry.parentPath}/${entry.name}`;
+            const outPath = inPath.replace(sourceDir, intermediateDir);
+            const outParent = entry.parentPath.replace(
+                sourceDir,
+                intermediateDir,
+            );
+            await fs.mkdir(outParent, { recursive: true });
+            await fs.copyFile(inPath, outPath);
+            continue;
+        }
+
         const componentAbsPath = resolve(componentPath);
         const mainPath = componentPath.replace(".tsx", ".main.tsx");
         const mainName = entry.name.replace(".tsx", ".main.tsx");

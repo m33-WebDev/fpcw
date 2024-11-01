@@ -1,3 +1,10 @@
+import "@fontsource/nunito/300.css";
+import "@fontsource/nunito/400.css";
+import "@fontsource/nunito/500.css";
+import "@fontsource/playfair-display/400.css";
+import "@fontsource/playfair-display/500.css";
+import "bulma/css/bulma.css";
+
 import { hydrateRoot } from "react-dom/client";
 
 // @ts-ignore: import will be replaced with actual path during build
