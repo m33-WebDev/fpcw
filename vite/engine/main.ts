@@ -25,6 +25,14 @@ async function main() {
             continue;
         }
 
+        // blindly copy anything that is not typescript
+        if (!entry.name.endsWith(".tsx")) {
+            const inPath = `${entry.parentPath}/${entry.name}`;
+            const outPath = inPath.replace(sourceDir, intermediateDir);
+            fs.copyFile(inPath, outPath);
+            continue;
+        }
+
         const componentPath = `${entry.parentPath}/${entry.name}`;
         const componentAbsPath = resolve(componentPath);
         const mainPath = componentPath.replace(".tsx", ".main.tsx");
