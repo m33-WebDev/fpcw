@@ -18,7 +18,13 @@ async function main() {
         recursive: true,
     });
 
-    const pages = ["src/index.tsx", "src/404.tsx"];
+    const pages = [
+        "src/index.tsx",
+        "src/404.tsx",
+        "src/brain-testing.tsx",
+        "src/formsuccess.tsx",
+        "src/tms.tsx",
+    ];
 
     // render all pages to intermediate format
     for (const entry of entries) {
