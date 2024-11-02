@@ -44,7 +44,7 @@ async function main() {
         }
 
         // blindly copy typescript files that are not marked as pages
-        const componentPath = `${entry.parentPath}/${entry.name}`;
+        const componentPath = `${entry.parentPath}/${entry.name}`.replace(/\\/g, "/");
         if (!pages.includes(componentPath)) {
             const inPath = `${entry.parentPath}/${entry.name}`;
             const outPath = inPath.replace(sourceDir, intermediateDir);

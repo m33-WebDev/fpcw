@@ -1,0 +1,129 @@
+{
+    "conditions": [
+        {
+            "name": "ADD, ADHD, ODD",
+            "article": "adhd-in-adults"
+        },
+        {
+            "name": "Anxiety, Panic Attacks, PTSD",
+            "article": "anxiety-and-related-conditions"
+        },
+        {
+            "name": "Depression",
+            "article": "depression-and-related-mood-disorders"
+        },
+        {
+            "name": "Bipolar Disorder",
+            "article": ""
+        },
+        {
+            "name": "Substance Abuse, Addiction",
+            "article": "addiction-recovery-and-dual-diagnosis"
+        },
+        {
+            "name": "Dual Diagnosis",
+            "article": "addiction-recovery-and-dual-diagnosis"
+        },
+        {
+            "name": "Psychotic Disorders",
+            "article": ""
+        },
+        {
+            "name": "Developmental Delays",
+            "article": ""
+        },
+        {
+            "name": "and much more...",
+            "article": ""
+        }
+    ],
+    "psychTreatments": [
+        {
+            "name": "Psychiatric Evaluation",
+            "article": "psychotherapy-and-counseling-services"
+        },
+        {
+            "name": "Medication Management",
+            "article": "psychiatric-medication-management"
+        },
+        {
+            "name": "Transcranial Magnetic Stimulation (TMS )  Therapy",
+            "article": "transcranial-magnetic-stimulation-tms"
+        },
+        {
+            "name": "Ketamine Therapy ",
+            "article": "ketamine-therapy"
+        },
+        {
+            "name": "Psychotherapy",
+            "article": "psychotherapy-and-counseling-services"
+        },
+        {
+            "name": "Family Therapy",
+            "article": "psychotherapy-and-counseling-services"
+        },
+        {
+            "name": "Couples Counseling",
+            "article": "psychotherapy-and-counseling-services"
+        },
+        {
+            "name": "Cognitive Behavior Therapy",
+            "article": "psychotherapy-and-counseling-services"
+        },
+
+        {
+            "name": "Anger Management",
+            "article": "psychotherapy-and-counseling-services"
+        },
+        {
+            "name": "Health, Wellness, Prevention",
+            "article": "feeling-happy-is-essential-for-survival-during-quarantine"
+        }
+    ],
+    "altTreatments": [
+        {
+            "name": "Nutrition and Weight Management",
+            "article": "alternative-treatments"
+        },
+        {
+            "name": "Metabolic Testing and Prevention",
+            "article": "alternative-treatments"
+        },
+        {
+            "name": "Hormone Testing and Balancing",
+            "article": "alternative-treatments"
+        },
+        {
+            "name": "Neurohormonal Testing",
+            "article": "brain-chemistry-testing-and-analysis"
+        },
+        {
+            "name": "Adrenal Fatigue Treatment",
+            "article": "brain-chemistry-testing-and-analysis"
+        },
+        {
+            "name": "Thyroid Balancing",
+            "article": "brain-chemistry-testing-and-analysis"
+        },
+        {
+            "name": "Detoxification and Chelation",
+            "article": ""
+        },
+        {
+            "name": "Life Coaching",
+            "article": ""
+        },
+        {
+            "name": "Mindfulness",
+            "article": ""
+        },
+        {
+            "name": "Relaxation Techniques ",
+            "article": ""
+        },
+        {
+            "name": "Problem Solving Skills ",
+            "article": ""
+        }
+    ]
+}
