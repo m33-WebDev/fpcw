@@ -9,6 +9,10 @@ import { hydrateRoot } from "react-dom/client";
 
 // @ts-ignore: import will be replaced with actual path during build
 import Component from "./<!--path-->";
+
+// @ts-ignore: import will be replaced with actual path during build
+import props from "./<!--props-->";
+
 import React from "react";
 
 /**
@@ -16,7 +20,7 @@ import React from "react";
  */
 function main() {
     const root = document.getElementById("root") as HTMLElement;
-    const node = React.createElement(Component, JSON.parse(`<!--props-->`));
+    const node = React.createElement(Component, props);
     hydrateRoot(root, node);
 }
 

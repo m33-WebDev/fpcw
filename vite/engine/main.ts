@@ -98,8 +98,15 @@ async function main() {
         });
         const mainCompleteContent = mainContent
             .replace("<!--path-->", entry.name)
-            .replace("<!--props-->", JSON.stringify(data));
+            .replace("<!--props-->", entry.name.replace(".tsx", ".props.json"));
         await fs.writeFile(mainPath.replace(sourceDir, intermediateDir), mainCompleteContent);
+
+        // save props
+        const propsPath = componentPath
+            .replace(".tsx", ".props.json")
+            .replace(sourceDir, intermediateDir);
+        const props = JSON.stringify(data);
+        fs.writeFile(propsPath, props);
     }
 }
 
