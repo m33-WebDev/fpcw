@@ -5,17 +5,13 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faExclamationCircle } from "@fortawesome/free-solid-svg-icons";
 import { Typography } from "../style";
 
-const telehealthCallout =
-    "Now Offering Telehealth Services all across California.";
+const telehealthCallout = "Now Offering Telehealth Services all across California.";
 
 const primaryLinks = [
     ["Home", "/"],
     ["Appointments", "/appointments"],
     ["Contact", "/contact"],
-    [
-        "Patient Portal",
-        "https://www.valant.io/portal/FamilyPsychiatryCounseling",
-    ],
+    ["Patient Portal", "https://www.valant.io/portal/FamilyPsychiatryCounseling"],
 ];
 
 const secondaryLinks = [
@@ -34,36 +30,23 @@ export function Header() {
             <Container>
                 <Navbar.Brand>
                     <Navbar.Item href="/">
-                        <img
-                            width={80}
-                            src="../../images/logo-fitted.png"
-                            alt="Logo"
-                        />
+                        <img width={80} src="../../images/logo-fitted.png" alt="Logo" />
                     </Navbar.Item>
                     <Navbar.Burger onClick={() => setActive((prev) => !prev)} />
                 </Navbar.Brand>
                 <Navbar.Menu>
-                    <Navbar.Container
-                        align="left"
-                        mobile={{ display: "hidden" }}
-                    >
+                    <Navbar.Container align="left" mobile={{ display: "hidden" }}>
                         <Navbar.Item>
                             <a href="/appointments">
                                 <Level>
                                     <Level.Item textColor="warning">
-                                        <FontAwesomeIcon
-                                            icon={faExclamationCircle}
-                                        />
+                                        <FontAwesomeIcon icon={faExclamationCircle} />
                                     </Level.Item>
                                     <Level.Item mx={3}>
-                                        <Typography as="span">
-                                            {telehealthCallout}
-                                        </Typography>
+                                        <Typography as="span">{telehealthCallout}</Typography>
                                     </Level.Item>
                                     <Level.Item textColor="warning">
-                                        <FontAwesomeIcon
-                                            icon={faExclamationCircle}
-                                        />
+                                        <FontAwesomeIcon icon={faExclamationCircle} />
                                     </Level.Item>
                                 </Level>
                             </a>
@@ -89,18 +72,11 @@ export function Header() {
                                 {secondaryLinks.map(([name, value]) =>
                                     value.startsWith("/") ? (
                                         <Navbar.Item href={value}>
-                                            <Typography as="span">
-                                                {name}
-                                            </Typography>
+                                            <Typography as="span">{name}</Typography>
                                         </Navbar.Item>
                                     ) : (
-                                        <Navbar.Item
-                                            href={value}
-                                            textColor="dark"
-                                        >
-                                            <Typography as="span">
-                                                {name}
-                                            </Typography>
+                                        <Navbar.Item href={value} textColor="dark">
+                                            <Typography as="span">{name}</Typography>
                                         </Navbar.Item>
                                     ),
                                 )}

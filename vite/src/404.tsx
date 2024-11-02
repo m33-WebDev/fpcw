@@ -1,7 +1,22 @@
-export default function NotFound() {
+import { Content, Section } from "react-bulma-components";
+import { Layout, Seo, Typography } from "./components";
+import { Helmet } from "react-helmet";
+
+export default function Page404() {
     return (
-        <>
-            <h1>Not found</h1>
-        </>
+        <Layout>
+            <Helmet>
+                <Seo title="Page Not Found" description="This resource was not found." noIndex />
+            </Helmet>
+            <Section>
+                <Content textAlign="center">
+                    <Typography>
+                        It looks like this page no longer exists.
+                        <br />
+                        Return to <a href="/">Home</a>.
+                    </Typography>
+                </Content>
+            </Section>
+        </Layout>
     );
 }

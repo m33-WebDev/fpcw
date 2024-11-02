@@ -21,6 +21,8 @@
         "vite": "^5.4.10"
     },
     "dependencies": {
+        "@contentful/rich-text-react-renderer": "^16.0.0",
+        "@contentful/rich-text-types": "^17.0.0",
         "@fontsource/nunito": "^5.1.0",
         "@fontsource/playfair-display": "^5.1.0",
         "@fortawesome/free-solid-svg-icons": "^6.6.0",

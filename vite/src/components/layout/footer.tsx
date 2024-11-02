@@ -8,27 +8,18 @@ import {
     Icon,
 } from "react-bulma-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-    faEnvelope,
-    faPhone,
-    faCalendar,
-    IconDefinition,
-} from "@fortawesome/free-solid-svg-icons";
+import { faEnvelope, faPhone, faCalendar, IconDefinition } from "@fortawesome/free-solid-svg-icons";
 import { Typography } from "../style";
 import { faExclamationCircle } from "@fortawesome/free-solid-svg-icons";
 
-const telehealthCallout =
-    "Now Offering Telehealth Services all across California.";
+const telehealthCallout = "Now Offering Telehealth Services all across California.";
 
 const contactDetails: [IconDefinition | null, string][] = [
     [faPhone, "(805) 341-3416"],
     [faEnvelope, "fpcw@familypsychiatry101.com"],
     [faCalendar, "Monday - Thursday - 9:00am - 5:00pm"],
     [faCalendar, "Friday - 8:00am - 3:00pm"],
-    [
-        null,
-        "Same day appointments available . We are closed on Weekends and Holidays. ",
-    ],
+    [null, "Same day appointments available . We are closed on Weekends and Holidays. "],
 ];
 
 export function Footer() {
@@ -37,17 +28,11 @@ export function Footer() {
             <Container>
                 <Columns.Column offset={3} size={6}>
                     <Container px={4}>
-                        <Block
-                            alignItems="center"
-                            alignContent="center"
-                            textAlign="center"
-                        >
+                        <Block alignItems="center" alignContent="center" textAlign="center">
                             <a href="/appointments">
                                 <Level>
                                     <Level.Item textColor="warning">
-                                        <FontAwesomeIcon
-                                            icon={faExclamationCircle}
-                                        />
+                                        <FontAwesomeIcon icon={faExclamationCircle} />
                                     </Level.Item>
                                     <Level.Item mx={1}>
                                         <Typography weight="heavy" as="h1">
@@ -55,9 +40,7 @@ export function Footer() {
                                         </Typography>
                                     </Level.Item>
                                     <Level.Item textColor="warning">
-                                        <FontAwesomeIcon
-                                            icon={faExclamationCircle}
-                                        />
+                                        <FontAwesomeIcon icon={faExclamationCircle} />
                                     </Level.Item>
                                 </Level>
                             </a>
@@ -93,8 +76,7 @@ export function Footer() {
                     <Columns.Column size={3}>
                         <Content>
                             <Typography>
-                                © 2023 Family Psychiatry Counseling and
-                                Wellness.
+                                © 2023 Family Psychiatry Counseling and Wellness.
                             </Typography>
                         </Content>
                     </Columns.Column>
@@ -106,11 +88,7 @@ export function Footer() {
 
 function Divider() {
     return (
-        <Columns.Column
-            size={1}
-            textAlign="center"
-            mobile={{ display: "hidden" }}
-        >
+        <Columns.Column size={1} textAlign="center" mobile={{ display: "hidden" }}>
             ·
         </Columns.Column>
     );

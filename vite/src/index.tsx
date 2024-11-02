@@ -8,9 +8,7 @@ export default function Index() {
         <>
             <Layout>
                 <h1>Home page</h1>
-                <button onClick={() => setCount((prev) => prev * 2)}>
-                    Click me (to double)
-                </button>
+                <button onClick={() => setCount((prev) => prev * 2)}>Click me (to double)</button>
                 <p>Count: {count}</p>
             </Layout>
         </>

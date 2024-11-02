@@ -31,10 +31,7 @@ async function main() {
         if (!entry.name.endsWith(".tsx")) {
             const inPath = `${entry.parentPath}/${entry.name}`;
             const outPath = inPath.replace(sourceDir, intermediateDir);
-            const outParent = entry.parentPath.replace(
-                sourceDir,
-                intermediateDir,
-            );
+            const outParent = entry.parentPath.replace(sourceDir, intermediateDir);
             await fs.mkdir(outParent, { recursive: true });
             await fs.copyFile(inPath, outPath);
             continue;
@@ -45,10 +42,7 @@ async function main() {
         if (!pages.includes(componentPath)) {
             const inPath = `${entry.parentPath}/${entry.name}`;
             const outPath = inPath.replace(sourceDir, intermediateDir);
-            const outParent = entry.parentPath.replace(
-                sourceDir,
-                intermediateDir,
-            );
+            const outParent = entry.parentPath.replace(sourceDir, intermediateDir);
             await fs.mkdir(outParent, { recursive: true });
             await fs.copyFile(inPath, outPath);
             continue;
@@ -82,24 +76,15 @@ async function main() {
         await fs.writeFile(renderedPath, html);
 
         // save page component
-        const componentOutPath = componentPath.replace(
-            sourceDir,
-            intermediateDir,
-        );
+        const componentOutPath = componentPath.replace(sourceDir, intermediateDir);
         fs.copyFile(componentPath, componentOutPath);
 
         // copy main script
         const mainContent = await fs.readFile("engine/client_main.tsx", {
             encoding: "utf-8",
         });
-        const mainCompleteContent = mainContent.replace(
-            "<!--path-->",
-            entry.name,
-        );
-        await fs.writeFile(
-            mainPath.replace(sourceDir, intermediateDir),
-            mainCompleteContent,
-        );
+        const mainCompleteContent = mainContent.replace("<!--path-->", entry.name);
+        await fs.writeFile(mainPath.replace(sourceDir, intermediateDir), mainCompleteContent);
     }
 }
 
