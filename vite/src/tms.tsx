@@ -11,11 +11,6 @@ import {
 } from "react-bulma-components";
 import { styled } from "styled-components";
 import { Layout, Seo, FormAppointment, Typography } from "./components";
-// @todo: reenable this
-// import neurostar from "./images/neurostar-logo.webp";
-// import tmsSmilingMan from "./images/tms/HatDude-extended-top-background.jpg";
-// import tmsLateralHead from "./images/tms/HP-LateralHead_coil_2021.jpg";
-// import tmsMalePatient from "./images/tms/MalePatientDr-closeup.jpg";
 
 export function Head() {
     return (
@@ -34,12 +29,12 @@ export default function Tms() {
                 <Container>
                     <Columns vCentered={true}>
                         <Columns.Column textAlign="center">
-                            {/* <FancyImage
-                                src={tmsSmilingMan}
+                            <FancyImage
+                                src="./images/tms/HatDude-extended-top-background.jpg"
                                 width="512px"
                                 height="512px"
                                 color="success"
-                            /> */}
+                            />
                         </Columns.Column>
                         <Columns.Column>
                             <Block>
@@ -71,7 +66,11 @@ export default function Tms() {
                                         target="_blank"
                                         rel="noreferrer"
                                     >
-                                        {/* <img src={neurostar} alt="Neurostar Logo" width="100px" /> */}
+                                        <img
+                                            src="./images/neurostar-logo.webp"
+                                            alt="Neurostar Logo"
+                                            width="100px"
+                                        />
                                     </a>
                                 </Level.Side>
                             </Level>
@@ -103,12 +102,12 @@ export default function Tms() {
                             </Typography>
                         </Columns.Column>
                         <Columns.Column textAlign="center">
-                            {/* <FancyImage
-                                src={tmsLateralHead}
+                            <FancyImage
+                                src="./images/tms/HP-LateralHead_coil_2021.jpg"
                                 width="512px"
                                 height="512px"
                                 color="success"
-                            /> */}
+                            />
                         </Columns.Column>
                     </Columns>
                 </Container>
@@ -119,12 +118,12 @@ export default function Tms() {
                 <Container>
                     <Columns vCentered={true}>
                         <Columns.Column textAlign="center">
-                            {/* <FancyImage
-                                src={tmsMalePatient}
+                            <FancyImage
+                                src="./images/tms/MalePatientDr-closeup.jpg"
                                 width="512px"
                                 height="512px"
                                 color="success"
-                            /> */}
+                            />
                         </Columns.Column>
                         <Columns.Column>
                             <Block>
@@ -201,11 +200,13 @@ function Quizlet() {
     const [phase, setPhase] = useState("quiz");
     const [selections, setSelections] = useState({});
 
+    // @ts-ignore
     const answerAssertion = (assertion, answer) => {
         setSelections((prev) => ({ ...prev, [assertion.id]: answer }));
     };
 
     const moveToSignup = () => {
+        // @ts-ignore
         if (assertions.every((assertion) => selections[assertion.id] !== undefined)) {
             setPhase("signup");
         }
@@ -222,6 +223,7 @@ function Quizlet() {
                                 <Form.Control>
                                     <Button
                                         color={
+                                            // @ts-ignore
                                             selections[assertion.id] === true ? "success" : "white"
                                         }
                                         rounded={true}
@@ -233,6 +235,7 @@ function Quizlet() {
                                 <Form.Control>
                                     <Button
                                         color={
+                                            // @ts-ignore
                                             selections[assertion.id] === false ? "success" : "white"
                                         }
                                         rounded={true}

@@ -4,7 +4,7 @@ import { Layout, Seo, Typography } from "./components";
 export function Head() {
     return (
         <Seo
-            title="FPCW - Success"
+            title="Success"
             description="Form submission successful. Please return to the main page."
             noIndex
         />

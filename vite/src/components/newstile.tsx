@@ -1,40 +1,46 @@
-// import { Link } from "gatsby";
-// import Img from "gatsby-image";
-// import { Block, Card, Content } from "react-bulma-components";
-// import styled from "styled-components";
-// import { Typography } from "./style";
+import { Block, Card, Content } from "react-bulma-components";
+import { styled } from "styled-components";
+import { Typography } from "./style";
+import { Post } from "../data";
+import { RichText } from "./richtext";
 
-// export function NewsTile({ post }) {
-//     const { title, feature, body, slug } = post;
+interface NewsTileProps {
+    post: Post;
+}
 
-//     return (
-//         <Link to={`/library/${slug}`}>
-//             <Card>
-//                 <FancyImage fluid={feature.fluid} key={feature.fluid.src} alt={feature.title} />
-//                 <Card.Content>
-//                     <Block>
-//                         <Typography as="h5" size="s">
-//                             {title}
-//                         </Typography>
-//                     </Block>
-//                     <Block mobile={{ display: "hidden" }}>
-//                         <Content>{extractExcerptFromRichText(body.raw, 20)}</Content>
-//                     </Block>
-//                 </Card.Content>
-//             </Card>
-//         </Link>
-//     );
-// }
+export function NewsTile({ post }: NewsTileProps) {
+    const { title, feature, body, slug } = post;
 
-// const FancyImage = styled(Img)`
-//     object-fit: cover;
-//     height: 30vmin;
-// `;
+    return (
+        <a href={`/library/${slug}`}>
+            <Card>
+                <FancyImage src={feature} alt="post thumbnail" />
+                <Card.Content>
+                    <Block>
+                        <Typography as="h5" size="s">
+                            {title}
+                        </Typography>
+                    </Block>
+                    <Block mobile={{ display: "hidden" }}>
+                        <Content>
+                            <RichText src={body} />
+                        </Content>
+                    </Block>
+                </Card.Content>
+            </Card>
+        </a>
+    );
+}
 
-// function extractExcerptFromRichText(raw: string, length: number): string {
-//     const document = JSON.parse(raw);
-//     const firstParagraph = document?.content.find(({ nodeType }) => nodeType === "paragraph");
-//     const firstText = firstParagraph?.content.find(({ nodeType }) => nodeType === "text");
-//     const excerpt = firstText?.value.split(" ").slice(0, length).join(" ");
-//     return excerpt ? `${excerpt}...` : "Excerpt could not be generated for this content.";
-// }
+const FancyImage = styled.img`
+    object-fit: cover;
+    height: 30vmin;
+`;
+
+function extractExcerptFromRichText(raw: string, length: number): string {
+    const document = JSON.parse(raw);
+    const firstParagraph = document?.content.find(({ nodeType }) => nodeType === "paragraph");
+    const firstText = firstParagraph?.content.find(({ nodeType }) => nodeType === "text");
+    const excerpt = firstText?.value.split(" ").slice(0, length).join(" ");
+    return excerpt ? `${excerpt}...` : "Excerpt could not be generated for this content.";
+}

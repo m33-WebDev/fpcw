@@ -1,6 +1,4 @@
 import { ReactNode } from "react";
-import PropTypes from "prop-types";
-// import { useSiteMetadata } from "../hooks";
 
 export interface SeoProps {
     title: string;
@@ -10,12 +8,11 @@ export interface SeoProps {
     children?: ReactNode;
 }
 
-function Seo(props: SeoProps) {
-    // @todo: reenable
-    // const siteMetadata = useSiteMetadata();
+export default function Seo(props: SeoProps) {
     const siteMetadata = {
-        description: "placeholder description",
-        author: "Family Psychiatry Counseling and Wellness",
+        description:
+            "A mental health clinic with a focus on overall wellness. Find better, one step at a time.",
+        author: "Sabira Saifuddin, M.D.",
     };
 
     const title = `${props.title} | Family Psychiatry, Counseling and Wellness`;
@@ -39,10 +36,3 @@ function Seo(props: SeoProps) {
         </>
     );
 }
-
-Seo.propTypes = {
-    title: PropTypes.string.isRequired,
-    description: PropTypes.string,
-};
-
-export default Seo;

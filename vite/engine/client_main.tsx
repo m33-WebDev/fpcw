@@ -9,13 +9,15 @@ import { hydrateRoot } from "react-dom/client";
 
 // @ts-ignore: import will be replaced with actual path during build
 import Component from "./<!--path-->";
+import React from "react";
 
 /**
  * Browser entry point. Responsible for hydrating the pre-rendered DOM.
  */
 function main() {
     const root = document.getElementById("root") as HTMLElement;
-    hydrateRoot(root, <Component />);
+    const node = React.createElement(Component, JSON.parse(`<!--props-->`));
+    hydrateRoot(root, node);
 }
 
 main();

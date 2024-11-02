@@ -2,7 +2,6 @@ import * as fs from "fs/promises";
 import React from "react";
 import { renderToString } from "react-dom/server";
 import { resolve } from "path";
-import { Helmet } from "react-helmet";
 
 async function main() {
     const sourceDir = "src";
@@ -19,10 +18,17 @@ async function main() {
     });
 
     const pages = [
-        "src/index.tsx",
         "src/404.tsx",
+        "src/appointments.tsx",
         "src/brain-testing.tsx",
+        "src/careers.tsx",
+        "src/contact.tsx",
         "src/formsuccess.tsx",
+        "src/gallery.tsx",
+        "src/index.tsx",
+        "src/library.tsx",
+        "src/providers.tsx",
+        "src/services.tsx",
         "src/tms.tsx",
     ];
 
@@ -62,11 +68,12 @@ async function main() {
         const component = await import(`file://${componentAbsPath}`);
 
         // render page from react to html
-        const node = React.createElement(component.default);
+        const data = await (component.query?.() ?? Promise.resolve({}));
+        const head = component.Head
+            ? renderToString(React.createElement(component.Head, data))
+            : "";
+        const node = React.createElement(component.default, data);
         const body = renderToString(node);
-        const head = Object.values(Helmet.renderStatic())
-            .map((e) => e.toString())
-            .join("\n");
         const template = await fs.readFile("engine/base.html", {
             encoding: "utf-8",
         });
@@ -89,7 +96,9 @@ async function main() {
         const mainContent = await fs.readFile("engine/client_main.tsx", {
             encoding: "utf-8",
         });
-        const mainCompleteContent = mainContent.replace("<!--path-->", entry.name);
+        const mainCompleteContent = mainContent
+            .replace("<!--path-->", entry.name)
+            .replace("<!--props-->", JSON.stringify(data));
         await fs.writeFile(mainPath.replace(sourceDir, intermediateDir), mainCompleteContent);
     }
 }
