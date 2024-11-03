@@ -1,0 +1,245 @@
+{
+    "metadata": { "tags": [], "concepts": [] },
+    "sys": {
+        "space": { "sys": { "type": "Link", "linkType": "Space", "id": "85wb86zbaewe" } },
+        "id": "3P03nUX5QpcEGzepk49NOi",
+        "type": "Entry",
+        "createdAt": "2022-12-29T22:46:22.927Z",
+        "updatedAt": "2022-12-29T22:46:22.927Z",
+        "environment": { "sys": { "id": "master", "type": "Link", "linkType": "Environment" } },
+        "publishedVersion": 31,
+        "revision": 1,
+        "contentType": { "sys": { "type": "Link", "linkType": "ContentType", "id": "newsPost" } },
+        "locale": "en-US"
+    },
+    "fields": {
+        "title": "How to Stay Healthy in the Holidays",
+        "metaTitle": "Mental Health and Immunity",
+        "metaDescription": "Tips on how to stay healthy during the holidays while focusing on boosting mental and physical immunities.",
+        "slug": "how-to-stay-healthy-in-the-holidays",
+        "feature": {
+            "metadata": { "tags": [], "concepts": [] },
+            "sys": {
+                "space": { "sys": { "type": "Link", "linkType": "Space", "id": "85wb86zbaewe" } },
+                "id": "3yqUNOcOj87y7ysby3KxrY",
+                "type": "Asset",
+                "createdAt": "2022-12-29T21:57:37.091Z",
+                "updatedAt": "2022-12-29T21:57:37.091Z",
+                "environment": {
+                    "sys": { "id": "master", "type": "Link", "linkType": "Environment" }
+                },
+                "publishedVersion": 3,
+                "revision": 1,
+                "locale": "en-US"
+            },
+            "fields": {
+                "title": "December Newsletter PickedImage",
+                "description": "",
+                "file": {
+                    "url": "//images.ctfassets.net/85wb86zbaewe/3yqUNOcOj87y7ysby3KxrY/07a4f97026559b9c8f5e4f01ded38063/December_Newsletter_PickedImage.jpg",
+                    "details": { "size": 3966948, "image": { "width": 5260, "height": 3506 } },
+                    "fileName": "December_Newsletter_PickedImage.jpg",
+                    "contentType": "image/jpeg"
+                }
+            }
+        },
+        "body": {
+            "data": {},
+            "content": [
+                {
+                    "data": {},
+                    "content": [
+                        {
+                            "data": {},
+                            "marks": [],
+                            "value": "With the hustle and bustle of the holidays and the changing of the weather, it is common for most people to have a higher chance of catching a cold. During this time of the flu and cold season, it is important to be not only stay physically healthy but also mentally. Working to manage stress and taking time to hang out with family and friends can reduce stress hormones and boost immune systems. ",
+                            "nodeType": "text"
+                        }
+                    ],
+                    "nodeType": "paragraph"
+                },
+                {
+                    "data": {},
+                    "content": [{ "data": {}, "marks": [], "value": "", "nodeType": "text" }],
+                    "nodeType": "paragraph"
+                },
+                {
+                    "data": {},
+                    "content": [
+                        {
+                            "data": {},
+                            "marks": [],
+                            "value": "\r\nResearchers have discovered a plethora of ",
+                            "nodeType": "text"
+                        },
+                        {
+                            "data": {
+                                "uri": "https://radiusstaffingsolutions.com/how-your-immune-system-and-mental-health-are-linked/"
+                            },
+                            "content": [
+                                { "data": {}, "marks": [], "value": "evidence", "nodeType": "text" }
+                            ],
+                            "nodeType": "hyperlink"
+                        },
+                        {
+                            "data": {},
+                            "marks": [],
+                            "value": " that shows the beneficial effects of positive emotions on the immune system. They have also seen that negative emotions can have destructive influences on health. For example, people who experience the loss of a loved one tend to have a longer recovery to a healthy immune system. Those under high amounts of stress, such as students cramming for an exam, can experience an overactive immune system. This can be beneficial in the short term, but if prolonged can wear on the immune system and increase the chances of becoming sick.",
+                            "nodeType": "text"
+                        }
+                    ],
+                    "nodeType": "paragraph"
+                },
+                {
+                    "data": {},
+                    "content": [{ "data": {}, "marks": [], "value": "", "nodeType": "text" }],
+                    "nodeType": "paragraph"
+                },
+                {
+                    "data": {},
+                    "content": [
+                        {
+                            "data": {},
+                            "marks": [],
+                            "value": "\r\nWhen people are sick, perhaps with a cold or flu, they tend to also experience feelings of sadness. This can be explained by the fact that people who are sick are normally unable to have the energy to complete their usual day-to-day activities and often are separated from loved ones so as to not infect them. This combination of loneliness and feelings of inadequacy can lead to more intense mental health issues, such as depression. ",
+                            "nodeType": "text"
+                        }
+                    ],
+                    "nodeType": "paragraph"
+                },
+                {
+                    "data": {},
+                    "content": [{ "data": {}, "marks": [], "value": "", "nodeType": "text" }],
+                    "nodeType": "paragraph"
+                },
+                {
+                    "data": {},
+                    "content": [
+                        { "data": {}, "marks": [], "value": "\r\nWhile the", "nodeType": "text" },
+                        {
+                            "data": {
+                                "uri": "https://psychcentral.com/lib/how-does-mood-affect-immunity#1"
+                            },
+                            "content": [
+                                { "data": {}, "marks": [], "value": " link", "nodeType": "text" }
+                            ],
+                            "nodeType": "hyperlink"
+                        },
+                        {
+                            "data": {},
+                            "marks": [],
+                            "value": " between emotions and the immune system remains unclear, researchers are working to better understand just how connected the two are. There is obvious communication between immune cells and brain cells that can affect common cognition and brain reactions that are related to pain and depression.  The brain has a direct effect on stress hormones, cortisol, and adrenaline, which have effects on the immune and nervous systems. \r\nTo combat the cold season and boost the immune system, it is important to practice positive mental health approaches. ",
+                            "nodeType": "text"
+                        }
+                    ],
+                    "nodeType": "paragraph"
+                },
+                {
+                    "data": {},
+                    "content": [{ "data": {}, "marks": [], "value": "", "nodeType": "text" }],
+                    "nodeType": "paragraph"
+                },
+                {
+                    "data": {},
+                    "content": [
+                        {
+                            "data": {},
+                            "marks": [],
+                            "value": "\r\nStaying active has been known to be one of the biggest ways to boost the immune system and mental health. Studies show staying active for even a short time, such as a daily walk, every day can ease anxiety and improve the body’s defense system.  ",
+                            "nodeType": "text"
+                        }
+                    ],
+                    "nodeType": "paragraph"
+                },
+                {
+                    "data": {},
+                    "content": [{ "data": {}, "marks": [], "value": "", "nodeType": "text" }],
+                    "nodeType": "paragraph"
+                },
+                {
+                    "data": {},
+                    "content": [
+                        { "data": {}, "marks": [], "value": "\r\n", "nodeType": "text" },
+                        {
+                            "data": {
+                                "uri": "https://www.medicalnewstoday.com/articles/322412#which-foods-boost-the-immune-system"
+                            },
+                            "content": [
+                                {
+                                    "data": {},
+                                    "marks": [],
+                                    "value": "Eating healthy",
+                                    "nodeType": "text"
+                                }
+                            ],
+                            "nodeType": "hyperlink"
+                        },
+                        {
+                            "data": {},
+                            "marks": [],
+                            "value": " and practicing getting adequate amounts of sleep can also aid in staying healthy. There are certain foods, such as blueberries, turmeric, and spinach, that help boost the immune system. According to the ",
+                            "nodeType": "text"
+                        },
+                        {
+                            "data": {
+                                "uri": "https://www.apa.org/monitor/2012/09/gut-feeling#:~:text=Gut%20bacteria%20regulate%20digestion%20and,the%20body%20from%20outside%20invaders"
+                            },
+                            "content": [
+                                {
+                                    "data": {},
+                                    "marks": [],
+                                    "value": "American Psychological Association",
+                                    "nodeType": "text"
+                                }
+                            ],
+                            "nodeType": "hyperlink"
+                        },
+                        {
+                            "data": {},
+                            "marks": [],
+                            "value": ", “gut bacteria regulate digestion and metabolism. They extract and make vitamins and other nutrients from the food you eat. They program the body’s immune system. They build and maintain the gut wall, which protects the body from outside invaders.” ",
+                            "nodeType": "text"
+                        }
+                    ],
+                    "nodeType": "paragraph"
+                },
+                {
+                    "data": {},
+                    "content": [{ "data": {}, "marks": [], "value": "", "nodeType": "text" }],
+                    "nodeType": "paragraph"
+                },
+                {
+                    "data": {},
+                    "content": [
+                        {
+                            "data": {},
+                            "marks": [],
+                            "value": "\r\nTaking care to slow down and provide enough rest whether it be mental or physical can have a positive effect on mental health and the immune system.  Scheduling activities that allow the brain to rest, such as yoga, reading for fun, or enjoying a nice bath can be beneficial. \r\nWith all this in mind, it is easy to get swept up in the end-of-the-year endeavors. We at FPCW, ask you all to try to be mindful and remember to check in with your mental and physical health to be safe during the holidays. We also understand that many might still need some extra help, if you or someone you love feel like they need some help please ",
+                            "nodeType": "text"
+                        },
+                        {
+                            "data": { "uri": "https://familypsychiatry.us/appointments" },
+                            "content": [
+                                {
+                                    "data": {},
+                                    "marks": [],
+                                    "value": "reach out",
+                                    "nodeType": "text"
+                                }
+                            ],
+                            "nodeType": "hyperlink"
+                        },
+                        {
+                            "data": {},
+                            "marks": [],
+                            "value": ". We are happy to have you. \r\n",
+                            "nodeType": "text"
+                        }
+                    ],
+                    "nodeType": "paragraph"
+                }
+            ],
+            "nodeType": "document"
+        }
+    }
+}
