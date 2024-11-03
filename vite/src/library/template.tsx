@@ -1,14 +1,30 @@
 import { Block, Columns, Container, Content, Section } from "react-bulma-components";
 import { Layout, Seo, RichText, NewsletterSignup, Typography } from "../components";
 import { ContentfulClient, Post as PostInfo } from "../data";
+import { InstanceInfo } from "../../engine";
+
+interface InstanceParams {
+    postId: string;
+}
+
+export async function instances(): Promise<InstanceInfo<InstanceParams>[]> {
+    const client = new ContentfulClient();
+    const posts = await client.getPosts();
+    return posts.map((post) => ({
+        name: post.slug!,
+        params: {
+            postId: post.id,
+        },
+    }));
+}
 
 interface PostProps {
     post: PostInfo;
 }
 
-export async function query(id: string): Promise<PostProps> {
+export async function query(params: InstanceParams): Promise<PostProps> {
     const client = new ContentfulClient();
-    const post = await client.getPost(id);
+    const post = await client.getPost(params.postId);
     return { post };
 }
 

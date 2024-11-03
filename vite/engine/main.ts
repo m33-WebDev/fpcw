@@ -2,6 +2,7 @@ import * as fs from "fs/promises";
 import React from "react";
 import { renderToString } from "react-dom/server";
 import { resolve } from "path";
+import { InstanceInfo } from "./instance";
 
 async function main() {
     const sourceDir = "src";
@@ -34,24 +35,6 @@ async function main() {
     ];
 
     const templates = ["src/providers/template.tsx", "src/library/template.tsx"];
-    const templateToItems = {
-        "src/providers/template.tsx": [
-            {
-                path: "src/providers/ronald-pan.tsx",
-                name: "ronald-pan.tsx",
-                parentPath: "target/intermediate/providers",
-                id: "7bQ8VtZRYsyWB9iJLR0V1R",
-            },
-        ],
-        "src/library/template.tsx": [
-            {
-                path: "src/library/how-to-stay-healthy-in-the-holidays.tsx",
-                name: "how-to-stay-healthy-in-the-holidays.tsx",
-                parentPath: "target/intermediate/library",
-                id: "3P03nUX5QpcEGzepk49NOi",
-            },
-        ],
-    };
 
     // render all pages to intermediate format
     for (const entry of entries) {
@@ -134,19 +117,19 @@ async function main() {
         }
 
         if (templates.includes(componentPath)) {
-            // @ts-ignore: todo
-            const items = templateToItems[componentPath];
-            for (const item of items) {
-                const basePath = item.path;
-                const componentAbsPath = resolve(componentPath);
-                const mainPath = basePath.replace(".tsx", ".main.tsx");
-                const mainName = item.name.replace(".tsx", ".main.tsx");
-
-                // load the page component
-                const component = await import(`file://${componentAbsPath}`);
+            const componentAbsPath = resolve(componentPath);
+            const component = await import(`file://${componentAbsPath}`);
+            const instances: InstanceInfo<any>[] = await component.instances();
+            for (const instance of instances) {
+                const name = `${instance.name}.tsx`;
+                const parent = entry.parentPath;
+                const basePath = `${parent}/${name}`;
+                const mainName = name.replace(".tsx", ".main.tsx");
+                const mainPath = `${parent}/${mainName}`;
 
                 // render page from react to html
-                const data = await (component.query?.(item.id) ?? Promise.resolve({}));
+                const params = instance.params;
+                const data = await (component.query?.(params) ?? Promise.resolve({}));
                 const head = component.Head
                     ? renderToString(React.createElement(component.Head, data))
                     : "";
@@ -161,7 +144,7 @@ async function main() {
                     .replace("<!--main-->", mainName);
 
                 // make the parent dir; todo: make this more generic
-                await fs.mkdir(item.parentPath, { recursive: true });
+                await fs.mkdir(parent, { recursive: true });
 
                 // save rendered html
                 const renderedPath = basePath
@@ -179,8 +162,8 @@ async function main() {
                 });
                 const mainCompleteContent = mainContent
                     .replace("<!--intermediate-->", intermediateAbsDir)
-                    .replace("<!--path-->", item.name)
-                    .replace("<!--props-->", item.name.replace(".tsx", ".props.json"));
+                    .replace("<!--path-->", name)
+                    .replace("<!--props-->", name.replace(".tsx", ".props.json"));
                 await fs.writeFile(
                     mainPath.replace(sourceDir, intermediateDir),
                     mainCompleteContent,

@@ -21,7 +21,13 @@ export class ContentfulClient {
     /** Get a page by entry id. */
     async getPage(id: string): Promise<Page> {
         const entry = await this.client.getEntry(id);
-        return entry.fields as Page;
+        const fields = entry.fields;
+        return {
+            id: entry.sys.id,
+            title: fields.title as string | undefined,
+            metaTitle: fields.metaTitle as string | undefined,
+            metaDescription: fields.metaDescription as string | undefined,
+        };
     }
 
     /** Get a gallery by entry id. */
@@ -36,7 +42,7 @@ export class ContentfulClient {
                 description: photo.fields.description,
                 url: photo.fields.file.url.replace("//", "https://"),
             }));
-        return { title, photos };
+        return { id: entry.sys.id, title, photos };
     }
 
     /** Get a post by entry id. */
@@ -45,6 +51,7 @@ export class ContentfulClient {
         const fields = entry.fields;
         const feature = (fields.feature as any)?.fields?.file?.url?.replace("//", "https://");
         return {
+            id,
             title: fields.title as string,
             metaTitle: fields.metaTitle as string | undefined,
             metaDescription: fields.metaDescription as string | undefined,
@@ -64,6 +71,7 @@ export class ContentfulClient {
             const fields = entry.fields;
             const feature = (fields.feature as any)?.fields?.file?.url?.replace("//", "https://");
             const post = {
+                id: entry.sys.id,
                 title: fields.title as string,
                 metaTitle: fields.metaTitle as string | undefined,
                 metaDescription: fields.metaDescription as string | undefined,
@@ -82,6 +90,7 @@ export class ContentfulClient {
         const fields = entry.fields;
         const headshot = (fields.headshot as any)?.fields?.file?.url?.replace("//", "https://");
         return {
+            id: entry.sys.id,
             name: fields.name as string,
             slug: fields.slug as string,
             headshot,
@@ -102,6 +111,7 @@ export class ContentfulClient {
             const fields = entry.fields;
             const headshot = (fields.headshot as any)?.fields?.file?.url?.replace("//", "https://");
             const profile = {
+                id: entry.sys.id,
                 name: fields.name as string,
                 slug: fields.slug as string,
                 headshot,
@@ -123,7 +133,13 @@ export class ContentfulClient {
         let reviews: Review[] = [];
         for (const entry of entries.items) {
             const fields = entry.fields;
-            reviews.push(fields as Review);
+            const review = {
+                id: entry.sys.id,
+                author: fields.author as string | undefined,
+                link: fields.link as string | undefined,
+                content: fields.content as Document | undefined,
+            };
+            reviews.push(review);
         }
         return reviews;
     }

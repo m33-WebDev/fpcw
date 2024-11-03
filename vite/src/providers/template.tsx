@@ -2,14 +2,30 @@ import { Columns, Container, Section } from "react-bulma-components";
 import { Layout, Seo } from "../components";
 import { Body, Frontmatter } from "../components/provider-profile";
 import { ContentfulClient, Profile } from "../data";
+import { InstanceInfo } from "../../engine";
+
+interface InstanceParams {
+    profileId: string;
+}
+
+export async function instances(): Promise<InstanceInfo<InstanceParams>[]> {
+    const client = new ContentfulClient();
+    const profiles = await client.getProfiles();
+    return profiles.map((post) => ({
+        name: post.slug!,
+        params: {
+            profileId: post.id,
+        },
+    }));
+}
 
 interface ProviderProfileProps {
     profile: Profile;
 }
 
-export async function query(id: string): Promise<ProviderProfileProps> {
+export async function query(params: InstanceParams): Promise<ProviderProfileProps> {
     const client = new ContentfulClient();
-    const profile = await client.getProfile(id);
+    const profile = await client.getProfile(params.profileId);
     return { profile };
 }
 

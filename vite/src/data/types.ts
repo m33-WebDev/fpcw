@@ -1,12 +1,14 @@
 import { Document } from "@contentful/rich-text-types";
 
 export interface Page {
+    id: string;
     title?: string;
     metaTitle?: string;
     metaDescription?: string;
 }
 
 export interface Gallery {
+    id: string;
     title?: string;
     photos?: {
         title: string;
@@ -16,6 +18,7 @@ export interface Gallery {
 }
 
 export interface Post {
+    id: string;
     title: string;
     metaTitle?: string;
     metaDescription?: string;
@@ -25,6 +28,7 @@ export interface Post {
 }
 
 export interface Profile {
+    id: string;
     name: string;
     slug: string;
     headshot: string;
@@ -35,6 +39,7 @@ export interface Profile {
 }
 
 export interface Review {
+    id: string;
     author?: string;
     link?: string;
     content?: Document;
