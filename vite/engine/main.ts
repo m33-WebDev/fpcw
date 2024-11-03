@@ -34,8 +34,6 @@ async function main() {
         "src/tms.tsx",
     ];
 
-    const templates = ["src/providers/template.tsx", "src/library/template.tsx"];
-
     // render all pages to intermediate format
     for (const entry of entries) {
         // skip directories
@@ -55,7 +53,8 @@ async function main() {
 
         // blindly copy typescript files that are not marked as pages or templates
         const componentPath = `${entry.parentPath}/${entry.name}`.replace(/\\/g, "/");
-        if (!pages.includes(componentPath) && !templates.includes(componentPath)) {
+        const templateExtension = ".template.tsx";
+        if (!pages.includes(componentPath) && !componentPath.endsWith(templateExtension)) {
             const inPath = `${entry.parentPath}/${entry.name}`;
             const outPath = inPath.replace(sourceDir, intermediateDir);
             const outParent = entry.parentPath.replace(sourceDir, intermediateDir);
@@ -116,7 +115,7 @@ async function main() {
             await fs.writeFile(propsPath, props);
         }
 
-        if (templates.includes(componentPath)) {
+        if (componentPath.endsWith(templateExtension)) {
             const componentAbsPath = resolve(componentPath);
             const component = await import(`file://${componentAbsPath}`);
             const instances: InstanceInfo<any>[] = await component.instances();
