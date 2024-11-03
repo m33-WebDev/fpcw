@@ -3,7 +3,7 @@ import "@fontsource/nunito/400.css";
 import "@fontsource/nunito/500.css";
 import "@fontsource/playfair-display/400.css";
 import "@fontsource/playfair-display/500.css";
-import "./styles/global.scss";
+import "<!--intermediate-->/styles/global.scss";
 
 import { hydrateRoot } from "react-dom/client";
 
