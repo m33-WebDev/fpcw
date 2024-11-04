@@ -3,6 +3,7 @@ import "@fontsource/nunito/400.css";
 import "@fontsource/nunito/500.css";
 import "@fontsource/playfair-display/400.css";
 import "@fontsource/playfair-display/500.css";
+import "pure-react-carousel/dist/react-carousel.es.css";
 import "<!--intermediate-->/styles/global.scss";
 
 import { hydrateRoot } from "react-dom/client";
