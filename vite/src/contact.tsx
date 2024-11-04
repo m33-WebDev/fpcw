@@ -51,7 +51,7 @@ export default function Contact(_: ContactProps) {
                                                 <Block>
                                                     <figure>
                                                         <img
-                                                            src="./images/location1.png"
+                                                            src="/images/location1.png"
                                                             alt="La Baya Drive location exterior"
                                                             height={200}
                                                         />
@@ -71,7 +71,7 @@ export default function Contact(_: ContactProps) {
                                             <Block>
                                                 <figure>
                                                     <img
-                                                        src="./images/location2.png"
+                                                        src="/images/location2.png"
                                                         alt="Agoura Road location exterior"
                                                         height={300}
                                                     />
@@ -86,7 +86,7 @@ export default function Contact(_: ContactProps) {
                                             <Block>
                                                 <figure>
                                                     <img
-                                                        src="./images/location3.png"
+                                                        src="/images/location3.png"
                                                         alt="La Baya Drive location exterior"
                                                         height={200}
                                                     />
@@ -100,7 +100,7 @@ export default function Contact(_: ContactProps) {
                                             <Block>
                                                 <figure>
                                                     <img
-                                                        src="./images/location4.png"
+                                                        src="/images/location4.png"
                                                         alt="Agoura Road location exterior test3"
                                                         height={200}
                                                     />

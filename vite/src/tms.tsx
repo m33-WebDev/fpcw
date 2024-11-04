@@ -30,7 +30,7 @@ export default function Tms() {
                     <Columns vCentered={true}>
                         <Columns.Column textAlign="center">
                             <FancyImage
-                                src="./images/tms/HatDude-extended-top-background.jpg"
+                                src="/images/tms/HatDude-extended-top-background.jpg"
                                 width="512px"
                                 height="512px"
                                 color="success"
@@ -67,7 +67,7 @@ export default function Tms() {
                                         rel="noreferrer"
                                     >
                                         <img
-                                            src="./images/neurostar-logo.webp"
+                                            src="/images/neurostar-logo.webp"
                                             alt="Neurostar Logo"
                                             width="100px"
                                         />
@@ -103,7 +103,7 @@ export default function Tms() {
                         </Columns.Column>
                         <Columns.Column textAlign="center">
                             <FancyImage
-                                src="./images/tms/HP-LateralHead_coil_2021.jpg"
+                                src="/images/tms/HP-LateralHead_coil_2021.jpg"
                                 width="512px"
                                 height="512px"
                                 color="success"
@@ -119,7 +119,7 @@ export default function Tms() {
                     <Columns vCentered={true}>
                         <Columns.Column textAlign="center">
                             <FancyImage
-                                src="./images/tms/MalePatientDr-closeup.jpg"
+                                src="/images/tms/MalePatientDr-closeup.jpg"
                                 width="512px"
                                 height="512px"
                                 color="success"

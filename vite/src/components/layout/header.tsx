@@ -30,7 +30,7 @@ export function Header() {
             <Container>
                 <Navbar.Brand>
                     <Navbar.Item href="/">
-                        <img width={80} src="../../images/logo-fitted.png" alt="Logo" />
+                        <img width={80} src="/images/logo-fitted.png" alt="Logo" />
                     </Navbar.Item>
                     <Navbar.Burger onClick={() => setActive((prev) => !prev)} />
                 </Navbar.Brand>
