@@ -59,6 +59,7 @@ class Engine {
         }
 
         this.saveManifest();
+        this.saveSitemap();
     }
 
     /**
@@ -126,6 +127,20 @@ class Engine {
      */
     async saveManifest() {
         await fs.writeFile(`${dirs.intermediate}/manifest.json`, JSON.stringify(this.pages));
+    }
+
+    /**
+     * Saves a sitemap.
+     */
+    async saveSitemap() {
+        const base = "https://familypsychiatry.us";
+        const urls = [];
+        for (const page of this.pages) {
+            const path = page.replace(".html", "");
+            const url = `${base}/${path}`;
+            urls.push(url);
+        }
+        await fs.writeFile(`${dirs.intermediate}/public/sitemap.txt`, urls.join("\n"));
     }
 }
 
