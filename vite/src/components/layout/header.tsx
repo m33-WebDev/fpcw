@@ -53,11 +53,11 @@ export function Header() {
                     <Navbar.Container align="right">
                         {primaryLinks.map(([name, value]) =>
                             value.startsWith("/") ? (
-                                <Navbar.Item href={value}>
+                                <Navbar.Item key={name} href={value}>
                                     <Typography as="span">{name}</Typography>
                                 </Navbar.Item>
                             ) : (
-                                <Navbar.Item href={value}>
+                                <Navbar.Item key={name} href={value}>
                                     <Typography as="span">{name}</Typography>
                                 </Navbar.Item>
                             ),
@@ -69,11 +69,11 @@ export function Header() {
                             <Navbar.Dropdown>
                                 {secondaryLinks.map(([name, value]) =>
                                     value.startsWith("/") ? (
-                                        <Navbar.Item href={value}>
+                                        <Navbar.Item key={name} href={value}>
                                             <Typography as="span">{name}</Typography>
                                         </Navbar.Item>
                                     ) : (
-                                        <Navbar.Item href={value} textColor="dark">
+                                        <Navbar.Item key={name} href={value} textColor="dark">
                                             <Typography as="span">{name}</Typography>
                                         </Navbar.Item>
                                     ),

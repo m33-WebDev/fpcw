@@ -14,12 +14,16 @@ import { faExclamationCircle } from "@fortawesome/free-solid-svg-icons";
 
 const telehealthCallout = "Now Offering Telehealth Services all across California.";
 
-const contactDetails: [IconDefinition | null, string][] = [
-    [faPhone, "(805) 341-3416"],
-    [faEnvelope, "fpcw@familypsychiatry101.com"],
-    [faCalendar, "Monday - Thursday - 9:00am - 5:00pm"],
-    [faCalendar, "Friday - 8:00am - 3:00pm"],
-    [null, "Same day appointments available . We are closed on Weekends and Holidays. "],
+const contactDetails: [string, IconDefinition | null, string][] = [
+    ["phone", faPhone, "(805) 341-3416"],
+    ["email", faEnvelope, "fpcw@familypsychiatry101.com"],
+    ["mon_thu", faCalendar, "Monday - Thursday - 9:00am - 5:00pm"],
+    ["fri", faCalendar, "Friday - 8:00am - 3:00pm"],
+    [
+        "same_day",
+        null,
+        "Same day appointments available . We are closed on Weekends and Holidays. ",
+    ],
 ];
 
 export function Footer() {
@@ -49,8 +53,8 @@ export function Footer() {
                 </Columns.Column>
                 <Columns vCentered={true}>
                     <Columns.Column size={3}>
-                        {contactDetails.map(([icon, text]) => (
-                            <Icon.Text mb={2}>
+                        {contactDetails.map(([key, icon, text]) => (
+                            <Icon.Text key={key} mb={2}>
                                 {icon && (
                                     <Icon>
                                         <FontAwesomeIcon icon={icon} />
