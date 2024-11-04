@@ -3,7 +3,7 @@
     "version": "1.0.0",
     "type": "module",
     "scripts": {
-        "vite:dev": "vite target\\intermediate",
+        "vite:dev": "vite --config vite.config.ts target\\intermediate",
         "dev": "tsx --watch-path=src engine\\main.ts",
         "build": "tsx engine\\main.ts"
     },
