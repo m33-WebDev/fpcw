@@ -7,97 +7,126 @@ import { pages } from "./pages";
 import * as dirs from "./dirs";
 
 async function main() {
-    // Ensure output dir exists
-    await fs.mkdir(dirs.intermediate, { recursive: true });
-
-    // Identify all source files
-    const sources = await fs.readdir(dirs.source, { withFileTypes: true, recursive: true });
-    for (const entry of sources) {
-        const source = `${entry.parentPath}/${entry.name}`.replace(/\\/g, "/");
-
-        // If directory, skip
-        if (entry.isDirectory()) {
-            continue;
-        }
-
-        // If not TypeScript or not listed as page, copy as-is
-        if (!entry.name.endsWith(".tsx") || !pages.includes(source)) {
-            const out = source.replace(dirs.source, dirs.intermediate);
-            const outParent = entry.parentPath.replace(dirs.source, dirs.intermediate);
-            await fs.mkdir(outParent, { recursive: true });
-            await fs.copyFile(source, out);
-            continue;
-        }
-
-        // If template file, calculate instances and then create pages
-        if (source.endsWith(".template.tsx")) {
-            const module = await import(`file://${resolve(source)}`);
-            const instances: InstanceInfo<any>[] = await module.instances();
-            instances.forEach((instance) => createPage(instance.path, source, instance.params));
-            continue;
-        }
-
-        // Otherwise, create single page
-        const path = source.replace("src/", "").replace(".tsx", "");
-        createPage(path, source);
-    }
+    const engine = new Engine();
+    engine.compile();
 }
 
 /**
- * Creates a page.
- *
- * The `path` is the output path of the page, relative to the site root. For
- * instance, a value of `appointments` will result in a page located at
- * `/appointments`. The `source` is the path to the source module that
- * represents the page. The `params` are opaque parameters passed to the page
- * query and are provided only for template instances.
+ * Rendering engine.
  */
-async function createPage(path: string, source: string, params?: any) {
-    console.info(`creating page: ${path}`);
+class Engine {
+    readonly pages: string[] = [];
 
-    // Calculate leaf name of the page
-    const name = path.split("/").at(-1);
+    /**
+     * Compiles site content.
+     */
+    async compile() {
+        // Ensure output dir exists
+        await fs.mkdir(dirs.intermediate, { recursive: true });
 
-    // Load module
-    const module = await import(`file://${resolve(source)}`);
+        // Identify all source files
+        const sources = await fs.readdir(dirs.source, { withFileTypes: true, recursive: true });
+        for (const entry of sources) {
+            const source = `${entry.parentPath}/${entry.name}`.replace(/\\/g, "/");
 
-    // Load props
-    const props = await (module.query?.(params) ?? Promise.resolve({}));
+            // If directory, skip
+            if (entry.isDirectory()) {
+                continue;
+            }
 
-    // Load head content
-    const head = module.Head ? renderToString(React.createElement(module.Head, props)) : "";
+            // If not TypeScript or not listed as page, copy as-is
+            if (!entry.name.endsWith(".tsx") || !pages.includes(source)) {
+                const out = source.replace(dirs.source, dirs.intermediate);
+                const outParent = entry.parentPath.replace(dirs.source, dirs.intermediate);
+                await fs.mkdir(outParent, { recursive: true });
+                await fs.copyFile(source, out);
+                continue;
+            }
 
-    // Load body content
-    const body = renderToString(React.createElement(module.default, props));
+            // If template file, calculate instances and then create pages
+            if (source.endsWith(".template.tsx")) {
+                const module = await import(`file://${resolve(source)}`);
+                const instances: InstanceInfo<any>[] = await module.instances();
+                for (const instance of instances) {
+                    await this.createPage(instance.path, source, instance.params);
+                }
+                continue;
+            }
 
-    // Render HTML
-    const html = (await fs.readFile("engine/base.html", { encoding: "utf-8" }))
-        .replace("<!--head-->", head)
-        .replace("<!--body-->", body)
-        .replace("<!--main-->", `${name}.main.tsx`);
+            // Otherwise, create single page
+            const path = source.replace("src/", "").replace(".tsx", "");
+            await this.createPage(path, source);
+        }
 
-    // Ensure output dir exists
-    const parts = path.split("/");
-    const base = parts.slice(0, parts.length - 1).join("/");
-    await fs.mkdir(`${dirs.intermediate}/${base}`, { recursive: true });
+        this.saveManifest();
+    }
 
-    // Save HTML
-    await fs.writeFile(`${dirs.intermediate}/${path}.html`, html);
+    /**
+     * Creates a page.
+     *
+     * The `path` is the output path of the page, relative to the site root. For
+     * instance, a value of `appointments` will result in a page located at
+     * `/appointments`. The `source` is the path to the source module that
+     * represents the page. The `params` are opaque parameters passed to the page
+     * query and are provided only for template instances.
+     */
+    async createPage(path: string, source: string, params?: any) {
+        console.info(`creating page: ${path}`);
 
-    // Save module
-    await fs.copyFile(source, `${dirs.intermediate}/${path}.source.tsx`);
+        // Calculate leaf name of the page
+        const name = path.split("/").at(-1);
 
-    // Save props
-    await fs.writeFile(`${dirs.intermediate}/${path}.props.json`, JSON.stringify(props));
+        // Load module
+        const module = await import(`file://${resolve(source)}`);
 
-    // Render main script
-    const main = (await fs.readFile("engine/client_main.tsx", { encoding: "utf-8" }))
-        .replace("<!--intermediate-->", resolve(dirs.intermediate).replace(/\\/g, "/"))
-        .replace("<!--source-->", `${name}.source.tsx`)
-        .replace("<!--props-->", `${name}.props.json`);
+        // Load props
+        const props = await (module.query?.(params) ?? Promise.resolve({}));
 
-    // Save main script
-    await fs.writeFile(`${dirs.intermediate}/${path}.main.tsx`, main);
+        // Load head content
+        const head = module.Head ? renderToString(React.createElement(module.Head, props)) : "";
+
+        // Load body content
+        const body = renderToString(React.createElement(module.default, props));
+
+        // Render HTML
+        const html = (await fs.readFile("engine/base.html", { encoding: "utf-8" }))
+            .replace("<!--head-->", head)
+            .replace("<!--body-->", body)
+            .replace("<!--main-->", `${name}.main.tsx`);
+
+        // Ensure output dir exists
+        const parts = path.split("/");
+        const base = parts.slice(0, parts.length - 1).join("/");
+        await fs.mkdir(`${dirs.intermediate}/${base}`, { recursive: true });
+
+        // Save HTML
+        await fs.writeFile(`${dirs.intermediate}/${path}.html`, html);
+
+        // Save module
+        await fs.copyFile(source, `${dirs.intermediate}/${path}.source.tsx`);
+
+        // Save props
+        await fs.writeFile(`${dirs.intermediate}/${path}.props.json`, JSON.stringify(props));
+
+        // Render main script
+        const main = (await fs.readFile("engine/client_main.tsx", { encoding: "utf-8" }))
+            .replace("<!--intermediate-->", resolve(dirs.intermediate).replace(/\\/g, "/"))
+            .replace("<!--source-->", `${name}.source.tsx`)
+            .replace("<!--props-->", `${name}.props.json`);
+
+        // Save main script
+        await fs.writeFile(`${dirs.intermediate}/${path}.main.tsx`, main);
+
+        // Register page entry point
+        this.pages.push(`${path}.html`);
+    }
+
+    /**
+     * Saves a manifest of generated pages.
+     */
+    async saveManifest() {
+        await fs.writeFile(`${dirs.intermediate}/manifest.json`, JSON.stringify(this.pages));
+    }
 }
 
 main();

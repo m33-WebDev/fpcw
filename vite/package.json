@@ -5,7 +5,9 @@
     "scripts": {
         "vite:dev": "vite --config vite.config.ts target\\intermediate",
         "dev": "tsx --watch-path=src engine\\main.ts",
-        "build": "tsx engine\\main.ts"
+        "build": "tsx engine\\main.ts",
+        "vite:build": "vite build --config vite.config.ts target\\intermediate --outDir '../dist --emptyOutDir true",
+        "vite:preview": "vite preview --config vite.config.ts target"
     },
     "devDependencies": {
         "@types/node": "^18.19.63",
