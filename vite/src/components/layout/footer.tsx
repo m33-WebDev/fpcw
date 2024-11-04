@@ -80,7 +80,7 @@ export function Footer() {
                     <Columns.Column size={3}>
                         <Content>
                             <Typography>
-                                © 2023 Family Psychiatry Counseling and Wellness.
+                                © 2024 Family Psychiatry Counseling and Wellness.
                             </Typography>
                         </Content>
                     </Columns.Column>
