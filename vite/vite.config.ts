@@ -2,6 +2,7 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import pages from "./target/intermediate/manifest.json";
 import { resolve } from "path";
+import { VitePluginRadar as radar } from "vite-plugin-radar";
 
 /**
  * Get build entry points.
@@ -16,7 +17,7 @@ function entrypoints() {
 }
 
 export default defineConfig({
-    plugins: [react()],
+    plugins: [react(), radar({ analytics: { id: "G-QYQZ5QLG34" } })],
     css: {
         preprocessorOptions: {
             scss: {
