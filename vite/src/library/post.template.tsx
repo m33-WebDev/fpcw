@@ -11,7 +11,7 @@ export async function instances(): Promise<InstanceInfo<InstanceParams>[]> {
     const client = new ContentfulClient();
     const posts = await client.getPosts();
     return posts.map((post) => ({
-        name: post.slug!,
+        path: `library/${post.slug!}`,
         params: {
             postId: post.id,
         },

@@ -12,7 +12,7 @@ export async function instances(): Promise<InstanceInfo<InstanceParams>[]> {
     const client = new ContentfulClient();
     const profiles = await client.getProfiles();
     return profiles.map((post) => ({
-        name: post.slug!,
+        path: `providers/${post.slug!}`,
         params: {
             profileId: post.id,
         },

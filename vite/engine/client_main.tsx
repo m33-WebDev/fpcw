@@ -8,7 +8,7 @@ import "<!--intermediate-->/styles/global.scss";
 import { hydrateRoot } from "react-dom/client";
 
 // @ts-ignore: import will be replaced with actual path during build
-import Component from "./<!--path-->";
+import Component from "./<!--source-->";
 
 // @ts-ignore: import will be replaced with actual path during build
 import props from "./<!--props-->";

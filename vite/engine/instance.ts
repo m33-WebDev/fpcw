@@ -3,10 +3,11 @@
  */
 export interface InstanceInfo<T> {
     /**
-     * The name of the instance. Used to generate the path for the resulting
-     * page.
+     * The path of this page, relative to the site root.
+     *
+     * This should not include a preceding slash.
      */
-    name: string;
+    path: string;
     /**
      * Parameters to pass to the page query, such as instance id.
      */
