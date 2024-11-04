@@ -35,7 +35,7 @@ export function Footer() {
                                         <FontAwesomeIcon icon={faExclamationCircle} />
                                     </Level.Item>
                                     <Level.Item mx={1}>
-                                        <Typography weight="heavy" as="h1">
+                                        <Typography $weight="heavy" as="h1">
                                             {telehealthCallout}
                                         </Typography>
                                     </Level.Item>

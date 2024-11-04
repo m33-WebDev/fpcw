@@ -24,16 +24,19 @@ import { ContentfulClient, Post, Review } from "./data";
 
 const ratings = [
     {
+        key: "google",
         link: "https://www.google.com/search?sxsrf=ALeKk00VCh2E4hyk89Nj9ExwQPWMR02uAg%3A1586936272331&source=hp&ei=0LmWXob-EYWw0PEPtPiGsAs&q=family+psychiatry+and+wellness&oq=famil&gs_lcp=CgZwc3ktYWIQARgAMgQIIxAnMgQIIxAnMgQIIxAnMgQIABBDMgQIABBDMgQIABBDMgQIABBDMgIIADICCAAyAggAOgcIABCDARBDOgUIABCRAjoFCAAQgwE6BggAEAoQQ0oVCBcSETItMTczZzIzNmcyOTNnMzAySg0IGBIJMi0xZzFnMWcxUKLF_QJYnMb9AmCE0v0CaANwAHgAgAGgAogB4QaSAQUxLjAuM5gBAKABAaoBB2d3cy13aXo&sclient=psy-ab",
         icon: faGoogle,
         rating: 4.8,
     },
     {
+        key: "facebook",
         link: "https://www.facebook.com/www.familypsychiatry101.net/",
         icon: faFacebookSquare,
         rating: 4.1,
     },
     {
+        key: "vitals",
         link: "https://www.vitals.com/doctors/Dr_Sabira_Saifuddin/reviews",
         icon: faHeartbeat,
         rating: 5.0,
@@ -74,7 +77,7 @@ export default function Index(props: IndexProps) {
                         <Columns vCentered={true}>
                             <Columns.Column size={6}>
                                 <Block>
-                                    <Typography family="secondary" size="xxl">
+                                    <Typography $family="secondary" $size="xxl">
                                         Family Psychiatry
                                         <br />
                                         Counseling and Wellness
@@ -91,18 +94,18 @@ export default function Index(props: IndexProps) {
                                     </Button>
                                 </a>
                                 <Block>
-                                    <Typography size="m" color="secondary">
+                                    <Typography $size="m" $color="secondary">
                                         A comprehensive psychiatric clinic serving the mental &
                                         emotional health needs of all members of the family. Our
                                         mission is to help you live your best life.
                                     </Typography>
 
-                                    <Typography size="m" color="secondary">
+                                    <Typography $size="m" $color="secondary">
                                         We diagnose and treat a variety of mental health symptoms
                                         and conditions—with or without medications. We also offer
                                         TMS & Ketamine therapies.
                                     </Typography>
-                                    <Typography size="m" color="secondary">
+                                    <Typography $size="m" $color="secondary">
                                         We accept most commercial insurances. Same day appointments
                                         available. Prescriptions are sent electronically to your
                                         pharmacy
@@ -166,7 +169,7 @@ export default function Index(props: IndexProps) {
                     </Columns.Column>
                     <Columns.Column size={6}>
                         <Block>
-                            <Typography as="h2" family="secondary" size="xl">
+                            <Typography as="h2" $family="secondary" $size="xl">
                                 Holistic Psychiatry for your Mind, Body and Soul
                             </Typography>
                         </Block>
@@ -184,14 +187,19 @@ export default function Index(props: IndexProps) {
                 <Container>
                     <Columns>
                         <Columns.Column size={3}>
-                            <Typography as="h2" family="secondary" size="xl">
+                            <Typography as="h2" $family="secondary" $size="xl">
                                 What Our Patients Are Saying
                             </Typography>
                         </Columns.Column>
                         <Columns.Column size={1} />
                         <Columns.Column size={2}>
                             {ratings.map((rating) => (
-                                <Rating {...rating} />
+                                <Rating
+                                    key={rating.key}
+                                    link={rating.link}
+                                    icon={rating.icon}
+                                    rating={rating.rating}
+                                />
                             ))}
                         </Columns.Column>
                         <Columns.Column size={1} />
@@ -204,7 +212,7 @@ export default function Index(props: IndexProps) {
             <Section backgroundColor="grey-lighter">
                 <Container py={6}>
                     <Block textAlign="center">
-                        <Typography as="h2" family="secondary" size="xl">
+                        <Typography as="h2" $family="secondary" $size="xl">
                             Health Resources
                         </Typography>
                     </Block>
@@ -239,10 +247,10 @@ function Rating({ link, icon, rating }: { link: string; icon: IconDefinition; ra
                     </Level.Side>
                     <Level.Side align="right">
                         <Level.Item>
-                            <Typography as="span" size="l">
+                            <Typography as="span" $size="l">
                                 {rating.toFixed(1)}
                             </Typography>
-                            <Typography as="span" size="l" color="interactive">
+                            <Typography as="span" $size="l" color="interactive">
                                 <Icon ml={2}>
                                     <FontAwesomeIcon icon={faStar} size="xs" />
                                 </Icon>

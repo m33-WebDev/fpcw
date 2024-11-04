@@ -30,7 +30,7 @@ export default function Services(_: ServicesProps) {
             <Section>
                 <Container>
                     <Block>
-                        <Typography as="h1" family="secondary" size="xxl">
+                        <Typography as="h1" $family="secondary" $size="xxl">
                             Mental Health Services Provided at FPCW
                         </Typography>
                     </Block>
@@ -38,7 +38,7 @@ export default function Services(_: ServicesProps) {
                     <Columns gap={6}>
                         <Columns.Column size={4}>
                             <Content>
-                                <Typography as="h2" size="xl">
+                                <Typography as="h2" $size="xl">
                                     Conditions Treated
                                 </Typography>
                                 <Typography>
@@ -54,7 +54,7 @@ export default function Services(_: ServicesProps) {
                         </Columns.Column>
                         <Columns.Column size={4}>
                             <Content>
-                                <Typography as="h2" size="xl">
+                                <Typography as="h2" $size="xl">
                                     Services Offered
                                 </Typography>
                                 <Typography>
@@ -70,7 +70,7 @@ export default function Services(_: ServicesProps) {
                         </Columns.Column>
                         <Columns.Column size={4}>
                             <Content>
-                                <Typography as="h2" size="xl">
+                                <Typography as="h2" $size="xl">
                                     Wellness and Prevention
                                 </Typography>
                                 <Typography>

@@ -1,18 +1,18 @@
 import { styled } from "styled-components";
 
 export interface TypographyProps {
-    family?: "primary" | "secondary";
-    size?: "xxs" | "xs" | "s" | "m" | "l" | "xl" | "xxl";
-    color?: "primary" | "secondary" | "interactive" | "disabled" | "error";
-    weight?: "light" | "regular" | "heavy";
+    $family?: "primary" | "secondary";
+    $size?: "xxs" | "xs" | "s" | "m" | "l" | "xl" | "xxl";
+    $color?: "primary" | "secondary" | "interactive" | "disabled" | "error";
+    $weight?: "light" | "regular" | "heavy";
 }
 
 export const Typography = styled.p<TypographyProps>`
-    font-family: ${({ family }) => families[family ?? "primary"]}, sans-serif;
-    font-weight: ${({ weight }) => weights[weight ?? "regular"]};
-    font-size: ${({ size }) => sizes[size ?? "xs"]};
-    line-height: ${({ size }) => lineHeights[size ?? "xs"]};
-    color: ${({ color }) => colors[color ?? "primary"]};
+    font-family: ${({ $family }) => families[$family ?? "primary"]}, sans-serif;
+    font-weight: ${({ $weight }) => weights[$weight ?? "regular"]};
+    font-size: ${({ $size }) => sizes[$size ?? "xs"]};
+    line-height: ${({ $size }) => lineHeights[$size ?? "xs"]};
+    color: ${({ $color }) => colors[$color ?? "primary"]};
 `;
 
 const families = {

@@ -35,7 +35,7 @@ export default function Library(props: LibraryProps) {
                         <Columns.Column size={4}>
                             <FancyBlurb>
                                 <Block>
-                                    <Typography as="h1" family="secondary" size="xxl">
+                                    <Typography as="h1" $family="secondary" $size="xxl">
                                         The Health Library
                                     </Typography>
                                 </Block>

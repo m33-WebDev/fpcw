@@ -41,7 +41,7 @@ export default function Appointments(_: AppointmentProps) {
             <Section>
                 <Container>
                     <Block>
-                        <Typography as="h1" family="secondary" size="xxl">
+                        <Typography as="h1" $family="secondary" $size="xxl">
                             Request an Appointment
                         </Typography>
                     </Block>

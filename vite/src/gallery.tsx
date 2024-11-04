@@ -23,7 +23,7 @@ export default function Gallery(props: GalleryProps) {
             <Section>
                 <Container>
                     <Block>
-                        <Typography as="h1" family="secondary" size="xxl">
+                        <Typography as="h1" $family="secondary" $size="xxl">
                             Photo Gallery
                         </Typography>
                     </Block>

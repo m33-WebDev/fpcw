@@ -33,7 +33,7 @@ export default function Contact(_: ContactProps) {
                         <Columns centered={true} gap={8}>
                             <Columns.Column size={6}>
                                 <Content>
-                                    <Typography family="secondary" size="l">
+                                    <Typography $family="secondary" $size="l">
                                         FPCW is serving patients all across California via a HIPAA-
                                         compliant telehealth platform. Our TMS & ketamine therapy
                                         services are provided at our main office in Westlake
@@ -116,7 +116,7 @@ export default function Contact(_: ContactProps) {
                             </Columns.Column>
                             <Columns.Column size={4}>
                                 <Content>
-                                    <Typography as="h2" family="secondary" size="xl">
+                                    <Typography as="h2" $family="secondary" $size="xl">
                                         FPCW Contact Information
                                     </Typography>
                                     <Table>

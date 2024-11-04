@@ -36,20 +36,18 @@ export function Header() {
                 </Navbar.Brand>
                 <Navbar.Menu>
                     <Navbar.Container align="left" mobile={{ display: "hidden" }}>
-                        <Navbar.Item>
-                            <a href="/appointments">
-                                <Level>
-                                    <Level.Item textColor="warning">
-                                        <FontAwesomeIcon icon={faExclamationCircle} />
-                                    </Level.Item>
-                                    <Level.Item mx={3}>
-                                        <Typography as="span">{telehealthCallout}</Typography>
-                                    </Level.Item>
-                                    <Level.Item textColor="warning">
-                                        <FontAwesomeIcon icon={faExclamationCircle} />
-                                    </Level.Item>
-                                </Level>
-                            </a>
+                        <Navbar.Item href="/appointments">
+                            <Level>
+                                <Level.Item textColor="warning">
+                                    <FontAwesomeIcon icon={faExclamationCircle} />
+                                </Level.Item>
+                                <Level.Item mx={3}>
+                                    <Typography as="span">{telehealthCallout}</Typography>
+                                </Level.Item>
+                                <Level.Item textColor="warning">
+                                    <FontAwesomeIcon icon={faExclamationCircle} />
+                                </Level.Item>
+                            </Level>
                         </Navbar.Item>
                     </Navbar.Container>
                     <Navbar.Container align="right">

@@ -17,7 +17,7 @@ export function NewsTile({ post }: NewsTileProps) {
                 <FancyImage src={feature} alt="post thumbnail" />
                 <Card.Content>
                     <Block>
-                        <Typography as="h5" size="s">
+                        <Typography as="h5" $size="s">
                             {title}
                         </Typography>
                     </Block>

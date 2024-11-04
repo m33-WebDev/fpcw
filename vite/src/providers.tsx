@@ -36,7 +36,7 @@ export default function Providers(props: ProvidersProps) {
                         <Columns.Column size={4}>
                             <FancyBlurb>
                                 <Block>
-                                    <Typography as="h1" family="secondary" size="xxl">
+                                    <Typography as="h1" $family="secondary" $size="xxl">
                                         Find the Right Expert for Your Mental Health Needs
                                     </Typography>
                                 </Block>

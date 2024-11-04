@@ -8,7 +8,7 @@ const action =
 export function NewsletterSignup() {
     return (
         <>
-            <Typography as="h5" size="s">
+            <Typography as="h5" $size="s">
                 Connect with us
             </Typography>
             <Typography>

@@ -29,7 +29,7 @@ export default function Careers(_: CareersProps) {
                     <Columns>
                         <Columns.Column size={3}>
                             <Block>
-                                <Typography as="h1" family="secondary" size="xxl">
+                                <Typography as="h1" $family="secondary" $size="xxl">
                                     Careers
                                 </Typography>
                             </Block>

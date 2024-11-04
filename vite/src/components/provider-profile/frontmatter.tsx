@@ -24,13 +24,13 @@ export function Frontmatter(props: FrontmatterProps) {
     return (
         <>
             <Block>
-                <Typography as="h1" family="secondary" size="xxl">
+                <Typography as="h1" $family="secondary" $size="xxl">
                     {props.name}
                     {props.credential && `, ${props.credential}`}
                 </Typography>
             </Block>
             <Block>
-                <Typography as="h2" size="s">
+                <Typography as="h2" $size="s">
                     {props.jobTitle}
                 </Typography>
             </Block>

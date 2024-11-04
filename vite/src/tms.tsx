@@ -38,12 +38,12 @@ export default function Tms() {
                         </Columns.Column>
                         <Columns.Column>
                             <Block>
-                                <Typography as="h1" family="secondary" size="xxl">
+                                <Typography as="h1" $family="secondary" $size="xxl">
                                     Transcranial Magnetic Stimulation
                                 </Typography>
                             </Block>
                             <Block>
-                                <Typography size="l" color="secondary">
+                                <Typography $size="l" $color="secondary">
                                     Tap into a new possibility for depression
                                 </Typography>
                             </Block>
@@ -85,12 +85,12 @@ export default function Tms() {
                     <Columns vCentered={true}>
                         <Columns.Column>
                             <Block>
-                                <Typography as="h2" family="secondary" size="xl">
+                                <Typography as="h2" $family="secondary" $size="xl">
                                     How TMS Works
                                 </Typography>
                             </Block>
                             <Block>
-                                <Typography size="m" color="secondary">
+                                <Typography $size="m" $color="secondary">
                                     Stimulating the brain with magnetic pulses
                                 </Typography>
                             </Block>
@@ -127,12 +127,12 @@ export default function Tms() {
                         </Columns.Column>
                         <Columns.Column>
                             <Block>
-                                <Typography as="h2" family="secondary" size="xl">
+                                <Typography as="h2" $family="secondary" $size="xl">
                                     Lasting Relief from Depression
                                 </Typography>
                             </Block>
                             <Block>
-                                <Typography size="m" color="secondary">
+                                <Typography $size="m" $color="secondary">
                                     The #1 physician-recommended treatment for non-responsive
                                     depression
                                 </Typography>
@@ -154,12 +154,12 @@ export default function Tms() {
                     <Columns vCentered={true} gap={8}>
                         <Columns.Column>
                             <Block>
-                                <Typography as="h2" family="secondary" size="xl">
+                                <Typography as="h2" $family="secondary" $size="xl">
                                     Find Out If TMS Is Right for You
                                 </Typography>
                             </Block>
                             <Block>
-                                <Typography size="m" color="secondary">
+                                <Typography $size="m" $color="secondary">
                                     Take the quiz and set up a free consultation
                                 </Typography>
                             </Block>

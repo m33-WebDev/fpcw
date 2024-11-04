@@ -31,7 +31,7 @@ export function FormJobApplication() {
         >
             <input type="hidden" name="form-name" value="jobapplication" />
             <Block>
-                <Typography as="h1" family="secondary" size="xxl">
+                <Typography as="h1" $family="secondary" $size="xxl">
                     Application
                 </Typography>
             </Block>

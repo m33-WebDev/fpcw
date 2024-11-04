@@ -43,7 +43,7 @@ export default function Post(props: PostProps) {
                     {/* @ts-ignore: @todo: not sure why gap is not found on Columns component */}
                     <Columns multiline={true}>
                         <Columns.Column size="half" offset={2}>
-                            <Typography as="h1" family="secondary" size="xxl">
+                            <Typography as="h1" $family="secondary" $size="xxl">
                                 {title}
                             </Typography>
                         </Columns.Column>

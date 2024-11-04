@@ -18,7 +18,7 @@ export default function BrainTesting() {
                     <Columns>
                         <Columns.Column size={6}>
                             <Block>
-                                <Typography as="h1" family="secondary" size="xxl">
+                                <Typography as="h1" $family="secondary" $size="xxl">
                                     Schedule a Brain Testing Appointment Today!
                                 </Typography>
                             </Block>
