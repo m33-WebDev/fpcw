@@ -47,7 +47,7 @@ export default function Services(_: ServicesProps) {
                                 </Typography>
                                 <ul>
                                     {conditions.map((service) => (
-                                        <Service service={service} />
+                                        <Service key={service.name} service={service} />
                                     ))}
                                 </ul>
                             </Content>
@@ -63,7 +63,7 @@ export default function Services(_: ServicesProps) {
                                 </Typography>
                                 <ul>
                                     {psychTreatments.map((service) => (
-                                        <Service service={service} />
+                                        <Service key={service.name} service={service} />
                                     ))}
                                 </ul>
                             </Content>
@@ -78,7 +78,7 @@ export default function Services(_: ServicesProps) {
                                 </Typography>
                                 <ul>
                                     {altTreatments.map((service) => (
-                                        <Service service={service} />
+                                        <Service key={service.name} service={service} />
                                     ))}
                                 </ul>
                             </Content>

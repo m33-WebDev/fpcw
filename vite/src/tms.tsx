@@ -217,7 +217,7 @@ function Quizlet() {
             <>
                 <Columns multiline={true}>
                     {assertions.map((assertion) => (
-                        <Columns.Column size={6}>
+                        <Columns.Column key={assertion.id} size={6}>
                             <Form.Field kind="group">
                                 <Form.Label>{assertion.val}</Form.Label>
                                 <Form.Control>

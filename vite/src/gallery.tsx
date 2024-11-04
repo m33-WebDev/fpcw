@@ -29,7 +29,7 @@ export default function Gallery(props: GalleryProps) {
                     </Block>
                     <Columns multiline={true} centered={true}>
                         {props.photos.map((photo) => (
-                            <Columns.Column size={6}>
+                            <Columns.Column key={photo.title} size={6}>
                                 <Box>
                                     <img src={photo.url} alt="Image" height={400} width={400} />
                                     <Typography>{photo.description}</Typography>

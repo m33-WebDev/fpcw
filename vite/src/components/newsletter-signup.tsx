@@ -33,6 +33,7 @@ export function NewsletterSignup() {
                         name="b_facdc7abe706e043dbfd4ead6_2b9b2f9f34"
                         tabIndex={-1}
                         value=""
+                        readOnly={true}
                     />
                 </div>
                 <Button type="submit" color="success" outlined={true} fullwidth={true}>
