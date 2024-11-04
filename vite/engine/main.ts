@@ -94,7 +94,9 @@ async function main() {
             await fs.writeFile(renderedPath, html);
 
             // save page component
-            const componentOutPath = componentPath.replace(sourceDir, intermediateDir);
+            const componentOutPath = componentPath
+                .replace(sourceDir, intermediateDir)
+                .replace(".tsx", ".comp.tsx");
             await fs.copyFile(componentPath, componentOutPath);
 
             // copy main script
@@ -103,7 +105,7 @@ async function main() {
             });
             const mainCompleteContent = mainContent
                 .replace("<!--intermediate-->", intermediateAbsDir)
-                .replace("<!--path-->", entry.name)
+                .replace("<!--path-->", entry.name.replace(".tsx", ".comp.tsx"))
                 .replace("<!--props-->", entry.name.replace(".tsx", ".props.json"));
             await fs.writeFile(mainPath.replace(sourceDir, intermediateDir), mainCompleteContent);
 
@@ -143,7 +145,7 @@ async function main() {
                     .replace("<!--main-->", mainName);
 
                 // make the parent dir; todo: make this more generic
-                await fs.mkdir(parent, { recursive: true });
+                await fs.mkdir(parent.replace(sourceDir, intermediateDir), { recursive: true });
 
                 // save rendered html
                 const renderedPath = basePath
@@ -152,7 +154,9 @@ async function main() {
                 await fs.writeFile(renderedPath, html);
 
                 // save page component
-                const componentOutPath = basePath.replace(sourceDir, intermediateDir);
+                const componentOutPath = basePath
+                    .replace(sourceDir, intermediateDir)
+                    .replace(".tsx", ".comp.tsx");
                 await fs.copyFile(componentPath, componentOutPath);
 
                 // copy main script
@@ -161,7 +165,7 @@ async function main() {
                 });
                 const mainCompleteContent = mainContent
                     .replace("<!--intermediate-->", intermediateAbsDir)
-                    .replace("<!--path-->", name)
+                    .replace("<!--path-->", name.replace(".tsx", ".comp.tsx"))
                     .replace("<!--props-->", name.replace(".tsx", ".props.json"));
                 await fs.writeFile(
                     mainPath.replace(sourceDir, intermediateDir),
