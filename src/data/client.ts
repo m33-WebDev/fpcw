@@ -6,7 +6,7 @@ export class ContentfulClient {
     readonly client: contentful.ContentfulClientApi<undefined>;
 
     constructor() {
-        const token = process.env.CONTENTFUl_API_TOKEN;
+        const token = process.env.CONTENTFUL_API_TOKEN;
 
         if (token === undefined) {
             throw new Error("CONTENTFUL_API_TOKEN is undefined");
