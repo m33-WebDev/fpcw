@@ -5,9 +5,7 @@
     "scripts": {
         "clean": "rm -rf target node_modules",
         "develop": "tsx engine/main.ts --develop",
-        "engine:build": "tsx engine/main.ts",
-        "vite:build": "vite build --config vite.config.ts target/intermediate --outDir ../dist --emptyOutDir true",
-        "build": "npm run engine:build && npm run vite:build",
+        "build": "tsx engine/main.ts && vite build --config vite.config.ts target/intermediate --outDir ../dist --emptyOutDir true",
         "preview": "vite preview --config vite.config.ts target"
     },
     "devDependencies": {
