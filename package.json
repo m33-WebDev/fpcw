@@ -3,12 +3,13 @@
     "version": "1.0.0",
     "type": "module",
     "scripts": {
-        "vite:dev": "vite --config vite.config.ts target/intermediate",
-        "engine:dev": "tsx --watch-path=src engine/main.ts",
+        "clean": "rm -rf target node_modules",
+        "vite:develop": "vite --config vite.config.ts target/develop",
+        "develop": "tsx engine/main.ts --develop",
         "engine:build": "tsx engine/main.ts",
         "vite:build": "vite build --config vite.config.ts target/intermediate --outDir ../dist --emptyOutDir true",
-        "vite:preview": "vite preview --config vite.config.ts target",
-        "build": "npm run engine:build && npm run vite:build"
+        "build": "npm run engine:build && npm run vite:build",
+        "preview": "vite preview --config vite.config.ts target"
     },
     "devDependencies": {
         "@types/node": "^18.19.63",
@@ -33,6 +34,7 @@
         "@fortawesome/free-solid-svg-icons": "^6.6.0",
         "@fortawesome/react-fontawesome": "^0.2.2",
         "bulma": "^1.0.2",
+        "chokidar": "^4.0.1",
         "contentful": "^11.2.0",
         "pure-react-carousel": "^1.32.0",
         "react": "^18.3.1",

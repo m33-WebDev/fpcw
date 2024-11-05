@@ -1,22 +1,22 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
-import pages from "./target/intermediate/manifest.json";
 import { resolve } from "path";
 import { VitePluginRadar as radar } from "vite-plugin-radar";
 
 /**
  * Get build entry points.
  */
-function entrypoints() {
-    const entries = {};
-    for (const page of pages) {
-        // @ts-ignore: todo
-        entries[page] = resolve("target/intermediate", page);
+async function entrypoints(): Promise<string[]> {
+    const entries: string[] = [];
+    const manifest = "./target/intermediate/manifest.json";
+    const pages = await import(manifest, { with: { type: "json" } });
+    for (const page of pages.default) {
+        entries.push(resolve("target/intermediate", page));
     }
     return entries;
 }
 
-export default defineConfig({
+export default defineConfig(async ({ command }) => ({
     plugins: [react(), radar({ analytics: { id: "G-QYQZ5QLG34" } })],
     css: {
         preprocessorOptions: {
@@ -31,7 +31,7 @@ export default defineConfig({
     },
     build: {
         rollupOptions: {
-            input: entrypoints(),
+            input: command === "build" ? await entrypoints() : [],
         },
     },
-});
+}));

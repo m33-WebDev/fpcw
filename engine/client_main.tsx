@@ -4,9 +4,9 @@ import "@fontsource/nunito/500.css";
 import "@fontsource/playfair-display/400.css";
 import "@fontsource/playfair-display/500.css";
 import "pure-react-carousel/dist/react-carousel.es.css";
-import "<!--intermediate-->/styles/global.scss";
+import "<!--base-->/styles/global.scss";
 
-import { hydrateRoot } from "react-dom/client";
+import { createRoot, hydrateRoot } from "react-dom/client";
 
 // @ts-ignore: import will be replaced with actual path during build
 import Component from "./<!--source-->";
@@ -20,9 +20,16 @@ import React from "react";
  * Browser entry point. Responsible for hydrating the pre-rendered DOM.
  */
 function main() {
-    const root = document.getElementById("root") as HTMLElement;
+    const mount = document.getElementById("root") as HTMLElement;
     const node = React.createElement(Component, props);
-    hydrateRoot(root, node);
+    const mode = "<!--mode-->";
+    // @ts-ignore: mode will be one of 'develop' or 'build'
+    if (mode === "develop") {
+        const root = createRoot(mount);
+        root.render(node);
+    } else {
+        hydrateRoot(mount, node);
+    }
 }
 
 main();
