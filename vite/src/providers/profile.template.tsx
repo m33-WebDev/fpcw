@@ -45,7 +45,11 @@ export default function ProviderProfile(props: ProviderProfileProps) {
                     {/* @ts-ignore: @todo: not sure why gap is not found on Columns component */}
                     <Columns gap={8}>
                         <Columns.Column>
-                            <img src={headshot} alt="Headshot" />
+                            <img
+                                src={headshot}
+                                alt="Headshot"
+                                style={{ width: "100%", objectFit: "cover" }}
+                            />
                         </Columns.Column>
                         <Columns.Column>
                             <Frontmatter

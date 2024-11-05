@@ -53,11 +53,15 @@ export default function Library(props: LibraryProps) {
                                 {props.posts.map(({ slug, title, feature }, i) => (
                                     <Columns.Column size={4} key={i}>
                                         <a href={`/library/${slug}`}>
-                                            <FancyCard>
-                                                <FancyPostImage
+                                            <FancyCard style={{ overflow: "hidden" }}>
+                                                <img
                                                     key={slug}
                                                     src={feature}
                                                     alt={title}
+                                                    style={{
+                                                        objectFit: "cover",
+                                                        minHeight: "100%",
+                                                    }}
                                                 />
                                                 <FancyPostTitle>
                                                     <Typography>{title}</Typography>
@@ -102,8 +106,4 @@ const FancyPostTitle = styled.div`
     text-align: left;
     background: rgba(72, 199, 116, 0.7);
     max-width: 70%;
-`;
-
-const FancyPostImage = styled.img`
-    height: 100%;
 `;

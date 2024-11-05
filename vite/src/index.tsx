@@ -7,7 +7,6 @@ import {
     Icon,
     Level,
     Section,
-    Tile,
 } from "react-bulma-components";
 import { styled } from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -113,50 +112,36 @@ export default function Index(props: IndexProps) {
                                 </Block>
                             </Columns.Column>
                             <Columns.Column size={6}>
-                                <Tile kind="ancestor">
-                                    <Tile className="tile is-vertical">
-                                        <Tile className="tile">
-                                            <Tile kind="parent">
-                                                <FancyTile kind="child">
-                                                    <SplashTile
-                                                        title="Services"
-                                                        image="./images/servicesplash.jpg"
-                                                        to="/services"
-                                                    />
-                                                </FancyTile>
-                                            </Tile>
-                                            <Tile kind="parent">
-                                                <Tile kind="child">
-                                                    <SplashTile
-                                                        title="Telehealth"
-                                                        image="./images/telehealthsplash.jpg"
-                                                        to="/library/telepsychiatry-telecounseling"
-                                                    />
-                                                </Tile>
-                                            </Tile>
-                                        </Tile>
-                                        <Tile className="tile">
-                                            <Tile kind="parent">
-                                                <Tile kind="child">
-                                                    <SplashTile
-                                                        title="Transcranial Magnetic Stimulation (TMS)"
-                                                        image="./images/tmssplash.jpg"
-                                                        to="/tms"
-                                                    />
-                                                </Tile>
-                                            </Tile>
-                                            <Tile kind="parent">
-                                                <FancyTile kind="child">
-                                                    <SplashTile
-                                                        title="Health Library"
-                                                        image="./images/librarysplash.jpg"
-                                                        to="/library"
-                                                    />
-                                                </FancyTile>
-                                            </Tile>
-                                        </Tile>
-                                    </Tile>
-                                </Tile>
+                                <Columns>
+                                    <Columns.Column size={6} style={{ minHeight: "40vmin" }}>
+                                        <SplashTile
+                                            title="Services"
+                                            image="./images/servicesplash.jpg"
+                                            to="/services"
+                                        />
+                                    </Columns.Column>
+                                    <Columns.Column size={6} style={{ minHeight: "40vmin" }}>
+                                        <SplashTile
+                                            title="Telehealth"
+                                            image="./images/telehealthsplash.jpg"
+                                            to="/library/telepsychiatry-telecounseling"
+                                        />
+                                    </Columns.Column>
+                                    <Columns.Column size={6} style={{ minHeight: "40vmin" }}>
+                                        <SplashTile
+                                            title="Transcranial Magnetic Stimulation (TMS)"
+                                            image="./images/tmssplash.jpg"
+                                            to="/tms"
+                                        />
+                                    </Columns.Column>
+                                    <Columns.Column size={6} style={{ minHeight: "40vmin" }}>
+                                        <SplashTile
+                                            title="Health Library"
+                                            image="./images/librarysplash.jpg"
+                                            to="/library"
+                                        />
+                                    </Columns.Column>
+                                </Columns>
                             </Columns.Column>
                         </Columns>
                     </Container>
@@ -262,10 +247,6 @@ function Rating({ link, icon, rating }: { link: string; icon: IconDefinition; ra
         </Block>
     );
 }
-
-const FancyTile = styled(Tile)`
-    min-height: 40vmin;
-`;
 
 const FancyDivider = styled.hr`
     background-color: #48c774;

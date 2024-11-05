@@ -13,8 +13,12 @@ export function NewsTile({ post }: NewsTileProps) {
 
     return (
         <a href={`/library/${slug}`}>
-            <Card>
-                <FancyImage src={feature} alt="post thumbnail" />
+            <Card style={{ overflow: "hidden" }}>
+                <FancyImage
+                    src={feature}
+                    alt="post thumbnail"
+                    style={{ objectFit: "cover", width: "100%" }}
+                />
                 <Card.Content>
                     <Block>
                         <Typography as="h5" $size="s">

@@ -11,8 +11,12 @@ interface SplashTileProps {
 export function SplashTile(props: SplashTileProps) {
     return (
         <a href={props.to}>
-            <FancyCard>
-                <FancyImage src={props.image} alt="Splash" />
+            <FancyCard style={{ overflow: "hidden" }}>
+                <img
+                    src={props.image}
+                    alt="Splash"
+                    style={{ objectFit: "cover", minHeight: "100%" }}
+                />
                 <FancyTitle>
                     <Typography>{props.title}</Typography>
                 </FancyTitle>
@@ -24,10 +28,6 @@ export function SplashTile(props: SplashTileProps) {
 const FancyCard = styled(Card)`
     height: 100%;
     position: relative;
-`;
-
-const FancyImage = styled.img`
-    height: 100%;
 `;
 
 const FancyTitle = styled.h2`

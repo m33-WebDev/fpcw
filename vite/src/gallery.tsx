@@ -31,7 +31,7 @@ export default function Gallery(props: GalleryProps) {
                         {props.photos.map((photo) => (
                             <Columns.Column key={photo.title} size={6}>
                                 <Box>
-                                    <img src={photo.url} alt="Image" height={400} width={400} />
+                                    <img src={photo.url} alt="Image" />
                                     <Typography>{photo.description}</Typography>
                                 </Box>
                             </Columns.Column>

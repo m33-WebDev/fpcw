@@ -56,8 +56,15 @@ export default function Providers(props: ProvidersProps) {
                                 {profiles.map(({ slug, name, credential, headshot }, i) => (
                                     <Columns.Column size={4} key={i}>
                                         <a href={`/providers/${slug}`}>
-                                            <FancyCard>
-                                                <FancyPostImage src={headshot} key={slug} />
+                                            <FancyCard style={{ overflow: "hidden" }}>
+                                                <img
+                                                    src={headshot}
+                                                    key={slug}
+                                                    style={{
+                                                        objectFit: "cover",
+                                                        minHeight: "100%",
+                                                    }}
+                                                />
                                                 <FancyPostTitle>
                                                     <Typography>
                                                         {name}
@@ -114,8 +121,4 @@ const FancyPostTitle = styled.div`
     text-align: left;
     background: rgba(72, 199, 116, 0.7);
     max-width: 70%;
-`;
-
-const FancyPostImage = styled.img`
-    height: 100%;
 `;
