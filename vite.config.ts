@@ -21,7 +21,9 @@ export default defineConfig(async ({ command }) => ({
     css: {
         preprocessorOptions: {
             scss: {
-                api: "modern-compiler",
+                // unable to silence warnings when using "legacy"
+                // develop server fails when using "modern-compiler"
+                api: "modern",
                 // silence warnings until the following issues are resolved
                 // upstream: https://github.com/jgthms/bulma/issues/3907,
                 // https://github.com/jgthms/bulma/issues/3920

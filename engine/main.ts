@@ -7,6 +7,7 @@ import { pages } from "./pages";
 import * as dirs from "./dirs";
 import { ServerStyleSheet } from "styled-components";
 import { watch } from "chokidar";
+import { createServer } from "vite";
 
 async function main() {
     const engine = new Engine();
@@ -161,6 +162,11 @@ class Engine {
                 fs.rm(`${dirs.develop}/${path}.main.tsx`);
             }
         });
+
+        // Start vite server
+        const server = await createServer({ configFile: "./vite.config.ts", root: dirs.develop });
+        await server.listen();
+        console.log("listening at http://localhost:5173");
     }
 
     /**
