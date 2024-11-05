@@ -1,4 +1,3 @@
-import React from "react";
 import { Button, Columns, Form, Icon } from "react-bulma-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope, faPhone } from "@fortawesome/free-solid-svg-icons";
@@ -6,8 +5,13 @@ import { Typography } from "./style";
 
 export function FormBrainTesting() {
     return (
-        // @ts-expect-error: 'netlify' attribute does not exist on HTML form tag
-        <form name="braintestingappointment" method="POST" netlify="true" action="/formsuccess/">
+        <form
+            name="braintestingappointment"
+            method="POST"
+            // @ts-expect-error: 'netlify' attribute does not exist on HTML form tag
+            netlify="true"
+            action="/formsuccess/"
+        >
             <input type="hidden" name="form-name" value="braintestingappointment" />
             <Columns>
                 <Columns.Column>

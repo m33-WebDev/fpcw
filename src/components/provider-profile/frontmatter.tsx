@@ -1,6 +1,4 @@
-import React from "react";
 import { Block } from "react-bulma-components";
-import { Nullable } from "../../types";
 import { Typography } from "../style";
 
 export interface FrontmatterProps {
@@ -11,7 +9,7 @@ export interface FrontmatterProps {
     /**
      * The credential of the provider, if applicable.
      */
-    credential: Nullable<string>;
+    credential?: string;
     /**
      * The human-friendly job title of the provider.
      */
@@ -26,13 +24,13 @@ export function Frontmatter(props: FrontmatterProps) {
     return (
         <>
             <Block>
-                <Typography as="h1" family="secondary" size="xxl">
+                <Typography as="h1" $family="secondary" $size="xxl">
                     {props.name}
                     {props.credential && `, ${props.credential}`}
                 </Typography>
             </Block>
             <Block>
-                <Typography as="h2" size="s">
+                <Typography as="h2" $size="s">
                     {props.jobTitle}
                 </Typography>
             </Block>

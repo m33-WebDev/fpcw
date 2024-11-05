@@ -9,23 +9,29 @@ const positions = [
     "Psychiatric Nurse Practitioner",
     "Licensed Marriage and Family Therapist",
     "Psychologist",
-    "Licensed Clinical Social Worker"
+    "Licensed Clinical Social Worker",
 ];
 
 export function FormJobApplication() {
     const [resume, setResume] = useState<any>();
 
-    function onUpload(event) {
+    function onUpload(event: React.ChangeEvent<HTMLInputElement>) {
         const files = event.target.files;
         setResume(files);
     }
 
     return (
-        // @ts-expect-error: 'netlify' attribute does not exist on HTML form tag
-        <form name="jobapplication" method="POST" netlify="true" action="/formsuccess/" encType="multipart/form-data">
+        <form
+            name="jobapplication"
+            method="POST"
+            // @ts-expect-error: 'netlify' attribute does not exist on HTML form tag
+            netlify="true"
+            action="/formsuccess/"
+            encType="multipart/form-data"
+        >
             <input type="hidden" name="form-name" value="jobapplication" />
             <Block>
-                <Typography as="h1" family="secondary" size="xxl">
+                <Typography as="h1" $family="secondary" $size="xxl">
                     Application
                 </Typography>
             </Block>
@@ -35,7 +41,7 @@ export function FormJobApplication() {
                 </Form.Label>
                 <Form.Control>
                     <Form.Select color="success">
-                        {positions.map(pos => {
+                        {positions.map((pos) => {
                             return <option key={pos}>{pos}</option>;
                         })}
                     </Form.Select>

@@ -1,30 +1,19 @@
-import React from "react";
-import { graphql, useStaticQuery } from "gatsby";
 import { CarouselProvider, Slider, Slide, Dot } from "pure-react-carousel";
 import { Block, Button, Content } from "react-bulma-components";
-import { RichText } from "./richtext";
 import { Typography } from "./style";
+import { Review } from "../data";
+import { RichText } from "./richtext";
 
-export function Reviews() {
-    const { reviews } = useStaticQuery(graphql`
-        query {
-            reviews: allContentfulReview(sort: { fields: createdAt, order: DESC }, limit: 5) {
-                nodes {
-                    author
-                    content {
-                        raw
-                    }
-                    link
-                }
-            }
-        }
-    `);
+interface ReviewsProps {
+    reviews: Review[];
+}
 
+export function Reviews(props: ReviewsProps) {
     return (
         <CarouselProvider
             naturalSlideWidth={600}
             naturalSlideHeight={350}
-            totalSlides={reviews.nodes.length}
+            totalSlides={props.reviews.length}
             isPlaying={true}
             interval={10000}
             dragEnabled={false}
@@ -33,12 +22,10 @@ export function Reviews() {
         >
             <Block>
                 <Slider>
-                    {reviews.nodes.map(({ author, content }, i) => {
+                    {props.reviews.map(({ author, content }, i) => {
                         return (
                             <Slide index={i} key={i}>
-                                <Content>
-                                    <RichText src={content} />
-                                </Content>
+                                <Content>{content && <RichText src={content} />}</Content>
                                 <Content textAlign="right">
                                     <Typography>
                                         <em>{author}</em>
@@ -51,8 +38,16 @@ export function Reviews() {
             </Block>
             <Block>
                 <Button.Group size="small">
-                    {reviews.nodes.map((_, i) => {
-                        return <Button renderAs={Dot} slide={i} key={i} color="success" rounded={true} />;
+                    {props.reviews.map((_, i) => {
+                        return (
+                            <Button
+                                renderAs={Dot}
+                                slide={i}
+                                key={i}
+                                color="success"
+                                rounded={true}
+                            />
+                        );
                     })}
                 </Button.Group>
             </Block>

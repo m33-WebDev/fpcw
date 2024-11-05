@@ -1,7 +1,13 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Button, Columns, Form, Icon } from "react-bulma-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEnvelope, faPhone, faCalendar, faUserFriends, faUser } from "@fortawesome/free-solid-svg-icons";
+import {
+    faEnvelope,
+    faPhone,
+    faCalendar,
+    faUserFriends,
+    faUser,
+} from "@fortawesome/free-solid-svg-icons";
 import { Typography } from "./style";
 
 const referralSources = [
@@ -9,7 +15,7 @@ const referralSources = [
     "Social Media (Facebook, Instagram, etc.)",
     "Insurance Referral",
     "Word of Mouth",
-    "Other"
+    "Other",
 ];
 
 const insuranceReferral = referralSources[2];
@@ -23,13 +29,18 @@ export interface FormAppointmentProps {
 export function FormAppointment(props: FormAppointmentProps) {
     const [referralSource, setReferralSource] = useState("");
 
-    const handleChange = event => {
+    const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
         setReferralSource(event.target.value);
     };
 
     return (
-        // @ts-expect-error: 'netlify' attribute does not exist on HTML form tag
-        <form name={props.name ?? "appointmentrequest"} method="POST" netlify="true" action="/formsuccess/">
+        <form
+            name={props.name ?? "appointmentrequest"}
+            method="POST"
+            // @ts-expect-error: 'netlify' attribute does not exist on HTML form tag
+            netlify="true"
+            action="/formsuccess/"
+        >
             <input type="hidden" name="form-name" value={props.name ?? "appointmentrequest"} />
             <input type="hidden" name="referral-insurer" />
             <input type="hidden" name="referral-wordofmouth-name" />
@@ -45,7 +56,11 @@ export function FormAppointment(props: FormAppointmentProps) {
                                     <Typography>First Name</Typography>
                                 </Form.Label>
                                 <Form.Control>
-                                    <Form.Input placeholder="John" name="first-name" required></Form.Input>
+                                    <Form.Input
+                                        placeholder="John"
+                                        name="first-name"
+                                        required
+                                    ></Form.Input>
                                 </Form.Control>
                             </Form.Field>
                         </Columns.Column>
@@ -55,7 +70,11 @@ export function FormAppointment(props: FormAppointmentProps) {
                                     <Typography>Last Name</Typography>
                                 </Form.Label>
                                 <Form.Control>
-                                    <Form.Input placeholder="Smith" name="last-name" required></Form.Input>
+                                    <Form.Input
+                                        placeholder="Smith"
+                                        name="last-name"
+                                        required
+                                    ></Form.Input>
                                 </Form.Control>
                             </Form.Field>
                         </Columns.Column>
@@ -115,7 +134,7 @@ export function FormAppointment(props: FormAppointmentProps) {
                                 onBlur={handleChange}
                                 required
                             >
-                                {referralSources.map(source => {
+                                {referralSources.map((source) => {
                                     return <option key={source}>{source}</option>;
                                 })}
                             </Form.Select>
@@ -144,7 +163,10 @@ export function FormAppointment(props: FormAppointmentProps) {
                                     <Typography>Word of Mouth Referrer</Typography>
                                 </Form.Label>
                                 <Form.Control>
-                                    <Form.Input placeholder="Name" name="referral-wordofmouth-name" />
+                                    <Form.Input
+                                        placeholder="Name"
+                                        name="referral-wordofmouth-name"
+                                    />
                                     <Icon align="left">
                                         <FontAwesomeIcon icon={faUser} />
                                     </Icon>
@@ -152,7 +174,10 @@ export function FormAppointment(props: FormAppointmentProps) {
                             </Form.Field>
                             <Form.Field>
                                 <Form.Control>
-                                    <Form.Input placeholder="(123) 456-7890" name="referral-wordofmouth-phone" />
+                                    <Form.Input
+                                        placeholder="(123) 456-7890"
+                                        name="referral-wordofmouth-phone"
+                                    />
                                     <Icon align="left">
                                         <FontAwesomeIcon icon={faPhone} />
                                     </Icon>

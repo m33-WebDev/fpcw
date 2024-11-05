@@ -1,14 +1,13 @@
-import React from "react";
 import { Content } from "react-bulma-components";
-import { ContentfulRichText, Nullable } from "../../types";
 import { RichText } from "../richtext";
 import { Typography } from "../style";
+import { Document } from "@contentful/rich-text-types";
 
 export interface BodyProps {
     /**
      * The biographical description for the provider.
      */
-    bio: Nullable<ContentfulRichText>;
+    bio: Document;
 }
 
 /**
@@ -21,7 +20,9 @@ export function Body(props: BodyProps) {
             {props.bio ? (
                 <RichText src={props.bio} />
             ) : (
-                <Typography>No information available at this time. Please check back again later.</Typography>
+                <Typography>
+                    No information available at this time. Please check back again later.
+                </Typography>
             )}
         </Content>
     );

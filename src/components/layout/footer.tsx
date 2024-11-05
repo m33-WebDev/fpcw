@@ -1,19 +1,29 @@
-import React from "react";
-import { Columns, Container, Level, Column, Content, Block, Footer as BulmaFooter, Icon } from "react-bulma-components";
+import {
+    Columns,
+    Container,
+    Level,
+    Content,
+    Block,
+    Footer as BulmaFooter,
+    Icon,
+} from "react-bulma-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope, faPhone, faCalendar, IconDefinition } from "@fortawesome/free-solid-svg-icons";
 import { Typography } from "../style";
 import { faExclamationCircle } from "@fortawesome/free-solid-svg-icons";
-import Link from "gatsby-link";
 
 const telehealthCallout = "Now Offering Telehealth Services all across California.";
 
-const contactDetails: [IconDefinition, string][] = [
-    [faPhone, "(805) 341-3416"],
-    [faEnvelope, "fpcw@familypsychiatry101.com"],
-    [faCalendar, "Monday - Thursday - 9:00am - 5:00pm"],
-    [faCalendar, "Friday - 8:00am - 3:00pm"],
-    [, "Same day appointments available . We are closed on Weekends and Holidays. "]
+const contactDetails: [string, IconDefinition | null, string][] = [
+    ["phone", faPhone, "(805) 341-3416"],
+    ["email", faEnvelope, "fpcw@familypsychiatry101.com"],
+    ["mon_thu", faCalendar, "Monday - Thursday - 9:00am - 5:00pm"],
+    ["fri", faCalendar, "Friday - 8:00am - 3:00pm"],
+    [
+        "same_day",
+        null,
+        "Same day appointments available . We are closed on Weekends and Holidays. ",
+    ],
 ];
 
 export function Footer() {
@@ -23,13 +33,13 @@ export function Footer() {
                 <Columns.Column offset={3} size={6}>
                     <Container px={4}>
                         <Block alignItems="center" alignContent="center" textAlign="center">
-                            <Link to="/appointments">
+                            <a href="/appointments">
                                 <Level>
                                     <Level.Item textColor="warning">
                                         <FontAwesomeIcon icon={faExclamationCircle} />
                                     </Level.Item>
                                     <Level.Item mx={1}>
-                                        <Typography weight="heavy" as="h1">
+                                        <Typography $weight="heavy" as="h1">
                                             {telehealthCallout}
                                         </Typography>
                                     </Level.Item>
@@ -37,17 +47,19 @@ export function Footer() {
                                         <FontAwesomeIcon icon={faExclamationCircle} />
                                     </Level.Item>
                                 </Level>
-                            </Link>
+                            </a>
                         </Block>
                     </Container>
                 </Columns.Column>
                 <Columns vCentered={true}>
                     <Columns.Column size={3}>
-                        {contactDetails.map(([icon, text]) => (
-                            <Icon.Text mb={2}>
-                                <Icon>
-                                    <FontAwesomeIcon icon={icon} />
-                                </Icon>
+                        {contactDetails.map(([key, icon, text]) => (
+                            <Icon.Text key={key} mb={2}>
+                                {icon && (
+                                    <Icon>
+                                        <FontAwesomeIcon icon={icon} />
+                                    </Icon>
+                                )}
                                 <Typography>{text}</Typography>
                             </Icon.Text>
                         ))}
@@ -67,7 +79,9 @@ export function Footer() {
                     <Divider />
                     <Columns.Column size={3}>
                         <Content>
-                            <Typography>© 2023 Family Psychiatry Counseling and Wellness.</Typography>
+                            <Typography>
+                                © 2024 Family Psychiatry Counseling and Wellness.
+                            </Typography>
                         </Content>
                     </Columns.Column>
                 </Columns>

@@ -1,30 +1,33 @@
-import React from "react";
-import { Link } from "gatsby";
-import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import { Card } from "react-bulma-components";
-import styled from "styled-components";
+import { styled } from "styled-components";
 import { Typography } from "./style";
 
-export function SplashTile(props) {
+interface SplashTileProps {
+    title: string;
+    to: string;
+    image: string;
+}
+
+export function SplashTile(props: SplashTileProps) {
     return (
-        <Link to={props.to ?? "/"}>
-            <FancyCard>
-                <FancyImage image={getImage(props.image)} alt="Splash" />
+        <a href={props.to}>
+            <FancyCard style={{ overflow: "hidden" }}>
+                <img
+                    src={props.image}
+                    alt="Splash"
+                    style={{ objectFit: "cover", minHeight: "100%" }}
+                />
                 <FancyTitle>
                     <Typography>{props.title}</Typography>
                 </FancyTitle>
             </FancyCard>
-        </Link>
+        </a>
     );
 }
 
 const FancyCard = styled(Card)`
     height: 100%;
     position: relative;
-`;
-
-const FancyImage = styled(GatsbyImage)`
-    height: 100%;
 `;
 
 const FancyTitle = styled.h2`
