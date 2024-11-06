@@ -62,6 +62,7 @@ export function AppointmentForm() {
              * These placeholders inform Netlify about fields that are not rendered at build time.
              * This ensures that the fields are recognized and uploaded with the the form submission.
              */}
+            <input type='hidden' name='form-name' value='appointmentrequest' />
             <input type="hidden" name="referral-insurer" />
             <input type="hidden" name="referral-wordofmouth-name" />
             <input type="hidden" name="referral-wordofmouth-phone" />
