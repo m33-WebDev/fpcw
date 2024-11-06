@@ -4,6 +4,8 @@ import "@fontsource/nunito/500.css";
 import "@fontsource/playfair-display/400.css";
 import "@fontsource/playfair-display/500.css";
 import "pure-react-carousel/dist/react-carousel.es.css";
+import "@fortawesome/fontawesome-svg-core/styles.css";
+import { config } from "@fortawesome/fontawesome-svg-core";
 import "<!--base-->/styles/global.scss";
 
 import { createRoot, hydrateRoot } from "react-dom/client";
@@ -20,6 +22,8 @@ import React from "react";
  * Browser entry point. Responsible for hydrating the pre-rendered DOM.
  */
 function main() {
+    config.autoAddCss = false; // prevent fontawesome flicker
+
     const mount = document.getElementById("root") as HTMLElement;
     const node = React.createElement(Component, props);
     const mode = "<!--mode-->";
