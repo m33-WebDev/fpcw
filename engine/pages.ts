@@ -9,7 +9,7 @@ export const pages = [
     "src/brain-testing.tsx",
     "src/careers.tsx",
     "src/contact.tsx",
-    "src/formsuccess.tsx",
+    "src/success.tsx",
     "src/gallery.tsx",
     "src/index.tsx",
     "src/library.tsx",

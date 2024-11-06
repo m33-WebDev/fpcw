@@ -6,7 +6,7 @@ export function Layout({ children }: { children: ReactNode }) {
     return (
         <>
             <Header />
-            <div style={{ minHeight: "calc(100vh - 3.25rem)", backgroundColor: "hsl(0, 0%, 96%)" }}>
+            <div id="site" className="tw-min-h-[calc(100vh-3.25rem)]">
                 {children}
             </div>
             <Footer />

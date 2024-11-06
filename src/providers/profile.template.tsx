@@ -49,6 +49,7 @@ export default function ProviderProfile(props: ProviderProfileProps) {
                                 src={headshot}
                                 alt="Headshot"
                                 style={{ width: "100%", objectFit: "cover" }}
+                                className="tw-rounded-lg"
                             />
                         </Columns.Column>
                         <Columns.Column>

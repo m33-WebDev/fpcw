@@ -1,19 +1,6 @@
-import { Block, Container, Section } from "react-bulma-components";
-import { Layout, Seo, FormAppointment, Typography } from "./components";
+import { Container } from "react-bulma-components";
+import { AppointmentForm, Layout, Seo } from "./components";
 import { ContentfulClient } from "./data";
-
-const disclaimer1 = `
-This appointment request form requires you to provide personal information
-for the purposes of scheduling your appointment. By completing and transmitting
-this form, you consent to disclose such information to a Family Psychiatry Counseling
-and Wellness affiliated representative. Also, general data (excluding patient
-identifiable information) may be used for internal analysis purposes.
-`;
-
-const disclaimer2 = `
-If you prefer to request an appointment by telephone, please contact our office
-directly at (805) 341-3416 during normal business hours.
-`;
 
 interface AppointmentProps {
     title: string;
@@ -37,24 +24,11 @@ export function Head(props: AppointmentProps) {
 export default function Appointments(_: AppointmentProps) {
     return (
         <Layout>
-            <Section>
+            <div className="tw-h-[calc(100vh-52px)] tw-flex tw-align-center tw-items-center tw-bg-gradient-to-r tw-from-[#48C744] tw-to-emerald-500">
                 <Container>
-                    <Block>
-                        <Typography as="h1" $family="secondary" $size="xxl">
-                            Request an Appointment
-                        </Typography>
-                    </Block>
-                    <FormAppointment />
-                    <div
-                        id="disclaimer"
-                        className="mt-2 relative border-4 border-solid border-[#48c774] px-4 pt-8 pb-4 before:absolute before:top-0 before:content-['NOTE'] before:px-6 before:py-1 before:mt-[-4px] before:text-[#48c774] before:bg-[#494949]"
-                    >
-                        <Typography>{disclaimer1}</Typography>
-                        <br />
-                        <Typography>{disclaimer2}</Typography>
-                    </div>
+                    <AppointmentForm />
                 </Container>
-            </Section>
+            </div>
         </Layout>
     );
 }

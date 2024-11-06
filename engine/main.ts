@@ -5,7 +5,6 @@ import { resolve } from "path";
 import { InstanceInfo } from "./instance";
 import { pages } from "./pages";
 import * as dirs from "./dirs";
-import { ServerStyleSheet } from "styled-components";
 import { watch } from "chokidar";
 import { createServer } from "vite";
 
@@ -319,14 +318,12 @@ class Engine {
         const head = module.Head ? renderToString(React.createElement(module.Head, props)) : "";
 
         // Load body content
-        const sheet = new ServerStyleSheet();
         const element = React.createElement(module.default, props);
-        const styled = sheet.collectStyles(element); // needed to enable styled ssr
-        const body = renderToString(styled);
+        const body = renderToString(element);
 
         // Render HTML
         const html = (await fs.readFile("engine/base.html", { encoding: "utf-8" }))
-            .replace("<!--head-->", `${head}\n${sheet.getStyleTags()}`)
+            .replace("<!--head-->", `${head}`)
             .replace("<!--body-->", body)
             .replace("<!--main-->", `${name}.main.tsx`);
 

@@ -1,5 +1,5 @@
-import { Block, Columns, Container, Section } from "react-bulma-components";
-import { Layout, Seo, FormBrainTesting, Typography } from "./components";
+import { Columns, Container, Section } from "react-bulma-components";
+import { Layout, Seo, BrainTestingForm } from "./components";
 
 export function Head() {
     return (
@@ -17,12 +17,10 @@ export default function BrainTesting() {
                 <Container>
                     <Columns>
                         <Columns.Column size={6}>
-                            <Block>
-                                <Typography as="h1" $family="secondary" $size="xxl">
-                                    Schedule a Brain Testing Appointment Today!
-                                </Typography>
-                            </Block>
-                            <FormBrainTesting />
+                            <h1 className="tw-font-serif tw-text-6xl tw-mb-6">
+                                Schedule a Brain Testing Appointment Today!
+                            </h1>
+                            <BrainTestingForm />
                         </Columns.Column>
                     </Columns>
                 </Container>

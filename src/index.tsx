@@ -1,24 +1,10 @@
-import {
-    Block,
-    Button,
-    Columns,
-    Container,
-    Hero,
-    Icon,
-    Level,
-    Section,
-} from "react-bulma-components";
+import { Columns, Container, Hero, Icon, Section } from "react-bulma-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-    faStar,
-    faHandHoldingMedical,
-    faChevronRight,
-    faHeartbeat,
-    IconDefinition,
-} from "@fortawesome/free-solid-svg-icons";
+import { faHeartbeat, IconDefinition } from "@fortawesome/free-solid-svg-icons";
 import { faFacebookSquare, faGoogle } from "@fortawesome/free-brands-svg-icons";
-import { Layout, Seo, SplashTile, NewsTile, Reviews, Typography } from "./components";
+import { Layout, Seo, Reviews } from "./components";
 import { ContentfulClient, Post, Review } from "./data";
+import { Document, Text } from "@contentful/rich-text-types";
 
 const ratings = [
     {
@@ -57,7 +43,7 @@ export async function query(): Promise<IndexProps> {
     return {
         title: page.metaTitle ?? "",
         description: (page.metaDescription as string) ?? "",
-        posts: posts.slice(0, 3),
+        posts: posts.slice(0, 4),
         reviews,
     };
 }
@@ -72,143 +58,151 @@ export default function Index(props: IndexProps) {
             <Hero size="fullheight" hasNavbar={true}>
                 <Hero.Body>
                     <Container>
-                        <Columns vCentered={true}>
+                        <Columns>
                             <Columns.Column size={6}>
-                                <Block>
-                                    <Typography $family="secondary" $size="xxl">
+                                <div className="tw-space-y-10">
+                                    <h1 className="tw-font-serif tw-text-6xl">
                                         Family Psychiatry
                                         <br />
-                                        Counseling and Wellness
-                                    </Typography>
-                                </Block>
-                                <a href="/appointments">
-                                    <Button color="light">
-                                        <Typography as="span" color="interactive">
-                                            MAKE AN APPOINTMENT TODAY
-                                        </Typography>
-                                        <Icon>
-                                            <FontAwesomeIcon icon={faChevronRight} />
-                                        </Icon>
-                                    </Button>
-                                </a>
-                                <Block>
-                                    <Typography $size="m" $color="secondary">
-                                        A comprehensive psychiatric clinic serving the mental &
-                                        emotional health needs of all members of the family. Our
-                                        mission is to help you live your best life.
-                                    </Typography>
+                                        Counseling & Wellness
+                                    </h1>
 
-                                    <Typography $size="m" $color="secondary">
-                                        We diagnose and treat a variety of mental health symptoms
-                                        and conditions—with or without medications. We also offer
-                                        TMS & Ketamine therapies.
-                                    </Typography>
-                                    <Typography $size="m" $color="secondary">
-                                        We accept most commercial insurances. Same day appointments
-                                        available. Prescriptions are sent electronically to your
-                                        pharmacy
-                                    </Typography>
-                                </Block>
+                                    <div className="tw-space-y-6">
+                                        <p className="tw-font-sans tw-text-xl tw-text-slate-500">
+                                            A comprehensive psychiatric clinic serving the mental &
+                                            emotional health needs of all members of the family. Our
+                                            mission is to help you live your best life.
+                                        </p>
+                                        <p className="tw-font-sans tw-text-xl tw-text-slate-500">
+                                            We diagnose and treat a variety of mental health
+                                            symptoms and conditions—with or without medications. We
+                                            also offer transcranial magnetic stimulation (TMS) and
+                                            ketamine therapies.
+                                        </p>
+                                        <p className="tw-font-sans tw-text-xl tw-text-slate-500">
+                                            We accept most commercial insurances. Same day
+                                            appointments available. Prescriptions are sent
+                                            electronically to your pharmacy
+                                        </p>
+                                    </div>
+
+                                    <div>
+                                        <a href="/appointments">
+                                            <button className="tw-rounded-full tw-px-6 tw-py-4 tw-text-xl tw-font-sans tw-font-bold tw-text-white tw-bg-gradient-to-r tw-from-[#48C744] tw-to-emerald-500">
+                                                Request an appointment
+                                            </button>
+                                        </a>
+                                    </div>
+                                </div>
                             </Columns.Column>
                             <Columns.Column size={6}>
-                                <Columns>
-                                    <Columns.Column size={6} style={{ minHeight: "40vmin" }}>
-                                        <SplashTile
-                                            title="Services"
-                                            image="./images/servicesplash.jpg"
-                                            to="/services"
+                                <div className="tw-grid tw-grid-cols-2 tw-gap-y-8">
+                                    <a href="/services" className="tw-justify-self-center">
+                                        <Card
+                                            label="Services"
+                                            feature="./images/servicesplash.jpg"
                                         />
-                                    </Columns.Column>
-                                    <Columns.Column size={6} style={{ minHeight: "40vmin" }}>
-                                        <SplashTile
-                                            title="Telehealth"
-                                            image="./images/telehealthsplash.jpg"
-                                            to="/library/telepsychiatry-telecounseling"
+                                    </a>
+                                    <a
+                                        href="/library/telepsychiatry-telecounseling"
+                                        className="tw-justify-self-center"
+                                    >
+                                        <Card
+                                            label="Telehealth"
+                                            feature="./images/telehealthsplash.jpg"
                                         />
-                                    </Columns.Column>
-                                    <Columns.Column size={6} style={{ minHeight: "40vmin" }}>
-                                        <SplashTile
-                                            title="Transcranial Magnetic Stimulation (TMS)"
-                                            image="./images/tmssplash.jpg"
-                                            to="/tms"
+                                    </a>
+                                    <a href="/tms" className="tw-justify-self-center">
+                                        <Card
+                                            label="Transcranial Magnetic Stimulation"
+                                            feature="./images/tmssplash.jpg"
                                         />
-                                    </Columns.Column>
-                                    <Columns.Column size={6} style={{ minHeight: "40vmin" }}>
-                                        <SplashTile
-                                            title="Health Library"
-                                            image="./images/librarysplash.jpg"
-                                            to="/library"
+                                    </a>
+                                    <a href="/library" className="tw-justify-self-center">
+                                        <Card
+                                            label="Health Library"
+                                            feature="./images/librarysplash.jpg"
                                         />
-                                    </Columns.Column>
-                                </Columns>
+                                    </a>
+                                </div>
                             </Columns.Column>
                         </Columns>
                     </Container>
                 </Hero.Body>
-            </Hero>
-            <Section backgroundColor="grey-lighter">
-                <Columns vCentered={true} centered={true}>
-                    <Columns.Column size={2} textAlign="center">
-                        <FontAwesomeIcon icon={faHandHoldingMedical} size="8x" />
-                    </Columns.Column>
-                    <Columns.Column size={6}>
-                        <Block>
-                            <Typography as="h2" $family="secondary" $size="xl">
-                                Holistic Psychiatry for your Mind, Body and Soul
-                            </Typography>
-                        </Block>
-                        <Typography>
-                            At Family Psychiatry Counseling and Wellness, we specialize in
-                            performing comprehensive psychiatric and psychological evaluations to
-                            establish accurate diagnoses and prepare individualized treatment plans.
-                            We combine advanced conventional methods with safe alternative treatment
-                            approaches to bring about lasting relief and improved quality of life.
-                        </Typography>
-                    </Columns.Column>
-                </Columns>
+            </Hero>{" "}
+            <Section>
+                <Container>
+                    <Columns centered={true}>
+                        <Columns.Column size={6}>
+                            <div className="tw-space-y-6">
+                                <h2 className="tw-font-serif tw-text-5xl">
+                                    Holistic psychiatry for the mind, body and soul
+                                </h2>
+                                <p className="tw-font-sans tw-text-lg">
+                                    At Family Psychiatry Counseling and Wellness, we specialize in
+                                    performing comprehensive psychiatric and psychological
+                                    evaluations to establish accurate diagnoses and prepare
+                                    individualized treatment plans. We combine advanced conventional
+                                    methods with safe alternative treatment approaches to bring
+                                    about lasting relief and improved quality of life.
+                                </p>
+                            </div>
+                        </Columns.Column>
+                        <Columns.Column size={6} textAlign="center">
+                            <img
+                                src="https://images.unsplash.com/photo-1545205597-3d9d02c29597?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                className="tw-rounded-lg"
+                            />
+                        </Columns.Column>
+                    </Columns>
+                </Container>
             </Section>
             <Section my={6}>
                 <Container>
                     <Columns>
-                        <Columns.Column size={3}>
-                            <Typography as="h2" $family="secondary" $size="xl">
-                                What Our Patients Are Saying
-                            </Typography>
+                        <Columns.Column size={6}>
+                            <div className="tw-space-y-6">
+                                <h2 className="tw-font-serif tw-text-5xl">
+                                    What our patients are saying
+                                </h2>
+                                <Columns>
+                                    {ratings.map((rating) => (
+                                        <Columns.Column size={4}>
+                                            <Rating
+                                                key={rating.key}
+                                                link={rating.link}
+                                                icon={rating.icon}
+                                                rating={rating.rating}
+                                            />
+                                        </Columns.Column>
+                                    ))}
+                                </Columns>
+                            </div>
                         </Columns.Column>
-                        <Columns.Column size={1} />
-                        <Columns.Column size={2}>
-                            {ratings.map((rating) => (
-                                <Rating
-                                    key={rating.key}
-                                    link={rating.link}
-                                    icon={rating.icon}
-                                    rating={rating.rating}
-                                />
-                            ))}
-                        </Columns.Column>
-                        <Columns.Column size={1} />
-                        <Columns.Column size={4}>
+                        <Columns.Column size={6}>
                             <Reviews reviews={props.reviews} />
                         </Columns.Column>
                     </Columns>
                 </Container>
             </Section>
-            <Section backgroundColor="grey-lighter">
+            <Section>
                 <Container py={6}>
-                    <Block textAlign="center">
-                        <Typography as="h2" $family="secondary" $size="xl">
-                            Health Resources
-                        </Typography>
-                    </Block>
-                    <hr className="bg-[#48c774] w-[15%] ml-auto mr-auto h-1 mb-2" />
-                    <Columns centered={true}>
-                        {props.posts.map((post, i) => (
-                            <Columns.Column size={3} key={i}>
-                                <NewsTile post={post} />
-                            </Columns.Column>
-                        ))}
-                    </Columns>
-                    <hr className="bg-[#48c774] w-[15%] ml-auto mr-auto h-1" />
+                    <div className="tw-space-y-6">
+                        <h2 className="tw-font-serif tw-text-5xl">Health Resources</h2>
+                        <Columns>
+                            {props.posts.map((post, i) => (
+                                <Columns.Column size={3} key={i}>
+                                    <a href={`/library/${post.slug}`}>
+                                        <LongCard
+                                            label={post.title}
+                                            feature={post.feature}
+                                            excerpt={extractExcerptFromRichText(post.body!, 40)}
+                                        />
+                                    </a>
+                                </Columns.Column>
+                            ))}
+                        </Columns>
+                    </div>
                 </Container>
             </Section>
         </Layout>
@@ -217,32 +211,57 @@ export default function Index(props: IndexProps) {
 
 function Rating({ link, icon, rating }: { link: string; icon: IconDefinition; rating: number }) {
     return (
-        <Block>
+        <div>
             <a href={link} target="_blank" rel="noopener noreferrer">
-                <Level>
-                    <Level.Side align="left">
-                        <Level.Item>
-                            <Typography as="div" color="interactive">
-                                <Icon>
-                                    <FontAwesomeIcon icon={icon} size="3x" />
-                                </Icon>
-                            </Typography>
-                        </Level.Item>
-                    </Level.Side>
-                    <Level.Side align="right">
-                        <Level.Item>
-                            <Typography as="span" $size="l">
-                                {rating.toFixed(1)}
-                            </Typography>
-                            <Typography as="span" $size="l" color="interactive">
-                                <Icon ml={2}>
-                                    <FontAwesomeIcon icon={faStar} size="xs" />
-                                </Icon>
-                            </Typography>
-                        </Level.Item>
-                    </Level.Side>
-                </Level>
+                <div className="tw-flex tw-flex-row tw-items-center tw-gap-6">
+                    <Icon className="tw-text-[#48C744]">
+                        <FontAwesomeIcon icon={icon} size="2x" />
+                    </Icon>
+                    <div className="tw-flex tw-items-center">
+                        <div className="tw-text-slate-400 tw-font-bold tw-text-3xl">
+                            {rating.toFixed(1)}
+                        </div>
+                    </div>
+                </div>
             </a>
-        </Block>
+        </div>
     );
+}
+
+function Card(props: { label: string; feature: string }) {
+    return (
+        <div className="tw-rounded-3xl tw-h-72 tw-w-72 tw-shadow tw-flex tw-flex-col tw-overflow-hidden">
+            <div className="tw-grow tw-overflow-hidden">
+                <img
+                    src={props.feature}
+                    alt="@todo"
+                    className="tw-w-full tw-h-full tw-object-cover"
+                />
+            </div>
+            <div className="tw-px-4 tw-py-2 tw-text-slate-600 tw-font-sans tw-font-medium">
+                {props.label}
+            </div>
+        </div>
+    );
+}
+
+function LongCard(props: { label: string; feature?: string; excerpt: string }) {
+    return (
+        <div className="tw-rounded-3xl tw-h-[36rem] tw-w-72 tw-shadow tw-flex tw-flex-col tw-overflow-hidden">
+            <div className="tw-grow tw-overflow-hidden">
+                <img src={props.feature ?? ""} className="tw-w-full tw-h-full tw-object-cover" />
+            </div>
+            <div className="tw-flex-none tw-px-4 tw-py-6 tw-h-72 tw-space-y-2">
+                <div className="tw-text-slate-600 tw-font-sans tw-font-medium">{props.label}</div>
+                <p className="tw-text-slate-500">{props.excerpt}</p>
+            </div>
+        </div>
+    );
+}
+
+function extractExcerptFromRichText(document: Document, length: number): string {
+    const firstParagraph = document.content.find(({ nodeType }) => nodeType === "paragraph");
+    const firstText = firstParagraph?.content.find(({ nodeType }) => nodeType === "text") as Text;
+    const excerpt = firstText?.value.split(" ").slice(0, length).join(" ");
+    return excerpt ? `${excerpt}...` : "Excerpt could not be generated for this content.";
 }

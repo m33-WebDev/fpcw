@@ -1,5 +1,5 @@
-import { Block, Card, Columns, Container, Content, Section } from "react-bulma-components";
-import { Layout, Seo, Typography } from "./components";
+import { Columns, Container, Section } from "react-bulma-components";
+import { Layout, Seo } from "./components";
 import { ContentfulClient, Profile } from "./data";
 
 interface ProvidersProps {
@@ -34,20 +34,16 @@ export default function Providers(props: ProvidersProps) {
                     <Columns gap={4}>
                         <Columns.Column size={4}>
                             <div className="min-[1024px]:sticky min-[1024px]:top-[15vh]">
-                                <Block>
-                                    <Typography as="h1" $family="secondary" $size="xxl">
-                                        Find the Right Expert for Your Mental Health Needs
-                                    </Typography>
-                                </Block>
-                                <Content size="medium">
-                                    <Typography>
-                                        Our professional staff consists of board-certified,
-                                        experienced psychiatrists, therapists, nurse practitioners,
-                                        and others. We are, individually and collectively, committed
-                                        to providing the highest quality care to our patients and to
-                                        advancing wellness of the mind, body, and spirit.
-                                    </Typography>
-                                </Content>
+                                <h1 className="tw-mb-6 tw-font-serif tw-text-5xl tw-leading-tight">
+                                    Find the Right Expert for Your Mental Health Needs
+                                </h1>
+                                <p className="tw-font-sans tw-text-lg">
+                                    Our professional staff consists of board-certified, experienced
+                                    psychiatrists, therapists, nurse practitioners, and others. We
+                                    are, individually and collectively, committed to providing the
+                                    highest quality care to our patients and to advancing wellness
+                                    of the mind, body, and spirit.
+                                </p>
                             </div>
                         </Columns.Column>
                         <Columns.Column size={8}>
@@ -55,19 +51,19 @@ export default function Providers(props: ProvidersProps) {
                                 {profiles.map(({ slug, name, credential, headshot }, i) => (
                                     <Columns.Column size={4} key={i}>
                                         <a href={`/providers/${slug}`}>
-                                            <Card className="overflow-hidden h-[30vmin]">
-                                                <img
-                                                    src={headshot}
-                                                    key={slug}
-                                                    className="object-cover min-h-full min-w-full"
-                                                />
-                                                <div className="border-3 border-green-500 border-r-0 absolute bottom-0 right-0 p-1 text-left bg-green-500/70 max-w-[70%]">
-                                                    <Typography>
-                                                        {name}
-                                                        {credential ? `, ${credential}` : ""}
-                                                    </Typography>
+                                            <div className="tw-rounded-3xl tw-h-72 tw-w-72 tw-shadow tw-flex tw-flex-col tw-overflow-hidden">
+                                                <div className="tw-grow tw-overflow-hidden">
+                                                    <img
+                                                        src={headshot}
+                                                        key={slug}
+                                                        className="tw-w-full tw-h-full tw-object-cover"
+                                                    />
                                                 </div>
-                                            </Card>
+                                                <div className="tw-px-4 tw-py-2 tw-text-slate-600 tw-font-sans tw-font-medium">
+                                                    {name}
+                                                    {credential ? `, ${credential}` : ""}
+                                                </div>
+                                            </div>
                                         </a>
                                     </Columns.Column>
                                 ))}

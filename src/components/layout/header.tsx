@@ -2,9 +2,8 @@ import { useState } from "react";
 import { Container, Level, Navbar } from "react-bulma-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faExclamationCircle } from "@fortawesome/free-solid-svg-icons";
-import { Typography } from "../style";
 
-const telehealthCallout = "Now Offering Telehealth Services all across California.";
+const telehealthCallout = "Now offering telehealth services all across California.";
 
 const primaryLinks = [
     ["Home", "/"],
@@ -25,7 +24,7 @@ export function Header() {
     const [active, setActive] = useState(false);
 
     return (
-        <Navbar fixed="top" color="success" active={active}>
+        <Navbar fixed="top" active={active} className="tw-shadow-sm">
             <Container>
                 <Navbar.Brand>
                     <Navbar.Item href="/">
@@ -37,13 +36,13 @@ export function Header() {
                     <Navbar.Container align="left" mobile={{ display: "hidden" }}>
                         <Navbar.Item href="/appointments">
                             <Level>
-                                <Level.Item textColor="warning">
+                                <Level.Item className="tw-text-[#ffe08a]">
                                     <FontAwesomeIcon icon={faExclamationCircle} />
                                 </Level.Item>
                                 <Level.Item mx={3}>
-                                    <Typography as="span">{telehealthCallout}</Typography>
+                                    <span className="tw-font-sans">{telehealthCallout}</span>
                                 </Level.Item>
-                                <Level.Item textColor="warning">
+                                <Level.Item className="tw-text-[#ffe08a]">
                                     <FontAwesomeIcon icon={faExclamationCircle} />
                                 </Level.Item>
                             </Level>
@@ -53,27 +52,27 @@ export function Header() {
                         {primaryLinks.map(([name, value]) =>
                             value.startsWith("/") ? (
                                 <Navbar.Item key={name} href={value}>
-                                    <Typography as="span">{name}</Typography>
+                                    <span className="tw-font-sans">{name}</span>
                                 </Navbar.Item>
                             ) : (
                                 <Navbar.Item key={name} href={value}>
-                                    <Typography as="span">{name}</Typography>
+                                    <span className="tw-font-sans">{name}</span>
                                 </Navbar.Item>
                             ),
                         )}
                         <Navbar.Item href="#" hoverable={true}>
                             <Navbar.Link>
-                                <Typography>About</Typography>
+                                <p className="tw-font-sans">About</p>
                             </Navbar.Link>
                             <Navbar.Dropdown>
                                 {secondaryLinks.map(([name, value]) =>
                                     value.startsWith("/") ? (
                                         <Navbar.Item key={name} href={value}>
-                                            <Typography as="span">{name}</Typography>
+                                            <span className="tw-font-sans">{name}</span>
                                         </Navbar.Item>
                                     ) : (
                                         <Navbar.Item key={name} href={value} textColor="dark">
-                                            <Typography as="span">{name}</Typography>
+                                            <span className="tw-font-sans">{name}</span>
                                         </Navbar.Item>
                                     ),
                                 )}

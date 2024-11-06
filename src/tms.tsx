@@ -9,7 +9,7 @@ import {
     Section,
     Block,
 } from "react-bulma-components";
-import { Layout, Seo, FormAppointment, Typography } from "./components";
+import { Layout, Seo, AppointmentForm } from "./components";
 
 export function Head() {
     return (
@@ -37,29 +37,29 @@ export default function Tms() {
                         </Columns.Column>
                         <Columns.Column>
                             <Block>
-                                <Typography as="h1" $family="secondary" $size="xxl">
+                                <h1 className="tw-font-serif tw-text-6xl">
                                     Transcranial Magnetic Stimulation
-                                </Typography>
+                                </h1>
                             </Block>
                             <Block>
-                                <Typography $size="l" $color="secondary">
+                                <p className="tw-font-sans tw-text-2xl tw-text-gray-400">
                                     Tap into a new possibility for depression
-                                </Typography>
+                                </p>
                             </Block>
-                            <Typography>
+                            <p className="tw-font-sans">
                                 Transcranial magnetic stimulation, or TMS for short, is a safe,
                                 effective, non-invasive, non-drug treatment for depression without
                                 the side effects of medications. The treatment requires no sedation
                                 or anesthesia. It also has no recovery time, meaning patients can
                                 resume normal activity - including driving - immediately after
                                 sessions. Covered by most insurance providers.
-                            </Typography>
+                            </p>
                             <Level>
                                 <Level.Side align="left" />
                                 <Level.Side align="right">
-                                    <Typography>
+                                    <p className="tw-font-sans">
                                         <strong>Powered by</strong>{" "}
-                                    </Typography>
+                                    </p>
                                     <a
                                         href="https://neurostar.com/"
                                         target="_blank"
@@ -84,21 +84,19 @@ export default function Tms() {
                     <Columns vCentered={true}>
                         <Columns.Column>
                             <Block>
-                                <Typography as="h2" $family="secondary" $size="xl">
-                                    How TMS Works
-                                </Typography>
+                                <h2 className="tw-font-serif tw-text-4xl">How TMS Works</h2>
                             </Block>
                             <Block>
-                                <Typography $size="m" $color="secondary">
+                                <p className="tw-font-sans tw-text-2xl tw-text-gray-400">
                                     Stimulating the brain with magnetic pulses
-                                </Typography>
+                                </p>
                             </Block>
-                            <Typography>
+                            <p className="tw-font-sans">
                                 TMS uses focused magnetic pulses, similar to an MRI, to stimulate
                                 underactive areas of the brain which results in improvement of
                                 depression. It is <strong>not</strong> a drug, shock therapy, or
                                 surgery.
-                            </Typography>
+                            </p>
                         </Columns.Column>
                         <Columns.Column textAlign="center">
                             <img
@@ -126,21 +124,21 @@ export default function Tms() {
                         </Columns.Column>
                         <Columns.Column>
                             <Block>
-                                <Typography as="h2" $family="secondary" $size="xl">
+                                <h2 className="tw-font-serif tw-text-4xl">
                                     Lasting Relief from Depression
-                                </Typography>
+                                </h2>
                             </Block>
                             <Block>
-                                <Typography $size="m" $color="secondary">
+                                <p className="tw-font-sans tw-text-2xl tw-text-gray-400">
                                     The #1 physician-recommended treatment for non-responsive
                                     depression
-                                </Typography>
+                                </p>
                             </Block>
-                            <Typography>
+                            <p className="tw-font-sans">
                                 Over 80% of patients who completed TMS treatments experienced
                                 significant relief, and out of those, 62% saw full remission of
                                 their depression symptoms.
-                            </Typography>
+                            </p>
                         </Columns.Column>
                     </Columns>
                 </Container>
@@ -153,22 +151,22 @@ export default function Tms() {
                     <Columns vCentered={true} gap={8}>
                         <Columns.Column>
                             <Block>
-                                <Typography as="h2" $family="secondary" $size="xl">
+                                <h2 className="tw-font-serif tw-text-4xl">
                                     Find Out If TMS Is Right for You
-                                </Typography>
+                                </h2>
                             </Block>
                             <Block>
-                                <Typography $size="m" $color="secondary">
+                                <p className="tw-font-sans tw-text-2xl tw-text-gray-400">
                                     Take the quiz and set up a free consultation
-                                </Typography>
+                                </p>
                             </Block>
-                            <Typography>
+                            <p className="tw-font-sans">
                                 TMS is FDA-approved for the treatment of moderate to severe
                                 depression in patients who have partially responded or not responded
                                 to medications and talk therapy. If you fit these criteria, adding
                                 TMS therapy to your existing treatment plan may help you achieve
                                 full remission.
-                            </Typography>
+                            </p>
                         </Columns.Column>
                         <Columns.Column>
                             <Quizlet />
@@ -258,7 +256,7 @@ function Quizlet() {
                 <Content>
                     <strong>Based on your answers, this treatment may be right for you.</strong>
                 </Content>
-                <FormAppointment />
+                <AppointmentForm />
             </div>
         );
     } else {

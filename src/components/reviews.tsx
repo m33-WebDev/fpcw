@@ -1,6 +1,5 @@
 import { CarouselProvider, Slider, Slide, Dot } from "pure-react-carousel";
 import { Block, Button, Content } from "react-bulma-components";
-import { Typography } from "./style";
 import { Review } from "../data";
 import { RichText } from "./richtext";
 
@@ -24,12 +23,12 @@ export function Reviews(props: ReviewsProps) {
                 <Slider>
                     {props.reviews.map(({ author, content }, i) => {
                         return (
-                            <Slide index={i} key={i}>
+                            <Slide index={i} key={i} className="tw-px-2">
                                 <Content>{content && <RichText src={content} />}</Content>
                                 <Content textAlign="right">
-                                    <Typography>
+                                    <p className="tw-font-sans">
                                         <em>{author}</em>
-                                    </Typography>
+                                    </p>
                                 </Content>
                             </Slide>
                         );

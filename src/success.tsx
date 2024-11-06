@@ -1,5 +1,5 @@
-import { Container, Content, Section } from "react-bulma-components";
-import { Layout, Seo, Typography } from "./components";
+import { Container, Section } from "react-bulma-components";
+import { Layout, Seo } from "./components";
 
 export function Head() {
     return (
@@ -11,20 +11,20 @@ export function Head() {
     );
 }
 
-export default function FormSuccess() {
+export default function Success() {
     return (
         <Layout>
             <Section>
                 <Container>
-                    <Content textAlign="center">
-                        <Typography>
+                    <div className="tw-text-center">
+                        <p className="tw-font-sans">
                             Thanks for your submission!
                             <br />
                             We'll be in touch.
                             <br />
                             Return to <a href="/">Home</a>.
-                        </Typography>
-                    </Content>
+                        </p>
+                    </div>
                 </Container>
             </Section>
         </Layout>

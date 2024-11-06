@@ -1,5 +1,5 @@
-import { Block, Columns, Container, Content, Section } from "react-bulma-components";
-import { Layout, Seo, FormJobApplication, Typography } from "./components";
+import { Columns, Container, Section } from "react-bulma-components";
+import { Layout, Seo, JobApplicationForm } from "./components";
 import { ContentfulClient } from "./data";
 
 interface CareersProps {
@@ -28,36 +28,29 @@ export default function Careers(_: CareersProps) {
                 <Container>
                     <Columns>
                         <Columns.Column size={3}>
-                            <Block>
-                                <Typography as="h1" $family="secondary" $size="xxl">
-                                    Careers
-                                </Typography>
-                            </Block>
-                            <Content>
-                                <Typography>
-                                    Want to join a team that is passionate about patient care? FPCW
-                                    is expanding, and we are looking to meet great providers with
-                                    various types of qualifications.
-                                </Typography>
-                                <br />
-                                <Typography>
-                                    We offer competitive compensation, a fun work environment, and
-                                    unparalleled work-life balance.
-                                </Typography>
-                                <br />
-                                <Typography>
-                                    Interested in joining our team? Submit an application today!
-                                </Typography>
-                            </Content>
+                            <h1 className="tw-font-serif tw-text-6xl tw-mb-6">Careers</h1>
+                            <p className="tw-font-sans tw-mb-4">
+                                Want to join a team that is passionate about patient care? FPCW is
+                                expanding, and we are looking to meet great providers with various
+                                types of qualifications.
+                            </p>
+                            <p className="tw-font-sans tw-mb-4">
+                                We offer competitive compensation, a fun work environment, and
+                                unparalleled work-life balance.
+                            </p>
+                            <p className="tw-font-sans tw-mb-4">
+                                Interested in joining our team? Submit an application today!
+                            </p>
                         </Columns.Column>
                         <Columns.Column size={6}>
                             <img
                                 alt="Woman speaking with therapist"
                                 src="https://www.helpguide.org/wp-content/uploads/woman-on-couch-speaking-with-therapist.jpg"
+                                className="tw-rounded-lg"
                             />
                         </Columns.Column>
                         <Columns.Column size={3}>
-                            <FormJobApplication />
+                            <JobApplicationForm />
                         </Columns.Column>
                     </Columns>
                 </Container>

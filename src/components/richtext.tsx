@@ -1,5 +1,4 @@
 import { BLOCKS, MARKS, INLINES, Document } from "@contentful/rich-text-types";
-import { Typography } from "./style";
 import { documentToReactComponents, Options } from "@contentful/rich-text-react-renderer";
 import { ReactNode } from "react";
 
@@ -11,12 +10,34 @@ const options: Options = {
         [MARKS.CODE]: (text: ReactNode) => <code>{text}</code>,
     },
     renderNode: {
-        [BLOCKS.PARAGRAPH]: (_: any, children: any) => <Typography>{children}</Typography>,
-        [BLOCKS.HEADING_1]: (_: any, children: any) => <Typography as="h2">{children}</Typography>,
-        [BLOCKS.HEADING_2]: (_: any, children: any) => <Typography as="h3">{children}</Typography>,
-        [BLOCKS.HEADING_3]: (_: any, children: any) => <Typography as="h4">{children}</Typography>,
-        [BLOCKS.HEADING_4]: (_: any, children: any) => <Typography as="h5">{children}</Typography>,
-        [BLOCKS.HEADING_5]: (_: any, children: any) => <Typography as="h6">{children}</Typography>,
+        [BLOCKS.PARAGRAPH]: (_: any, children: any) => (
+            <p className="tw-font-sans tw-text-lg tw-mb-4">{children}</p>
+        ),
+        [BLOCKS.HEADING_1]: (_: any, children: any) => (
+            <h2 className="tw-font-sans tw-text-3xl tw-underline tw-underline-offset-8 tw-decoration-2 tw-decoration-[#48C744] tw-mb-4">
+                {children}
+            </h2>
+        ),
+        [BLOCKS.HEADING_2]: (_: any, children: any) => (
+            <h3 className="tw-font-sans tw-text-2xl tw-underline tw-underline-offset-8 tw-decoration-2 tw-decoration-[#48C744] tw-mb-4">
+                {children}
+            </h3>
+        ),
+        [BLOCKS.HEADING_3]: (_: any, children: any) => (
+            <h4 className="tw-font-sans tw-text-xl tw-underline tw-underline-offset-8 tw-decoration-2 tw-decoration-[#48C744] tw-mb-4">
+                {children}
+            </h4>
+        ),
+        [BLOCKS.HEADING_4]: (_: any, children: any) => (
+            <h5 className="tw-font-sans tw-text-lg tw-underline tw-underline-offset-8 tw-decoration-2 tw-decoration-[#48C744] tw-mb-4">
+                {children}
+            </h5>
+        ),
+        [BLOCKS.HEADING_5]: (_: any, children: any) => (
+            <h6 className="tw-font-sans tw-text-lg tw-underline tw-underline-offset-8 tw-decoration-2 tw-decoration-[#48C744] tw-mb-4">
+                {children}
+            </h6>
+        ),
         [INLINES.HYPERLINK]: (node: any) => {
             if (node.data.uri.includes("player.vimeo.com/video")) {
                 return (

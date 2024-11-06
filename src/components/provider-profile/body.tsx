@@ -1,6 +1,4 @@
-import { Content } from "react-bulma-components";
 import { RichText } from "../richtext";
-import { Typography } from "../style";
 import { Document } from "@contentful/rich-text-types";
 
 export interface BodyProps {
@@ -16,14 +14,14 @@ export interface BodyProps {
  */
 export function Body(props: BodyProps) {
     return (
-        <Content size="medium">
+        <>
             {props.bio ? (
                 <RichText src={props.bio} />
             ) : (
-                <Typography>
+                <p className="tw-font-sans tw-text-lg">
                     No information available at this time. Please check back again later.
-                </Typography>
+                </p>
             )}
-        </Content>
+        </>
     );
 }

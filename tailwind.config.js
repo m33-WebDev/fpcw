@@ -1,8 +1,12 @@
 /** @type {import('tailwindcss').Config} */
 export default {
+    prefix: "tw-",
     content: ["./target/intermediate/**/*.tsx"],
     theme: {
-        extend: {},
+        fontFamily: {
+            sans: ["Nunito", "sans-serif"],
+            serif: ["Playfair Display", "serif"],
+        },
     },
     plugins: [],
 };

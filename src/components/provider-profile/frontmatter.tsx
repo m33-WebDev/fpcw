@@ -1,6 +1,3 @@
-import { Block } from "react-bulma-components";
-import { Typography } from "../style";
-
 export interface FrontmatterProps {
     /**
      * The full name of the provider.
@@ -23,17 +20,18 @@ export interface FrontmatterProps {
 export function Frontmatter(props: FrontmatterProps) {
     return (
         <>
-            <Block>
-                <Typography as="h1" $family="secondary" $size="xxl">
+            <div className="tw-mb-6">
+                <h1 className="tw-font-serif tw-text-6xl">
+                    {" "}
                     {props.name}
                     {props.credential && `, ${props.credential}`}
-                </Typography>
-            </Block>
-            <Block>
-                <Typography as="h2" $size="s">
+                </h1>
+            </div>
+            <div className="tw-mb-6">
+                <p className="tw-font-sans tw-p-2 tw-text-lg tw-bg-gradient-to-r tw-from-[#48C744] tw-to-white">
                     {props.jobTitle}
-                </Typography>
-            </Block>
+                </p>
+            </div>
         </>
     );
 }

@@ -1,5 +1,5 @@
-import { Block, Box, Columns, Container, Section } from "react-bulma-components";
-import { Layout, Typography } from "./components";
+import { Block, Columns, Container, Section } from "react-bulma-components";
+import { Layout } from "./components";
 import { ContentfulClient } from "./data";
 
 export interface GalleryProps {
@@ -23,17 +23,15 @@ export default function Gallery(props: GalleryProps) {
             <Section>
                 <Container>
                     <Block>
-                        <Typography as="h1" $family="secondary" $size="xxl">
-                            Photo Gallery
-                        </Typography>
+                        <h1 className="tw-font-serif tw-text-6xl">Photo Gallery</h1>
                     </Block>
                     <Columns multiline={true} centered={true}>
                         {props.photos.map((photo) => (
                             <Columns.Column key={photo.title} size={6}>
-                                <Box>
-                                    <img src={photo.url} alt="Image" />
-                                    <Typography>{photo.description}</Typography>
-                                </Box>
+                                <div className="tw-lg:bg-white tw-p-6 tw-rounded-lg tw-space-y-6">
+                                    <img className="tw-mb-4" src={photo.url} alt="Image" />
+                                    <p className="tw-font-sans">{photo.description}</p>
+                                </div>
                             </Columns.Column>
                         ))}
                     </Columns>

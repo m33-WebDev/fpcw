@@ -1,5 +1,5 @@
-import { Block, Columns, Container, Content, Section } from "react-bulma-components";
-import { Layout, Seo, Typography } from "./components";
+import { Columns, Container, Section } from "react-bulma-components";
+import { Layout, Seo } from "./components";
 import services from "./content/services.json";
 import { ContentfulClient } from "./data";
 
@@ -29,59 +29,51 @@ export default function Services(_: ServicesProps) {
         <Layout>
             <Section>
                 <Container>
-                    <Block>
-                        <Typography as="h1" $family="secondary" $size="xxl">
-                            Mental Health Services Provided at FPCW
-                        </Typography>
-                    </Block>
+                    <h1 className="tw-font-serif tw-text-6xl tw-mb-8">
+                        Mental health services provided
+                    </h1>
                     {/* @ts-ignore: @todo: not sure why gap is not found on Columns component */}
                     <Columns gap={6}>
                         <Columns.Column size={4}>
-                            <Content>
-                                <Typography as="h2" $size="xl">
-                                    Conditions Treated
-                                </Typography>
-                                <Typography>
-                                    We offer expert diagnosis and treatment of most psychiatric
-                                    conditions, including:
-                                </Typography>
-                                <ul>
-                                    {conditions.map((service) => (
-                                        <Service key={service.name} service={service} />
-                                    ))}
-                                </ul>
-                            </Content>
+                            <h2 className="tw-font-sans tw-text-3xl tw-mb-6 tw-underline tw-decoration-2 tw-underline-offset-8 tw-decoration-[#48C744]">
+                                Conditions treated
+                            </h2>
+                            <p className="tw-font-sans mb-4">
+                                We offer expert diagnosis and treatment of most psychiatric
+                                conditions, including:
+                            </p>
+                            <ul className="tw-pl-6">
+                                {conditions.map((service) => (
+                                    <Service key={service.name} service={service} />
+                                ))}
+                            </ul>
                         </Columns.Column>
                         <Columns.Column size={4}>
-                            <Content>
-                                <Typography as="h2" $size="xl">
-                                    Services Offered
-                                </Typography>
-                                <Typography>
-                                    We offer counseling and treatment for a full range of mental
-                                    health conditions including:
-                                </Typography>
-                                <ul>
-                                    {psychTreatments.map((service) => (
-                                        <Service key={service.name} service={service} />
-                                    ))}
-                                </ul>
-                            </Content>
+                            <h2 className="tw-font-sans tw-text-3xl tw-mb-6 tw-underline tw-decoration-2 tw-underline-offset-8 tw-decoration-[#48C744]">
+                                Services offered
+                            </h2>
+                            <p className="tw-font-sans mb-4">
+                                We offer counseling and treatment for a full range of mental health
+                                conditions including:
+                            </p>
+                            <ul className="tw-pl-6">
+                                {psychTreatments.map((service) => (
+                                    <Service key={service.name} service={service} />
+                                ))}
+                            </ul>
                         </Columns.Column>
                         <Columns.Column size={4}>
-                            <Content>
-                                <Typography as="h2" $size="xl">
-                                    Wellness and Prevention
-                                </Typography>
-                                <Typography>
-                                    We provide holistic therapies to promote emotional wellbeing:
-                                </Typography>
-                                <ul>
-                                    {altTreatments.map((service) => (
-                                        <Service key={service.name} service={service} />
-                                    ))}
-                                </ul>
-                            </Content>
+                            <h2 className="tw-font-sans tw-text-3xl tw-mb-6 tw-underline tw-decoration-2 tw-underline-offset-8 tw-decoration-[#48C744]">
+                                Wellness and prevention
+                            </h2>
+                            <p className="tw-font-sans mb-4">
+                                We provide holistic therapies to promote emotional wellbeing:
+                            </p>
+                            <ul className="tw-pl-6">
+                                {altTreatments.map((service) => (
+                                    <Service key={service.name} service={service} />
+                                ))}
+                            </ul>
                         </Columns.Column>
                     </Columns>
                 </Container>
@@ -98,12 +90,12 @@ interface ServiceInfo {
 function Service(props: { service: ServiceInfo }) {
     const { service } = props;
     return (
-        <Typography as="li" key={service.name}>
+        <li className="tw-font-sans tw-list-disc tw-mb-2" key={service.name}>
             {service.article ? (
                 <a href={`/library/${service.article}`}>{service.name}</a>
             ) : (
                 service.name
             )}
-        </Typography>
+        </li>
     );
 }
