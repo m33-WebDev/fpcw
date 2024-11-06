@@ -1,5 +1,4 @@
 import { Button, Form } from "react-bulma-components";
-import { styled } from "styled-components";
 import { Typography } from "./style";
 
 const action =
@@ -28,12 +27,13 @@ export function NewsletterSignup() {
                     </Form.Control>
                 </Form.Field>
                 <div aria-hidden="true">
-                    <Honeypot
+                    <input
                         type="text"
                         name="b_facdc7abe706e043dbfd4ead6_2b9b2f9f34"
                         tabIndex={-1}
                         value=""
                         readOnly={true}
+                        className="hidden"
                     />
                 </div>
                 <Button type="submit" color="success" outlined={true} fullwidth={true}>
@@ -43,7 +43,3 @@ export function NewsletterSignup() {
         </>
     );
 }
-
-const Honeypot = styled.input`
-    display: none;
-`;

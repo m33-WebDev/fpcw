@@ -1,4 +1,3 @@
-import { styled } from "styled-components";
 import { Block, Container, Section } from "react-bulma-components";
 import { Layout, Seo, FormAppointment, Typography } from "./components";
 import { ContentfulClient } from "./data";
@@ -46,31 +45,16 @@ export default function Appointments(_: AppointmentProps) {
                         </Typography>
                     </Block>
                     <FormAppointment />
-                    <Disclaimer>
+                    <div
+                        id="disclaimer"
+                        className="mt-2 relative border-4 border-solid border-[#48c774] px-4 pt-8 pb-4 before:absolute before:top-0 before:content-['NOTE'] before:px-6 before:py-1 before:mt-[-4px] before:text-[#48c774] before:bg-[#494949]"
+                    >
                         <Typography>{disclaimer1}</Typography>
                         <br />
                         <Typography>{disclaimer2}</Typography>
-                    </Disclaimer>
+                    </div>
                 </Container>
             </Section>
         </Layout>
     );
 }
-
-const Disclaimer = styled.div`
-    margin-top: 2vmin;
-    position: relative;
-    border: 4px solid #48c774;
-    padding: 2em;
-    ::before {
-        content: "note";
-        padding: 2px 18px;
-        margin-top: -4px;
-        text-transform: uppercase;
-        font-weight: lighter;
-        position: absolute;
-        top: 0;
-        color: #48c774;
-        background-color: #494949;
-    }
-`;

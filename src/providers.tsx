@@ -1,5 +1,4 @@
 import { Block, Card, Columns, Container, Content, Section } from "react-bulma-components";
-import { styled } from "styled-components";
 import { Layout, Seo, Typography } from "./components";
 import { ContentfulClient, Profile } from "./data";
 
@@ -34,7 +33,7 @@ export default function Providers(props: ProvidersProps) {
                     {/* @ts-ignore: @todo: not sure why gap is not found on Columns component */}
                     <Columns gap={4}>
                         <Columns.Column size={4}>
-                            <FancyBlurb>
+                            <div className="min-[1024px]:sticky min-[1024px]:top-[15vh]">
                                 <Block>
                                     <Typography as="h1" $family="secondary" $size="xxl">
                                         Find the Right Expert for Your Mental Health Needs
@@ -49,29 +48,26 @@ export default function Providers(props: ProvidersProps) {
                                         advancing wellness of the mind, body, and spirit.
                                     </Typography>
                                 </Content>
-                            </FancyBlurb>
+                            </div>
                         </Columns.Column>
                         <Columns.Column size={8}>
                             <Columns multiline={true}>
                                 {profiles.map(({ slug, name, credential, headshot }, i) => (
                                     <Columns.Column size={4} key={i}>
                                         <a href={`/providers/${slug}`}>
-                                            <FancyCard style={{ overflow: "hidden" }}>
+                                            <Card className="overflow-hidden h-[30vmin]">
                                                 <img
                                                     src={headshot}
                                                     key={slug}
-                                                    style={{
-                                                        objectFit: "cover",
-                                                        minHeight: "100%",
-                                                    }}
+                                                    className="object-cover min-h-full min-w-full"
                                                 />
-                                                <FancyPostTitle>
+                                                <div className="border-3 border-green-500 border-r-0 absolute bottom-0 right-0 p-1 text-left bg-green-500/70 max-w-[70%]">
                                                     <Typography>
                                                         {name}
                                                         {credential ? `, ${credential}` : ""}
                                                     </Typography>
-                                                </FancyPostTitle>
-                                            </FancyCard>
+                                                </div>
+                                            </Card>
                                         </a>
                                     </Columns.Column>
                                 ))}
@@ -93,32 +89,3 @@ function sortProfiles(profiles: Profile[]): Profile[] {
 
     return ([] as Profile[]).concat(sabira, psych, np, lmft, admin);
 }
-
-const FancyBlurb = styled.div`
-    @media (min-width: 1024px) {
-        position: sticky;
-        top: 15vh;
-    }
-`;
-
-const FancyCard = styled(Card)`
-    @media (max-width: 769px) {
-        height: 70vmin;
-    }
-    @media (min-width: 769px) {
-        height: 30vmin;
-    }
-`;
-
-const FancyPostTitle = styled.div`
-    border: 3px solid #48c774;
-    border-right: 0px;
-
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    padding: 0.3em;
-    text-align: left;
-    background: rgba(72, 199, 116, 0.7);
-    max-width: 70%;
-`;

@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { Container, Level, Navbar } from "react-bulma-components";
-import { styled } from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faExclamationCircle } from "@fortawesome/free-solid-svg-icons";
 import { Typography } from "../style";
@@ -26,7 +25,7 @@ export function Header() {
     const [active, setActive] = useState(false);
 
     return (
-        <FancyNavbar fixed="top" color="success" active={active}>
+        <Navbar fixed="top" color="success" active={active}>
             <Container>
                 <Navbar.Brand>
                     <Navbar.Item href="/">
@@ -83,13 +82,6 @@ export function Header() {
                     </Navbar.Container>
                 </Navbar.Menu>
             </Container>
-        </FancyNavbar>
+        </Navbar>
     );
 }
-
-const FancyNavbar = styled(Navbar)`
-    box-shadow: 0 2px 2px -2px rgba(0, 0, 0, 0.2);
-    a {
-        color: inherit;
-    }
-`;

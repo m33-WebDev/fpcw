@@ -8,7 +8,6 @@ import {
     Level,
     Section,
 } from "react-bulma-components";
-import { styled } from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
     faStar,
@@ -201,7 +200,7 @@ export default function Index(props: IndexProps) {
                             Health Resources
                         </Typography>
                     </Block>
-                    <FancyDivider />
+                    <hr className="bg-[#48c774] w-[15%] ml-auto mr-auto h-1 mb-2" />
                     <Columns centered={true}>
                         {props.posts.map((post, i) => (
                             <Columns.Column size={3} key={i}>
@@ -209,7 +208,7 @@ export default function Index(props: IndexProps) {
                             </Columns.Column>
                         ))}
                     </Columns>
-                    <FancyDivider />
+                    <hr className="bg-[#48c774] w-[15%] ml-auto mr-auto h-1" />
                 </Container>
             </Section>
         </Layout>
@@ -247,11 +246,3 @@ function Rating({ link, icon, rating }: { link: string; icon: IconDefinition; ra
         </Block>
     );
 }
-
-const FancyDivider = styled.hr`
-    background-color: #48c774;
-    width: 15%;
-    margin-left: auto;
-    margin-right: auto;
-    height: 5px;
-`;

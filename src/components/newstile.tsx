@@ -1,5 +1,4 @@
 import { Block, Card, Content } from "react-bulma-components";
-import { styled } from "styled-components";
 import { Typography } from "./style";
 import { Post } from "../data";
 import { Document, Text } from "@contentful/rich-text-types";
@@ -14,10 +13,11 @@ export function NewsTile({ post }: NewsTileProps) {
     return (
         <a href={`/library/${slug}`}>
             <Card style={{ overflow: "hidden" }}>
-                <FancyImage
+                <img
                     src={feature}
                     alt="post thumbnail"
-                    style={{ objectFit: "cover", width: "100%" }}
+                    style={{ height: "30vmin" }}
+                    className="object-cover w-full"
                 />
                 <Card.Content>
                     <Block>
@@ -33,11 +33,6 @@ export function NewsTile({ post }: NewsTileProps) {
         </a>
     );
 }
-
-const FancyImage = styled.img`
-    object-fit: cover;
-    height: 30vmin;
-`;
 
 function extractExcerptFromRichText(document: Document, length: number): string {
     const firstParagraph = document.content.find(({ nodeType }) => nodeType === "paragraph");

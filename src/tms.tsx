@@ -9,7 +9,6 @@ import {
     Section,
     Block,
 } from "react-bulma-components";
-import { styled } from "styled-components";
 import { Layout, Seo, FormAppointment, Typography } from "./components";
 
 export function Head() {
@@ -29,11 +28,11 @@ export default function Tms() {
                 <Container>
                     <Columns vCentered={true}>
                         <Columns.Column textAlign="center">
-                            <FancyImage
+                            <img
                                 src="/images/tms/HatDude-extended-top-background.jpg"
                                 width="512px"
                                 height="512px"
-                                color="success"
+                                className="p-2 border-dotted border-x-2 border-y-2 border-green-500"
                             />
                         </Columns.Column>
                         <Columns.Column>
@@ -102,11 +101,11 @@ export default function Tms() {
                             </Typography>
                         </Columns.Column>
                         <Columns.Column textAlign="center">
-                            <FancyImage
+                            <img
                                 src="/images/tms/HP-LateralHead_coil_2021.jpg"
                                 width="512px"
                                 height="512px"
-                                color="success"
+                                className="p-2 border-dotted border-x-2 border-y-2 border-green-500"
                             />
                         </Columns.Column>
                     </Columns>
@@ -118,11 +117,11 @@ export default function Tms() {
                 <Container>
                     <Columns vCentered={true}>
                         <Columns.Column textAlign="center">
-                            <FancyImage
+                            <img
                                 src="/images/tms/MalePatientDr-closeup.jpg"
                                 width="512px"
                                 height="512px"
-                                color="success"
+                                className="p-2 border-dotted border-x-2 border-y-2 border-green-500"
                             />
                         </Columns.Column>
                         <Columns.Column>
@@ -266,9 +265,3 @@ function Quizlet() {
         return <></>;
     }
 }
-
-const FancyImage = styled.img`
-    padding: 5px;
-    border: dotted 5px;
-    border-color: ${(props) => (props.color === "success" ? "#48C774" : "#F5F5F5")};
-`;

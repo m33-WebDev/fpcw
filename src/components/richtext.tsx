@@ -1,5 +1,4 @@
 import { BLOCKS, MARKS, INLINES, Document } from "@contentful/rich-text-types";
-import { styled } from "styled-components";
 import { Typography } from "./style";
 import { documentToReactComponents, Options } from "@contentful/rich-text-react-renderer";
 import { ReactNode } from "react";
@@ -32,15 +31,16 @@ const options: Options = {
                 );
             } else if (node.data.uri.includes("youtube.com/embed")) {
                 return (
-                    <FancyVideoWrapper>
-                        <FancyVideo
+                    <span className="block w-full pb-10 relative">
+                        <iframe
                             title="Unique Title 002"
                             src={node.data.uri}
                             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                             frameBorder="0"
                             allowFullScreen
-                        ></FancyVideo>
-                    </FancyVideoWrapper>
+                            className="h-full w-full absolute top-0 left-0"
+                        ></iframe>
+                    </span>
                 );
             } else {
                 return <a href={node.data.uri}>{node.content[0].value}</a>;
@@ -53,21 +53,6 @@ interface RichTextProps {
     src: Document;
 }
 
-export function RichText({ src }: RichTextProps) {
-    return <>{documentToReactComponents(src, options)}</>;
+export function RichText(props: RichTextProps) {
+    return <>{documentToReactComponents(props.src, options)}</>;
 }
-
-const FancyVideoWrapper = styled.span`
-    padding-bottom: 56.25%;
-    position: relative;
-    display: block;
-    width: 100%;
-`;
-
-const FancyVideo = styled.iframe`
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-`;

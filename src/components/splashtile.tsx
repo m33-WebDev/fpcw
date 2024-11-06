@@ -1,5 +1,4 @@
 import { Card } from "react-bulma-components";
-import { styled } from "styled-components";
 import { Typography } from "./style";
 
 interface SplashTileProps {
@@ -11,34 +10,16 @@ interface SplashTileProps {
 export function SplashTile(props: SplashTileProps) {
     return (
         <a href={props.to}>
-            <FancyCard style={{ overflow: "hidden" }}>
+            <Card style={{ overflow: "hidden" }} className="h-full relative">
                 <img
                     src={props.image}
                     alt="Splash"
                     style={{ objectFit: "cover", minHeight: "100%" }}
                 />
-                <FancyTitle>
+                <h2 className="border-l-0 border-4 border-green-500 absolute bottom-[10%] left-0 p-1 text-left bg-[#48c774] max-w-[70%]">
                     <Typography>{props.title}</Typography>
-                </FancyTitle>
-            </FancyCard>
+                </h2>
+            </Card>
         </a>
     );
 }
-
-const FancyCard = styled(Card)`
-    height: 100%;
-    position: relative;
-`;
-
-const FancyTitle = styled.h2`
-    border: 3px solid #48c774;
-    border-left: 0px;
-
-    position: absolute;
-    bottom: 10%;
-    left: 0;
-    padding: 0.3em;
-    text-align: left;
-    background: rgb(72, 199, 116);
-    max-width: 70%;
-`;
