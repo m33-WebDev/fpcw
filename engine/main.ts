@@ -118,19 +118,21 @@ class Engine {
                 // If not a template, copy as-is
                 if (!source.endsWith(".template.tsx")) {
                     console.log(`changed: ${source}`);
+                    const sanitizedModule = await Engine.getSanitizedModule(source);
                     const out = source
                         .replace(dirs.source, dirs.intermediate)
                         .replace(".tsx", ".source.tsx");
-                    await fs.copyFile(source, out);
+                    await fs.writeFile(out, sanitizedModule);
                     return;
                 }
 
                 // Otherwise, copy updated template source to all instances
                 console.log(`changed: ${source}`);
                 const instances = this.templateToInstances[source];
+                const sanitizedModule = await Engine.getSanitizedModule(source);
                 for (const instance of instances) {
                     const out = `${dirs.intermediate}/${instance.path}.source.tsx`;
-                    await fs.copyFile(source, out);
+                    await fs.writeFile(out, sanitizedModule);
                 }
             }
 
@@ -262,7 +264,8 @@ class Engine {
         await fs.writeFile(`${dirs.intermediate}/${path}.html`, html);
 
         // Save module
-        await fs.copyFile(source, `${dirs.intermediate}/${path}.source.tsx`);
+        const sanitizedModule = await Engine.getSanitizedModule(source);
+        await fs.writeFile(`${dirs.intermediate}/${path}.source.tsx`, sanitizedModule);
 
         // Save props
         await fs.writeFile(`${dirs.intermediate}/${path}.props.json`, JSON.stringify(props));
@@ -276,6 +279,19 @@ class Engine {
 
         // Save main script
         await fs.writeFile(`${dirs.intermediate}/${path}.main.tsx`, main);
+    }
+
+    /**
+     * Removes non-React exports from the module.
+     *
+     * This allows us to work around a limitation of hot reload that prevents it
+     * from incrementally updating modules that export non-React components.
+     */
+    static async getSanitizedModule(path: string): Promise<string> {
+        const content = await fs.readFile(path, { encoding: "utf-8" });
+        return content
+            .replace("export async function query", "async function query")
+            .replace("export async function instances", "async function instances");
     }
 
     /**
