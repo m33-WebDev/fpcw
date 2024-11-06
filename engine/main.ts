@@ -32,8 +32,11 @@ class Engine {
     async develop() {
         console.log("starting development server");
 
-        // Ensure output dir exists
-        await fs.mkdir(dirs.develop, { recursive: true });
+        // Clean output dir
+        fs.rm(dirs.intermediate, { recursive: true, force: true });
+
+        // Create output dir
+        await fs.mkdir(dirs.intermediate, { recursive: true });
 
         // Identify all source files
         const sources = await fs.readdir(dirs.source, { withFileTypes: true, recursive: true });
@@ -47,8 +50,8 @@ class Engine {
 
             // If not TypeScript or not listed as page, copy as-is
             if (!entry.name.endsWith(".tsx") || !pages.includes(source)) {
-                const out = source.replace(dirs.source, dirs.develop);
-                const outParent = entry.parentPath.replace(dirs.source, dirs.develop);
+                const out = source.replace(dirs.source, dirs.intermediate);
+                const outParent = entry.parentPath.replace(dirs.source, dirs.intermediate);
                 await fs.mkdir(outParent, { recursive: true });
                 await fs.copyFile(source, out);
                 continue;
@@ -80,7 +83,7 @@ class Engine {
                 // If not listed as page, copy as-is
                 if (!pages.includes(source)) {
                     console.log(`created: ${source}`);
-                    const out = source.replace(dirs.source, dirs.develop);
+                    const out = source.replace(dirs.source, dirs.intermediate);
                     await fs.copyFile(source, out);
                     return;
                 }
@@ -107,7 +110,7 @@ class Engine {
                 // If not listed as page, copy as-is
                 if (!pages.includes(source)) {
                     console.log(`changed: ${source}`);
-                    const out = source.replace(dirs.source, dirs.develop);
+                    const out = source.replace(dirs.source, dirs.intermediate);
                     await fs.copyFile(source, out);
                     return;
                 }
@@ -116,7 +119,7 @@ class Engine {
                 if (!source.endsWith(".template.tsx")) {
                     console.log(`changed: ${source}`);
                     const out = source
-                        .replace(dirs.source, dirs.develop)
+                        .replace(dirs.source, dirs.intermediate)
                         .replace(".tsx", ".source.tsx");
                     await fs.copyFile(source, out);
                     return;
@@ -126,7 +129,7 @@ class Engine {
                 console.log(`changed: ${source}`);
                 const instances = this.templateToInstances[source];
                 for (const instance of instances) {
-                    const out = `${dirs.develop}/${instance.path}.source.tsx`;
+                    const out = `${dirs.intermediate}/${instance.path}.source.tsx`;
                     await fs.copyFile(source, out);
                 }
             }
@@ -135,7 +138,7 @@ class Engine {
                 // If not listed as page, delete
                 if (!pages.includes(source)) {
                     console.log(`deleted: ${source}`);
-                    const out = source.replace(dirs.source, dirs.develop);
+                    const out = source.replace(dirs.source, dirs.intermediate);
                     await fs.rm(out);
                     return;
                 }
@@ -145,10 +148,10 @@ class Engine {
                     console.log(`deleted: ${source}`);
                     for (const instance of this.templateToInstances[source]) {
                         const path = instance.path;
-                        fs.rm(`${dirs.develop}/${path}.html`);
-                        fs.rm(`${dirs.develop}/${path}.props.json`);
-                        fs.rm(`${dirs.develop}/${path}.source.tsx`);
-                        fs.rm(`${dirs.develop}/${path}.main.tsx`);
+                        fs.rm(`${dirs.intermediate}/${path}.html`);
+                        fs.rm(`${dirs.intermediate}/${path}.props.json`);
+                        fs.rm(`${dirs.intermediate}/${path}.source.tsx`);
+                        fs.rm(`${dirs.intermediate}/${path}.main.tsx`);
                     }
                     return;
                 }
@@ -156,15 +159,18 @@ class Engine {
                 // Otherwise, delete single page artifacts
                 console.log(`deleted: ${source}`);
                 const path = source.replace("src/", "").replace(".tsx", "");
-                fs.rm(`${dirs.develop}/${path}.html`);
-                fs.rm(`${dirs.develop}/${path}.props.json`);
-                fs.rm(`${dirs.develop}/${path}.source.tsx`);
-                fs.rm(`${dirs.develop}/${path}.main.tsx`);
+                fs.rm(`${dirs.intermediate}/${path}.html`);
+                fs.rm(`${dirs.intermediate}/${path}.props.json`);
+                fs.rm(`${dirs.intermediate}/${path}.source.tsx`);
+                fs.rm(`${dirs.intermediate}/${path}.main.tsx`);
             }
         });
 
         // Start vite server
-        const server = await createServer({ configFile: "./vite.config.ts", root: dirs.develop });
+        const server = await createServer({
+            configFile: "./vite.config.ts",
+            root: dirs.intermediate,
+        });
         await server.listen();
         console.log("listening at http://localhost:5173");
     }
@@ -173,7 +179,10 @@ class Engine {
      * Builds a production site.
      */
     async build() {
-        // Ensure output dir exists
+        // Clean output dir
+        fs.rm(dirs.intermediate, { recursive: true, force: true });
+
+        // Create output dir
         await fs.mkdir(dirs.intermediate, { recursive: true });
 
         // Identify all source files
@@ -247,26 +256,26 @@ class Engine {
         // Ensure output dir exists
         const parts = path.split("/");
         const base = parts.slice(0, parts.length - 1).join("/");
-        await fs.mkdir(`${dirs.develop}/${base}`, { recursive: true });
+        await fs.mkdir(`${dirs.intermediate}/${base}`, { recursive: true });
 
         // Save HTML
-        await fs.writeFile(`${dirs.develop}/${path}.html`, html);
+        await fs.writeFile(`${dirs.intermediate}/${path}.html`, html);
 
         // Save module
-        await fs.copyFile(source, `${dirs.develop}/${path}.source.tsx`);
+        await fs.copyFile(source, `${dirs.intermediate}/${path}.source.tsx`);
 
         // Save props
-        await fs.writeFile(`${dirs.develop}/${path}.props.json`, JSON.stringify(props));
+        await fs.writeFile(`${dirs.intermediate}/${path}.props.json`, JSON.stringify(props));
 
         // Render main script
         const main = (await fs.readFile("engine/client_main.tsx", { encoding: "utf-8" }))
-            .replace("<!--base-->", resolve(dirs.develop).replace(/\\/g, "/"))
+            .replace("<!--base-->", resolve(dirs.intermediate).replace(/\\/g, "/"))
             .replace("<!--source-->", `${name}.source.tsx`)
             .replace("<!--props-->", `${name}.props.json`)
             .replace("<!--mode-->", "develop");
 
         // Save main script
-        await fs.writeFile(`${dirs.develop}/${path}.main.tsx`, main);
+        await fs.writeFile(`${dirs.intermediate}/${path}.main.tsx`, main);
     }
 
     /**
