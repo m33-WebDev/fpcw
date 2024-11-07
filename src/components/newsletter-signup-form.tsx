@@ -8,11 +8,11 @@ export function NewsletterSignupForm() {
                 action={action}
                 method="post"
                 target="_blank"
-                className="tw-lg:bg-white tw-p-[1.5rem] tw-rounded-lg tw-space-y-6 tw-shadow-2xl tw-max-w-md"
+                className="tw-lg:bg-white lg:tw-p-[1.5rem] tw-rounded-lg tw-space-y-6 lg:tw-shadow-2xl tw-max-w-md"
             >
                 <h1 className="tw-font-serif tw-text-3xl tw-text-slate-600">Connect with us</h1>
 
-                <p className="font-sans">
+                <p className="tw-font-sans">
                     Want to learn more? Sign up for our newsletter and stay up to date with the
                     latest developments in mental health management.
                 </p>
