@@ -51,7 +51,7 @@ export default function Contact(_: ContactProps) {
                             </p>
 
                             <p className="tw-font-sans tw-text-lg tw-mb-4">
-                                You can also reach us using one the methods below:
+                                You can also reach us using one of the methods below:
                             </p>
 
                             <Table>
