@@ -2,11 +2,11 @@ import { Columns, Container, Footer as BulmaFooter, Icon } from "react-bulma-com
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope, faPhone, faCalendar, IconDefinition } from "@fortawesome/free-solid-svg-icons";
 
-const contactDetails: [string, IconDefinition | null, string][] = [
-    ["phone", faPhone, "(805) 341-3416"],
-    ["email", faEnvelope, "fpcw@familypsychiatry101.com"],
-    ["mon_thu", faCalendar, "Monday - Thursday - 9:00am - 5:00pm"],
-    ["fri", faCalendar, "Friday - 8:00am - 3:00pm"],
+const contactDetails: [string, IconDefinition | null, string | undefined, string][] = [
+    ["phone", faPhone, "tel:8053413416", "(805) 341-3416"],
+    ["email", faEnvelope, "mailto:fpcw@familypsychiatry101.com", "fpcw@familypsychiatry101.com"],
+    ["mon_thu", faCalendar, , "Monday - Thursday - 9:00am - 5:00pm"],
+    ["fri", faCalendar, , "Friday - 8:00am - 3:00pm"],
 ];
 
 export function Footer() {
@@ -15,14 +15,19 @@ export function Footer() {
             <Container>
                 <Columns>
                     <Columns.Column size={3}>
-                        {contactDetails.map(([key, icon, text]) => (
+                        {contactDetails.map(([key, icon, link, text]) => (
                             <Icon.Text key={key} mb={2}>
                                 {icon && (
                                     <Icon>
                                         <FontAwesomeIcon icon={icon} />
                                     </Icon>
                                 )}
-                                <p className="tw-font-sans">{text}</p>
+                                {link && (
+                                    <a href={link}>
+                                        <p className="tw-font-sans">{text}</p>
+                                    </a>
+                                )}
+                                {!link && <p className="tw-font-sans">{text}</p>}
                             </Icon.Text>
                         ))}
                         <p className="tw-mt-2 tw-font-sans">

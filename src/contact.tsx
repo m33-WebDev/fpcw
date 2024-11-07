@@ -60,13 +60,19 @@ export default function Contact(_: ContactProps) {
                                         <td>
                                             <FontAwesomeIcon icon={faPhone} />
                                         </td>
-                                        <td>(805) 341-3416</td>
+                                        <td>
+                                            <a href="tel:8053413416">(805) 341-3416</a>
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td>
                                             <FontAwesomeIcon icon={faEnvelope} />
                                         </td>
-                                        <td>fpcw@familypsychiatry101.com</td>
+                                        <td>
+                                            <a href="mailto:fpcw@familypsychiatry101.com">
+                                                fpcw@familypsychiatry101.com
+                                            </a>
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td>
