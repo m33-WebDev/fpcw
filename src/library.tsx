@@ -48,13 +48,13 @@ export default function Library(props: LibraryProps) {
                                 {props.posts.map(({ slug, title, feature }, i) => (
                                     <Columns.Column size={4} key={i}>
                                         <a href={`/library/${slug}`}>
-                                            <div className="tw-rounded-3xl tw-h-72 tw-w-72 tw-shadow tw-flex tw-flex-col tw-overflow-hidden">
+                                            <div className="tw-rounded-3xl tw-h-72 lg:tw-w-72 tw-shadow tw-flex tw-flex-col tw-overflow-hidden">
                                                 <div className="tw-grow tw-overflow-hidden">
                                                     <img
                                                         key={slug}
                                                         src={feature}
                                                         alt={title}
-                                                        className="tw-w-full tw-h-full tw-object-cover"
+                                                        className="tw-w-full tw-h-full tw-object-cover tw-object-top"
                                                     />
                                                 </div>
                                                 <div className="tw-px-4 tw-py-2 tw-text-slate-600 tw-font-sans tw-font-medium">
