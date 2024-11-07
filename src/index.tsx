@@ -235,7 +235,7 @@ function Card(props: { label: string; feature: string }) {
                 <img
                     src={props.feature}
                     alt="@todo"
-                    className="tw-w-full tw-h-full tw-object-cover"
+                    className="tw-w-full tw-h-full tw-object-top tw-object-cover"
                 />
             </div>
             <div className="tw-px-4 tw-py-2 tw-text-slate-600 tw-font-sans tw-font-medium">
