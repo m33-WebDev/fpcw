@@ -27,7 +27,7 @@ export default function Appointments(_: AppointmentProps) {
             <div className="tw-min-h-[calc(100vh-3.25rem)]">
                 <Section className="tw-px-0 lg:tw-px-[1.5rem]">
                     <Container>
-                        <Columns vCentered={true}>
+                        <Columns vCentered={true} className="tw-max-w-full">
                             <Columns.Column size={4}>
                                 <AppointmentForm />
                             </Columns.Column>
