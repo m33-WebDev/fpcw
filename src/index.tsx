@@ -247,7 +247,7 @@ function Card(props: { label: string; feature: string }) {
 
 function LongCard(props: { label: string; feature?: string; excerpt: string }) {
     return (
-        <div className="tw-rounded-3xl tw-h-[36rem] tw-w-72 tw-shadow tw-flex tw-flex-col tw-overflow-hidden">
+        <div className="tw-rounded-3xl tw-h-[36rem] lg:tw-w-72 tw-shadow tw-flex tw-flex-col tw-overflow-hidden">
             <div className="tw-grow tw-overflow-hidden">
                 <img src={props.feature ?? ""} className="tw-w-full tw-h-full tw-object-cover" />
             </div>
