@@ -25,7 +25,7 @@ export function Footer() {
                                 <p className="tw-font-sans">{text}</p>
                             </Icon.Text>
                         ))}
-                        <p className="tw-mt-2">
+                        <p className="tw-mt-2 tw-font-sans">
                             Same day appointments available. We are closed on weekends and holidays.
                         </p>
                     </Columns.Column>
