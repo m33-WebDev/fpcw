@@ -165,7 +165,7 @@ export default function Index(props: IndexProps) {
                                 <h2 className="tw-font-serif tw-text-5xl">
                                     What our patients are saying
                                 </h2>
-                                <Columns>
+                                <Columns breakpoint="mobile">
                                     {ratings.map((rating) => (
                                         <Columns.Column size={4}>
                                             <Rating
