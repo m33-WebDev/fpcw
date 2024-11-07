@@ -90,9 +90,7 @@ export default function Contact(_: ContactProps) {
                         <Columns.Column size={6}>
                             <iframe
                                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6603.282201614023!2d-118.80153120000001!3d34.155523099999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80e8245ccc95cfc5%3A0x9d68e491496f16f2!2s31194%20La%20Baya%20Dr%2C%20Westlake%20Village%2C%20CA%2091362!5e0!3m2!1sen!2sus!4v1730930331227!5m2!1sen!2sus"
-                                width="600"
-                                height="450"
-                                style={{ border: 0 }}
+                                className="tw-w-full tw-h-[50vh] lg:tw-h-full"
                                 allowFullScreen={true}
                                 loading="lazy"
                                 referrerPolicy="no-referrer-when-downgrade"
