@@ -1,4 +1,4 @@
-import { Container } from "react-bulma-components";
+import { Container, Section } from "react-bulma-components";
 import { AppointmentForm, Layout, Seo } from "./components";
 import { ContentfulClient } from "./data";
 
@@ -24,10 +24,12 @@ export function Head(props: AppointmentProps) {
 export default function Appointments(_: AppointmentProps) {
     return (
         <Layout>
-            <div className="tw-h-[calc(100vh-52px)] tw-flex tw-align-center tw-items-center tw-bg-gradient-to-r tw-from-[#48C744] tw-to-emerald-500">
-                <Container>
-                    <AppointmentForm />
-                </Container>
+            <div className="tw-min-h-[calc(100vh-3.25rem)] lg:tw-bg-gradient-to-r tw-from-[#48C744] tw-to-emerald-500">
+                <Section className="tw-px-0 lg:tw-px-[1.5rem]">
+                    <Container>
+                        <AppointmentForm />
+                    </Container>
+                </Section>
             </div>
         </Layout>
     );

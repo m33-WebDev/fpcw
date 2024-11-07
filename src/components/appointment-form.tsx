@@ -16,7 +16,7 @@ export function AppointmentForm() {
             name="appointmentrequest"
             method="POST"
             data-netlify="true"
-            className="lg:tw-bg-white tw-p-6 tw-rounded-lg tw-space-y-6 tw-shadow-2xl tw-max-w-md"
+            className="lg:tw-bg-white tw-p-6 tw-rounded-lg tw-space-y-6 lg:tw-shadow-2xl tw-max-w-md"
         >
             <h1 className="tw-font-serif tw-text-3xl lg:tw-text-6xl tw-text-slate-600">
                 Request an appointment
@@ -62,7 +62,7 @@ export function AppointmentForm() {
              * These placeholders inform Netlify about fields that are not rendered at build time.
              * This ensures that the fields are recognized and uploaded with the the form submission.
              */}
-            <input type='hidden' name='form-name' value='appointmentrequest' />
+            <input type="hidden" name="form-name" value="appointmentrequest" />
             <input type="hidden" name="referral-insurer" />
             <input type="hidden" name="referral-wordofmouth-name" />
             <input type="hidden" name="referral-wordofmouth-phone" />
