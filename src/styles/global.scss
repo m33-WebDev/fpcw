@@ -1,5 +1,6 @@
 @use "bulma/sass" with (
-    $success: #48c774
+    $success: #48c774,
+    $navbar-dropdown-arrow: #48c744
 );
 
 @tailwind base;

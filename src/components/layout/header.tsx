@@ -30,7 +30,10 @@ export function Header() {
                     <Navbar.Item href="/">
                         <img width={80} src="/images/logo-fitted.png" alt="Logo" />
                     </Navbar.Item>
-                    <Navbar.Burger onClick={() => setActive((prev) => !prev)} />
+                    <Navbar.Burger
+                        className="tw-text-[#48C744]"
+                        onClick={() => setActive((prev) => !prev)}
+                    />
                 </Navbar.Brand>
                 <Navbar.Menu>
                     <Navbar.Container align="left" mobile={{ display: "hidden" }}>
