@@ -59,7 +59,7 @@ export default function Index(props: IndexProps) {
                 <Hero.Body>
                     <Container>
                         <Columns>
-                            <Columns.Column size={6}>
+                            <Columns.Column size={6} className="tw-mb-12">
                                 <div className="tw-space-y-10">
                                     <h1 className="tw-font-serif tw-text-6xl">
                                         Family Psychiatry
@@ -69,9 +69,9 @@ export default function Index(props: IndexProps) {
 
                                     <div className="tw-space-y-6">
                                         <p className="tw-font-sans tw-text-xl tw-text-slate-500">
-                                            A comprehensive psychiatric clinic serving the mental &
-                                            emotional health needs of all members of the family. Our
-                                            mission is to help you live your best life.
+                                            A comprehensive psychiatric clinic serving the mental
+                                            and emotional health needs of all members of the family.
+                                            Our mission is to help you live your best life.
                                         </p>
                                         <p className="tw-font-sans tw-text-xl tw-text-slate-500">
                                             We diagnose and treat a variety of mental health
@@ -82,7 +82,7 @@ export default function Index(props: IndexProps) {
                                         <p className="tw-font-sans tw-text-xl tw-text-slate-500">
                                             We accept most commercial insurances. Same day
                                             appointments available. Prescriptions are sent
-                                            electronically to your pharmacy
+                                            electronically to your pharmacy.
                                         </p>
                                     </div>
 
@@ -96,7 +96,7 @@ export default function Index(props: IndexProps) {
                                 </div>
                             </Columns.Column>
                             <Columns.Column size={6}>
-                                <div className="tw-grid tw-grid-cols-2 tw-gap-y-8">
+                                <div className="tw-grid tw-grid-cols-1 lg:tw-grid-cols-2 tw-gap-y-8">
                                     <a href="/services" className="tw-justify-self-center">
                                         <Card
                                             label="Services"
@@ -230,7 +230,7 @@ function Rating({ link, icon, rating }: { link: string; icon: IconDefinition; ra
 
 function Card(props: { label: string; feature: string }) {
     return (
-        <div className="tw-rounded-3xl tw-h-72 tw-w-72 tw-shadow tw-flex tw-flex-col tw-overflow-hidden">
+        <div className="tw-rounded-3xl tw-h-72 lg:tw-w-72 tw-shadow tw-flex tw-flex-col tw-overflow-hidden">
             <div className="tw-grow tw-overflow-hidden">
                 <img
                     src={props.feature}
