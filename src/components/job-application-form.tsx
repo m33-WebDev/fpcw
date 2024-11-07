@@ -17,7 +17,7 @@ export function JobApplicationForm() {
             method="POST"
             // @ts-expect-error: 'netlify' attribute does not exist on HTML form tag
             netlify="true"
-            action="/success/"
+            action="/success"
             encType="multipart/form-data"
             className="tw-space-y-6 tw-max-w-md"
         >
